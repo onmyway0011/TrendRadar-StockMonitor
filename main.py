@@ -19,7 +19,7 @@ CONFIG = {
     "RANK_THRESHOLD": 5,  # 排名阈值，决定使用【】还是[]的界限
     "USE_PROXY": False,  # 是否启用本地代理
     "DEFAULT_PROXY": "http://127.0.0.1:10086",
-    "CONTINUE_WITHOUT_FEISHU": False,  # 控制是否在没有飞书webhook URL时继续执行爬虫, 如果True ,会依然进行爬虫行为，会在github上持续的生成爬取的新闻数据
+    "CONTINUE_WITHOUT_FEISHU": True,  # 控制是否在没有飞书webhook URL时继续执行爬虫, 如果True ,会依然进行爬虫行为，会在github上持续的生成爬取的新闻数据
     "FEISHU_WEBHOOK_URL": "",  # 飞书机器人的webhook URL，大概长这样：https://www.feishu.cn/flow/api/trigger-webhook/xxxx， 默认为空，推荐通过GitHub Secrets设置
 }
 
@@ -673,7 +673,6 @@ class ReportGenerator:
     ) -> str:
         """
         生成HTML报告，包括失败的请求信息
-
         Returns:
             HTML文件路径
         """
@@ -682,7 +681,6 @@ class ReportGenerator:
             filename = "当日统计.html"
         else:
             filename = f"{TimeHelper.format_time_filename()}.html"
-
         file_path = FileHelper.get_output_path("html", filename)
 
         # HTML模板和内容生成
@@ -693,6 +691,15 @@ class ReportGenerator:
         # 写入文件
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(html_content)
+
+        # 如果是当日统计，还需要在根目录下生成index.html
+        if is_daily:
+            root_file_path = "index.html"  # 根目录下使用index.html作为文件名
+            with open(root_file_path, "w", encoding="utf-8") as f:
+                f.write(html_content)
+            print(
+                f"当日统计报告已保存到根目录的index.html: {os.path.abspath(root_file_path)}"
+            )
 
         return file_path
 
