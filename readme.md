@@ -60,23 +60,6 @@ TrendRadar 是一款多平台热点资讯监控工具，可自动追踪主流媒
    - 运行结果将自动保存在仓库的`output`目录中
    - 同时通过飞书机器人发送通知到你的群组
 
-6. **增加或减少平台**：
-如果想支持更多平台或者不想看某些歪屁股平台，可以访问newsnow的源代码：https://github.com/ourongxing/newsnow/tree/main/server/sources ，根据里面的文件名自己来修改 main.py 中的下面代码，可以在你 Fork 的项目上直接修改源码
-
-```
-    ids = [
-        ("toutiao", "今日头条"),
-        ("baidu", "百度热搜"),
-        ("wallstreetcn-hot", "华尔街见闻"),
-        ("thepaper", "澎湃新闻"),
-        ("bilibili-hot-search", "bilibili 热搜"),
-        ("cls-hot", "财联社热门"),
-        "tieba",
-        "weibo",
-        "douyin",
-        "zhihu",
-    ]
-```
 
 ### 方式二：本地运行
 
@@ -244,42 +227,7 @@ GPT
 
 ![alt text](image.png)
 
-```bash
-# Linux/macOS
-export FEISHU_WEBHOOK_URL="你的Webhook URL"
 
-# Windows
-set FEISHU_WEBHOOK_URL="你的Webhook URL"
-```
-
-## 📡 数据来源说明
-
-本项目使用的数据来自 [newsnow](https://github.com/ourongxing/newsnow) 的 API 服务。每个平台的数据通过以下格式的 API 请求获取：
-
-```
-https://newsnow.busiyi.world/api/s?id={平台ID}&latest
-```
-
-其中`{平台ID}`为各平台的标识符，如`baidu`、`toutiao`等。
-
-API 返回的数据格式为 JSON，包含平台的热搜榜单：
-
-```json
-{
-  "status": "success",
-  "items": [
-    {
-      "title": "热搜标题1",
-      "url": "https://example.com/news1"
-    },
-    {
-      "title": "热搜标题2",
-      "url": "https://example.com/news2"
-    }
-    // ...更多条目
-  ]
-}
-```
 
 ### 自建 API 服务
 
@@ -307,30 +255,26 @@ API 返回的数据格式为 JSON，包含平台的热搜榜单：
 
 4. 如需添加新的平台支持，请参考 newsnow 项目中的爬虫实现并添加到你的 API 服务中
 
-## 📁 代码结构
-
-代码采用了面向对象设计模式，主要包含以下几个类：
-
-- `TimeHelper`: 时间相关的辅助功能
-- `FileHelper`: 文件操作相关的辅助功能
-- `DataFetcher`: 负责从 API 获取数据
-- `DataProcessor`: 负责处理和转换数据
-- `StatisticsCalculator`: 负责统计计算
-- `ReportGenerator`: 负责生成 HTML 报告和飞书消息
-- `NewsAnalyzer`: 主类，协调整个流程的执行
 
 ## 🔧 高级用法
 
 ### 自定义监控平台
 
-可以在`NewsAnalyzer.run`方法中修改`ids`列表来添加或移除监控的平台：
+如果想支持更多平台或者不想看某些歪屁股平台，可以访问newsnow的源代码：https://github.com/ourongxing/newsnow/tree/main/server/sources ，根据里面的文件名自己来修改 main.py 中的下面代码，可以在你 Fork 的项目上直接修改源码
 
-```python
-ids = [
-    ("toutiao", '今日头条'),
-    ("baidu", '百度热搜'),
-    # 添加或移除平台
-]
+```
+    ids = [
+        ("toutiao", "今日头条"),
+        ("baidu", "百度热搜"),
+        ("wallstreetcn-hot", "华尔街见闻"),
+        ("thepaper", "澎湃新闻"),
+        ("bilibili-hot-search", "bilibili 热搜"),
+        ("cls-hot", "财联社热门"),
+        "tieba",
+        "weibo",
+        "douyin",
+        "zhihu",
+    ]
 ```
 
 ### 飞书通知选项
