@@ -61,37 +61,6 @@ TrendRadar 是一款多平台热点资讯监控工具，可自动追踪主流媒
    - 同时通过飞书机器人发送通知到你的群组
 
 
-### 方式二：本地运行
-
-1. **克隆项目**到本地：
-
-```bash
-git clone https://github.com/sansan0/TrendRadar.git
-cd TrendRadar
-```
-
-2. **安装依赖**：
-
-```bash
-pip install requests pytz
-```
-
-3. **配置飞书 Webhook URL**（两种方式）：
-
-   - 方式 1：直接在代码顶部的`CONFIG`字典中修改`FEISHU_WEBHOOK_URL`的值
-   - 方式 2：设置环境变量`FEISHU_WEBHOOK_URL`（优先级更高）
-
-4. **创建或修改关键词**:
-
-   - 编辑`frequency_words.txt`文件，添加你需要监控的频率词和过滤词
-
-5. **运行程序**：
-
-```bash
-python main.py
-```
-
-程序将自动爬取热点数据，生成报告，并在本地浏览器中打开 HTML 统计页面。
 
 ## ⚙️ 配置说明
 
@@ -227,36 +196,11 @@ GPT
 
 ![alt text](image.png)
 
+10. 到这里就配置完了，你可以等待手机接收消息(等几十分钟)，也可以在 Actions 页面手动触发一次 workflow(等待几十秒就行，不懂得可以问 ai), 如果希望支持更多平台可以看下面的其它用法
 
 
-### 自建 API 服务
 
-如果你想自己部署 API 服务而不依赖第三方：
-
-1. 克隆 [newsnow](https://github.com/ourongxing/newsnow) 仓库
-
-   ```bash
-   git clone https://github.com/ourongxing/newsnow.git
-   cd newsnow
-   ```
-
-2. 按照该仓库的 README 说明部署 API 服务
-
-3. 修改 TrendRadar 中的 API URL：
-
-   - 在`DataFetcher.fetch_data`方法中，将
-     ```python
-     url = f"https://newsnow.busiyi.world/api/s?id={id_value}&latest"
-     ```
-     更改为你自己的 API 地址
-     ```python
-     url = f"https://你的域名/api/s?id={id_value}&latest"
-     ```
-
-4. 如需添加新的平台支持，请参考 newsnow 项目中的爬虫实现并添加到你的 API 服务中
-
-
-## 🔧 高级用法
+## 🔧 其它用法
 
 ### 自定义监控平台
 
@@ -277,24 +221,6 @@ GPT
     ]
 ```
 
-### 飞书通知选项
-
-你可以通过以下方式控制飞书通知行为：
-
-1. `FEISHU_WEBHOOK_URL`: 设置为有效的 webhook URL 以启用飞书通知
-2. `CONTINUE_WITHOUT_FEISHU`: 控制在没有有效 webhook URL 时的行为
-   - `True`: 执行爬虫但不发送通知（默认值）
-   - `False`: 完全不执行爬虫
-3. `FEISHU_REPORT_TYPE`: 控制发送哪种类型的报告
-
-### 扩展功能
-
-如果你想扩展功能，可以：
-
-1. 继承已有类并重写特定方法
-2. 添加新的统计方法到`StatisticsCalculator`类
-3. 添加新的报告格式到`ReportGenerator`类
-4. 修改`NewsAnalyzer`类以支持新的工作流程
 
 ## ❓ 常见问题
 
