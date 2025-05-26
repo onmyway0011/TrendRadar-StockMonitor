@@ -13,11 +13,11 @@ import pytz
 
 # 配置常量
 CONFIG = {
-    "FEISHU_SEPARATOR": "==============================",  # 飞书消息中，每个频率词之间的分割线，注意，其它类型的分割线可能会被飞书过滤而显示怪异
+    "FEISHU_SEPARATOR": "━━━━━━━━━━━━━━━━━━━",  # 飞书消息中，每个频率词之间的分割线，注意，其它类型的分割线可能会被飞书过滤而不显示
     "REQUEST_INTERVAL": 1000,  # 毫秒
     "FEISHU_REPORT_TYPE": "daily",  # 可选: "current", "daily", "both"
-    "RANK_THRESHOLD": 5,  # 排名阈值，决定使用【】还是[]的界限
-    "USE_PROXY": False,  # 是否启用本地代理
+    "RANK_THRESHOLD": 5,  # 排名阈值，前5名使用红色加粗显示
+    "USE_PROXY": True,  # 是否启用本地代理
     "DEFAULT_PROXY": "http://127.0.0.1:10086",
     "CONTINUE_WITHOUT_FEISHU": True,  # 控制是否在没有飞书webhook URL时继续执行爬虫, 如果True ,会依然进行爬虫行为，会在github上持续的生成爬取的新闻数据
     "FEISHU_WEBHOOK_URL": "",  # 飞书机器人的webhook URL，大概长这样：https://www.feishu.cn/flow/api/trigger-webhook/xxxx， 默认为空，推荐通过GitHub Secrets设置
@@ -103,9 +103,9 @@ class DataFetcher:
 
         # 添加随机性模拟真实用户
         headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
             "Accept": "application/json, text/plain, */*",
-            "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-US;q=0.7",
+            "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
             "Connection": "keep-alive",
             "Cache-Control": "no-cache",
         }
@@ -598,9 +598,13 @@ class StatisticsCalculator:
                     if rank_display:
                         formatted_title += f" {rank_display}"
                     if time_display:
-                        formatted_title += f" - {time_display}"
+                        formatted_title += (
+                            f" <font color='grey'>- {time_display}</font>"
+                        )
                     if count_info > 1:
-                        formatted_title += f" - {count_info}次"
+                        formatted_title += (
+                            f" <font color='green'>({count_info}次)</font>"
+                        )
 
                     titles_with_info.append(formatted_title)
 
@@ -623,8 +627,8 @@ class StatisticsCalculator:
         return stats, total_titles
 
     @staticmethod
-    def _format_rank_display(ranks: List[int], rank_threshold: int) -> str:
-        """格式化排名显示"""
+    def _format_rank_display(ranks: List[int], rank_threshold: int = 5) -> str:
+        """格式化排名显示，前5名使用红色数字"""
         if not ranks:
             return ""
 
@@ -633,15 +637,16 @@ class StatisticsCalculator:
         min_rank = unique_ranks[0]
         max_rank = unique_ranks[-1]
 
-        # 根据最高排名判断使用哪种括号
+        # 所有排名都使用[]，只有前5名显示红色
         if min_rank <= rank_threshold:
-            # 使用【】
             if min_rank == max_rank:
-                return f"【{min_rank}】"
+                # 单一排名且在前5
+                return f"<font color='red'>**[{min_rank}]**</font>"
             else:
-                return f"【{min_rank} - {max_rank}】"
+                return f"<font color='red'>**[{min_rank} - {max_rank}]**</font>"
+
         else:
-            # 使用[]
+            # 排名在5名之后，使用普通显示
             if min_rank == max_rank:
                 return f"[{min_rank}]"
             else:
@@ -673,6 +678,7 @@ class ReportGenerator:
     ) -> str:
         """
         生成HTML报告，包括失败的请求信息
+
         Returns:
             HTML文件路径
         """
@@ -681,6 +687,7 @@ class ReportGenerator:
             filename = "当日统计.html"
         else:
             filename = f"{TimeHelper.format_time_filename()}.html"
+
         file_path = FileHelper.get_output_path("html", filename)
 
         # HTML模板和内容生成
@@ -694,7 +701,7 @@ class ReportGenerator:
 
         # 如果是当日统计，还需要在根目录下生成index.html
         if is_daily:
-            root_file_path = "index.html"  # 根目录下使用index.html作为文件名
+            root_file_path = "index.html"
             with open(root_file_path, "w", encoding="utf-8") as f:
                 f.write(html_content)
             print(
@@ -852,36 +859,73 @@ class ReportGenerator:
     def _build_feishu_content(
         stats: List[Dict], failed_ids: Optional[List] = None
     ) -> str:
-        """构建飞书消息内容"""
+        """构建飞书消息内容，使用富文本格式"""
         text_content = ""
 
         # 添加频率词统计信息
         filtered_stats = [stat for stat in stats if stat["count"] > 0]
+
+        # 如果有统计数据，添加标题
+        if filtered_stats:
+            text_content += "📊 **热点词汇统计**\n\n"
+
         for i, stat in enumerate(filtered_stats):
             word = stat["word"]
             count = stat["count"]
 
-            text_content += f"【{word}】 : {count} 条\n"
+            # 关键词加粗，计数和百分比使用不同颜色
+            if count >= 10:
+                # 高频词使用红色
+                text_content += (
+                    f"🔥 **{word}** : <font color='red'>{count}</font> 条\n\n"
+                )
+            elif count >= 5:
+                # 中频词使用橙色
+                text_content += (
+                    f"📈 **{word}** : <font color='orange'>{count}</font> 条\n\n"
+                )
+            else:
+                # 低频词使用默认颜色
+                text_content += f"📌 **{word}** : {count} 条\n\n"
 
             # 添加相关标题
             for j, title in enumerate(stat["titles"], 1):
-                text_content += f"{j}. {title}\n"
+                # 提取来源信息
+                if title.startswith("[") and "]" in title:
+                    source_end = title.index("]") + 1
+                    source = title[:source_end]
+                    rest = title[source_end:].strip()
 
-            # 添加分割线
+                    # 使用灰色显示来源
+                    text_content += (
+                        f"  {j}. <font color='grey'>{source}</font> {rest}\n"
+                    )
+                else:
+                    text_content += f"  {j}. {title}\n"
+
+                # 在每条新闻后添加额外间隔（除了最后一条）
+                if j < len(stat["titles"]):
+                    text_content += "\n"
+
+            # 添加分割线，使用更优雅的样式
             if i < len(filtered_stats) - 1:
                 text_content += f"\n{CONFIG['FEISHU_SEPARATOR']}\n\n"
 
         if not text_content:
-            text_content = "无匹配频率词\n\n"
+            text_content = "📭 暂无匹配的热点词汇\n\n"
 
         # 添加失败平台信息
         if failed_ids and len(failed_ids) > 0:
-            if text_content and text_content != "无匹配频率词\n\n":
+            if text_content and "暂无匹配" not in text_content:
                 text_content += f"\n{CONFIG['FEISHU_SEPARATOR']}\n\n"
 
-            text_content += "失败平台：\n"
+            text_content += "⚠️ **数据获取失败的平台：**\n\n"
             for i, id_value in enumerate(failed_ids, 1):
-                text_content += f"{i}. {id_value}\n"
+                text_content += f"  • <font color='red'>{id_value}</font>\n"
+
+        # 添加底部时间戳
+        now = TimeHelper.get_beijing_time()
+        text_content += f"\n\n<font color='grey'>更新时间：{now.strftime('%Y-%m-%d %H:%M:%S')}</font>"
 
         return text_content
 
@@ -999,6 +1043,7 @@ class NewsAnalyzer:
             ("thepaper", "澎湃新闻"),
             ("bilibili-hot-search", "bilibili 热搜"),
             ("cls-hot", "财联社热门"),
+            ("ifeng", "凤凰网"),
             "tieba",
             "weibo",
             "douyin",
