@@ -549,14 +549,27 @@ class StatisticsCalculator:
                             if "ranks" in info and info["ranks"]:
                                 ranks = info["ranks"]
 
-                        # 添加带信息的标题
+                        # 确保排名是有效的
+                        if not ranks:
+                            ranks = [99]  # 使用默认排名
+
+                        # 格式化时间信息
+                        time_display = StatisticsCalculator._format_time_display(
+                            first_time, last_time
+                        )
+
+                        # 添加带完整信息的标题数据，保存原始数据用于后续格式化
+                        source_alias = id_to_alias.get(source_id, source_id)
                         word_stats[group_key]["titles"][source_id].append(
                             {
                                 "title": title,
+                                "source_alias": source_alias,
                                 "first_time": first_time,
                                 "last_time": last_time,
+                                "time_display": time_display,
                                 "count": count_info,
                                 "ranks": ranks,
+                                "rank_threshold": rank_threshold,
                             }
                         )
 
@@ -566,53 +579,18 @@ class StatisticsCalculator:
                         processed_titles[source_id][title] = True
                         break  # 找到第一个匹配的词组后退出循环
 
-        # 转换统计结果
+        # 转换统计结果 - 这里不再进行格式化，保留原始数据
         stats = []
         for group_key, data in word_stats.items():
-            titles_with_info = []
+            all_titles = []
             for source_id, title_list in data["titles"].items():
-                source_alias = id_to_alias.get(source_id, source_id)
-                for title_data in title_list:
-                    title = title_data["title"]
-                    first_time = title_data["first_time"]
-                    last_time = title_data["last_time"]
-                    count_info = title_data["count"]
-                    ranks = title_data.get("ranks", [])
-
-                    # 确保排名是有效的
-                    if not ranks:
-                        ranks = [99]  # 使用默认排名
-
-                    # 格式化排名信息
-                    rank_display = StatisticsCalculator._format_rank_display(
-                        ranks, rank_threshold
-                    )
-
-                    # 格式化时间信息
-                    time_display = StatisticsCalculator._format_time_display(
-                        first_time, last_time
-                    )
-
-                    # 格式化标题信息
-                    formatted_title = f"[{source_alias}] {title}"
-                    if rank_display:
-                        formatted_title += f" {rank_display}"
-                    if time_display:
-                        formatted_title += (
-                            f" <font color='grey'>- {time_display}</font>"
-                        )
-                    if count_info > 1:
-                        formatted_title += (
-                            f" <font color='green'>({count_info}次)</font>"
-                        )
-
-                    titles_with_info.append(formatted_title)
+                all_titles.extend(title_list)
 
             stats.append(
                 {
                     "word": group_key,
                     "count": data["count"],
-                    "titles": titles_with_info,
+                    "titles": all_titles,  # 保存原始标题数据，用于后续格式化
                     "percentage": (
                         round(data["count"] / total_titles * 100, 2)
                         if total_titles > 0
@@ -627,8 +605,33 @@ class StatisticsCalculator:
         return stats, total_titles
 
     @staticmethod
-    def _format_rank_display(ranks: List[int], rank_threshold: int = 5) -> str:
-        """格式化排名显示，前5名使用红色数字"""
+    def _format_rank_for_html(ranks: List[int], rank_threshold: int = 5) -> str:
+        """格式化排名显示用于HTML，前5名使用红色粗体"""
+        if not ranks:
+            return ""
+
+        # 排序排名并确保不重复
+        unique_ranks = sorted(set(ranks))
+        min_rank = unique_ranks[0]
+        max_rank = unique_ranks[-1]
+
+        # 所有排名都使用[]，只有前5名显示红色粗体
+        if min_rank <= rank_threshold:
+            if min_rank == max_rank:
+                # 单一排名且在前5
+                return f"<font color='red'><strong>[{min_rank}]</strong></font>"
+            else:
+                return f"<font color='red'><strong>[{min_rank} - {max_rank}]</strong></font>"
+        else:
+            # 排名在5名之后，使用普通显示
+            if min_rank == max_rank:
+                return f"[{min_rank}]"
+            else:
+                return f"[{min_rank} - {max_rank}]"
+
+    @staticmethod
+    def _format_rank_for_feishu(ranks: List[int], rank_threshold: int = 5) -> str:
+        """格式化排名显示用于飞书，前5名使用红色粗体markdown格式"""
         if not ranks:
             return ""
 
@@ -644,7 +647,6 @@ class StatisticsCalculator:
                 return f"<font color='red'>**[{min_rank}]**</font>"
             else:
                 return f"<font color='red'>**[{min_rank} - {max_rank}]**</font>"
-
         else:
             # 排名在5名之后，使用普通显示
             if min_rank == max_rank:
@@ -781,13 +783,39 @@ class ReportGenerator:
 
         # 表格内容
         for i, stat in enumerate(stats, 1):
+            # 格式化标题列表用于HTML显示
+            formatted_titles = []
+            for title_data in stat["titles"]:
+                title = title_data["title"]
+                source_alias = title_data["source_alias"]
+                time_display = title_data["time_display"]
+                count_info = title_data["count"]
+                ranks = title_data["ranks"]
+                rank_threshold = title_data["rank_threshold"]
+
+                # 使用HTML格式化排名
+                rank_display = StatisticsCalculator._format_rank_for_html(
+                    ranks, rank_threshold
+                )
+
+                # 格式化标题信息
+                formatted_title = f"[{source_alias}] {title}"
+                if rank_display:
+                    formatted_title += f" {rank_display}"
+                if time_display:
+                    formatted_title += f" <font color='grey'>- {time_display}</font>"
+                if count_info > 1:
+                    formatted_title += f" <font color='green'>({count_info}次)</font>"
+
+                formatted_titles.append(formatted_title)
+
             html += f"""
                 <tr>
                     <td>{i}</td>
                     <td class="word">{stat['word']}</td>
                     <td class="count">{stat['count']}</td>
                     <td class="percentage">{stat['percentage']}%</td>
-                    <td class="titles">{"<br>".join(stat['titles'])}</td>
+                    <td class="titles">{"<br>".join(formatted_titles)}</td>
                 </tr>
             """
 
@@ -869,39 +897,61 @@ class ReportGenerator:
         if filtered_stats:
             text_content += "📊 **热点词汇统计**\n\n"
 
+        # 获取总数用于序号显示
+        total_count = len(filtered_stats)
+
         for i, stat in enumerate(filtered_stats):
             word = stat["word"]
             count = stat["count"]
 
-            # 关键词加粗，计数和百分比使用不同颜色
+            # 构建序号显示，格式为 [当前序号/总数]，使用灰色且不加粗
+            sequence_display = f"<font color='grey'>[{i + 1}/{total_count}]</font>"
+
+            # 关键词加粗，计数和百分比使用不同颜色，序号单独显示为灰色
             if count >= 10:
                 # 高频词使用红色
-                text_content += (
-                    f"🔥 **{word}** : <font color='red'>{count}</font> 条\n\n"
-                )
+                text_content += f"🔥 {sequence_display} **{word}** : <font color='red'>{count}</font> 条\n\n"
             elif count >= 5:
                 # 中频词使用橙色
-                text_content += (
-                    f"📈 **{word}** : <font color='orange'>{count}</font> 条\n\n"
-                )
+                text_content += f"📈 {sequence_display} **{word}** : <font color='orange'>{count}</font> 条\n\n"
             else:
                 # 低频词使用默认颜色
-                text_content += f"📌 **{word}** : {count} 条\n\n"
+                text_content += f"📌 {sequence_display} **{word}** : {count} 条\n\n"
 
-            # 添加相关标题
-            for j, title in enumerate(stat["titles"], 1):
-                # 提取来源信息
-                if title.startswith("[") and "]" in title:
-                    source_end = title.index("]") + 1
-                    source = title[:source_end]
-                    rest = title[source_end:].strip()
+            # 格式化标题列表用于飞书显示
+            for j, title_data in enumerate(stat["titles"], 1):
+                title = title_data["title"]
+                source_alias = title_data["source_alias"]
+                time_display = title_data["time_display"]
+                count_info = title_data["count"]
+                ranks = title_data["ranks"]
+                rank_threshold = title_data["rank_threshold"]
 
-                    # 使用灰色显示来源
-                    text_content += (
-                        f"  {j}. <font color='grey'>{source}</font> {rest}\n"
-                    )
-                else:
-                    text_content += f"  {j}. {title}\n"
+                # 使用飞书格式化排名
+                rank_display = StatisticsCalculator._format_rank_for_feishu(
+                    ranks, rank_threshold
+                )
+
+                # 格式化标题信息
+                formatted_title = f"[{source_alias}] {title}"
+                if rank_display:
+                    formatted_title += f" {rank_display}"
+                if time_display:
+                    formatted_title += f" <font color='grey'>- {time_display}</font>"
+                if count_info > 1:
+                    formatted_title += f" <font color='green'>({count_info}次)</font>"
+
+                # 使用灰色显示来源
+                text_content += (
+                    f"  {j}. <font color='grey'>[{source_alias}]</font> {title}"
+                )
+                if rank_display:
+                    text_content += f" {rank_display}"
+                if time_display:
+                    text_content += f" <font color='grey'>- {time_display}</font>"
+                if count_info > 1:
+                    text_content += f" <font color='green'>({count_info}次)</font>"
+                text_content += "\n"
 
                 # 在每条新闻后添加额外间隔（除了最后一条）
                 if j < len(stat["titles"]):
