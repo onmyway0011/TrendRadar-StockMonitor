@@ -70,6 +70,7 @@ mac
 ios
 
 ai
+!gai
 人工智能
 
 汽车
