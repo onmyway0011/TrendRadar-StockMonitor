@@ -28,7 +28,7 @@
 2. feishu 和 html 底部增加一个新增新闻显示
 
 <p align="center">
-  <img src="_image/2025-06-13.jpg" alt="更新" width="400"/>
+  <img src="_image/2025-06-14.jpg" alt="更新" width="400"/>
 </p>
 
 ### 2025/06/09
