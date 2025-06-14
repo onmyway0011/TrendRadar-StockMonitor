@@ -1242,8 +1242,10 @@ class ReportGenerator:
                 text_content += f"**{source_data['source_alias']}** ({len(source_data['titles'])} 条):\n"
 
                 for j, title_data in enumerate(source_data["titles"], 1):
+                    title_data_copy = title_data.copy()
+                    title_data_copy["is_new"] = False
                     formatted_title = ReportGenerator._format_title_feishu(
-                        title_data, show_source=False
+                        title_data_copy, show_source=False
                     )
                     text_content += f"  {j}. {formatted_title}\n"
 
