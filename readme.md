@@ -1,4 +1,18 @@
-# TrendRadar-多平台热点资讯监控分析系统
+<div align="center">
+
+# 🎯 TrendRadar
+
+**多平台热点资讯监控分析系统**
+
+[![License](https://img.shields.io/badge/license-GPL--3.0-blue.svg?style=flat-square)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.7%2B-3776AB?style=flat-square&logo=python&logoColor=ffdd54)](https://www.python.org/)
+[![Version](https://img.shields.io/badge/version-v1.0.0-green.svg?style=flat-square)](https://github.com/sansan0/TrendRadar)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg?style=flat-square)](https://github.com/sansan0/TrendRadar)
+
+[![飞书通知](https://img.shields.io/badge/飞书-通知支持-00D4AA?style=flat-square)](https://www.feishu.cn/)
+[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-自动化-2088FF?style=flat-square&logo=github-actions&logoColor=white)](https://github.com/sansan0/TrendRadar)
+
+</div>
 
 > 本项目只是我写文章的副产品...如果项目对你有帮助，请 **点击 Star ⭐** 支持我~~有条件的可选择去【硅基茶水间】公众号对应文章下面[点赞][转发][推荐]任选其一就行，我能在后台看到你们的支持，成为老粉就在今天哈哈~在我写文章的萌新阶段雪中送炭，好处大大的有(≧∇≦)ﾉ
 
