@@ -13,6 +13,9 @@ import requests
 import pytz
 
 CONFIG = {
+    "VERSION": "1.0.0",
+    "VERSION_CHECK_URL": "https://raw.githubusercontent.com/sansan0/TrendRadar/refs/heads/master/version",
+    "FEISHU_SHOW_VERSION_UPDATE": True,  # 控制显示版本更新提示，改成 False 将不接受新版本提示
     "FEISHU_SEPARATOR": "━━━━━━━━━━━━━━━━━━━",  # 飞书消息分割线，注意，其它类型的分割线可能会被飞书过滤而不显示
     "REQUEST_INTERVAL": 1000,  # 请求间隔(毫秒)
     "FEISHU_REPORT_TYPE": "daily",  # 飞书报告类型: "current"|"daily"|"both"
@@ -38,6 +41,73 @@ class TimeHelper:
     @staticmethod
     def format_time_filename() -> str:
         return TimeHelper.get_beijing_time().strftime("%H时%M分")
+
+
+class VersionChecker:
+    """版本检查工具"""
+
+    @staticmethod
+    def parse_version(version_str: str) -> Tuple[int, int, int]:
+        """解析版本号字符串为元组"""
+        try:
+            parts = version_str.strip().split(".")
+            if len(parts) != 3:
+                raise ValueError("版本号格式不正确")
+            return tuple(int(part) for part in parts)
+        except (ValueError, AttributeError):
+            print(f"无法解析版本号: {version_str}")
+            return (0, 0, 0)
+
+    @staticmethod
+    def compare_versions(current: str, remote: str) -> int:
+        """比较版本号"""
+        current_tuple = VersionChecker.parse_version(current)
+        remote_tuple = VersionChecker.parse_version(remote)
+
+        if current_tuple < remote_tuple:
+            return -1  # 需要更新
+        elif current_tuple > remote_tuple:
+            return 1  # 当前版本更新
+        else:
+            return 0  # 版本相同
+
+    @staticmethod
+    def check_for_updates(
+        current_version: str,
+        version_url: str,
+        proxy_url: Optional[str] = None,
+        timeout: int = 10,
+    ) -> Tuple[bool, Optional[str]]:
+        """检查是否有新版本"""
+        try:
+            proxies = None
+            if proxy_url:
+                proxies = {"http": proxy_url, "https": proxy_url}
+
+            headers = {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+                "Accept": "text/plain, */*",
+                "Cache-Control": "no-cache",
+            }
+
+            response = requests.get(
+                version_url, proxies=proxies, headers=headers, timeout=timeout
+            )
+            response.raise_for_status()
+
+            remote_version = response.text.strip()
+            print(f"当前版本: {current_version}, 远程版本: {remote_version}")
+
+            comparison = VersionChecker.compare_versions(
+                current_version, remote_version
+            )
+            need_update = comparison == -1
+
+            return need_update, remote_version if need_update else None
+
+        except Exception as e:
+            print(f"版本检查失败: {e}")
+            return False, None
 
 
 class FileHelper:
@@ -1191,7 +1261,9 @@ class ReportGenerator:
         return result
 
     @staticmethod
-    def _render_feishu_content(report_data: Dict) -> str:
+    def _render_feishu_content(
+        report_data: Dict, update_info: Optional[Dict] = None
+    ) -> str:
         """渲染飞书内容"""
         text_content = ""
 
@@ -1264,6 +1336,10 @@ class ReportGenerator:
         now = TimeHelper.get_beijing_time()
         text_content += f"\n\n<font color='grey'>更新时间：{now.strftime('%Y-%m-%d %H:%M:%S')}</font>"
 
+        # 版本更新提示
+        if update_info:
+            text_content += f"\n<font color='grey'>TrendRadar 发现新版本 {update_info['remote_version']}，当前 {update_info['current_version']}</font>"
+
         return text_content
 
     @staticmethod
@@ -1273,6 +1349,7 @@ class ReportGenerator:
         report_type: str = "单次爬取",
         new_titles: Optional[Dict] = None,
         id_to_alias: Optional[Dict] = None,
+        update_info: Optional[Dict] = None,
     ) -> bool:
         """发送数据到飞书"""
         webhook_url = os.environ.get("FEISHU_WEBHOOK_URL", CONFIG["FEISHU_WEBHOOK_URL"])
@@ -1290,7 +1367,7 @@ class ReportGenerator:
         )
 
         # 渲染层
-        text_content = ReportGenerator._render_feishu_content(report_data)
+        text_content = ReportGenerator._render_feishu_content(report_data, update_info)
 
         now = TimeHelper.get_beijing_time()
         payload = {
@@ -1331,7 +1408,7 @@ class NewsAnalyzer:
         self.feishu_report_type = feishu_report_type
         self.rank_threshold = rank_threshold
         self.is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
-
+        self.update_info = None
         self.proxy_url = None
         if not self.is_github_actions and CONFIG["USE_PROXY"]:
             self.proxy_url = CONFIG["DEFAULT_PROXY"]
@@ -1342,6 +1419,27 @@ class NewsAnalyzer:
             print("GitHub Actions环境，不使用代理")
 
         self.data_fetcher = DataFetcher(self.proxy_url)
+
+        if self.is_github_actions:
+            self._check_version_update()
+
+    def _check_version_update(self) -> None:
+        """检查版本更新"""
+        try:
+            need_update, remote_version = VersionChecker.check_for_updates(
+                CONFIG["VERSION"], CONFIG["VERSION_CHECK_URL"], self.proxy_url
+            )
+
+            if need_update and remote_version:
+                self.update_info = {
+                    "current_version": CONFIG["VERSION"],
+                    "remote_version": remote_version,
+                }
+                print(f"发现新版本: {remote_version} (当前: {CONFIG['VERSION']})")
+            else:
+                print("版本检查完成，当前为最新版本")
+        except Exception as e:
+            print(f"版本检查出错: {e}")
 
     def generate_daily_summary(self) -> Optional[str]:
         """生成当日统计报告"""
@@ -1383,8 +1481,16 @@ class NewsAnalyzer:
         print(f"当日HTML统计报告已生成: {html_file}")
 
         if self.feishu_report_type in ["daily", "both"]:
+            update_info_for_feishu = (
+                self.update_info if CONFIG["FEISHU_SHOW_VERSION_UPDATE"] else None
+            )
             ReportGenerator.send_to_feishu(
-                stats, [], "当日汇总", latest_new_titles, id_to_alias
+                stats,
+                [],
+                "当日汇总",
+                latest_new_titles,
+                id_to_alias,
+                update_info_for_feishu,
             )
 
         return html_file
@@ -1464,8 +1570,16 @@ class NewsAnalyzer:
         )
 
         if self.feishu_report_type in ["current", "both"]:
+            update_info_for_feishu = (
+                self.update_info if CONFIG["FEISHU_SHOW_VERSION_UPDATE"] else None
+            )
             ReportGenerator.send_to_feishu(
-                stats, failed_ids, "单次爬取", new_titles, id_to_alias
+                stats,
+                failed_ids,
+                "单次爬取",
+                new_titles,
+                id_to_alias,
+                update_info_for_feishu,
             )
 
         html_file = ReportGenerator.generate_html_report(
