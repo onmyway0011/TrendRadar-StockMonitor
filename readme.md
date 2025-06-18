@@ -4,9 +4,12 @@
 
 **多平台热点资讯监控分析系统**
 
+[![GitHub Stars](https://img.shields.io/github/stars/sansan0/TrendRadar?style=flat-square&logo=github&color=yellow)](https://github.com/sansan0/TrendRadar/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/sansan0/TrendRadar?style=flat-square&logo=github&color=blue)](https://github.com/sansan0/TrendRadar/network/members)
+[![GitHub Issues](https://img.shields.io/github/issues/sansan0/TrendRadar?style=flat-square&logo=github&color=red)](https://github.com/sansan0/TrendRadar/issues)
 [![License](https://img.shields.io/badge/license-GPL--3.0-blue.svg?style=flat-square)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.7%2B-3776AB?style=flat-square&logo=python&logoColor=ffdd54)](https://www.python.org/)
-[![Version](https://img.shields.io/badge/version-v1.0.0-green.svg?style=flat-square)](https://github.com/sansan0/TrendRadar)
+[![Version](https://img.shields.io/badge/version-v1.1.0-green.svg?style=flat-square)](https://github.com/sansan0/TrendRadar)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg?style=flat-square)](https://github.com/sansan0/TrendRadar)
 
 [![飞书通知](https://img.shields.io/badge/飞书-通知支持-00D4AA?style=flat-square)](https://www.feishu.cn/)
@@ -30,11 +33,19 @@
 
 - **开箱即用部署** - 一键 Fork 即可部署，简化部署流程和技术门槛
 
-> GitHub Pages 自带的设置页面对大多数人更方便, 配置一下，保存一个网页链接即可，放手机浏览器里也随时可看， 比如我这里[https://sansan0.github.io/TrendRadar/](https://sansan0.github.io/TrendRadar/)，该链接每 50 分钟 更新一次
+> GitHub Pages 自带的设置页面对大多数人更方便, 配置一下，保存一个网页链接即可，放手机浏览器里也随时可看， 比如我这里[https://sansan0.github.io/TrendRadar/](https://sansan0.github.io/TrendRadar/)
 
 ## 更新日志
 
 > 飞书机器人创建完得点发布得点发布得点发布~除了 issues 里，还有几位跑公众号问的最后也排查出是这个问题，我以为我的步骤已经很详细了/(ㄒ o ㄒ)/~~如果你还遇到什么问题，往下翻到常见问题( •̀ ω •́ )✧
+
+### 2025/06/18
+
+**200 star⭐** 了, 继续给大伙儿助兴~近期，在我的"怂恿"下，挺多人在我公众号点赞分享推荐助力了我，我都在后台看见了具体账号的鼓励数据，很多都成了天使轮老粉（我玩公众号才一个多月，虽然注册是七八年前的事了哈哈，属于上车早，发车晚），但因为你们没有留言或私信我，所以我也无法一一回应并感谢支持，在此一并谢谢！
+
+1. 1.1.0 版
+2. 重要的更新，加了权重，你现在看到的新闻都是最热点最有关注度的出现在最上面
+3. 更新文档使用，因为近期更新了很多功能，而且之前的使用文档我偷懒写的简单（见下面的 ⚙️ 频率词配置完整教程）
 
 ### 2025/06/16
 
@@ -146,30 +157,169 @@ frequency_words.txt 文件增加了一个【必须词】功能，使用 + 号
    - 运行结果将自动保存在仓库的`output`目录中
    - 同时通过飞书机器人发送通知到你的群组
 
-## ⚙️ 配置说明
+## ⚙️ 频率词配置完整教程（三种语法）
 
-### 频率词和过滤词
+在`frequency_words.txt`文件中配置监控的频率词，过滤词和必须词
 
-在`frequency_words.txt`文件中配置监控的频率词和过滤词：
+### 1. **频率词** - 关键词匹配
 
-- 每组相关的频率词用换行分隔，不同组之间用空行分隔
-- 以`!`开头的词为过滤词
-- 如果一个标题既包含频率词又包含过滤词，则该标题不会被统计
-- 每个标题只会被第一个匹配的词组统计，避免重复计算
-
-示例：
-
+```txt
+华为
+任正非
+鸿蒙
 ```
-人工智能
+
+**作用：** 新闻标题包含其中**任意一个词**就会被捕获  
+**举例：**
+
+- ✅ "华为发布新手机" ← 包含"华为"
+- ✅ "任正非接受采访" ← 包含"任正非"
+- ✅ "鸿蒙系统更新" ← 包含"鸿蒙"
+
+### 2. **必须词** `+词汇` - 限定主题
+
+```txt
+华为
+任正非
++手机
+```
+
+**作用：** 除了包含频率词，**还必须包含**`+`开头的词  
+**举例：**
+
+- ✅ "华为手机销量第一" ← 有"华为"+有"手机" ✓
+- ❌ "华为汽车计划曝光" ← 有"华为"但没有"手机" ✗
+- ❌ "小米手机新品发布" ← 有"手机"但没有"华为/任正非" ✗
+
+### 3. **过滤词** `!词汇` - 排除干扰
+
+```txt
+哪吒
+饺子
+!汽车
+!食品
+```
+
+**作用：** 标题包含`!`开头的词会被**直接排除**  
+**举例：**
+
+- ✅ "导演饺子新电影" ← 有"饺子"，没有"汽车/食品" ✓
+- ❌ "哪吒汽车销量增长" ← 有"哪吒"但包含"汽车" ✗
+- ❌ "饺子食品安全检查" ← 有"饺子"但包含"食品" ✗
+
+## 📝 配置文件示例
+
+### frequency_words.txt 完整示例：
+
+```txt
+华为
+任正非
+鸿蒙
++手机
+
+哪吒
+饺子
+!汽车
+!食品
+
 AI
-GPT
-大模型
-!AI绘画
+人工智能
++技术
+!绘画
+
+比亚迪
+王传福
++新能源
+!玩具
+
+苹果
+库克
+iPhone
++科技
+!水果
+!手机壳
 ```
 
-上述配置表示：
+## 🔍 实际效果演示
 
-- 监控包含"人工智能"、"AI"、"GPT"或"大模型"的标题，但若同时包含"AI 绘画"则排除
+### 词组 1：华为相关
+
+**配置：** 华为、任正非、鸿蒙 + 必须有"手机"
+
+```
+✅ "华为手机市场份额领先"
+✅ "任正非谈手机行业发展"
+✅ "鸿蒙手机用户破亿"
+❌ "华为云计算业务增长"（没有"手机"）
+❌ "小米手机新品发布"（没有华为相关词）
+```
+
+### 词组 2：哪吒相关
+
+**配置：** 哪吒、饺子 - 排除"汽车"和"食品"
+
+```
+✅ "导演饺子执导新片"
+✅ "哪吒动画获奖"
+❌ "哪吒汽车交付量创新高"（包含过滤词"汽车"）
+❌ "速冻饺子食品安全"（包含过滤词"食品"）
+```
+
+### 词组 3：AI 相关
+
+**配置：** AI、人工智能 + 必须有"技术" - 排除"绘画"
+
+```
+✅ "AI技术助力医疗诊断"
+✅ "人工智能技术新突破"
+❌ "AI绘画工具走红"（包含过滤词"绘画"）
+❌ "AI概念股大涨"（没有"技术"）
+```
+
+## 💡 配置技巧
+
+### 🎯 如何设置词组
+
+1. **找准核心词**：先列出最重要的关键词
+2. **加必须词**：用`+`限定话题范围，避免误匹配
+3. **设过滤词**：用`!`排除干扰内容
+
+### ✅ 好的配置示例
+
+```txt
+特斯拉
+马斯克
++汽车
+!玩具
+!模型
+```
+
+→ 只要特斯拉/马斯克的汽车新闻，排除玩具车、模型车
+
+### ❌ 不建议的配置示例
+
+```txt
+苹果
+```
+
+→ 会匹配到"苹果手机"、"苹果价格"(吃的苹果)、"苹果园"等无关内容
+
+## 🔧 使用步骤
+
+1. **创建配置文件**：新建 `frequency_words.txt` 文件
+2. **填写词组**：每个词组用空行分隔
+3. **测试效果**：运行程序查看 HTML 报告
+4. **调整优化**：根据结果增减词汇或调整过滤
+
+## 📊 权重排序说明
+
+配置好的新闻会自动按重要性排序：
+
+- **排名越高越靠前**（在各平台的排行榜位置）
+- **出现越多越靠前**（在多个平台都有）
+- **稳定性越好越靠前**（经常出现在前几名）
+
+这样最重要的新闻总是显示在最前面！
 
 ## 📊 输出示例
 
