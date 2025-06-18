@@ -13,7 +13,7 @@ import requests
 import pytz
 
 CONFIG = {
-    "VERSION": "1.0.0",
+    "VERSION": "1.1.0",
     "VERSION_CHECK_URL": "https://raw.githubusercontent.com/sansan0/TrendRadar/refs/heads/master/version",
     "FEISHU_SHOW_VERSION_UPDATE": True,  # 控制显示版本更新提示，改成 False 将不接受新版本提示
     "FEISHU_SEPARATOR": "━━━━━━━━━━━━━━━━━━━",  # 飞书消息分割线，注意，其它类型的分割线可能会被飞书过滤而不显示
@@ -24,6 +24,12 @@ CONFIG = {
     "DEFAULT_PROXY": "http://127.0.0.1:10086",
     "CONTINUE_WITHOUT_FEISHU": True,  # 控制在没有飞书 webhook URL 时是否继续执行爬虫, 如果 True ,会依然进行爬虫行为，并在 github 上持续的生成爬取的新闻数据
     "FEISHU_WEBHOOK_URL": "",  # 飞书机器人的 webhook URL，大概长这样：https://www.feishu.cn/flow/api/trigger-webhook/xxxx， 默认为空，推荐通过GitHub Secrets设置
+    # 用于让关注度更高的新闻在更前面显示，这里是权重排序配置，合起来是 1就行(你可以微调，虽然我不建议动嘿嘿)
+    "WEIGHT_CONFIG": {
+        "RANK_WEIGHT": 0.6,  # 排名
+        "FREQUENCY_WEIGHT": 0.3,  # 频次
+        "HOTNESS_WEIGHT": 0.1,  # 热度
+    },
 }
 
 
@@ -643,6 +649,62 @@ class StatisticsCalculator:
     """统计计算器"""
 
     @staticmethod
+    def calculate_news_weight(
+        title_data: Dict, rank_threshold: int = CONFIG["RANK_THRESHOLD"]
+    ) -> float:
+        """计算新闻权重，用于排序"""
+        ranks = title_data.get("ranks", [])
+        if not ranks:
+            return 0.0
+
+        count = title_data.get("count", len(ranks))
+        weight_config = CONFIG["WEIGHT_CONFIG"]
+
+        # 排名权重：Σ(11 - min(rank, 10)) / 出现次数
+        rank_scores = []
+        for rank in ranks:
+            score = 11 - min(rank, 10)
+            rank_scores.append(score)
+
+        rank_weight = sum(rank_scores) / len(ranks) if ranks else 0
+
+        # 频次权重：min(出现次数, 10) × 10
+        frequency_weight = min(count, 10) * 10
+
+        # 热度加成：高排名次数 / 总出现次数 × 100
+        high_rank_count = sum(1 for rank in ranks if rank <= rank_threshold)
+        hotness_ratio = high_rank_count / len(ranks) if ranks else 0
+        hotness_weight = hotness_ratio * 100
+
+        # 综合权重计算
+        total_weight = (
+            rank_weight * weight_config["RANK_WEIGHT"]
+            + frequency_weight * weight_config["FREQUENCY_WEIGHT"]
+            + hotness_weight * weight_config["HOTNESS_WEIGHT"]
+        )
+
+        return total_weight
+
+    @staticmethod
+    def sort_titles_by_weight(
+        titles_list: List[Dict], rank_threshold: int = CONFIG["RANK_THRESHOLD"]
+    ) -> List[Dict]:
+        """按权重对新闻标题列表进行排序"""
+
+        def get_sort_key(title_data):
+            weight = StatisticsCalculator.calculate_news_weight(
+                title_data, rank_threshold
+            )
+            ranks = title_data.get("ranks", [])
+            count = title_data.get("count", 1)
+
+            # 主要按权重排序，权重相同时按最高排名排序，再相同时按出现次数排序
+            min_rank = min(ranks) if ranks else 999
+            return (-weight, min_rank, -count)
+
+        return sorted(titles_list, key=get_sort_key)
+
+    @staticmethod
     def _matches_word_groups(
         title: str, word_groups: List[Dict], filter_words: List[str]
     ) -> bool:
@@ -808,11 +870,16 @@ class StatisticsCalculator:
             for source_id, title_list in data["titles"].items():
                 all_titles.extend(title_list)
 
+            # 按权重排序标题
+            sorted_titles = StatisticsCalculator.sort_titles_by_weight(
+                all_titles, rank_threshold
+            )
+
             stats.append(
                 {
                     "word": group_key,
                     "count": data["count"],
-                    "titles": all_titles,
+                    "titles": sorted_titles,
                     "percentage": (
                         round(data["count"] / total_titles * 100, 2)
                         if total_titles > 0
