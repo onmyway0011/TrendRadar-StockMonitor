@@ -13,7 +13,7 @@ import requests
 import pytz
 
 CONFIG = {
-    "VERSION": "1.2.0",
+    "VERSION": "1.2.1",
     "VERSION_CHECK_URL": "https://raw.githubusercontent.com/sansan0/TrendRadar/refs/heads/master/version",
     "SHOW_VERSION_UPDATE": True,  # 控制显示版本更新提示，改成 False 将不接受新版本提示
     "FEISHU_MESSAGE_SEPARATOR": "━━━━━━━━━━━━━━━━━━━",  # feishu消息分割线
@@ -1739,17 +1739,13 @@ class ReportGenerator:
         now = TimeHelper.get_beijing_time()
 
         # 顶部统计信息
-        text_content += f"<b>总新闻数：</b> <code>{total_titles}</code>\n"
-        text_content += (
-            f"<b>时间：</b> <code>{now.strftime('%Y-%m-%d %H:%M:%S')}</code>\n"
-        )
-        text_content += f"<b>类型：</b> <code>热点分析报告</code>\n\n"
-
-        text_content += "━━━━━━━━━━━━━━━━━━━\n\n"
+        text_content += f"总新闻数： {total_titles}\n"
+        text_content += f"时间： {now.strftime('%Y-%m-%d %H:%M:%S')}\n"
+        text_content += f"类型： 热点分析报告\n\n"
 
         # 渲染热点词汇统计
         if report_data["stats"]:
-            text_content += "📊 <b>热点词汇统计</b>\n\n"
+            text_content += "📊 热点词汇统计\n\n"
 
             total_count = len(report_data["stats"])
 
@@ -1757,20 +1753,14 @@ class ReportGenerator:
                 word = stat["word"]
                 count = stat["count"]
 
-                sequence_display = f"<code>[{i + 1}/{total_count}]</code>"
+                sequence_display = f"[{i + 1}/{total_count}]"
 
                 if count >= 10:
-                    text_content += (
-                        f"🔥 {sequence_display} <b>{word}</b> : <b>{count}</b> 条\n\n"
-                    )
+                    text_content += f"🔥 {sequence_display} {word} : {count} 条\n\n"
                 elif count >= 5:
-                    text_content += (
-                        f"📈 {sequence_display} <b>{word}</b> : <b>{count}</b> 条\n\n"
-                    )
+                    text_content += f"📈 {sequence_display} {word} : {count} 条\n\n"
                 else:
-                    text_content += (
-                        f"📌 {sequence_display} <b>{word}</b> : {count} 条\n\n"
-                    )
+                    text_content += f"📌 {sequence_display} {word} : {count} 条\n\n"
 
                 for j, title_data in enumerate(stat["titles"], 1):
                     formatted_title = ReportGenerator._format_title_telegram(
@@ -1782,7 +1772,7 @@ class ReportGenerator:
                         text_content += "\n"
 
                 if i < len(report_data["stats"]) - 1:
-                    text_content += f"\n━━━━━━━━━━━━━━━━━━━\n\n"
+                    text_content += f"\n\n"
 
         if not report_data["stats"]:
             text_content += "📭 暂无匹配的热点词汇\n\n"
@@ -1790,12 +1780,14 @@ class ReportGenerator:
         # 渲染新增新闻部分
         if report_data["new_titles"]:
             if text_content and "暂无匹配" not in text_content:
-                text_content += f"\n━━━━━━━━━━━━━━━━━━━\n\n"
+                text_content += f"\n\n"
 
-            text_content += f"🆕 <b>本次新增热点新闻</b> (共 {report_data['total_new_count']} 条)\n\n"
+            text_content += (
+                f"🆕 本次新增热点新闻 (共 {report_data['total_new_count']} 条)\n\n"
+            )
 
             for source_data in report_data["new_titles"]:
-                text_content += f"<b>{source_data['source_alias']}</b> ({len(source_data['titles'])} 条):\n\n"
+                text_content += f"{source_data['source_alias']} ({len(source_data['titles'])} 条):\n\n"
 
                 for j, title_data in enumerate(source_data["titles"], 1):
                     title_data_copy = title_data.copy()
@@ -1810,17 +1802,17 @@ class ReportGenerator:
         # 渲染失败平台
         if report_data["failed_ids"]:
             if text_content and "暂无匹配" not in text_content:
-                text_content += f"\n━━━━━━━━━━━━━━━━━━━\n\n"
+                text_content += f"\n\n"
 
-            text_content += "<b>⚠️ 数据获取失败的平台：</b>\n\n"
+            text_content += "⚠️ 数据获取失败的平台：\n\n"
             for i, id_value in enumerate(report_data["failed_ids"], 1):
-                text_content += f"  • <code>{id_value}</code>\n"
+                text_content += f"  • {id_value}\n"
 
-        text_content += f"\n\n<i>更新时间：{now.strftime('%Y-%m-%d %H:%M:%S')}</i>"
+        text_content += f"\n\n更新时间：{now.strftime('%Y-%m-%d %H:%M:%S')}"
 
         # 版本更新提示
         if update_info:
-            text_content += f"\n<i>TrendRadar 发现新版本 <b>{update_info['remote_version']}</b>，当前 <b>{update_info['current_version']}</b></i>"
+            text_content += f"\nTrendRadar 发现新版本 {update_info['remote_version']}，当前 {update_info['current_version']}"
 
         return text_content
 
