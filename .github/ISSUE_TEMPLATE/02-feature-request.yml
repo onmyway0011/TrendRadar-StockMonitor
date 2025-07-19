@@ -1,0 +1,98 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-issue-forms.json
+
+name: 💡 功能建议
+description: 提出新功能想法或改进建议
+title: "[功能] "
+labels: ["enhancement"]
+assignees:
+  - sansan0
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你的创意！好的想法让这个项目变得更加实用。
+
+  - type: dropdown
+    id: feature-category
+    attributes:
+      label: 🏷️ 功能类别
+      options:
+        - 数据抓取增强
+        - 分析算法改进
+        - 通知方式扩展
+        - 配置管理优化
+        - 部署便利性
+        - 数据可视化
+        - 监控与告警
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: 💭 功能描述
+      description: 详细描述你希望添加的功能
+      placeholder: |
+        请详细描述：
+        - 功能的具体内容
+        - 如何使用这个功能
+        - 期望的效果
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: 🎯 使用场景
+      description: 这个功能会在什么情况下使用？
+      placeholder: |
+        例如：
+        - 当用户需要...的时候
+        - 在...场景下会很有帮助
+        - 可以解决...问题
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-workaround
+    attributes:
+      label: 🔄 现有解决方案
+      description: 目前是如何处理这个需求的？
+      placeholder: |
+        - 目前的替代方案
+        - 现有方案的不足
+        - 为什么需要新功能
+
+  - type: dropdown
+    id: feature-priority
+    attributes:
+      label: ⭐ 优先级
+      description: 你认为这个功能的重要程度
+      options:
+        - 高 - 非常重要，强烈建议
+        - 中 - 会很有用，建议考虑
+        - 低 - 锦上添花，有时间可做
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation-ideas
+    attributes:
+      label: 🛠️ 实现想法（可选）
+      description: 如果你有实现思路，欢迎分享
+      placeholder: |
+        - 技术实现方案
+        - 配置设计建议
+        - 用户界面设计
+        - 参考项目或工具
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 📎 其他信息
+      description: 其他想要补充的内容
+      placeholder: |
+        - 相关截图或示例
+        - 类似功能的参考
+        - 其他相关想法

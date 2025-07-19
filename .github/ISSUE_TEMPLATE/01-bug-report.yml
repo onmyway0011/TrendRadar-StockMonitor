@@ -1,0 +1,123 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-issue-forms.json
+
+name: 🐛 Bug 报告
+description: 报告程序错误或异常行为
+title: "[Bug] "
+labels: ["bug"]
+assignees:
+  - sansan0
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你的反馈！详细的 Bug 报告有助于快速定位和修复问题。
+
+  - type: dropdown
+    id: bug-category
+    attributes:
+      label: 🏷️ 问题类型
+      options:
+        - 数据抓取失败
+        - 频率词匹配异常
+        - 通知发送失败
+        - 配置解析错误
+        - Docker 部署问题
+        - 报告生成错误
+        - 性能问题
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: 📝 问题描述
+      description: 详细描述遇到的问题
+      placeholder: |
+        请清楚地描述：
+        - 发生了什么问题
+        - 问题的具体表现
+        - 影响范围
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: 🔄 复现步骤
+      description: 如何重现这个问题？
+      placeholder: |
+        1. 运行命令：python main.py
+        2. 配置设置：...
+        3. 观察到的现象：...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: ✅ 期望行为
+      description: 正常情况下应该发生什么？
+      placeholder: 描述期望的正常行为...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: 🖥️ 运行环境
+      options:
+        - 本地 Python 环境
+        - Docker 容器
+        - GitHub Actions
+        - 其他
+    validations:
+      required: true
+
+  - type: input
+    id: python-version
+    attributes:
+      label: 🐍 Python 版本
+      description: 使用的 Python 版本
+      placeholder: 如：3.10.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-logs
+    attributes:
+      label: 📋 错误日志
+      description: 相关的错误信息或日志
+      placeholder: |
+        请粘贴完整的错误堆栈信息或相关日志：
+        
+        ```
+        错误信息...
+        ```
+    validations:
+      required: true
+
+  - type: textarea
+    id: config-info
+    attributes:
+      label: ⚙️ 配置信息
+      description: 相关的配置设置（请隐藏敏感信息）
+      placeholder: |
+        相关的配置片段（请移除敏感信息如 webhook URL）：
+        
+        ```yaml
+        crawler:
+          request_interval: 1000
+          enable_crawler: true
+        ```
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 📎 其他信息
+      description: 其他可能有用的信息
+      placeholder: |
+        - 网络环境
+        - 使用的平台配置
+        - 频率词配置
+        - 其他相关信息

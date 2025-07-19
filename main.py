@@ -1,52 +1,151 @@
 # coding=utf-8
 
 import json
-import time
+import os
 import random
 import re
-from datetime import datetime
+import time
 import webbrowser
-from typing import Dict, List, Tuple, Optional, Union
+from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
-import os
+from typing import Dict, List, Tuple, Optional, Union
 
-import requests
 import pytz
+import requests
+import yaml
 
-CONFIG = {
-    "VERSION": "1.4.1",
-    "VERSION_CHECK_URL": "https://raw.githubusercontent.com/sansan0/TrendRadar/refs/heads/master/version",
-    "SHOW_VERSION_UPDATE": True,  # 控制显示版本更新提示，改成 False 将不接受新版本提示
-    "FEISHU_MESSAGE_SEPARATOR": "━━━━━━━━━━━━━━━━━━━",  # feishu消息分割线
-    "REQUEST_INTERVAL": 1000,  # 请求间隔(毫秒)
-    "REPORT_TYPE": "daily",  # 报告类型: "current"|"daily"|"both"
-    "RANK_THRESHOLD": 5,  # 排名高亮阈值
-    "USE_PROXY": True,  # 是否启用代理
-    "DEFAULT_PROXY": "http://127.0.0.1:10086",
-    "ENABLE_CRAWLER": True,  # 是否启用爬取新闻功能，False时直接停止程序
-    "ENABLE_NOTIFICATION": True,  # 是否启用通知功能，False时不发送手机通知
-    "FOCUS_NEW_ONLY": False,  # 是否只关注新增新闻，True时只统计和推送新增的新闻(增量推送)
-    # FOCUS_NEW_ONLY 增量推送开关：避免重复推送相同内容，只在有新内容时才发通知
-    # 优点：1.减少重复推送噪音 2.专注最新动态 3.避免通知疲劳
-    # 适用场景：1.高频监控(≤30分钟间隔) 2.实时热点追踪 3.只关心新话题而非持续热度
-    "MESSAGE_BATCH_SIZE": 4000,  # 消息分批大小（字节）
-    "BATCH_SEND_INTERVAL": 1,  # 批次发送间隔（秒）
-    # 飞书机器人的 webhook URL
-    "FEISHU_WEBHOOK_URL": "",
-    # 钉钉机器人的 webhook URL
-    "DINGTALK_WEBHOOK_URL": "",
-    # 企业微信机器人的 webhook URL
-    "WEWORK_WEBHOOK_URL": "",
-    # Telegram 要填两个
-    "TELEGRAM_BOT_TOKEN": "",
-    "TELEGRAM_CHAT_ID": "",
-    # 用于让关注度更高的新闻在更前面显示，这里是权重排序配置，合起来是 1 就行
-    "WEIGHT_CONFIG": {
-        "RANK_WEIGHT": 0.6,  # 排名
-        "FREQUENCY_WEIGHT": 0.3,  # 频次
-        "HOTNESS_WEIGHT": 0.1,  # 热度
-    },
-}
+
+class ConfigManager:
+    """配置管理器"""
+
+    @staticmethod
+    def _load_config_file() -> Dict:
+        """加载配置文件"""
+        config_path = os.environ.get("CONFIG_PATH", "config/config.yaml")
+
+        if not Path(config_path).exists():
+            raise FileNotFoundError(f"配置文件 {config_path} 不存在")
+
+        try:
+            with open(config_path, "r", encoding="utf-8") as f:
+                config_data = yaml.safe_load(f)
+
+            print(f"配置文件加载成功: {config_path}")
+            return config_data
+
+        except Exception as e:
+            raise RuntimeError(f"配置文件解析失败: {e}")
+
+    def __init__(self):
+        self.config_data = self._load_config_file()
+        self.config = self._build_config()
+        self.platforms = self.config_data["platforms"]
+
+    def _get_webhook_config(self, config_key: str, env_key: str) -> str:
+        """获取 Webhook 配置"""
+        env_value = os.environ.get(env_key, "").strip()
+        if env_value:
+            return env_value
+
+        return (
+            self.config_data.get("notification", {})
+            .get("webhooks", {})
+            .get(config_key, "")
+        )
+
+    def _build_config(self) -> Dict:
+        """构建配置字典，环境变量优先级高于配置文件"""
+
+        feishu_url = self._get_webhook_config("feishu_url", "FEISHU_WEBHOOK_URL")
+        dingtalk_url = self._get_webhook_config("dingtalk_url", "DINGTALK_WEBHOOK_URL")
+        wework_url = self._get_webhook_config("wework_url", "WEWORK_WEBHOOK_URL")
+        telegram_token = self._get_webhook_config(
+            "telegram_bot_token", "TELEGRAM_BOT_TOKEN"
+        )
+        telegram_chat_id = self._get_webhook_config(
+            "telegram_chat_id", "TELEGRAM_CHAT_ID"
+        )
+
+        # 输出配置来源信息
+        webhook_sources = []
+        if feishu_url:
+            source = "环境变量" if os.environ.get("FEISHU_WEBHOOK_URL") else "配置文件"
+            webhook_sources.append(f"飞书({source})")
+        if dingtalk_url:
+            source = (
+                "环境变量" if os.environ.get("DINGTALK_WEBHOOK_URL") else "配置文件"
+            )
+            webhook_sources.append(f"钉钉({source})")
+        if wework_url:
+            source = "环境变量" if os.environ.get("WEWORK_WEBHOOK_URL") else "配置文件"
+            webhook_sources.append(f"企业微信({source})")
+        if telegram_token and telegram_chat_id:
+            token_source = (
+                "环境变量" if os.environ.get("TELEGRAM_BOT_TOKEN") else "配置文件"
+            )
+            chat_source = (
+                "环境变量" if os.environ.get("TELEGRAM_CHAT_ID") else "配置文件"
+            )
+            webhook_sources.append(f"Telegram({token_source}/{chat_source})")
+
+        if webhook_sources:
+            print(f"Webhook 配置来源: {', '.join(webhook_sources)}")
+        else:
+            print("未配置任何 Webhook")
+
+        config = {
+            "VERSION": self.config_data["app"]["version"],
+            "VERSION_CHECK_URL": self.config_data["app"]["version_check_url"],
+            "SHOW_VERSION_UPDATE": self.config_data["app"]["show_version_update"],
+            "FEISHU_MESSAGE_SEPARATOR": self.config_data["notification"][
+                "feishu_message_separator"
+            ],
+            "REQUEST_INTERVAL": self.config_data["crawler"]["request_interval"],
+            "REPORT_MODE": self.config_data["report"]["mode"],
+            "RANK_THRESHOLD": self.config_data["report"]["rank_threshold"],
+            "USE_PROXY": self.config_data["crawler"]["use_proxy"],
+            "DEFAULT_PROXY": self.config_data["crawler"]["default_proxy"],
+            "ENABLE_CRAWLER": self.config_data["crawler"]["enable_crawler"],
+            "ENABLE_NOTIFICATION": self.config_data["notification"][
+                "enable_notification"
+            ],
+            "MESSAGE_BATCH_SIZE": self.config_data["notification"][
+                "message_batch_size"
+            ],
+            "BATCH_SEND_INTERVAL": self.config_data["notification"][
+                "batch_send_interval"
+            ],
+            "FEISHU_WEBHOOK_URL": feishu_url,
+            "DINGTALK_WEBHOOK_URL": dingtalk_url,
+            "WEWORK_WEBHOOK_URL": wework_url,
+            "TELEGRAM_BOT_TOKEN": telegram_token,
+            "TELEGRAM_CHAT_ID": telegram_chat_id,
+            "WEIGHT_CONFIG": {
+                "RANK_WEIGHT": self.config_data["weight"]["rank_weight"],
+                "FREQUENCY_WEIGHT": self.config_data["weight"]["frequency_weight"],
+                "HOTNESS_WEIGHT": self.config_data["weight"]["hotness_weight"],
+            },
+        }
+
+        return config
+
+    def get_config(self) -> Dict:
+        """获取配置字典"""
+        return self.config
+
+    def get_platforms(self) -> List:
+        """获取平台列表"""
+        return self.platforms
+
+
+print("正在加载配置...")
+config_manager = ConfigManager()
+CONFIG = config_manager.get_config()
+PLATFORMS = config_manager.get_platforms()
+
+print(f"TrendRadar v{CONFIG['VERSION']} 配置加载完成")
+print(f"监控平台数量: {len(PLATFORMS)}")
 
 
 class TimeHelper:
@@ -75,10 +174,10 @@ class VersionChecker:
             parts = version_str.strip().split(".")
             if len(parts) != 3:
                 raise ValueError("版本号格式不正确")
-            return tuple(int(part) for part in parts)
+            return int(parts[0]), int(parts[1]), int(parts[2])
         except (ValueError, AttributeError):
             print(f"无法解析版本号: {version_str}")
-            return (0, 0, 0)
+            return 0, 0, 0
 
     @staticmethod
     def compare_versions(current: str, remote: str) -> int:
@@ -220,17 +319,17 @@ class DataFetcher:
     ) -> Tuple[Dict, Dict, List]:
         """爬取多个网站数据"""
         results = {}
-        id_to_alias = {}
+        id_to_name = {}
         failed_ids = []
 
         for i, id_info in enumerate(ids_list):
             if isinstance(id_info, tuple):
-                id_value, alias = id_info
+                id_value, name = id_info
             else:
                 id_value = id_info
-                alias = id_value
+                name = id_value
 
-            id_to_alias[id_value] = alias
+            id_to_name[id_value] = name
             response, _, _ = self.fetch_data(id_info)
 
             if response:
@@ -265,7 +364,7 @@ class DataFetcher:
                 time.sleep(actual_interval / 1000)
 
         print(f"成功: {list(results.keys())}, 失败: {failed_ids}")
-        return results, id_to_alias, failed_ids
+        return results, id_to_name, failed_ids
 
 
 class DataProcessor:
@@ -277,10 +376,7 @@ class DataProcessor:
         if not isinstance(title, str):
             title = str(title)
 
-        # 移除或替换常见的特殊字符
-        cleaned_title = title.replace("\n", " ").replace(  # 换行符替换为空格
-            "\r", " "
-        )  # 回车符替换为空格
+        cleaned_title = title.replace("\n", " ").replace("\r", " ")
 
         cleaned_title = re.sub(r"\s+", " ", cleaned_title)
 
@@ -301,8 +397,10 @@ class DataProcessor:
         return len(files) <= 1  # 0个文件或1个文件都算第一次
 
     @staticmethod
-    def detect_latest_new_titles(id_to_alias: Dict) -> Dict:
-        """检测当日最新批次的新增标题"""
+    def detect_latest_new_titles(
+        current_platform_ids: Optional[List[str]] = None,
+    ) -> Dict:
+        """检测当日最新批次的新增标题，支持按当前监控平台过滤"""
         date_folder = TimeHelper.format_date_folder()
         txt_dir = Path("output") / date_folder / "txt"
 
@@ -311,26 +409,43 @@ class DataProcessor:
 
         files = sorted([f for f in txt_dir.iterdir() if f.suffix == ".txt"])
         if len(files) < 2:
-            # 如果只有一个文件（第一次爬取），没有"新增"的概念，返回空字典
             return {}
 
+        # 解析最新文件
         latest_file = files[-1]
-        latest_titles = DataProcessor._parse_file_titles(latest_file)
+        latest_titles, _ = DataProcessor._parse_file_titles(latest_file)
 
-        # 汇总历史标题
+        # 如果指定了当前平台列表，过滤最新文件数据
+        if current_platform_ids is not None:
+            filtered_latest_titles = {}
+            for source_id, title_data in latest_titles.items():
+                if source_id in current_platform_ids:
+                    filtered_latest_titles[source_id] = title_data
+            latest_titles = filtered_latest_titles
+
+        # 汇总历史标题（按平台过滤）
         historical_titles = {}
         for file_path in files[:-1]:
-            historical_data = DataProcessor._parse_file_titles(file_path)
-            for source_name, titles_data in historical_data.items():
-                if source_name not in historical_titles:
-                    historical_titles[source_name] = set()
+            historical_data, _ = DataProcessor._parse_file_titles(file_path)
+
+            # 过滤历史数据
+            if current_platform_ids is not None:
+                filtered_historical_data = {}
+                for source_id, title_data in historical_data.items():
+                    if source_id in current_platform_ids:
+                        filtered_historical_data[source_id] = title_data
+                historical_data = filtered_historical_data
+
+            for source_id, titles_data in historical_data.items():
+                if source_id not in historical_titles:
+                    historical_titles[source_id] = set()
                 for title in titles_data.keys():
-                    historical_titles[source_name].add(title)
+                    historical_titles[source_id].add(title)
 
         # 找出新增标题
         new_titles = {}
-        for source_name, latest_source_titles in latest_titles.items():
-            historical_set = historical_titles.get(source_name, set())
+        for source_id, latest_source_titles in latest_titles.items():
+            historical_set = historical_titles.get(source_id, set())
             source_new_titles = {}
 
             for title, title_data in latest_source_titles.items():
@@ -338,21 +453,15 @@ class DataProcessor:
                     source_new_titles[title] = title_data
 
             if source_new_titles:
-                source_id = None
-                for id_val, alias in id_to_alias.items():
-                    if alias == source_name:
-                        source_id = id_val
-                        break
-
-                if source_id:
-                    new_titles[source_id] = source_new_titles
+                new_titles[source_id] = source_new_titles
 
         return new_titles
 
     @staticmethod
-    def _parse_file_titles(file_path: Path) -> Dict:
-        """解析单个txt文件的标题数据"""
-        titles_by_source = {}
+    def _parse_file_titles(file_path: Path) -> Tuple[Dict, Dict]:
+        """解析单个txt文件的标题数据，返回(titles_by_id, id_to_name)"""
+        titles_by_id = {}
+        id_to_name = {}
 
         with open(file_path, "r", encoding="utf-8") as f:
             content = f.read()
@@ -366,8 +475,18 @@ class DataProcessor:
                 if len(lines) < 2:
                     continue
 
-                source_name = lines[0].strip()
-                titles_by_source[source_name] = {}
+                # id | name 或 id
+                header_line = lines[0].strip()
+                if " | " in header_line:
+                    parts = header_line.split(" | ", 1)
+                    source_id = parts[0].strip()
+                    name = parts[1].strip()
+                    id_to_name[source_id] = name
+                else:
+                    source_id = header_line
+                    id_to_name[source_id] = source_id 
+
+                titles_by_id[source_id] = {}
 
                 for line in lines[1:]:
                     if line.strip():
@@ -383,7 +502,7 @@ class DataProcessor:
                                 rank_str, title_part = title_part.split(". ", 1)
                                 rank = int(rank_str)
 
-                            # 提取MOBILE URL
+                            # 提取 MOBILE URL
                             mobile_url = ""
                             if " [MOBILE:" in title_part:
                                 title_part, mobile_part = title_part.rsplit(
@@ -392,7 +511,7 @@ class DataProcessor:
                                 if mobile_part.endswith("]"):
                                     mobile_url = mobile_part[:-1]
 
-                            # 提取URL
+                            # 提取 URL
                             url = ""
                             if " [URL:" in title_part:
                                 title_part, url_part = title_part.rsplit(" [URL:", 1)
@@ -402,7 +521,7 @@ class DataProcessor:
                             title = DataProcessor.clean_title(title_part.strip())
                             ranks = [rank] if rank is not None else [1]
 
-                            titles_by_source[source_name][title] = {
+                            titles_by_id[source_id][title] = {
                                 "ranks": ranks,
                                 "url": url,
                                 "mobileUrl": mobile_url,
@@ -411,10 +530,10 @@ class DataProcessor:
                         except Exception as e:
                             print(f"解析标题行出错: {line}, 错误: {e}")
 
-        return titles_by_source
+        return titles_by_id, id_to_name
 
     @staticmethod
-    def save_titles_to_file(results: Dict, id_to_alias: Dict, failed_ids: List) -> str:
+    def save_titles_to_file(results: Dict, id_to_name: Dict, failed_ids: List) -> str:
         """保存标题到文件"""
         file_path = FileHelper.get_output_path(
             "txt", f"{TimeHelper.format_time_filename()}.txt"
@@ -422,8 +541,12 @@ class DataProcessor:
 
         with open(file_path, "w", encoding="utf-8") as f:
             for id_value, title_data in results.items():
-                display_name = id_to_alias.get(id_value, id_value)
-                f.write(f"{display_name}\n")
+                # id | name 或 id
+                name = id_to_name.get(id_value)
+                if name and name != id_value:
+                    f.write(f"{id_value} | {name}\n")
+                else:
+                    f.write(f"{id_value}\n")
 
                 # 按排名排序标题
                 sorted_titles = []
@@ -457,20 +580,23 @@ class DataProcessor:
             if failed_ids:
                 f.write("==== 以下ID请求失败 ====\n")
                 for id_value in failed_ids:
-                    display_name = id_to_alias.get(id_value, id_value)
-                    f.write(f"{display_name} (ID: {id_value})\n")
+                    f.write(f"{id_value}\n")
 
         return file_path
 
     @staticmethod
     def load_frequency_words(
-        frequency_file: str = "frequency_words.txt",
+        frequency_file: Optional[str] = None,
     ) -> Tuple[List[Dict], List[str]]:
         """加载频率词配置"""
+        if frequency_file is None:
+            frequency_file = os.environ.get(
+                "FREQUENCY_WORDS_PATH", "config/frequency_words.txt"
+            )
+
         frequency_path = Path(frequency_file)
         if not frequency_path.exists():
-            print(f"频率词文件 {frequency_file} 不存在")
-            return [], []
+            raise FileNotFoundError(f"频率词文件 {frequency_file} 不存在")
 
         with open(frequency_path, "r", encoding="utf-8") as f:
             content = f.read()
@@ -515,8 +641,10 @@ class DataProcessor:
         return processed_groups, filter_words
 
     @staticmethod
-    def read_all_today_titles() -> Tuple[Dict, Dict, Dict]:
-        """读取当天所有标题文件"""
+    def read_all_today_titles(
+        current_platform_ids: Optional[List[str]] = None,
+    ) -> Tuple[Dict, Dict, Dict]:
+        """读取当天所有标题文件，支持按当前监控平台过滤"""
         date_folder = TimeHelper.format_date_folder()
         txt_dir = Path("output") / date_folder / "txt"
 
@@ -524,7 +652,7 @@ class DataProcessor:
             return {}, {}, {}
 
         all_results = {}
-        id_to_alias = {}
+        final_id_to_name = {}
         title_info = {}
 
         files = sorted([f for f in txt_dir.iterdir() if f.suffix == ".txt"])
@@ -532,109 +660,55 @@ class DataProcessor:
         for file_path in files:
             time_info = file_path.stem
 
-            with open(file_path, "r", encoding="utf-8") as f:
-                content = f.read()
+            titles_by_id, file_id_to_name = DataProcessor._parse_file_titles(file_path)
 
-                sections = content.split("\n\n")
-                for section in sections:
-                    if not section.strip() or "==== 以下ID请求失败 ====" in section:
-                        continue
+            if current_platform_ids is not None:
+                filtered_titles_by_id = {}
+                filtered_id_to_name = {}
 
-                    lines = section.strip().split("\n")
-                    if len(lines) < 2:
-                        continue
+                for source_id, title_data in titles_by_id.items():
+                    if source_id in current_platform_ids:
+                        filtered_titles_by_id[source_id] = title_data
+                        if source_id in file_id_to_name:
+                            filtered_id_to_name[source_id] = file_id_to_name[source_id]
 
-                    source_name = lines[0].strip()
-                    title_data = {}
+                titles_by_id = filtered_titles_by_id
+                file_id_to_name = filtered_id_to_name
 
-                    for line in lines[1:]:
-                        if line.strip():
-                            try:
-                                rank = None
-                                title_part = line.strip()
+            final_id_to_name.update(file_id_to_name)
 
-                                # 提取行首的排名数字
-                                if (
-                                    ". " in title_part
-                                    and title_part.split(". ")[0].isdigit()
-                                ):
-                                    parts = title_part.split(". ", 1)
-                                    rank = int(parts[0])
-                                    title_part = parts[1]
+            for source_id, title_data in titles_by_id.items():
+                DataProcessor._process_source_data(
+                    source_id,
+                    title_data,
+                    time_info,
+                    all_results,
+                    title_info,
+                )
 
-                                # 提取 MOBILE URL
-                                mobile_url = ""
-                                if " [MOBILE:" in title_part:
-                                    title_part, mobile_part = title_part.rsplit(
-                                        " [MOBILE:", 1
-                                    )
-                                    if mobile_part.endswith("]"):
-                                        mobile_url = mobile_part[:-1]
-
-                                # 提取 URL
-                                url = ""
-                                if " [URL:" in title_part:
-                                    title_part, url_part = title_part.rsplit(
-                                        " [URL:", 1
-                                    )
-                                    if url_part.endswith("]"):
-                                        url = url_part[:-1]
-
-                                title = title_part.strip()
-                                ranks = [rank] if rank is not None else [1]
-
-                                title_data[title] = {
-                                    "ranks": ranks,
-                                    "url": url,
-                                    "mobileUrl": mobile_url,
-                                }
-
-                            except Exception as e:
-                                print(f"解析标题行出错: {line}, 错误: {e}")
-
-                    DataProcessor._process_source_data(
-                        source_name,
-                        title_data,
-                        time_info,
-                        all_results,
-                        title_info,
-                        id_to_alias,
-                    )
-
-        # 转换为ID格式
-        id_results = {}
-        id_title_info = {}
-        for name, titles in all_results.items():
-            for id_value, alias in id_to_alias.items():
-                if alias == name:
-                    id_results[id_value] = titles
-                    id_title_info[id_value] = title_info[name]
-                    break
-
-        return id_results, id_to_alias, id_title_info
+        return all_results, final_id_to_name, title_info
 
     @staticmethod
     def _process_source_data(
-        source_name: str,
+        source_id: str,
         title_data: Dict,
         time_info: str,
         all_results: Dict,
         title_info: Dict,
-        id_to_alias: Dict,
     ) -> None:
         """处理来源数据，合并重复标题"""
-        if source_name not in all_results:
-            all_results[source_name] = title_data
+        if source_id not in all_results:
+            all_results[source_id] = title_data
 
-            if source_name not in title_info:
-                title_info[source_name] = {}
+            if source_id not in title_info:
+                title_info[source_id] = {}
 
             for title, data in title_data.items():
                 ranks = data.get("ranks", [])
                 url = data.get("url", "")
                 mobile_url = data.get("mobileUrl", "")
 
-                title_info[source_name][title] = {
+                title_info[source_id][title] = {
                     "first_time": time_info,
                     "last_time": time_info,
                     "count": 1,
@@ -642,22 +716,19 @@ class DataProcessor:
                     "url": url,
                     "mobileUrl": mobile_url,
                 }
-
-            reversed_id = source_name.lower().replace(" ", "-")
-            id_to_alias[reversed_id] = source_name
         else:
             for title, data in title_data.items():
                 ranks = data.get("ranks", [])
                 url = data.get("url", "")
                 mobile_url = data.get("mobileUrl", "")
 
-                if title not in all_results[source_name]:
-                    all_results[source_name][title] = {
+                if title not in all_results[source_id]:
+                    all_results[source_id][title] = {
                         "ranks": ranks,
                         "url": url,
                         "mobileUrl": mobile_url,
                     }
-                    title_info[source_name][title] = {
+                    title_info[source_id][title] = {
                         "first_time": time_info,
                         "last_time": time_info,
                         "count": 1,
@@ -666,7 +737,7 @@ class DataProcessor:
                         "mobileUrl": mobile_url,
                     }
                 else:
-                    existing_data = all_results[source_name][title]
+                    existing_data = all_results[source_id][title]
                     existing_ranks = existing_data.get("ranks", [])
                     existing_url = existing_data.get("url", "")
                     existing_mobile_url = existing_data.get("mobileUrl", "")
@@ -676,19 +747,19 @@ class DataProcessor:
                         if rank not in merged_ranks:
                             merged_ranks.append(rank)
 
-                    all_results[source_name][title] = {
+                    all_results[source_id][title] = {
                         "ranks": merged_ranks,
                         "url": existing_url or url,
                         "mobileUrl": existing_mobile_url or mobile_url,
                     }
 
-                    title_info[source_name][title]["last_time"] = time_info
-                    title_info[source_name][title]["ranks"] = merged_ranks
-                    title_info[source_name][title]["count"] += 1
-                    if not title_info[source_name][title].get("url"):
-                        title_info[source_name][title]["url"] = url
-                    if not title_info[source_name][title].get("mobileUrl"):
-                        title_info[source_name][title]["mobileUrl"] = mobile_url
+                    title_info[source_id][title]["last_time"] = time_info
+                    title_info[source_id][title]["ranks"] = merged_ranks
+                    title_info[source_id][title]["count"] += 1
+                    if not title_info[source_id][title].get("url"):
+                        title_info[source_id][title]["url"] = url
+                    if not title_info[source_id][title].get("mobileUrl"):
+                        title_info[source_id][title]["mobileUrl"] = mobile_url
 
 
 class StatisticsCalculator:
@@ -722,7 +793,6 @@ class StatisticsCalculator:
         hotness_ratio = high_rank_count / len(ranks) if ranks else 0
         hotness_weight = hotness_ratio * 100
 
-        # 综合权重计算
         total_weight = (
             rank_weight * weight_config["RANK_WEIGHT"]
             + frequency_weight * weight_config["FREQUENCY_WEIGHT"]
@@ -746,12 +816,12 @@ class StatisticsCalculator:
 
             # 主要按权重排序，权重相同时按最高排名排序，再相同时按出现次数排序
             min_rank = min(ranks) if ranks else 999
-            return (-weight, min_rank, -count)
+            return -weight, min_rank, -count
 
         return sorted(titles_list, key=get_sort_key)
 
     @staticmethod
-    def _matches_word_groups(
+    def matches_word_groups(
         title: str, word_groups: List[Dict], filter_words: List[str]
     ) -> bool:
         """检查标题是否匹配词组规则"""
@@ -791,44 +861,65 @@ class StatisticsCalculator:
         results: Dict,
         word_groups: List[Dict],
         filter_words: List[str],
-        id_to_alias: Dict,
+        id_to_name: Dict,
         title_info: Optional[Dict] = None,
         rank_threshold: int = CONFIG["RANK_THRESHOLD"],
         new_titles: Optional[Dict] = None,
-        focus_new_only: bool = False,
+        mode: str = "daily",
     ) -> Tuple[List[Dict], int]:
         """统计词频，支持必须词、频率词、过滤词，并标记新增标题"""
 
-        # 检测是否是当天第一次爬取
         is_first_today = DataProcessor.is_first_crawl_today()
 
         # 确定处理的数据源和新增标记逻辑
-        if focus_new_only:
+        if mode == "incremental":
             if is_first_today:
-                # 新增模式 + 当天第一次：处理所有新闻，都标记为新增
+                # 增量模式 + 当天第一次：处理所有新闻，都标记为新增
                 results_to_process = results
                 all_news_are_new = True
-                total_input_news = sum(len(titles) for titles in results.values())
-                print(
-                    f"新增模式：当天第一次爬取，处理 {total_input_news} 条新闻（所有匹配的新闻都视为新增）"
-                )
             else:
-                # 新增模式 + 当天非第一次：只处理新增的新闻
+                # 增量模式 + 当天非第一次：只处理新增的新闻
                 results_to_process = new_titles if new_titles else {}
-                all_news_are_new = True  # 处理的都是新增新闻
-                if new_titles:
-                    total_new_count = sum(len(titles) for titles in new_titles.values())
+                all_news_are_new = True
+        elif mode == "current":
+            # current 模式：只处理当前时间批次的新闻，但统计信息来自全部历史
+            if title_info:
+                latest_time = None
+                for source_titles in title_info.values():
+                    for title_data in source_titles.values():
+                        last_time = title_data.get("last_time", "")
+                        if last_time:
+                            if latest_time is None or last_time > latest_time:
+                                latest_time = last_time
+
+                # 只处理 last_time 等于最新时间的新闻
+                if latest_time:
+                    results_to_process = {}
+                    for source_id, source_titles in results.items():
+                        if source_id in title_info:
+                            filtered_titles = {}
+                            for title, title_data in source_titles.items():
+                                if title in title_info[source_id]:
+                                    info = title_info[source_id][title]
+                                    if info.get("last_time") == latest_time:
+                                        filtered_titles[title] = title_data
+                            if filtered_titles:
+                                results_to_process[source_id] = filtered_titles
+
                     print(
-                        f"新增模式：检测到 {total_new_count} 条新增新闻，开始进行频率词匹配..."
+                        f"当前榜单模式：最新时间 {latest_time}，筛选出 {sum(len(titles) for titles in results_to_process.values())} 条当前榜单新闻"
                     )
                 else:
-                    print("新增模式：未检测到新增新闻")
+                    results_to_process = results
+            else:
+                results_to_process = results
+            all_news_are_new = False
         else:
-            # 正常模式：处理所有新闻
+            # 当日汇总模式：处理所有新闻
             results_to_process = results
             all_news_are_new = False
             total_input_news = sum(len(titles) for titles in results.values())
-            print(f"正常模式：处理 {total_input_news} 条新闻")
+            print(f"当日汇总模式：处理 {total_input_news} 条新闻")
 
         word_stats = {}
         total_titles = 0
@@ -855,15 +946,17 @@ class StatisticsCalculator:
                     continue
 
                 # 使用统一的匹配逻辑
-                matches_frequency_words = StatisticsCalculator._matches_word_groups(
+                matches_frequency_words = StatisticsCalculator.matches_word_groups(
                     title, word_groups, filter_words
                 )
 
                 if not matches_frequency_words:
                     continue
 
-                # 如果是新增模式，统计匹配的新增新闻数量
-                if focus_new_only and all_news_are_new:
+                # 如果是增量模式或 current 模式第一次，统计匹配的新增新闻数量
+                if (mode == "incremental" and all_news_are_new) or (
+                    mode == "current" and is_first_today
+                ):
                     matched_new_count += 1
 
                 source_ranks = title_data.get("ranks", [])
@@ -905,7 +998,22 @@ class StatisticsCalculator:
                     url = source_url
                     mobile_url = source_mobile_url
 
+                    # 对于 current 模式，从历史统计信息中获取完整数据
                     if (
+                        mode == "current"
+                        and title_info
+                        and source_id in title_info
+                        and title in title_info[source_id]
+                    ):
+                        info = title_info[source_id][title]
+                        first_time = info.get("first_time", "")
+                        last_time = info.get("last_time", "")
+                        count_info = info.get("count", 1)
+                        if "ranks" in info and info["ranks"]:
+                            ranks = info["ranks"]
+                        url = info.get("url", source_url)
+                        mobile_url = info.get("mobileUrl", source_mobile_url)
+                    elif (
                         title_info
                         and source_id in title_info
                         and title in title_info[source_id]
@@ -926,30 +1034,22 @@ class StatisticsCalculator:
                         first_time, last_time
                     )
 
-                    source_alias = id_to_alias.get(source_id, source_id)
+                    source_name = id_to_name.get(source_id, source_id)
 
                     # 判断是否为新增
                     is_new = False
                     if all_news_are_new:
-                        # 新增模式下所有处理的新闻都是新增，或者当天第一次的所有新闻都是新增
+                        # 增量模式下所有处理的新闻都是新增，或者当天第一次的所有新闻都是新增
                         is_new = True
                     elif new_titles and source_id in new_titles:
-                        # 正常模式下，检查是否在新增列表中
+                        # 检查是否在新增列表中
                         new_titles_for_source = new_titles[source_id]
-                        if title in new_titles_for_source:
-                            is_new = True
-                        else:
-                            # 如果直接匹配失败，尝试去除首尾空格后匹配
-                            title_stripped = title.strip()
-                            for new_title in new_titles_for_source.keys():
-                                if title_stripped == new_title.strip():
-                                    is_new = True
-                                    break
+                        is_new = title in new_titles_for_source
 
                     word_stats[group_key]["titles"][source_id].append(
                         {
                             "title": title,
-                            "source_alias": source_alias,
+                            "source_name": source_name,
                             "first_time": first_time,
                             "last_time": last_time,
                             "time_display": time_display,
@@ -967,20 +1067,36 @@ class StatisticsCalculator:
                     processed_titles[source_id][title] = True
                     break
 
-        if focus_new_only and not is_first_today:
-            if new_titles:
-                total_new_count = sum(len(titles) for titles in new_titles.values())
+        # 最后统一打印汇总信息
+        if mode == "incremental":
+            if is_first_today:
+                total_input_news = sum(len(titles) for titles in results.values())
                 print(
-                    f"新增模式：{total_new_count} 条新增新闻中，有 {matched_new_count} 条匹配频率词"
+                    f"增量模式：当天第一次爬取，{total_input_news} 条新闻中有 {matched_new_count} 条匹配频率词"
                 )
-                if matched_new_count == 0:
-                    print("新增模式：没有新增新闻匹配频率词，将不会发送通知")
             else:
-                print("新增模式：未检测到新增新闻")
-        elif focus_new_only and is_first_today:
-            print(
-                f"新增模式：当天第一次爬取，{matched_new_count} 条新闻匹配频率词并将推送"
+                if new_titles:
+                    total_new_count = sum(len(titles) for titles in new_titles.values())
+                    print(
+                        f"增量模式：{total_new_count} 条新增新闻中，有 {matched_new_count} 条匹配频率词"
+                    )
+                    if matched_new_count == 0:
+                        print("增量模式：没有新增新闻匹配频率词，将不会发送通知")
+                else:
+                    print("增量模式：未检测到新增新闻")
+        elif mode == "current":
+            total_input_news = sum(
+                len(titles) for titles in results_to_process.values()
             )
+            if is_first_today:
+                print(
+                    f"当前榜单模式：当天第一次爬取，{total_input_news} 条当前榜单新闻中有 {matched_new_count} 条匹配频率词"
+                )
+            else:
+                matched_count = sum(stat["count"] for stat in word_stats.values())
+                print(
+                    f"当前榜单模式：{total_input_news} 条当前榜单新闻中有 {matched_count} 条匹配频率词"
+                )
 
         stats = []
         for group_key, data in word_stats.items():
@@ -988,7 +1104,6 @@ class StatisticsCalculator:
             for source_id, title_list in data["titles"].items():
                 all_titles.extend(title_list)
 
-            # 按权重排序标题
             sorted_titles = StatisticsCalculator.sort_titles_by_weight(
                 all_titles, rank_threshold
             )
@@ -1021,7 +1136,6 @@ class StatisticsCalculator:
         min_rank = unique_ranks[0]
         max_rank = unique_ranks[-1]
 
-        # 根据格式类型选择不同的标记方式
         if format_type == "html":
             highlight_start = "<font color='red'><strong>"
             highlight_end = "</strong></font>"
@@ -1041,7 +1155,6 @@ class StatisticsCalculator:
             highlight_start = "**"
             highlight_end = "**"
 
-        # 格式化排名显示
         if min_rank <= rank_threshold:
             if min_rank == max_rank:
                 return f"{highlight_start}[{min_rank}]{highlight_end}"
@@ -1054,27 +1167,27 @@ class StatisticsCalculator:
                 return f"[{min_rank} - {max_rank}]"
 
     @staticmethod
-    def _format_rank_for_html(ranks: List[int], rank_threshold: int = 5) -> str:
+    def format_rank_for_html(ranks: List[int], rank_threshold: int = 5) -> str:
         """格式化HTML排名显示"""
         return StatisticsCalculator._format_rank_base(ranks, rank_threshold, "html")
 
     @staticmethod
-    def _format_rank_for_feishu(ranks: List[int], rank_threshold: int = 5) -> str:
+    def format_rank_for_feishu(ranks: List[int], rank_threshold: int = 5) -> str:
         """格式化飞书排名显示"""
         return StatisticsCalculator._format_rank_base(ranks, rank_threshold, "feishu")
 
     @staticmethod
-    def _format_rank_for_dingtalk(ranks: List[int], rank_threshold: int = 5) -> str:
+    def format_rank_for_dingtalk(ranks: List[int], rank_threshold: int = 5) -> str:
         """格式化钉钉排名显示"""
         return StatisticsCalculator._format_rank_base(ranks, rank_threshold, "dingtalk")
 
     @staticmethod
-    def _format_rank_for_wework(ranks: List[int], rank_threshold: int = 5) -> str:
+    def format_rank_for_wework(ranks: List[int], rank_threshold: int = 5) -> str:
         """格式化企业微信排名显示"""
         return StatisticsCalculator._format_rank_base(ranks, rank_threshold, "wework")
 
     @staticmethod
-    def _format_rank_for_telegram(ranks: List[int], rank_threshold: int = 5) -> str:
+    def format_rank_for_telegram(ranks: List[int], rank_threshold: int = 5) -> str:
         """格式化Telegram排名显示"""
         return StatisticsCalculator._format_rank_base(ranks, rank_threshold, "telegram")
 
@@ -1097,32 +1210,36 @@ class ReportGenerator:
         stats: List[Dict],
         total_titles: int,
         failed_ids: Optional[List] = None,
-        is_daily: bool = False,
         new_titles: Optional[Dict] = None,
-        id_to_alias: Optional[Dict] = None,
+        id_to_name: Optional[Dict] = None,
+        mode: str = "daily",
+        is_daily_summary: bool = False,
     ) -> str:
         """生成HTML报告"""
-        if is_daily:
-            filename = "当日统计.html"
+        if is_daily_summary:
+            if mode == "current":
+                filename = "当前榜单汇总.html"
+            elif mode == "incremental":
+                filename = "当日增量.html"
+            else:
+                filename = "当日汇总.html"
         else:
             filename = f"{TimeHelper.format_time_filename()}.html"
 
         file_path = FileHelper.get_output_path("html", filename)
 
-        # 数据处理层
         report_data = ReportGenerator._prepare_report_data(
-            stats, failed_ids, new_titles, id_to_alias
+            stats, failed_ids, new_titles, id_to_name, mode
         )
 
-        # 渲染层
         html_content = ReportGenerator._render_html_content(
-            report_data, total_titles, is_daily
+            report_data, total_titles, is_daily_summary, mode
         )
 
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(html_content)
 
-        if is_daily:
+        if is_daily_summary:
             root_file_path = Path("index.html")
             with open(root_file_path, "w", encoding="utf-8") as f:
                 f.write(html_content)
@@ -1134,16 +1251,19 @@ class ReportGenerator:
         stats: List[Dict],
         failed_ids: Optional[List] = None,
         new_titles: Optional[Dict] = None,
-        id_to_alias: Optional[Dict] = None,
-        hide_new_section: bool = False,
+        id_to_name: Optional[Dict] = None,
+        mode: str = "daily",
     ) -> Dict:
         """准备报告数据"""
         processed_new_titles = []
 
+        # 在增量模式下隐藏新增新闻区域
+        hide_new_section = mode == "incremental"
+
         # 只有在非隐藏模式下才处理新增新闻部分
         if not hide_new_section:
             filtered_new_titles = {}
-            if new_titles and id_to_alias:
+            if new_titles and id_to_name:
                 word_groups, filter_words = DataProcessor.load_frequency_words()
                 for source_id, titles_data in new_titles.items():
                     filtered_titles = ReportGenerator._apply_frequency_filter(
@@ -1152,9 +1272,9 @@ class ReportGenerator:
                     if filtered_titles:
                         filtered_new_titles[source_id] = filtered_titles
 
-            if filtered_new_titles and id_to_alias:
+            if filtered_new_titles and id_to_name:
                 for source_id, titles_data in filtered_new_titles.items():
-                    source_alias = id_to_alias.get(source_id, source_id)
+                    source_name = id_to_name.get(source_id, source_id)
                     source_titles = []
 
                     for title, title_data in titles_data.items():
@@ -1164,7 +1284,7 @@ class ReportGenerator:
 
                         processed_title = {
                             "title": title,
-                            "source_alias": source_alias,
+                            "source_name": source_name,
                             "time_display": "",
                             "count": 1,
                             "ranks": ranks,
@@ -1179,7 +1299,7 @@ class ReportGenerator:
                         processed_new_titles.append(
                             {
                                 "source_id": source_id,
-                                "source_alias": source_alias,
+                                "source_name": source_name,
                                 "titles": source_titles,
                             }
                         )
@@ -1193,7 +1313,7 @@ class ReportGenerator:
             for title_data in stat["titles"]:
                 processed_title = {
                     "title": title_data["title"],
-                    "source_alias": title_data["source_alias"],
+                    "source_name": title_data["source_name"],
                     "time_display": title_data["time_display"],
                     "count": title_data["count"],
                     "ranks": title_data["ranks"],
@@ -1239,7 +1359,7 @@ class ReportGenerator:
         filtered_titles = {}
 
         for title, title_data in titles_data.items():
-            if StatisticsCalculator._matches_word_groups(
+            if StatisticsCalculator.matches_word_groups(
                 title, word_groups, filter_words
             ):
                 filtered_titles[title] = title_data
@@ -1263,7 +1383,7 @@ class ReportGenerator:
     @staticmethod
     def _format_title_html(title_data: Dict) -> str:
         """格式化HTML标题显示"""
-        rank_display = StatisticsCalculator._format_rank_for_html(
+        rank_display = StatisticsCalculator.format_rank_for_html(
             title_data["ranks"], title_data["rank_threshold"]
         )
 
@@ -1271,14 +1391,14 @@ class ReportGenerator:
 
         cleaned_title = DataProcessor.clean_title(title_data["title"])
         escaped_title = ReportGenerator._html_escape(cleaned_title)
-        escaped_source_alias = ReportGenerator._html_escape(title_data["source_alias"])
+        escaped_source_name = ReportGenerator._html_escape(title_data["source_name"])
 
         if link_url:
             escaped_url = ReportGenerator._html_escape(link_url)
-            formatted_title = f'[{escaped_source_alias}] <a href="{escaped_url}" target="_blank" class="news-link">{escaped_title}</a>'
+            formatted_title = f'[{escaped_source_name}] <a href="{escaped_url}" target="_blank" class="news-link">{escaped_title}</a>'
         else:
             formatted_title = (
-                f'[{escaped_source_alias}] <span class="no-link">{escaped_title}</span>'
+                f'[{escaped_source_name}] <span class="no-link">{escaped_title}</span>'
             )
 
         if rank_display:
@@ -1296,7 +1416,10 @@ class ReportGenerator:
 
     @staticmethod
     def _render_html_content(
-        report_data: Dict, total_titles: int, is_daily: bool = False
+        report_data: Dict,
+        total_titles: int,
+        is_daily_summary: bool = False,
+        mode: str = "daily",
     ) -> str:
         """渲染HTML内容"""
         html = """
@@ -1357,14 +1480,20 @@ class ReportGenerator:
             <h1>频率词统计报告</h1>
         """
 
-        if is_daily:
-            html += "<p>报告类型: 当日汇总</p>"
+        if is_daily_summary:
+            if mode == "current":
+                html += "<p>报告类型: 当前榜单模式</p>"
+            elif mode == "incremental":
+                html += "<p>报告类型: 增量模式</p>"
+            else:
+                html += "<p>报告类型: 当日汇总</p>"
+        else:
+            html += "<p>报告类型: 实时分析</p>"
 
         now = TimeHelper.get_beijing_time()
         html += f"<p>总标题数: {total_titles}</p>"
         html += f"<p>生成时间: {now.strftime('%Y-%m-%d %H:%M:%S')}</p>"
 
-        # 渲染失败平台
         if report_data["failed_ids"]:
             html += """
             <div class="error">
@@ -1378,7 +1507,6 @@ class ReportGenerator:
             </div>
             """
 
-        # 渲染统计表格
         html += """
             <table>
                 <tr>
@@ -1412,7 +1540,6 @@ class ReportGenerator:
             </table>
         """
 
-        # 渲染新增新闻部分
         if report_data["new_titles"]:
             html += f"""
             <div class="new-section">
@@ -1421,7 +1548,7 @@ class ReportGenerator:
 
             for source_data in report_data["new_titles"]:
                 escaped_source = ReportGenerator._html_escape(
-                    source_data["source_alias"]
+                    source_data["source_name"]
                 )
                 html += (
                     f"<h4>{escaped_source} ({len(source_data['titles'])} 条)</h4><ul>"
@@ -1433,7 +1560,6 @@ class ReportGenerator:
                     formatted_title = ReportGenerator._format_title_html(
                         title_data_copy
                     )
-                    # 移除来源标签
                     if "] " in formatted_title:
                         formatted_title = formatted_title.split("] ", 1)[1]
                     html += f"<li>{formatted_title}</li>"
@@ -1452,7 +1578,7 @@ class ReportGenerator:
     @staticmethod
     def _format_title_feishu(title_data: Dict, show_source: bool = True) -> str:
         """格式化飞书标题显示"""
-        rank_display = StatisticsCalculator._format_rank_for_feishu(
+        rank_display = StatisticsCalculator.format_rank_for_feishu(
             title_data["ranks"], title_data["rank_threshold"]
         )
 
@@ -1468,7 +1594,7 @@ class ReportGenerator:
         title_prefix = "🆕 " if title_data["is_new"] else ""
 
         if show_source:
-            result = f"<font color='grey'>[{title_data['source_alias']}]</font> {title_prefix}{formatted_title}"
+            result = f"<font color='grey'>[{title_data['source_name']}]</font> {title_prefix}{formatted_title}"
         else:
             result = f"{title_prefix}{formatted_title}"
 
@@ -1484,7 +1610,7 @@ class ReportGenerator:
     @staticmethod
     def _format_title_dingtalk(title_data: Dict, show_source: bool = True) -> str:
         """格式化钉钉标题显示"""
-        rank_display = StatisticsCalculator._format_rank_for_dingtalk(
+        rank_display = StatisticsCalculator.format_rank_for_dingtalk(
             title_data["ranks"], title_data["rank_threshold"]
         )
 
@@ -1500,7 +1626,7 @@ class ReportGenerator:
         title_prefix = "🆕 " if title_data["is_new"] else ""
 
         if show_source:
-            result = f"[{title_data['source_alias']}] {title_prefix}{formatted_title}"
+            result = f"[{title_data['source_name']}] {title_prefix}{formatted_title}"
         else:
             result = f"{title_prefix}{formatted_title}"
 
@@ -1516,7 +1642,7 @@ class ReportGenerator:
     @staticmethod
     def _format_title_wework(title_data: Dict, show_source: bool = True) -> str:
         """格式化企业微信标题显示"""
-        rank_display = StatisticsCalculator._format_rank_for_wework(
+        rank_display = StatisticsCalculator.format_rank_for_wework(
             title_data["ranks"], title_data["rank_threshold"]
         )
 
@@ -1532,7 +1658,7 @@ class ReportGenerator:
         title_prefix = "🆕 " if title_data["is_new"] else ""
 
         if show_source:
-            result = f"[{title_data['source_alias']}] {title_prefix}{formatted_title}"
+            result = f"[{title_data['source_name']}] {title_prefix}{formatted_title}"
         else:
             result = f"{title_prefix}{formatted_title}"
 
@@ -1548,7 +1674,7 @@ class ReportGenerator:
     @staticmethod
     def _format_title_telegram(title_data: Dict, show_source: bool = True) -> str:
         """格式化Telegram标题显示"""
-        rank_display = StatisticsCalculator._format_rank_for_telegram(
+        rank_display = StatisticsCalculator.format_rank_for_telegram(
             title_data["ranks"], title_data["rank_threshold"]
         )
 
@@ -1564,7 +1690,7 @@ class ReportGenerator:
         title_prefix = "🆕 " if title_data["is_new"] else ""
 
         if show_source:
-            result = f"[{title_data['source_alias']}] {title_prefix}{formatted_title}"
+            result = f"[{title_data['source_name']}] {title_prefix}{formatted_title}"
         else:
             result = f"{title_prefix}{formatted_title}"
 
@@ -1579,14 +1705,13 @@ class ReportGenerator:
 
     @staticmethod
     def _render_feishu_content(
-        report_data: Dict, update_info: Optional[Dict] = None
+        report_data: Dict, update_info: Optional[Dict] = None, mode: str = "daily"
     ) -> str:
         """渲染飞书内容"""
         text_content = ""
 
-        # 渲染热点词汇统计
         if report_data["stats"]:
-            text_content += "📊 **热点词汇统计**\n\n"
+            text_content += f"📊 **热点词汇统计**\n\n"
 
         total_count = len(report_data["stats"])
 
@@ -1616,9 +1741,14 @@ class ReportGenerator:
                 text_content += f"\n{CONFIG['FEISHU_MESSAGE_SEPARATOR']}\n\n"
 
         if not text_content:
-            text_content = "📭 暂无匹配的热点词汇\n\n"
+            if mode == "incremental":
+                mode_text = "增量模式下暂无新增匹配的热点词汇"
+            elif mode == "current":
+                mode_text = "当前榜单模式下暂无匹配的热点词汇"
+            else:
+                mode_text = "暂无匹配的热点词汇"
+            text_content = f"📭 {mode_text}\n\n"
 
-        # 渲染新增新闻部分
         if report_data["new_titles"]:
             if text_content and "暂无匹配" not in text_content:
                 text_content += f"\n{CONFIG['FEISHU_MESSAGE_SEPARATOR']}\n\n"
@@ -1628,7 +1758,7 @@ class ReportGenerator:
             )
 
             for source_data in report_data["new_titles"]:
-                text_content += f"**{source_data['source_alias']}** ({len(source_data['titles'])} 条):\n"
+                text_content += f"**{source_data['source_name']}** ({len(source_data['titles'])} 条):\n"
 
                 for j, title_data in enumerate(source_data["titles"], 1):
                     title_data_copy = title_data.copy()
@@ -1640,7 +1770,6 @@ class ReportGenerator:
 
                 text_content += "\n"
 
-        # 渲染失败平台
         if report_data["failed_ids"]:
             if text_content and "暂无匹配" not in text_content:
                 text_content += f"\n{CONFIG['FEISHU_MESSAGE_SEPARATOR']}\n\n"
@@ -1649,11 +1778,9 @@ class ReportGenerator:
             for i, id_value in enumerate(report_data["failed_ids"], 1):
                 text_content += f"  • <font color='red'>{id_value}</font>\n"
 
-        # 添加时间戳
         now = TimeHelper.get_beijing_time()
         text_content += f"\n\n<font color='grey'>更新时间：{now.strftime('%Y-%m-%d %H:%M:%S')}</font>"
 
-        # 版本更新提示
         if update_info:
             text_content += f"\n<font color='grey'>TrendRadar 发现新版本 {update_info['remote_version']}，当前 {update_info['current_version']}</font>"
 
@@ -1661,27 +1788,24 @@ class ReportGenerator:
 
     @staticmethod
     def _render_dingtalk_content(
-        report_data: Dict, update_info: Optional[Dict] = None
+        report_data: Dict, update_info: Optional[Dict] = None, mode: str = "daily"
     ) -> str:
         """渲染钉钉内容"""
         text_content = ""
 
-        # 计算总标题数
         total_titles = sum(
             len(stat["titles"]) for stat in report_data["stats"] if stat["count"] > 0
         )
         now = TimeHelper.get_beijing_time()
 
-        # 顶部统计信息
         text_content += f"**总新闻数：** {total_titles}\n\n"
         text_content += f"**时间：** {now.strftime('%Y-%m-%d %H:%M:%S')}\n\n"
         text_content += f"**类型：** 热点分析报告\n\n"
 
         text_content += "---\n\n"
 
-        # 渲染热点词汇统计
         if report_data["stats"]:
-            text_content += "📊 **热点词汇统计**\n\n"
+            text_content += f"📊 **热点词汇统计**\n\n"
 
             total_count = len(report_data["stats"])
 
@@ -1715,9 +1839,14 @@ class ReportGenerator:
                     text_content += f"\n---\n\n"
 
         if not report_data["stats"]:
-            text_content += "📭 暂无匹配的热点词汇\n\n"
+            if mode == "incremental":
+                mode_text = "增量模式下暂无新增匹配的热点词汇"
+            elif mode == "current":
+                mode_text = "当前榜单模式下暂无匹配的热点词汇"
+            else:
+                mode_text = "暂无匹配的热点词汇"
+            text_content += f"📭 {mode_text}\n\n"
 
-        # 渲染新增新闻部分
         if report_data["new_titles"]:
             if text_content and "暂无匹配" not in text_content:
                 text_content += f"\n---\n\n"
@@ -1727,7 +1856,7 @@ class ReportGenerator:
             )
 
             for source_data in report_data["new_titles"]:
-                text_content += f"**{source_data['source_alias']}** ({len(source_data['titles'])} 条):\n\n"
+                text_content += f"**{source_data['source_name']}** ({len(source_data['titles'])} 条):\n\n"
 
                 for j, title_data in enumerate(source_data["titles"], 1):
                     title_data_copy = title_data.copy()
@@ -1739,7 +1868,6 @@ class ReportGenerator:
 
                 text_content += "\n"
 
-        # 渲染失败平台
         if report_data["failed_ids"]:
             if text_content and "暂无匹配" not in text_content:
                 text_content += f"\n---\n\n"
@@ -1748,10 +1876,8 @@ class ReportGenerator:
             for i, id_value in enumerate(report_data["failed_ids"], 1):
                 text_content += f"  • **{id_value}**\n"
 
-        # 添加时间戳
         text_content += f"\n\n> 更新时间：{now.strftime('%Y-%m-%d %H:%M:%S')}"
 
-        # 版本更新提示
         if update_info:
             text_content += f"\n> TrendRadar 发现新版本 **{update_info['remote_version']}**，当前 **{update_info['current_version']}**"
 
@@ -1763,11 +1889,11 @@ class ReportGenerator:
         format_type: str,
         update_info: Optional[Dict] = None,
         max_bytes: int = CONFIG["MESSAGE_BATCH_SIZE"],
+        mode: str = "daily",
     ) -> List[str]:
         """分批处理消息内容，确保词组标题+至少第一条新闻的完整性"""
         batches = []
 
-        # 基础信息构建
         total_titles = sum(
             len(stat["titles"]) for stat in report_data["stats"] if stat["count"] > 0
         )
@@ -1792,20 +1918,25 @@ class ReportGenerator:
         stats_header = ""
         if report_data["stats"]:
             if format_type == "wework":
-                stats_header = "📊 **热点词汇统计**\n\n"
+                stats_header = f"📊 **热点词汇统计**\n\n"
             elif format_type == "telegram":
-                stats_header = "📊 热点词汇统计\n\n"
+                stats_header = f"📊 热点词汇统计\n\n"
 
         current_batch = base_header
         current_batch_has_content = False
 
-        # 空内容处理
         if (
             not report_data["stats"]
             and not report_data["new_titles"]
             and not report_data["failed_ids"]
         ):
-            simple_content = "📭 暂无匹配的热点词汇\n\n"
+            if mode == "incremental":
+                mode_text = "增量模式下暂无新增匹配的热点词汇"
+            elif mode == "current":
+                mode_text = "当前榜单模式下暂无匹配的热点词汇"
+            else:
+                mode_text = "暂无匹配的热点词汇"
+            simple_content = f"📭 {mode_text}\n\n"
             final_content = base_header + simple_content + base_footer
             batches.append(final_content)
             return batches
@@ -1970,9 +2101,9 @@ class ReportGenerator:
             for source_data in report_data["new_titles"]:
                 source_header = ""
                 if format_type == "wework":
-                    source_header = f"**{source_data['source_alias']}** ({len(source_data['titles'])} 条):\n\n"
+                    source_header = f"**{source_data['source_name']}** ({len(source_data['titles'])} 条):\n\n"
                 elif format_type == "telegram":
-                    source_header = f"{source_data['source_alias']} ({len(source_data['titles'])} 条):\n\n"
+                    source_header = f"{source_data['source_name']} ({len(source_data['titles'])} 条):\n\n"
 
                 # 构建第一条新增新闻
                 first_news_line = ""
@@ -2049,7 +2180,6 @@ class ReportGenerator:
 
                 current_batch += "\n"
 
-        # 处理失败平台
         if report_data["failed_ids"]:
             failed_header = ""
             if format_type == "wework":
@@ -2095,55 +2225,62 @@ class ReportGenerator:
     def send_to_webhooks(
         stats: List[Dict],
         failed_ids: Optional[List] = None,
-        report_type: str = "单次爬取",
+        report_type: str = "当日汇总",
         new_titles: Optional[Dict] = None,
-        id_to_alias: Optional[Dict] = None,
+        id_to_name: Optional[Dict] = None,
         update_info: Optional[Dict] = None,
         proxy_url: Optional[str] = None,
-        hide_new_section: bool = False,
+        mode: str = "daily",
     ) -> Dict[str, bool]:
         """发送数据到多个webhook平台"""
         results = {}
 
-        # 数据处理层
         report_data = ReportGenerator._prepare_report_data(
-            stats, failed_ids, new_titles, id_to_alias, hide_new_section
+            stats, failed_ids, new_titles, id_to_name, mode
         )
 
-        # 获取环境变量中的webhook配置
-        feishu_url = os.environ.get("FEISHU_WEBHOOK_URL", CONFIG["FEISHU_WEBHOOK_URL"])
-        dingtalk_url = os.environ.get(
-            "DINGTALK_WEBHOOK_URL", CONFIG["DINGTALK_WEBHOOK_URL"]
-        )
-        wework_url = os.environ.get("WEWORK_WEBHOOK_URL", CONFIG["WEWORK_WEBHOOK_URL"])
-        telegram_token = os.environ.get(
-            "TELEGRAM_BOT_TOKEN", CONFIG["TELEGRAM_BOT_TOKEN"]
-        )
-        telegram_chat_id = os.environ.get(
-            "TELEGRAM_CHAT_ID", CONFIG["TELEGRAM_CHAT_ID"]
-        )
+        feishu_url = CONFIG["FEISHU_WEBHOOK_URL"]
+        dingtalk_url = CONFIG["DINGTALK_WEBHOOK_URL"]
+        wework_url = CONFIG["WEWORK_WEBHOOK_URL"]
+        telegram_token = CONFIG["TELEGRAM_BOT_TOKEN"]
+        telegram_chat_id = CONFIG["TELEGRAM_CHAT_ID"]
 
         update_info_to_send = update_info if CONFIG["SHOW_VERSION_UPDATE"] else None
 
         # 发送到飞书
         if feishu_url:
             results["feishu"] = ReportGenerator._send_to_feishu(
-                feishu_url, report_data, report_type, update_info_to_send, proxy_url
+                feishu_url,
+                report_data,
+                report_type,
+                update_info_to_send,
+                proxy_url,
+                mode,
             )
 
         # 发送到钉钉
         if dingtalk_url:
             results["dingtalk"] = ReportGenerator._send_to_dingtalk(
-                dingtalk_url, report_data, report_type, update_info_to_send, proxy_url
+                dingtalk_url,
+                report_data,
+                report_type,
+                update_info_to_send,
+                proxy_url,
+                mode,
             )
 
         # 发送到企业微信
         if wework_url:
             results["wework"] = ReportGenerator._send_to_wework(
-                wework_url, report_data, report_type, update_info_to_send, proxy_url
+                wework_url,
+                report_data,
+                report_type,
+                update_info_to_send,
+                proxy_url,
+                mode,
             )
 
-        # 发送到Telegram
+        # 发送到 Telegram
         if telegram_token and telegram_chat_id:
             results["telegram"] = ReportGenerator._send_to_telegram(
                 telegram_token,
@@ -2152,6 +2289,7 @@ class ReportGenerator:
                 report_type,
                 update_info_to_send,
                 proxy_url,
+                mode,
             )
 
         if not results:
@@ -2166,11 +2304,14 @@ class ReportGenerator:
         report_type: str,
         update_info: Optional[Dict] = None,
         proxy_url: Optional[str] = None,
+        mode: str = "daily",
     ) -> bool:
         """发送到飞书"""
         headers = {"Content-Type": "application/json"}
 
-        text_content = ReportGenerator._render_feishu_content(report_data, update_info)
+        text_content = ReportGenerator._render_feishu_content(
+            report_data, update_info, mode
+        )
         total_titles = sum(
             len(stat["titles"]) for stat in report_data["stats"] if stat["count"] > 0
         )
@@ -2213,12 +2354,13 @@ class ReportGenerator:
         report_type: str,
         update_info: Optional[Dict] = None,
         proxy_url: Optional[str] = None,
+        mode: str = "daily",
     ) -> bool:
         """发送到钉钉"""
         headers = {"Content-Type": "application/json"}
 
         text_content = ReportGenerator._render_dingtalk_content(
-            report_data, update_info
+            report_data, update_info, mode
         )
 
         payload = {
@@ -2263,6 +2405,7 @@ class ReportGenerator:
         report_type: str,
         update_info: Optional[Dict] = None,
         proxy_url: Optional[str] = None,
+        mode: str = "daily",
     ) -> bool:
         """发送到企业微信（支持分批发送）"""
         headers = {"Content-Type": "application/json"}
@@ -2272,7 +2415,7 @@ class ReportGenerator:
 
         # 获取分批内容
         batches = ReportGenerator._split_content_into_batches(
-            report_data, "wework", update_info
+            report_data, "wework", update_info, mode=mode
         )
 
         print(f"企业微信消息分为 {len(batches)} 批次发送 [{report_type}]")
@@ -2335,6 +2478,7 @@ class ReportGenerator:
         report_type: str,
         update_info: Optional[Dict] = None,
         proxy_url: Optional[str] = None,
+        mode: str = "daily",
     ) -> bool:
         """发送到Telegram（支持分批发送）"""
         headers = {"Content-Type": "application/json"}
@@ -2346,7 +2490,7 @@ class ReportGenerator:
 
         # 获取分批内容
         batches = ReportGenerator._split_content_into_batches(
-            report_data, "telegram", update_info
+            report_data, "telegram", update_info, mode=mode
         )
 
         print(f"Telegram消息分为 {len(batches)} 批次发送 [{report_type}]")
@@ -2403,21 +2547,98 @@ class ReportGenerator:
         return True
 
 
+@dataclass
+class ModeStrategy:
+    """模式策略配置"""
+
+    mode_name: str
+    description: str
+    realtime_report_type: str
+    summary_report_type: str
+    should_send_realtime: bool
+    should_generate_summary: bool
+    summary_mode: str
+
+    def get_log_messages(self) -> Dict[str, str]:
+        """返回该模式的各种日志消息"""
+        return {
+            "mode_description": self.description,
+            "realtime_skip": f"跳过实时推送通知：{self.mode_name}下未检测到匹配的新闻",
+            "summary_skip": f"跳过{self.summary_report_type}通知：未匹配到有效的新闻内容",
+        }
+
+
 class NewsAnalyzer:
     """新闻分析器"""
+
+    MODE_STRATEGIES = {
+        "incremental": ModeStrategy(
+            mode_name="增量模式",
+            description="增量模式（只关注新增新闻，无新增时不推送）",
+            realtime_report_type="实时增量",
+            summary_report_type="当日汇总",
+            should_send_realtime=True,
+            should_generate_summary=True,
+            summary_mode="daily",
+        ),
+        "current": ModeStrategy(
+            mode_name="当前榜单模式",
+            description="当前榜单模式（当前榜单匹配新闻 + 新增新闻区域 + 按时推送）",
+            realtime_report_type="实时当前榜单",
+            summary_report_type="当前榜单汇总",
+            should_send_realtime=True,
+            should_generate_summary=True,
+            summary_mode="current",
+        ),
+        "daily": ModeStrategy(
+            mode_name="当日汇总模式",
+            description="当日汇总模式（所有匹配新闻 + 新增新闻区域 + 按时推送）",
+            realtime_report_type="",
+            summary_report_type="当日汇总",
+            should_send_realtime=False,
+            should_generate_summary=True,
+            summary_mode="daily",
+        ),
+    }
 
     def __init__(
         self,
         request_interval: int = CONFIG["REQUEST_INTERVAL"],
-        report_type: str = CONFIG["REPORT_TYPE"],
+        report_mode: str = CONFIG["REPORT_MODE"],
         rank_threshold: int = CONFIG["RANK_THRESHOLD"],
     ):
         self.request_interval = request_interval
-        self.report_type = report_type
+        self.report_mode = report_mode
         self.rank_threshold = rank_threshold
         self.is_github_actions = os.environ.get("GITHUB_ACTIONS") == "true"
+        self.is_docker_container = self._detect_docker_environment()
         self.update_info = None
         self.proxy_url = None
+        self._setup_proxy()
+        self.data_fetcher = DataFetcher(self.proxy_url)
+
+        if self.is_github_actions:
+            self._check_version_update()
+    
+    def _detect_docker_environment(self) -> bool:
+        """检测是否运行在 Docker 容器中"""
+        try:
+            if os.environ.get("DOCKER_CONTAINER") == "true":
+                return True
+        
+            if os.path.exists("/.dockerenv"):
+                return True
+            
+            return False
+        except Exception:
+            return False
+    
+    def _should_open_browser(self) -> bool:
+        """判断是否应该打开浏览器"""
+        return not self.is_github_actions and not self.is_docker_container
+
+    def _setup_proxy(self) -> None:
+        """设置代理配置"""
         if not self.is_github_actions and CONFIG["USE_PROXY"]:
             self.proxy_url = CONFIG["DEFAULT_PROXY"]
             print("本地环境，使用代理")
@@ -2425,11 +2646,6 @@ class NewsAnalyzer:
             print("本地环境，未启用代理")
         else:
             print("GitHub Actions环境，不使用代理")
-
-        self.data_fetcher = DataFetcher(self.proxy_url)
-
-        if self.is_github_actions:
-            self._check_version_update()
 
     def _check_version_update(self) -> None:
         """检查版本更新"""
@@ -2449,169 +2665,76 @@ class NewsAnalyzer:
         except Exception as e:
             print(f"版本检查出错: {e}")
 
+    def _get_mode_strategy(self) -> ModeStrategy:
+        """获取当前模式的策略配置"""
+        return self.MODE_STRATEGIES.get(self.report_mode, self.MODE_STRATEGIES["daily"])
+
+    def _has_webhook_configured(self) -> bool:
+        """检查是否配置了webhook"""
+        return any(
+            [
+                CONFIG["FEISHU_WEBHOOK_URL"],
+                CONFIG["DINGTALK_WEBHOOK_URL"],
+                CONFIG["WEWORK_WEBHOOK_URL"],
+                (CONFIG["TELEGRAM_BOT_TOKEN"] and CONFIG["TELEGRAM_CHAT_ID"]),
+            ]
+        )
+
     def _has_valid_content(
         self, stats: List[Dict], new_titles: Optional[Dict] = None
     ) -> bool:
         """检查是否有有效的新闻内容"""
-        if CONFIG["FOCUS_NEW_ONLY"]:
-            # 新增模式下，只要stats有内容就说明有新增的匹配新闻
+        if self.report_mode in ["incremental", "current"]:
+            # 增量模式和current模式下，只要stats有内容就说明有匹配的新闻
             return any(stat["count"] > 0 for stat in stats)
         else:
-            # 正常模式下，检查是否有匹配的频率词新闻或新增新闻
+            # 当日汇总模式下，检查是否有匹配的频率词新闻或新增新闻
             has_matched_news = any(stat["count"] > 0 for stat in stats)
             has_new_news = bool(
                 new_titles and any(len(titles) > 0 for titles in new_titles.values())
             )
             return has_matched_news or has_new_news
 
-    def generate_daily_summary(self) -> Optional[str]:
-        """生成当日统计报告"""
-        print("生成当日统计报告...")
+    def _load_analysis_data(
+        self,
+    ) -> Optional[Tuple[Dict, Dict, Dict, Dict, List, List]]:
+        """统一的数据加载和预处理，使用当前监控平台列表过滤历史数据"""
+        try:
+            # 获取当前配置的监控平台ID列表
+            current_platform_ids = []
+            for platform in PLATFORMS:
+                current_platform_ids.append(platform["id"])
 
-        all_results, id_to_alias, title_info = DataProcessor.read_all_today_titles()
+            print(f"当前监控平台: {current_platform_ids}")
 
-        if not all_results:
-            print("没有找到当天的数据")
+            all_results, id_to_name, title_info = DataProcessor.read_all_today_titles(
+                current_platform_ids
+            )
+
+            if not all_results:
+                print("没有找到当天的数据")
+                return None
+
+            total_titles = sum(len(titles) for titles in all_results.values())
+            print(f"读取到 {total_titles} 个标题（已按当前监控平台过滤）")
+
+            new_titles = DataProcessor.detect_latest_new_titles(current_platform_ids)
+            word_groups, filter_words = DataProcessor.load_frequency_words()
+
+            return (
+                all_results,
+                id_to_name,
+                title_info,
+                new_titles,
+                word_groups,
+                filter_words,
+            )
+        except Exception as e:
+            print(f"数据加载失败: {e}")
             return None
 
-        total_titles = sum(len(titles) for titles in all_results.values())
-        print(f"读取到 {total_titles} 个标题")
-
-        new_titles = DataProcessor.detect_latest_new_titles(id_to_alias)
-        word_groups, filter_words = DataProcessor.load_frequency_words()
-
-        stats, total_titles = StatisticsCalculator.count_word_frequency(
-            all_results,
-            word_groups,
-            filter_words,
-            id_to_alias,
-            title_info,
-            self.rank_threshold,
-            new_titles,
-            focus_new_only=CONFIG["FOCUS_NEW_ONLY"],
-        )
-
-        html_file = ReportGenerator.generate_html_report(
-            stats,
-            total_titles,
-            is_daily=True,
-            new_titles=new_titles,
-            id_to_alias=id_to_alias,
-        )
-        print(f"当日HTML统计报告已生成: {html_file}")
-
-        # 检查通知配置
-        has_webhook = any(
-            [
-                os.environ.get("FEISHU_WEBHOOK_URL", CONFIG["FEISHU_WEBHOOK_URL"]),
-                os.environ.get("DINGTALK_WEBHOOK_URL", CONFIG["DINGTALK_WEBHOOK_URL"]),
-                os.environ.get("WEWORK_WEBHOOK_URL", CONFIG["WEWORK_WEBHOOK_URL"]),
-                (
-                    os.environ.get("TELEGRAM_BOT_TOKEN", CONFIG["TELEGRAM_BOT_TOKEN"])
-                    and os.environ.get("TELEGRAM_CHAT_ID", CONFIG["TELEGRAM_CHAT_ID"])
-                ),
-            ]
-        )
-
-        if (
-            CONFIG["ENABLE_NOTIFICATION"]
-            and has_webhook
-            and self.report_type in ["daily", "both"]
-            and self._has_valid_content(stats, new_titles)
-        ):
-            hide_new_section = CONFIG["FOCUS_NEW_ONLY"]
-
-            ReportGenerator.send_to_webhooks(
-                stats,
-                [],
-                "当日汇总",
-                new_titles,
-                id_to_alias,
-                self.update_info,
-                self.proxy_url,
-                hide_new_section=hide_new_section,
-            )
-        elif CONFIG["ENABLE_NOTIFICATION"] and not has_webhook:
-            print("⚠️ 警告：通知功能已启用但未配置webhook URL，将跳过通知发送")
-        elif not CONFIG["ENABLE_NOTIFICATION"]:
-            print("跳过当日汇总通知：通知功能已禁用")
-        elif (
-            CONFIG["ENABLE_NOTIFICATION"]
-            and has_webhook
-            and not self._has_valid_content(stats, new_titles)
-        ):
-            if CONFIG["FOCUS_NEW_ONLY"]:
-                print("跳过当日汇总通知：新增模式下未检测到匹配的新增新闻")
-            else:
-                print("跳过当日汇总通知：未匹配到有效的新闻内容")
-
-        return html_file
-
-    def run(self) -> None:
-        """执行分析流程"""
-        now = TimeHelper.get_beijing_time()
-        print(f"当前北京时间: {now.strftime('%Y-%m-%d %H:%M:%S')}")
-
-        if not CONFIG["ENABLE_CRAWLER"]:
-            print("爬虫功能已禁用（ENABLE_CRAWLER=False），程序退出")
-            return
-
-        # 检查是否配置了任何webhook URL
-        has_webhook = any(
-            [
-                os.environ.get("FEISHU_WEBHOOK_URL", CONFIG["FEISHU_WEBHOOK_URL"]),
-                os.environ.get("DINGTALK_WEBHOOK_URL", CONFIG["DINGTALK_WEBHOOK_URL"]),
-                os.environ.get("WEWORK_WEBHOOK_URL", CONFIG["WEWORK_WEBHOOK_URL"]),
-                (
-                    os.environ.get("TELEGRAM_BOT_TOKEN", CONFIG["TELEGRAM_BOT_TOKEN"])
-                    and os.environ.get("TELEGRAM_CHAT_ID", CONFIG["TELEGRAM_CHAT_ID"])
-                ),
-            ]
-        )
-
-        # 通知功能状态检查和提示
-        if not CONFIG["ENABLE_NOTIFICATION"]:
-            print("通知功能已禁用（ENABLE_NOTIFICATION=False），将只进行数据抓取")
-        elif not has_webhook:
-            print("未配置任何webhook URL，将只进行数据抓取，不发送通知")
-        else:
-            print("通知功能已启用，将发送webhook通知")
-
-        print(f"报告类型: {self.report_type}")
-
-        if CONFIG["FOCUS_NEW_ONLY"]:
-            print("运行模式: 新增检测模式（只关注新增新闻）")
-        else:
-            print("运行模式: 正常模式（频率词统计 + 新增检测）")
-
-        ids = [
-            ("toutiao", "今日头条"),
-            ("baidu", "百度热搜"),
-            ("wallstreetcn-hot", "华尔街见闻"),
-            ("thepaper", "澎湃新闻"),
-            ("bilibili-hot-search", "bilibili 热搜"),
-            ("cls-hot", "财联社热门"),
-            ("ifeng", "凤凰网"),
-            "tieba",
-            "weibo",
-            "douyin",
-            "zhihu",
-        ]
-
-        print(f"开始爬取数据，请求间隔 {self.request_interval} 毫秒")
-        FileHelper.ensure_directory_exists("output")
-
-        results, id_to_alias, failed_ids = self.data_fetcher.crawl_websites(
-            ids, self.request_interval
-        )
-
-        title_file = DataProcessor.save_titles_to_file(results, id_to_alias, failed_ids)
-        print(f"标题已保存到: {title_file}")
-
-        new_titles = DataProcessor.detect_latest_new_titles(id_to_alias)
-
-        # 构建标题信息
-        time_info = Path(title_file).stem
+    def _prepare_current_title_info(self, results: Dict, time_info: str) -> Dict:
+        """从当前抓取结果构建标题信息"""
         title_info = {}
         for source_id, titles_data in results.items():
             title_info[source_id] = {}
@@ -2628,78 +2751,357 @@ class NewsAnalyzer:
                     "url": url,
                     "mobileUrl": mobile_url,
                 }
+        return title_info
 
-        word_groups, filter_words = DataProcessor.load_frequency_words()
+    def _run_analysis_pipeline(
+        self,
+        data_source: Dict,
+        mode: str,
+        title_info: Dict,
+        new_titles: Dict,
+        word_groups: List[Dict],
+        filter_words: List[str],
+        id_to_name: Dict,
+        failed_ids: Optional[List] = None,
+        is_daily_summary: bool = False,
+    ) -> Tuple[List[Dict], str]:
+        """统一的分析流水线：数据处理 → 统计计算 → HTML生成"""
 
+        # 统计计算
         stats, total_titles = StatisticsCalculator.count_word_frequency(
-            results,
+            data_source,
             word_groups,
             filter_words,
-            id_to_alias,
+            id_to_name,
             title_info,
             self.rank_threshold,
             new_titles,
-            focus_new_only=CONFIG["FOCUS_NEW_ONLY"],
+            mode=mode,
         )
 
-        # 只有启用通知且配置了webhook且有有效内容时才发送通知
+        # HTML生成
+        html_file = ReportGenerator.generate_html_report(
+            stats,
+            total_titles,
+            failed_ids=failed_ids,
+            new_titles=new_titles,
+            id_to_name=id_to_name,
+            mode=mode,
+            is_daily_summary=is_daily_summary,
+        )
+
+        return stats, html_file
+
+    def _send_notification_if_needed(
+        self,
+        stats: List[Dict],
+        report_type: str,
+        mode: str,
+        failed_ids: Optional[List] = None,
+        new_titles: Optional[Dict] = None,
+        id_to_name: Optional[Dict] = None,
+    ) -> bool:
+        """统一的通知发送逻辑，包含所有判断条件"""
+        has_webhook = self._has_webhook_configured()
+
         if (
             CONFIG["ENABLE_NOTIFICATION"]
             and has_webhook
-            and self.report_type in ["current", "both"]
             and self._has_valid_content(stats, new_titles)
         ):
-            hide_new_section = CONFIG["FOCUS_NEW_ONLY"]
-
             ReportGenerator.send_to_webhooks(
                 stats,
-                failed_ids,
-                "单次爬取",
+                failed_ids or [],
+                report_type,
                 new_titles,
-                id_to_alias,
+                id_to_name,
                 self.update_info,
                 self.proxy_url,
-                hide_new_section=hide_new_section,
+                mode=mode,
             )
+            return True
         elif CONFIG["ENABLE_NOTIFICATION"] and not has_webhook:
             print("⚠️ 警告：通知功能已启用但未配置webhook URL，将跳过通知发送")
         elif not CONFIG["ENABLE_NOTIFICATION"]:
-            print("跳过单次爬取通知：通知功能已禁用")
+            print(f"跳过{report_type}通知：通知功能已禁用")
         elif (
             CONFIG["ENABLE_NOTIFICATION"]
             and has_webhook
             and not self._has_valid_content(stats, new_titles)
         ):
-            if CONFIG["FOCUS_NEW_ONLY"]:
-                print("跳过单次爬取通知：新增模式下未检测到匹配的新增新闻")
+            mode_strategy = self._get_mode_strategy()
+            log_messages = mode_strategy.get_log_messages()
+            if "实时" in report_type:
+                print(log_messages["realtime_skip"])
             else:
-                print("跳过单次爬取通知：未匹配到有效的新闻内容")
+                print(log_messages["summary_skip"])
 
-        html_file = ReportGenerator.generate_html_report(
-            stats, total_titles, failed_ids, False, new_titles, id_to_alias
+        return False
+
+    def _generate_summary_report(self, mode_strategy: ModeStrategy) -> Optional[str]:
+        """生成汇总报告（带通知）"""
+        summary_type = (
+            "当前榜单汇总" if mode_strategy.summary_mode == "current" else "当日汇总"
         )
-        print(f"HTML报告已生成: {html_file}")
+        print(f"生成{summary_type}报告...")
 
-        daily_html = self.generate_daily_summary()
+        # 加载分析数据
+        analysis_data = self._load_analysis_data()
+        if not analysis_data:
+            return None
 
-        if not self.is_github_actions and html_file:
-            file_url = "file://" + str(Path(html_file).resolve())
-            print(f"正在打开HTML报告: {file_url}")
-            webbrowser.open(file_url)
+        all_results, id_to_name, title_info, new_titles, word_groups, filter_words = (
+            analysis_data
+        )
 
-            if daily_html:
-                daily_url = "file://" + str(Path(daily_html).resolve())
-                print(f"正在打开当日统计报告: {daily_url}")
-                webbrowser.open(daily_url)
+        # 运行分析流水线
+        stats, html_file = self._run_analysis_pipeline(
+            all_results,
+            mode_strategy.summary_mode,
+            title_info,
+            new_titles,
+            word_groups,
+            filter_words,
+            id_to_name,
+            is_daily_summary=True,
+        )
+
+        print(f"{summary_type}报告已生成: {html_file}")
+
+        # 发送通知
+        self._send_notification_if_needed(
+            stats,
+            mode_strategy.summary_report_type,
+            mode_strategy.summary_mode,
+            new_titles=new_titles,
+            id_to_name=id_to_name,
+        )
+
+        return html_file
+
+    def _generate_summary_html(self, mode: str = "daily") -> Optional[str]:
+        """生成汇总HTML"""
+        summary_type = "当前榜单汇总" if mode == "current" else "当日汇总"
+        print(f"生成{summary_type}HTML...")
+
+        # 加载分析数据
+        analysis_data = self._load_analysis_data()
+        if not analysis_data:
+            return None
+
+        all_results, id_to_name, title_info, new_titles, word_groups, filter_words = (
+            analysis_data
+        )
+
+        # 运行分析流水线
+        _, html_file = self._run_analysis_pipeline(
+            all_results,
+            mode,
+            title_info,
+            new_titles,
+            word_groups,
+            filter_words,
+            id_to_name,
+            is_daily_summary=True,
+        )
+
+        print(f"{summary_type}HTML已生成: {html_file}")
+        return html_file
+
+    def _initialize_and_check_config(self) -> None:
+        """通用初始化和配置检查"""
+        now = TimeHelper.get_beijing_time()
+        print(f"当前北京时间: {now.strftime('%Y-%m-%d %H:%M:%S')}")
+
+        if not CONFIG["ENABLE_CRAWLER"]:
+            print("爬虫功能已禁用（ENABLE_CRAWLER=False），程序退出")
+            return
+
+        has_webhook = self._has_webhook_configured()
+        if not CONFIG["ENABLE_NOTIFICATION"]:
+            print("通知功能已禁用（ENABLE_NOTIFICATION=False），将只进行数据抓取")
+        elif not has_webhook:
+            print("未配置任何webhook URL，将只进行数据抓取，不发送通知")
+        else:
+            print("通知功能已启用，将发送webhook通知")
+
+        mode_strategy = self._get_mode_strategy()
+        print(f"报告模式: {self.report_mode}")
+        print(f"运行模式: {mode_strategy.description}")
+
+    def _crawl_data(self) -> Tuple[Dict, Dict, List]:
+        """执行数据爬取"""
+        ids = []
+        for platform in PLATFORMS:
+            if "name" in platform:
+                ids.append((platform["id"], platform["name"]))
+            else:
+                ids.append(platform["id"])
+
+        print(f"配置的监控平台: {[p.get('name', p['id']) for p in PLATFORMS]}")
+        print(f"开始爬取数据，请求间隔 {self.request_interval} 毫秒")
+        FileHelper.ensure_directory_exists("output")
+
+        results, id_to_name, failed_ids = self.data_fetcher.crawl_websites(
+            ids, self.request_interval
+        )
+
+        title_file = DataProcessor.save_titles_to_file(results, id_to_name, failed_ids)
+        print(f"标题已保存到: {title_file}")
+
+        return results, id_to_name, failed_ids
+
+    def _execute_mode_strategy(
+        self,
+        mode_strategy: ModeStrategy,
+        results: Dict,
+        id_to_name: Dict,
+        failed_ids: List,
+    ) -> Optional[str]:
+        """执行模式特定逻辑"""
+        # 获取当前监控平台ID列表
+        current_platform_ids = [platform["id"] for platform in PLATFORMS]
+
+        new_titles = DataProcessor.detect_latest_new_titles(current_platform_ids)
+        time_info = Path(
+            DataProcessor.save_titles_to_file(results, id_to_name, failed_ids)
+        ).stem
+        word_groups, filter_words = DataProcessor.load_frequency_words()
+
+        # current模式下，实时推送需要使用完整的历史数据来保证统计信息的完整性
+        if self.report_mode == "current":
+            # 加载完整的历史数据（已按当前平台过滤）
+            analysis_data = self._load_analysis_data()
+            if analysis_data:
+                (
+                    all_results,
+                    historical_id_to_name,
+                    historical_title_info,
+                    historical_new_titles,
+                    _,
+                    _,
+                ) = analysis_data
+
+                print(
+                    f"current模式：使用过滤后的历史数据，包含平台：{list(all_results.keys())}"
+                )
+
+                stats, html_file = self._run_analysis_pipeline(
+                    all_results,
+                    self.report_mode,
+                    historical_title_info,
+                    historical_new_titles,
+                    word_groups,
+                    filter_words,
+                    historical_id_to_name,
+                    failed_ids=failed_ids,
+                )
+
+                combined_id_to_name = {**historical_id_to_name, **id_to_name}
+
+                print(f"HTML报告已生成: {html_file}")
+
+                # 发送实时通知（使用完整历史数据的统计结果）
+                summary_html = None
+                if mode_strategy.should_send_realtime:
+                    self._send_notification_if_needed(
+                        stats,
+                        mode_strategy.realtime_report_type,
+                        self.report_mode,
+                        failed_ids=failed_ids,
+                        new_titles=historical_new_titles,
+                        id_to_name=combined_id_to_name,
+                    )
+            else:
+                print("❌ 严重错误：无法读取刚保存的数据文件")
+                raise RuntimeError("数据一致性检查失败：保存后立即读取失败")
+        else:
+            title_info = self._prepare_current_title_info(results, time_info)
+            stats, html_file = self._run_analysis_pipeline(
+                results,
+                self.report_mode,
+                title_info,
+                new_titles,
+                word_groups,
+                filter_words,
+                id_to_name,
+                failed_ids=failed_ids,
+            )
+            print(f"HTML报告已生成: {html_file}")
+
+            # 发送实时通知（如果需要）
+            summary_html = None
+            if mode_strategy.should_send_realtime:
+                self._send_notification_if_needed(
+                    stats,
+                    mode_strategy.realtime_report_type,
+                    self.report_mode,
+                    failed_ids=failed_ids,
+                    new_titles=new_titles,
+                    id_to_name=id_to_name,
+                )
+
+        # 生成汇总报告（如果需要）
+        summary_html = None
+        if mode_strategy.should_generate_summary:
+            if mode_strategy.should_send_realtime:
+                # 如果已经发送了实时通知，汇总只生成HTML不发送通知
+                summary_html = self._generate_summary_html(mode_strategy.summary_mode)
+            else:
+                # daily模式：直接生成汇总报告并发送通知
+                summary_html = self._generate_summary_report(mode_strategy)
+
+        # 打开浏览器（仅在非容器环境）
+        if self._should_open_browser() and html_file:
+            if summary_html:
+                summary_url = "file://" + str(Path(summary_html).resolve())
+                print(f"正在打开汇总报告: {summary_url}")
+                webbrowser.open(summary_url)
+            else:
+                file_url = "file://" + str(Path(html_file).resolve())
+                print(f"正在打开HTML报告: {file_url}")
+                webbrowser.open(file_url)
+        elif self.is_docker_container and html_file:
+            if summary_html:
+                print(f"汇总报告已生成（Docker环境）: {summary_html}")
+            else:
+                print(f"HTML报告已生成（Docker环境）: {html_file}")
+
+        return summary_html
+
+    def run(self) -> None:
+        """执行分析流程"""
+        try:
+            self._initialize_and_check_config()
+
+            mode_strategy = self._get_mode_strategy()
+
+            results, id_to_name, failed_ids = self._crawl_data()
+
+            self._execute_mode_strategy(mode_strategy, results, id_to_name, failed_ids)
+
+        except Exception as e:
+            print(f"分析流程执行出错: {e}")
+            raise
 
 
 def main():
-    analyzer = NewsAnalyzer(
-        request_interval=CONFIG["REQUEST_INTERVAL"],
-        report_type=CONFIG["REPORT_TYPE"],
-        rank_threshold=CONFIG["RANK_THRESHOLD"],
-    )
-    analyzer.run()
+    try:
+        analyzer = NewsAnalyzer(
+            request_interval=CONFIG["REQUEST_INTERVAL"],
+            report_mode=CONFIG["REPORT_MODE"],
+            rank_threshold=CONFIG["RANK_THRESHOLD"],
+        )
+        analyzer.run()
+    except FileNotFoundError as e:
+        print(f"❌ 配置文件错误: {e}")
+        print("\n请确保以下文件存在:")
+        print("  • config/config.yaml")
+        print("  • config/frequency_words.txt")
+        print("\n参考项目文档进行正确配置")
+    except Exception as e:
+        print(f"❌ 程序运行错误: {e}")
+        raise
 
 
 if __name__ == "__main__":

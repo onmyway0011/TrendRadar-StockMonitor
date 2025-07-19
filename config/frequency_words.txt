@@ -41,6 +41,10 @@ HarmonyOS
 字节
 张一鸣
 
+小米
+雷军
+xiaomi
+
 马斯克
 特斯拉
 
@@ -59,11 +63,14 @@ gemini
 deepmind
 
 chatgpt
+Sam Altman
 openai
 
 claude
 Anthropic
 
+苹果
+库克
 iphone
 ipad
 mac
@@ -75,17 +82,24 @@ ai
 
 汽车
 自动驾驶
-l3
+
+手机
 
 机器人
 
+国产
+中国
+
+美国
+
 芯片
-半导体
 光刻机
 
 科技
 
 核能
+
+新质生产力
 
 月球
 登月
