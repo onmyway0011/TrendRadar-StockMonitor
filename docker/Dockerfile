@@ -23,9 +23,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY main.py .
 COPY docker/manage.py .
-COPY docker/entrypoint.sh /entrypoint.sh
 
-RUN chmod +x /entrypoint.sh && \
+# 复制 entrypoint.sh 并强制转换为 LF 格式
+COPY docker/entrypoint.sh /entrypoint.sh.tmp
+RUN sed -i 's/\r$//' /entrypoint.sh.tmp && \
+    mv /entrypoint.sh.tmp /entrypoint.sh && \
+    chmod +x /entrypoint.sh && \
     chmod +x manage.py && \
     mkdir -p /app/config /app/output
 
