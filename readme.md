@@ -25,7 +25,9 @@
 
 > 如果本项目对你有所帮助，**点个 Star ⭐** 就是对我最大的支持。
 >
-> 遇到问题可以直接提 issues。也可以【硅基茶水间】公众号留言问题。
+> 本项目以轻量，易部署为目标，不进行过多新功能的堆叠，主要处理 issues
+>
+> 遇到问题提 issues，或【硅基茶水间】公众号留言。
 
 
 
@@ -59,7 +61,7 @@
 | **当前榜单模式**<br/>`current` | 按时推送 | 当前榜单匹配新闻<br/>+ 新增新闻区域 | 实时热点追踪<br/>了解当前最火的内容 |
 | **增量监控模式**<br/>`incremental` | 有新增才推送 | 新出现的匹配频率词新闻 | 避免重复信息干扰<br/>高频监控场景 |
 
-- **📈 投资者/交易员** → 选择 `incremental`，及时获取新增资讯(建议自建服务器进行 docker 部署，提高检测频率)
+- **📈 投资者/交易员** → 选择 `incremental`，及时获取新增资讯
 - **📰 自媒体人/内容创作者** → 选择 `current`，掌握实时热点趋势  
 - **📋 企业管理者/普通用户** → 选择 `daily`，定时获取完整日报
 
@@ -118,9 +120,9 @@ GitHub 一键 Fork 即可使用，无需编程基础。
 
 ### 2025/07/09 - v1.4.1
 
-**功能新增**：增加增量推送(在 main.py 头部配置 FOCUS_NEW_ONLY)，该开关只关心新话题而非持续热度，只在有新内容时才发通知
+**功能新增**：增加增量推送(在 main.py 头部配置 FOCUS_NEW_ONLY)，该开关只关心新话题而非持续热度，只在有新内容时才发通知。
 
-**修复问题**: 某些情况下，由于新闻本身含有特殊符号导致的偶发性排版异常
+**修复问题**: 某些情况下，由于新闻本身含有特殊符号导致的偶发性排版异常。
 
 ### 2025/06/23 - v1.3.0
 
@@ -588,26 +590,16 @@ platforms:
    ```
 
 
-## ☕ 赞助让代码更香.jpg
+## ☕ 学习交流与1元点赞
 
 <div align="center">
 
-| Wechat | Alipay |
-|:---:|:---:|
-| <img src="https://cdn-1258574687.cos.ap-shanghai.myqcloud.com/img/%2F2025%2F07%2F17%2F2ae0a88d98079f7e876c2b4dc85233c6-9e8025.JPG" width="300" title="微信支付"/> | <img src="https://cdn-1258574687.cos.ap-shanghai.myqcloud.com/img/%2F2025%2F07%2F17%2Fed4f20ab8e35be51f8e84c94e6e239b4-fe4947.JPG" width="300" title="支付宝支付"/> |
+|公众号关注 |微信点赞 | 支付宝点赞 |
+|:---:|:---:|:---:| 
+| <img src="_image/weixin.png" width="300" title="硅基茶水间"/> | <img src="https://cdn-1258574687.cos.ap-shanghai.myqcloud.com/img/%2F2025%2F07%2F17%2F2ae0a88d98079f7e876c2b4dc85233c6-9e8025.JPG" width="300" title="微信支付"/> | <img src="https://cdn-1258574687.cos.ap-shanghai.myqcloud.com/img/%2F2025%2F07%2F17%2Fed4f20ab8e35be51f8e84c94e6e239b4-fe4947.JPG" width="300" title="支付宝支付"/> |
 
 </div>
 
-
-## 📧 学习交流
-
-<div align="center">
-
-<img src="_image/support.jpg"  title="硅基茶水间留言"/>
-<br>
-<img src="_image/weixin.png" width="600" title="硅基茶水间"/>
-
-</div>
 
 
 ```mermaid
