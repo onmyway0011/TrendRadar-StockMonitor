@@ -825,6 +825,10 @@ class StatisticsCalculator:
         title: str, word_groups: List[Dict], filter_words: List[str]
     ) -> bool:
         """检查标题是否匹配词组规则"""
+        # 如果没有配置词组，则匹配所有标题（支持显示全部新闻）
+        if not word_groups:
+            return True
+        
         title_lower = title.lower()
 
         # 过滤词检查
@@ -868,6 +872,12 @@ class StatisticsCalculator:
         mode: str = "daily",
     ) -> Tuple[List[Dict], int]:
         """统计词频，支持必须词、频率词、过滤词，并标记新增标题"""
+
+        # 如果没有配置词组，创建一个包含所有新闻的虚拟词组
+        if not word_groups:
+            print("频率词配置为空，将显示所有新闻")
+            word_groups = [{"required": [], "normal": [], "group_key": "全部新闻"}]
+            filter_words = []  # 清空过滤词，显示所有新闻
 
         is_first_today = DataProcessor.is_first_crawl_today()
 
@@ -919,7 +929,8 @@ class StatisticsCalculator:
             results_to_process = results
             all_news_are_new = False
             total_input_news = sum(len(titles) for titles in results.values())
-            print(f"当日汇总模式：处理 {total_input_news} 条新闻")
+            filter_status = "全部显示" if len(word_groups) == 1 and word_groups[0]["group_key"] == "全部新闻" else "频率词过滤"
+            print(f"当日汇总模式：处理 {total_input_news} 条新闻，模式：{filter_status}")
 
         word_stats = {}
         total_titles = 0
@@ -969,27 +980,34 @@ class StatisticsCalculator:
                     required_words = group["required"]
                     normal_words = group["normal"]
 
-                    # 再次检查匹配
-                    if required_words:
-                        all_required_present = all(
-                            req_word.lower() in title_lower
-                            for req_word in required_words
-                        )
-                        if not all_required_present:
-                            continue
+                    # 如果是"全部新闻"模式，所有标题都匹配第一个（唯一的）词组
+                    if len(word_groups) == 1 and word_groups[0]["group_key"] == "全部新闻":
+                        group_key = group["group_key"]
+                        word_stats[group_key]["count"] += 1
+                        if source_id not in word_stats[group_key]["titles"]:
+                            word_stats[group_key]["titles"][source_id] = []
+                    else:
+                        # 原有的匹配逻辑
+                        if required_words:
+                            all_required_present = all(
+                                req_word.lower() in title_lower
+                                for req_word in required_words
+                            )
+                            if not all_required_present:
+                                continue
 
-                    if normal_words:
-                        any_normal_present = any(
-                            normal_word.lower() in title_lower
-                            for normal_word in normal_words
-                        )
-                        if not any_normal_present:
-                            continue
+                        if normal_words:
+                            any_normal_present = any(
+                                normal_word.lower() in title_lower
+                                for normal_word in normal_words
+                            )
+                            if not any_normal_present:
+                                continue
 
-                    group_key = group["group_key"]
-                    word_stats[group_key]["count"] += 1
-                    if source_id not in word_stats[group_key]["titles"]:
-                        word_stats[group_key]["titles"][source_id] = []
+                        group_key = group["group_key"]
+                        word_stats[group_key]["count"] += 1
+                        if source_id not in word_stats[group_key]["titles"]:
+                            word_stats[group_key]["titles"][source_id] = []
 
                     first_time = ""
                     last_time = ""
@@ -1065,22 +1083,25 @@ class StatisticsCalculator:
                     if source_id not in processed_titles:
                         processed_titles[source_id] = {}
                     processed_titles[source_id][title] = True
+                
                     break
 
         # 最后统一打印汇总信息
         if mode == "incremental":
             if is_first_today:
                 total_input_news = sum(len(titles) for titles in results.values())
+                filter_status = "全部显示" if len(word_groups) == 1 and word_groups[0]["group_key"] == "全部新闻" else "频率词匹配"
                 print(
-                    f"增量模式：当天第一次爬取，{total_input_news} 条新闻中有 {matched_new_count} 条匹配频率词"
+                    f"增量模式：当天第一次爬取，{total_input_news} 条新闻中有 {matched_new_count} 条{filter_status}"
                 )
             else:
                 if new_titles:
                     total_new_count = sum(len(titles) for titles in new_titles.values())
+                    filter_status = "全部显示" if len(word_groups) == 1 and word_groups[0]["group_key"] == "全部新闻" else "匹配频率词"
                     print(
-                        f"增量模式：{total_new_count} 条新增新闻中，有 {matched_new_count} 条匹配频率词"
+                        f"增量模式：{total_new_count} 条新增新闻中，有 {matched_new_count} 条{filter_status}"
                     )
-                    if matched_new_count == 0:
+                    if matched_new_count == 0 and len(word_groups) > 1:
                         print("增量模式：没有新增新闻匹配频率词，将不会发送通知")
                 else:
                     print("增量模式：未检测到新增新闻")
@@ -1089,13 +1110,15 @@ class StatisticsCalculator:
                 len(titles) for titles in results_to_process.values()
             )
             if is_first_today:
+                filter_status = "全部显示" if len(word_groups) == 1 and word_groups[0]["group_key"] == "全部新闻" else "频率词匹配"
                 print(
-                    f"当前榜单模式：当天第一次爬取，{total_input_news} 条当前榜单新闻中有 {matched_new_count} 条匹配频率词"
+                    f"当前榜单模式：当天第一次爬取，{total_input_news} 条当前榜单新闻中有 {matched_new_count} 条{filter_status}"
                 )
             else:
                 matched_count = sum(stat["count"] for stat in word_stats.values())
+                filter_status = "全部显示" if len(word_groups) == 1 and word_groups[0]["group_key"] == "全部新闻" else "频率词匹配"
                 print(
-                    f"当前榜单模式：{total_input_news} 条当前榜单新闻中有 {matched_count} 条匹配频率词"
+                    f"当前榜单模式：{total_input_news} 条当前榜单新闻中有 {matched_count} 条{filter_status}"
                 )
 
         stats = []
