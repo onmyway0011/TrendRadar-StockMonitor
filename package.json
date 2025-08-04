@@ -1,0 +1,28 @@
+{
+  "name": "image-to-excel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node run_tests.js",
+    "test:backend": "jest",
+    "test:frontend": "cd client && npm test"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.28.0",
+    "babel-jest": "^30.0.5",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "multer": "^2.0.2"
+  }
+}
