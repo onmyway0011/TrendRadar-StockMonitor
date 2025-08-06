@@ -31,3 +31,6 @@ Thumbs.db
 *.jpg
 *.png
 *.tmp
+
+# 文档文件
+*.md

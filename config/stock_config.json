@@ -1,0 +1,59 @@
+{
+  "stocks": [
+    {
+      "symbol": "AAPL",
+      "name": "苹果公司",
+      "market": "US",
+      "threshold_up": 3.0,
+      "threshold_down": -2.0,
+      "enabled": true,
+      "last_price": null,
+      "last_alert_time": null
+    },
+    {
+      "symbol": "TSLA",
+      "name": "特斯拉",
+      "market": "US",
+      "threshold_up": 5.0,
+      "threshold_down": -3.0,
+      "enabled": true,
+      "last_price": null,
+      "last_alert_time": null
+    },
+    {
+      "symbol": "0700.HK",
+      "name": "腾讯控股",
+      "market": "HK",
+      "threshold_up": 4.0,
+      "threshold_down": -3.0,
+      "enabled": true,
+      "last_price": null,
+      "last_alert_time": null
+    },
+    {
+      "symbol": "0941.HK",
+      "name": "中国移动",
+      "market": "HK",
+      "threshold_up": 3.0,
+      "threshold_down": -2.5,
+      "enabled": true,
+      "last_price": null,
+      "last_alert_time": null
+    }
+  ],
+  "settings": {
+    "check_interval_minutes": 1,
+    "market_hours_only": true,
+    "alert_cooldown_minutes": 30,
+    "us_market_hours": {
+      "start": "09:30",
+      "end": "16:00",
+      "timezone": "America/New_York"
+    },
+    "hk_market_hours": {
+      "start": "09:30",
+      "end": "16:00",
+      "timezone": "Asia/Hong_Kong"
+    }
+  }
+}
