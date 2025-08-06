@@ -36,9 +36,16 @@ notification:
   webhooks:
     feishu_url: "" # 飞书机器人的 webhook URL
     dingtalk_url: "" # 钉钉机器人的 webhook URL
-    wework_url: "" # 企业微信机器人的 webhook URL
+    wework_url: "" # 企业微信机器人的 webhook URL (已废弃，请使用企业微信机器人配置)
     telegram_bot_token: "" # Telegram Bot Token
     telegram_chat_id: "" # Telegram Chat ID
+
+  # 企业微信机器人配置 (推荐使用)
+  wework_robot:
+    corpid: "" # 企业微信的 corpid
+    corpsecret: "" # 企业微信应用的 corpsecret
+    agentid: "" # 企业微信应用的 agentid
+    touser: "@all" # 接收消息的用户，@all 表示全部成员
 
 # 用于让关注度更高的新闻在更前面显示，合起来是 1 就行
 weight:

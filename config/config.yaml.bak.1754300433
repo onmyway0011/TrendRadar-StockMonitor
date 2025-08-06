@@ -1,0 +1,60 @@
+app:
+  version_check_url: https://raw.githubusercontent.com/sansan0/TrendRadar/refs/heads/master/version
+  show_version_update: true
+crawler:
+  request_interval: 1000
+  enable_crawler: true
+  use_proxy: false
+  default_proxy: http://127.0.0.1:10086
+report:
+  mode: daily
+  rank_threshold: 5
+notification:
+  enable_notification: true
+  message_batch_size: 4000
+  batch_send_interval: 1
+  feishu_message_separator: ━━━━━━━━━━━━━━━━━━━
+  webhooks:
+    feishu_url: ''
+    dingtalk_url: ''
+    wework_corpid: test_corpid
+    wework_corpsecret: test_corpsecret
+    wework_agentid: test_agentid
+    telegram_bot_token: ''
+    telegram_chat_id: ''
+weight:
+  rank_weight: 0.6
+  frequency_weight: 0.3
+  hotness_weight: 0.1
+platforms:
+- id: toutiao
+  name: 今日头条
+- id: baidu
+  name: 百度热搜
+- id: wallstreetcn-hot
+  name: 华尔街见闻
+- id: thepaper
+  name: 澎湃新闻
+- id: bilibili-hot-search
+  name: bilibili 热搜
+- id: cls-hot
+  name: 财联社热门
+- id: ifeng
+  name: 凤凰网
+- id: tieba
+  name: 贴吧
+- id: weibo
+  name: 微博
+- id: douyin
+  name: 抖音
+- id: zhihu
+  name: 知乎
+tencent_server:
+  ip: 127.0.0.1
+  port: '22'
+  username: test_user
+  password: test_password
+wework:
+  corpid: test_api_corpid
+  corpsecret: test_api_corpsecret
+  agentid: test_api_agentid

@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>测试报告 - 2025-08-05T08:10:03.467Z</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .header { background: #f5f5f5; padding: 20px; border-radius: 5px; }
+        .summary { margin: 20px 0; }
+        .test-result { margin: 10px 0; padding: 10px; border-radius: 5px; }
+        .success { background: #d4edda; border: 1px solid #c3e6cb; }
+        .failure { background: #f8d7da; border: 1px solid #f5c6cb; }
+        .error { color: #721c24; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>自动化测试报告</h1>
+        <p>生成时间: 2025-08-05T08:10:03.467Z</p>
+    </div>
+    
+    <div class="summary">
+        <h2>测试摘要</h2>
+        <p>总测试数: 2</p>
+        <p>通过: 2</p>
+        <p>失败: 0</p>
+    </div>
+    
+    <div class="results">
+        <h2>测试结果</h2>
+        
+            <div class="test-result success">
+                <h3>后端测试</h3>
+                <p>状态: 通过</p>
+                
+                <pre>  console.log
+    [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+
+      at _log (node_modules/dotenv/lib/main.js:139:11)
+
+  console.log
+    Received image upload request
+
+      at log (src/index.js:47:11)
+
+----------------|---------|----------|---------|---------|-------------------------------------------------------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                                 
+----------------|---------|----------|---------|---------|-------------------------------------------------------------------
+All files       |   72.36 |    45.45 |   88.88 |   72.36 |                                                                   
+ TrendRadar     |     100 |      100 |     100 |     100 |                                                                   
+  server.js     |     100 |      100 |     100 |     100 |                                                                   
+ TrendRadar/src |      72 |    45.45 |   88.88 |      72 |                                                                   
+  index.js      |      72 |    45.45 |   88.88 |      72 | 49,59-60,69-70,77,87-88,97-98,109,118-119,124-125,137-145,154-156 
+----------------|---------|----------|---------|---------|-------------------------------------------------------------------
+</pre>
+            </div>
+        
+            <div class="test-result success">
+                <h3>前端测试</h3>
+                <p>状态: 通过</p>
+                
+                <pre>前端项目不存在，跳过测试</pre>
+            </div>
+        
+    </div>
+</body>
+</html>
+  

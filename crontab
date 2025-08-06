@@ -1,0 +1,4 @@
+# TrendRadar 定时任务配置
+# 每日11点和21点执行爬虫并推送到企微
+0 11 * * * cd /Users/ON-MY-WAY/快手/AICODE/TrendRadar && /usr/bin/python3 main.py
+0 21 * * * cd /Users/ON-MY-WAY/快手/AICODE/TrendRadar && /usr/bin/python3 main.py

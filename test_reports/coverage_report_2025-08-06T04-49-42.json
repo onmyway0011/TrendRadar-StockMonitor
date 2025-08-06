@@ -1,0 +1,85 @@
+{
+  "timestamp": "2025-08-06T04:49:42.452Z",
+  "analysis": {
+    "overall": {
+      "lines": {
+        "total": 76,
+        "covered": 55,
+        "skipped": 0,
+        "pct": 72.36
+      },
+      "statements": {
+        "total": 76,
+        "covered": 55,
+        "skipped": 0,
+        "pct": 72.36
+      },
+      "functions": {
+        "total": 9,
+        "covered": 8,
+        "skipped": 0,
+        "pct": 88.88
+      },
+      "branches": {
+        "total": 22,
+        "covered": 10,
+        "skipped": 0,
+        "pct": 45.45
+      },
+      "branchesTrue": {
+        "total": 0,
+        "covered": 0,
+        "skipped": 0,
+        "pct": 100
+      }
+    },
+    "files": [
+      {
+        "path": "/Users/ON-MY-WAY/快手/AICODE/TrendRadar/server.js",
+        "statements": 100,
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "uncoveredLines": []
+      },
+      {
+        "path": "/Users/ON-MY-WAY/快手/AICODE/TrendRadar/src/index.js",
+        "statements": 72,
+        "branches": 45.45,
+        "functions": 88.88,
+        "lines": 72,
+        "uncoveredLines": []
+      }
+    ],
+    "lowCoverageFiles": [
+      {
+        "path": "/Users/ON-MY-WAY/快手/AICODE/TrendRadar/src/index.js",
+        "statements": 72,
+        "branches": 45.45,
+        "functions": 88.88,
+        "lines": 72,
+        "uncoveredLines": []
+      }
+    ],
+    "uncoveredLines": []
+  },
+  "suggestions": [
+    {
+      "type": "overall",
+      "priority": "high",
+      "message": "整体代码覆盖率为 72.36%，建议提高到80%以上"
+    },
+    {
+      "type": "file",
+      "priority": "medium",
+      "file": "/Users/ON-MY-WAY/快手/AICODE/TrendRadar/src/index.js",
+      "message": "文件 /Users/ON-MY-WAY/快手/AICODE/TrendRadar/src/index.js 覆盖率为 72%，需要增加测试用例"
+    }
+  ],
+  "summary": {
+    "overallCoverage": 72.36,
+    "totalFiles": 2,
+    "lowCoverageFiles": 1,
+    "highPrioritySuggestions": 1
+  }
+}

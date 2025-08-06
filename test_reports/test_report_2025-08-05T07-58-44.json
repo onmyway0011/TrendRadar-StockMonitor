@@ -1,0 +1,68 @@
+{
+  "timestamp": "2025-08-05T07:58:44.662Z",
+  "results": [
+    {
+      "name": "后端测试",
+      "success": false,
+      "error": "Command failed: npx jest --config jest.config.js\nnpm error code EAGAIN\nnpm error syscall spawn sh\nnpm error path /Users/ON-MY-WAY/快手/AICODE/TrendRadar\nnpm error errno -35\nnpm error spawn sh EAGAIN\nnpm error command sh -c \"jest\" --config jest.config.js\nnpm error A complete log of this run can be found in: /Users/ON-MY-WAY/.npm/_logs/2025-08-05T07_58_37_722Z-debug-0.log\n",
+      "round": 1
+    },
+    {
+      "name": "前端测试",
+      "success": false,
+      "error": "Command failed: npm test\nnpm error code EAGAIN\nnpm error syscall spawn sh\nnpm error path /Users/ON-MY-WAY/快手/AICODE/TrendRadar\nnpm error errno -35\nnpm error spawn sh EAGAIN\nnpm error command sh -c node run_tests.js\nnpm error A complete log of this run can be found in: /Users/ON-MY-WAY/.npm/_logs/2025-08-05T07_58_39_131Z-debug-0.log\n",
+      "round": 1
+    },
+    {
+      "name": "前端修复",
+      "success": false,
+      "error": "Command failed: npm run lint:fix\nnpm error Missing script: \"lint:fix\"\nnpm error\nnpm error To see a list of scripts, run:\nnpm error   npm run\nnpm error A complete log of this run can be found in: /Users/ON-MY-WAY/.npm/_logs/2025-08-05T07_58_39_576Z-debug-0.log\n",
+      "round": 1
+    },
+    {
+      "name": "后端修复",
+      "success": true,
+      "round": 1
+    },
+    {
+      "name": "后端测试",
+      "success": false,
+      "error": "Command failed: npx jest --config jest.config.js\nnpm error code EAGAIN\nnpm error syscall spawn sh\nnpm error path /Users/ON-MY-WAY/快手/AICODE/TrendRadar\nnpm error errno -35\nnpm error spawn sh EAGAIN\nnpm error command sh -c \"jest\" --config jest.config.js\nnpm error A complete log of this run can be found in: /Users/ON-MY-WAY/.npm/_logs/2025-08-05T07_58_39_978Z-debug-0.log\n",
+      "round": 2
+    },
+    {
+      "name": "前端测试",
+      "success": false,
+      "error": "Command failed: npm test\nnpm error code EAGAIN\nnpm error syscall spawn sh\nnpm error path /Users/ON-MY-WAY/快手/AICODE/TrendRadar\nnpm error errno -35\nnpm error spawn sh EAGAIN\nnpm error command sh -c node run_tests.js\nnpm error A complete log of this run can be found in: /Users/ON-MY-WAY/.npm/_logs/2025-08-05T07_58_41_035Z-debug-0.log\n",
+      "round": 2
+    },
+    {
+      "name": "前端修复",
+      "success": false,
+      "error": "Command failed: npm run lint:fix\nnpm error Missing script: \"lint:fix\"\nnpm error\nnpm error To see a list of scripts, run:\nnpm error   npm run\nnpm error A complete log of this run can be found in: /Users/ON-MY-WAY/.npm/_logs/2025-08-05T07_58_41_395Z-debug-0.log\n",
+      "round": 2
+    },
+    {
+      "name": "后端修复",
+      "success": true,
+      "round": 2
+    },
+    {
+      "name": "后端测试",
+      "success": false,
+      "error": "Command failed: npx jest --config jest.config.js\nnpm error code EAGAIN\nnpm error syscall spawn sh\nnpm error path /Users/ON-MY-WAY/快手/AICODE/TrendRadar\nnpm error errno -35\nnpm error spawn sh EAGAIN\nnpm error command sh -c \"jest\" --config jest.config.js\nnpm error A complete log of this run can be found in: /Users/ON-MY-WAY/.npm/_logs/2025-08-05T07_58_41_722Z-debug-0.log\n",
+      "round": 3
+    },
+    {
+      "name": "前端测试",
+      "success": false,
+      "error": "Command failed: npm test\n",
+      "round": 3
+    }
+  ],
+  "summary": {
+    "totalTests": 10,
+    "passed": 2,
+    "failed": 8
+  }
+}

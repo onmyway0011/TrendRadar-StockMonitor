@@ -1,0 +1,56 @@
+{
+  "timestamp": "2025-08-05T07:59:59.036Z",
+  "results": [
+    {
+      "name": "后端测试",
+      "success": false,
+      "error": "Command failed: npx jest --config jest.config.js\nFAIL __tests__/server.test.js\n  ● Test suite failed to run\n\n    Cannot find module '@babel/preset-env'\n    Require stack:\n    - /Users/ON-MY-WAY/.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/lib/config/files/plugins.js\n    - /Users/ON-MY-WAY/.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/lib/config/files/index.js\n    - /Users/ON-MY-WAY/.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/lib/index.js\n    - /Users/ON-MY-WAY/.npm/_npx/b8d86e6551a4f492/node_modules/jest-snapshot/build/index.js\n    - /Users/ON-MY-WAY/.npm/_npx/b8d86e6551a4f492/node_modules/jest-runtime/build/index.js\n    - /Users/ON-MY-WAY/.npm/_npx/b8d86e6551a4f492/node_modules/@jest/core/build/index.js\n    - /Users/ON-MY-WAY/.npm/_npx/b8d86e6551a4f492/node_modules/jest-cli/build/index.js\n    - /Users/ON-MY-WAY/.npm/_npx/b8d86e6551a4f492/node_modules/jest-cli/bin/jest.js\n    - /Users/ON-MY-WAY/.npm/_npx/b8d86e6551a4f492/node_modules/jest/bin/jest.js\n\n    Make sure that all the Babel plugins and presets you are using\n    are defined as dependencies or devDependencies in your package.json\n    file. It's possible that the missing plugin is loaded by a preset\n    you are using that forgot to add the plugin to its dependencies: you\n    can workaround this problem by explicitly adding the missing package\n    to your top-level package.json.\n\n      at tryRequireResolve (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/config/files/plugins.ts:140:36)\n      at tryRequireResolve (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/config/files/plugins.ts:168:19)\n      at resolveStandardizedNameForRequire (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/config/files/plugins.ts:196:12)\n      at resolvePreset (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/config/files/plugins.ts:50:32)\n          at loadPreset.next (<anonymous>)\n      at resolver (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/config/config-descriptors.ts:326:35)\n          at createDescriptor.next (<anonymous>)\n      at evaluateSync (../../../.npm/_npx/b8d86e6551a4f492/node_modules/gensync/index.js:251:28)\n      at ../../../.npm/_npx/b8d86e6551a4f492/node_modules/gensync/index.js:31:34\n          at Array.map (<anonymous>)\n      at gensync.sync (../../../.npm/_npx/b8d86e6551a4f492/node_modules/gensync/index.js:31:22)\n      at gensync.all (../../../.npm/_npx/b8d86e6551a4f492/node_modules/gensync/index.js:210:24)\n      at all (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/config/config-descriptors.ts:267:38)\n          at createDescriptors.next (<anonymous>)\n      at createDescriptors (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/config/config-descriptors.ts:243:17)\n          at createPresetDescriptors.next (<anonymous>)\n      at fn (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/gensync-utils/functional.ts:18:46)\n      at presets (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/config/config-chain.ts:725:34)\n          at mergeChainOpts.next (<anonymous>)\n      at mergeChainOpts (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/config/config-chain.ts:661:14)\n          at chainWalker.next (<anonymous>)\n      at loadFileChainWalker (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/config/config-chain.ts:398:24)\n          at loadFileChain.next (<anonymous>)\n      at loadFileChain (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/config/config-chain.ts:186:27)\n          at buildRootChain.next (<anonymous>)\n      at loadPrivatePartialConfig (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/config/partial.ts:111:44)\n          at loadPrivatePartialConfig.next (<anonymous>)\n      at loadPrivatePartialConfig (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/config/partial.ts:170:12)\n          at loadPartialConfig.next (<anonymous>)\n      at evaluateSync (../../../.npm/_npx/b8d86e6551a4f492/node_modules/gensync/index.js:251:28)\n      at sync (../../../.npm/_npx/b8d86e6551a4f492/node_modules/gensync/index.js:89:14)\n      at fn (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/errors/rewrite-stack-trace.ts:99:14)\n      at loadPartialConfigSync (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/config/index.ts:50:60)\n      at loadPartialConfigSync (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@babel/core/src/config/index.ts:69:14)\n      at ScriptTransformer._getCacheKey (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@jest/transform/build/index.js:195:41)\n      at ScriptTransformer._getFileCachePath (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@jest/transform/build/index.js:231:27)\n      at ScriptTransformer.transformSource (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@jest/transform/build/index.js:402:32)\n      at ScriptTransformer._transformAndBuildScript (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@jest/transform/build/index.js:519:40)\n      at ScriptTransformer.transform (../../../.npm/_npx/b8d86e6551a4f492/node_modules/@jest/transform/build/index.js:558:19)\n\nTest Suites: 1 failed, 1 total\nTests:       0 total\nSnapshots:   0 total\nTime:        0.188 s\nRan all test suites.\nForce exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?\n",
+      "round": 1
+    },
+    {
+      "name": "前端测试",
+      "success": true,
+      "output": "前端项目不存在，跳过测试",
+      "round": 1
+    },
+    {
+      "name": "后端修复",
+      "success": true,
+      "round": 1
+    },
+    {
+      "name": "后端测试",
+      "success": false,
+      "error": "Command failed: npx jest --config jest.config.js\nnode:events:485\n      throw er; // Unhandled 'error' event\n      ^\n\nError: spawn /usr/local/Cellar/node/24.4.1/bin/node EAGAIN\n    at ChildProcess._handle.onexit (node:internal/child_process:286:19)\n    at onErrorNT (node:internal/child_process:484:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\nEmitted 'error' event on ChildProcess instance at:\n    at ChildProcess._handle.onexit (node:internal/child_process:292:12)\n    at onErrorNT (node:internal/child_process:484:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {\n  errno: -35,\n  code: 'EAGAIN',\n  syscall: 'spawn /usr/local/Cellar/node/24.4.1/bin/node',\n  path: '/usr/local/Cellar/node/24.4.1/bin/node',\n  spawnargs: [\n    '/Users/ON-MY-WAY/.npm/_npx/b8d86e6551a4f492/node_modules/jest-worker/build/processChild.js'\n  ]\n}\n\nNode.js v24.4.1\n",
+      "round": 2
+    },
+    {
+      "name": "前端测试",
+      "success": true,
+      "output": "前端项目不存在，跳过测试",
+      "round": 2
+    },
+    {
+      "name": "后端修复",
+      "success": true,
+      "round": 2
+    },
+    {
+      "name": "后端测试",
+      "success": false,
+      "error": "Command failed: npx jest --config jest.config.js\nnpm error code EAGAIN\nnpm error syscall spawn sh\nnpm error path /Users/ON-MY-WAY/快手/AICODE/TrendRadar\nnpm error errno -35\nnpm error spawn sh EAGAIN\nnpm error command sh -c \"jest\" --config jest.config.js\nnpm error A complete log of this run can be found in: /Users/ON-MY-WAY/.npm/_logs/2025-08-05T07_59_58_286Z-debug-0.log\n",
+      "round": 3
+    },
+    {
+      "name": "前端测试",
+      "success": true,
+      "output": "前端项目不存在，跳过测试",
+      "round": 3
+    }
+  ],
+  "summary": {
+    "totalTests": 8,
+    "passed": 5,
+    "failed": 3
+  }
+}

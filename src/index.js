@@ -19,10 +19,16 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
+// 确保uploads目录存在
+const uploadsDir = path.join(__dirname, '../uploads');
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
+
 // 文件上传配置
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, 'uploads/'));
+    cb(null, uploadsDir);
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + '-' + file.originalname);
@@ -45,9 +51,9 @@ app.post('/upload/image', upload.single('image'), async (req, res) => {
 
   try {
     // 生成输出Excel路径
-    const outputExcel = path.join(__dirname, 'uploads', Date.now() + '-result.xlsx');
+    const outputExcel = path.join(__dirname, '../uploads', Date.now() + '-result.xlsx');
     // 调用Python脚本
-    const { stdout, stderr } = await execAsync(`python ${path.join(__dirname, 'ocr_scripts', 'image_to_excel.py')} ${req.file.path} ${outputExcel}`);
+    const { stdout, stderr } = await execAsync(`python ${path.join(__dirname, '../ocr_scripts', 'image_to_excel.py')} ${req.file.path} ${outputExcel}`);
 
     if (stderr) {
       console.error('Python script error:', stderr);
@@ -73,9 +79,9 @@ app.post('/upload/video', upload.single('video'), async (req, res) => {
 
   try {
     // 生成输出Excel路径
-    const outputExcel = path.join(__dirname, 'uploads', Date.now() + '-video-result.xlsx');
+    const outputExcel = path.join(__dirname, '../uploads', Date.now() + '-video-result.xlsx');
     // 调用Python脚本
-    const { stdout, stderr } = await execAsync(`python ${path.join(__dirname, 'ocr_scripts', 'video_to_excel.py')} ${req.file.path} ${outputExcel}`);
+    const { stdout, stderr } = await execAsync(`python ${path.join(__dirname, '../ocr_scripts', 'video_to_excel.py')} ${req.file.path} ${outputExcel}`);
 
     if (stderr) {
       console.error('Python script error:', stderr);
@@ -97,7 +103,7 @@ app.post('/upload/video', upload.single('video'), async (req, res) => {
 app.post('/update-column-types', async (req, res) => {
   try {
     const { fileName, columnTypes } = req.body;
-    const filePath = path.join(__dirname, 'uploads', fileName);
+    const filePath = path.join(__dirname, '../uploads', fileName);
 
     if (!fs.existsSync(filePath)) {
       return res.status(404).json({ message: '文件不存在' });
@@ -105,7 +111,7 @@ app.post('/update-column-types', async (req, res) => {
 
     // 调用Python脚本更新列类型
     const { stdout, stderr } = await execAsync(
-      `python ${path.join(__dirname, 'ocr_scripts', 'update_column_types.py')} ${filePath} '${JSON.stringify(columnTypes)}'`
+      `python ${path.join(__dirname, '../ocr_scripts', 'update_column_types.py')} ${filePath} '${JSON.stringify(columnTypes)}'`
     );
 
     if (stderr) {
@@ -123,7 +129,7 @@ app.post('/update-column-types', async (req, res) => {
 // 下载Excel文件的路由
 app.get('/download/:fileName', (req, res) => {
   const fileName = req.params.fileName;
-  const filePath = path.join(__dirname, 'uploads', fileName);
+  const filePath = path.join(__dirname, '../uploads', fileName);
 
   if (fs.existsSync(filePath)) {
     res.download(filePath, fileName, (err) => {
@@ -143,8 +149,10 @@ app.get('/download/:fileName', (req, res) => {
 // 导出app实例供测试使用
 module.exports = app;
 
-// 启动服务器
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// 只有在直接运行此文件时才启动服务器
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}

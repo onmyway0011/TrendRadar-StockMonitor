@@ -75,6 +75,21 @@ def load_config():
         "TELEGRAM_CHAT_ID", ""
     ).strip() or webhooks.get("telegram_chat_id", "")
 
+    # 企业微信机器人配置（环境变量优先）
+    wework_robot = notification.get("wework_robot", {})
+    config["WEWORK_CORPID"] = os.environ.get(
+        "WEWORK_CORPID", ""
+    ).strip() or wework_robot.get("corpid", "")
+    config["WEWORK_CORPSECRET"] = os.environ.get(
+        "WEWORK_CORPSECRET", ""
+    ).strip() or wework_robot.get("corpsecret", "")
+    config["WEWORK_AGENTID"] = os.environ.get(
+        "WEWORK_AGENTID", ""
+    ).strip() or wework_robot.get("agentid", "")
+    config["WEWORK_TOUSER"] = os.environ.get(
+        "WEWORK_TOUSER", ""
+    ).strip() or wework_robot.get("touser", "@all")
+
     # 输出配置来源信息
     webhook_sources = []
     if config["FEISHU_WEBHOOK_URL"]:
@@ -85,7 +100,12 @@ def load_config():
         webhook_sources.append(f"钉钉({source})")
     if config["WEWORK_WEBHOOK_URL"]:
         source = "环境变量" if os.environ.get("WEWORK_WEBHOOK_URL") else "配置文件"
-        webhook_sources.append(f"企业微信({source})")
+        webhook_sources.append(f"企业微信Webhook({source})")
+    if config["WEWORK_CORPID"] and config["WEWORK_CORPSECRET"] and config["WEWORK_AGENTID"]:
+        corpid_source = "环境变量" if os.environ.get("WEWORK_CORPID") else "配置文件"
+        secret_source = "环境变量" if os.environ.get("WEWORK_CORPSECRET") else "配置文件"
+        agent_source = "环境变量" if os.environ.get("WEWORK_AGENTID") else "配置文件"
+        webhook_sources.append(f"企业微信机器人({corpid_source}/{secret_source}/{agent_source})")
     if config["TELEGRAM_BOT_TOKEN"] and config["TELEGRAM_CHAT_ID"]:
         token_source = (
             "环境变量" if os.environ.get("TELEGRAM_BOT_TOKEN") else "配置文件"
@@ -1556,136 +1576,162 @@ def render_html_content(
 def render_feishu_content(
     report_data: Dict, update_info: Optional[Dict] = None, mode: str = "daily"
 ) -> str:
-    """渲染飞书内容"""
+    """渲染飞书内容 - 优化格式更易读"""
     text_content = ""
-
+    
+    total_titles = sum(
+        len(stat["titles"]) for stat in report_data["stats"] if stat["count"] > 0
+    )
+    now = get_beijing_time()
+    
+    # 标题部分 - 使用飞书富文本格式
+    text_content += "📊 **TrendRadar 热点分析报告**\n\n"
+    text_content += f"📈 **总新闻数：** <font color='blue'>{total_titles}</font> 条\n"
+    text_content += f"⏰ **更新时间：** <font color='grey'>{now.strftime('%Y-%m-%d %H:%M:%S')}</font>\n\n"
+    
+    if mode == "incremental":
+        text_content += "🔄 **增量模式** - <font color='orange'>仅显示新增匹配内容</font>\n\n"
+    elif mode == "current":
+        text_content += "🎯 **当前榜单模式** - <font color='purple'>显示当前热门内容</font>\n\n"
+    else:
+        text_content += "📋 **当日汇总模式** - <font color='green'>显示全天匹配内容</font>\n\n"
+    
+    text_content += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+    
+    # 频率词统计部分
     if report_data["stats"]:
-        text_content += f"📊 **热点词汇统计**\n\n"
-
-    total_count = len(report_data["stats"])
-
-    for i, stat in enumerate(report_data["stats"]):
-        word = stat["word"]
-        count = stat["count"]
-
-        sequence_display = f"<font color='grey'>[{i + 1}/{total_count}]</font>"
-
-        if count >= 10:
-            text_content += f"🔥 {sequence_display} **{word}** : <font color='red'>{count}</font> 条\n\n"
-        elif count >= 5:
-            text_content += f"📈 {sequence_display} **{word}** : <font color='orange'>{count}</font> 条\n\n"
-        else:
-            text_content += f"📌 {sequence_display} **{word}** : {count} 条\n\n"
-
-        for j, title_data in enumerate(stat["titles"], 1):
-            formatted_title = format_title_for_platform(
-                "feishu", title_data, show_source=True
-            )
-            text_content += f"  {j}. {formatted_title}\n"
-
-            if j < len(stat["titles"]):
-                text_content += "\n"
-
-        if i < len(report_data["stats"]) - 1:
-            text_content += f"\n{CONFIG['FEISHU_MESSAGE_SEPARATOR']}\n\n"
-
-    if not text_content:
+        total_count = len(report_data["stats"])
+        
+        for i, stat in enumerate(report_data["stats"], 1):
+            word = stat["word"]
+            count = stat["count"]
+            
+            # 根据热度使用不同的颜色和图标
+            if count >= 10:
+                icon = "🔥"
+                color = "red"
+            elif count >= 5:
+                icon = "📈"
+                color = "orange"
+            else:
+                icon = "📌"
+                color = "blue"
+            
+            sequence_display = f"<font color='grey'>[{i}/{total_count}]</font>"
+            text_content += f"{icon} {sequence_display} **{word}** - <font color='{color}'>{count}</font> 条相关新闻\n\n"
+            
+            # 新闻列表
+            for j, title_data in enumerate(stat["titles"], 1):
+                formatted_title = format_title_for_platform(
+                    "feishu", title_data, show_source=True
+                )
+                text_content += f"   {j}. {formatted_title}\n"
+            
+            # 词组间分隔
+            if i < total_count:
+                text_content += "\n" + "─" * 30 + "\n\n"
+    else:
         if mode == "incremental":
             mode_text = "增量模式下暂无新增匹配的热点词汇"
         elif mode == "current":
             mode_text = "当前榜单模式下暂无匹配的热点词汇"
         else:
             mode_text = "暂无匹配的热点词汇"
-        text_content = f"📭 {mode_text}\n\n"
-
+        text_content += f"📭 <font color='grey'>{mode_text}</font>\n\n"
+    
+    # 新增新闻部分
     if report_data["new_titles"]:
-        if text_content and "暂无匹配" not in text_content:
-            text_content += f"\n{CONFIG['FEISHU_MESSAGE_SEPARATOR']}\n\n"
-
-        text_content += (
-            f"🆕 **本次新增热点新闻** (共 {report_data['total_new_count']} 条)\n\n"
-        )
-
+        text_content += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+        text_content += f"🆕 **本次新增热点新闻** (<font color='green'>{report_data['total_new_count']}</font> 条)\n\n"
+        
         for source_data in report_data["new_titles"]:
-            text_content += (
-                f"**{source_data['source_name']}** ({len(source_data['titles'])} 条):\n"
-            )
-
+            text_content += f"📰 **{source_data['source_name']}** (<font color='blue'>{len(source_data['titles'])}</font> 条)\n"
+            
             for j, title_data in enumerate(source_data["titles"], 1):
                 title_data_copy = title_data.copy()
                 title_data_copy["is_new"] = False
                 formatted_title = format_title_for_platform(
                     "feishu", title_data_copy, show_source=False
                 )
-                text_content += f"  {j}. {formatted_title}\n"
-
+                text_content += f"   {j}. {formatted_title}\n"
             text_content += "\n"
-
+    
+    # 失败平台提示
     if report_data["failed_ids"]:
-        if text_content and "暂无匹配" not in text_content:
-            text_content += f"\n{CONFIG['FEISHU_MESSAGE_SEPARATOR']}\n\n"
-
+        text_content += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
         text_content += "⚠️ **数据获取失败的平台：**\n\n"
-        for i, id_value in enumerate(report_data["failed_ids"], 1):
-            text_content += f"  • <font color='red'>{id_value}</font>\n"
-
-    now = get_beijing_time()
-    text_content += (
-        f"\n\n<font color='grey'>更新时间：{now.strftime('%Y-%m-%d %H:%M:%S')}</font>"
-    )
-
+        for id_value in report_data["failed_ids"]:
+            text_content += f"   • <font color='red'>{id_value}</font>\n"
+        text_content += "\n"
+    
+    # 版本更新提示
     if update_info:
-        text_content += f"\n<font color='grey'>TrendRadar 发现新版本 {update_info['remote_version']}，当前 {update_info['current_version']}</font>"
-
+        text_content += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+        text_content += f"🔔 **发现新版本** <font color='green'>{update_info['remote_version']}</font>，当前版本 <font color='grey'>{update_info['current_version']}</font>\n\n"
+    
+    text_content += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+    text_content += "📱 TrendRadar 热点监控系统"
+    
     return text_content
 
 
 def render_dingtalk_content(
     report_data: Dict, update_info: Optional[Dict] = None, mode: str = "daily"
 ) -> str:
-    """渲染钉钉内容"""
+    """渲染钉钉内容 - 优化格式更易读"""
     text_content = ""
-
+    
     total_titles = sum(
         len(stat["titles"]) for stat in report_data["stats"] if stat["count"] > 0
     )
     now = get_beijing_time()
-
-    text_content += f"**总新闻数：** {total_titles}\n\n"
-    text_content += f"**时间：** {now.strftime('%Y-%m-%d %H:%M:%S')}\n\n"
-    text_content += f"**类型：** 热点分析报告\n\n"
-
+    
+    # 标题部分 - 使用钉钉Markdown格式
+    text_content += "📊 **TrendRadar 热点分析报告**\n\n"
+    text_content += f"📈 **总新闻数：** {total_titles} 条\n"
+    text_content += f"⏰ **更新时间：** {now.strftime('%Y-%m-%d %H:%M:%S')}\n\n"
+    
+    if mode == "incremental":
+        text_content += "🔄 **增量模式** - 仅显示新增匹配内容\n\n"
+    elif mode == "current":
+        text_content += "🎯 **当前榜单模式** - 显示当前热门内容\n\n"
+    else:
+        text_content += "📋 **当日汇总模式** - 显示全天匹配内容\n\n"
+    
     text_content += "---\n\n"
-
+    
+    # 频率词统计部分
     if report_data["stats"]:
-        text_content += f"📊 **热点词汇统计**\n\n"
-
         total_count = len(report_data["stats"])
-
-        for i, stat in enumerate(report_data["stats"]):
+        
+        for i, stat in enumerate(report_data["stats"], 1):
             word = stat["word"]
             count = stat["count"]
-
-            sequence_display = f"[{i + 1}/{total_count}]"
-
+            
+            # 根据热度使用不同的图标和强调
             if count >= 10:
-                text_content += f"🔥 {sequence_display} **{word}** : **{count}** 条\n\n"
+                icon = "🔥"
+                emphasis = "**"
             elif count >= 5:
-                text_content += f"📈 {sequence_display} **{word}** : **{count}** 条\n\n"
+                icon = "📈"
+                emphasis = "**"
             else:
-                text_content += f"📌 {sequence_display} **{word}** : {count} 条\n\n"
-
+                icon = "📌"
+                emphasis = ""
+            
+            sequence_display = f"[{i}/{total_count}]"
+            text_content += f"{icon} {sequence_display} **{word}** - {emphasis}{count}{emphasis} 条相关新闻\n\n"
+            
+            # 新闻列表
             for j, title_data in enumerate(stat["titles"], 1):
                 formatted_title = format_title_for_platform(
                     "dingtalk", title_data, show_source=True
                 )
-                text_content += f"  {j}. {formatted_title}\n"
-
-                if j < len(stat["titles"]):
-                    text_content += "\n"
-
-            if i < len(report_data["stats"]) - 1:
-                text_content += f"\n---\n\n"
+                text_content += f"   {j}. {formatted_title}\n"
+            
+            # 词组间分隔
+            if i < total_count:
+                text_content += "\n" + "---" + "\n\n"
 
     if not report_data["stats"]:
         if mode == "incremental":
@@ -2082,6 +2128,10 @@ def send_to_webhooks(
     feishu_url = CONFIG["FEISHU_WEBHOOK_URL"]
     dingtalk_url = CONFIG["DINGTALK_WEBHOOK_URL"]
     wework_url = CONFIG["WEWORK_WEBHOOK_URL"]
+    wework_corpid = CONFIG["WEWORK_CORPID"]
+    wework_corpsecret = CONFIG["WEWORK_CORPSECRET"]
+    wework_agentid = CONFIG["WEWORK_AGENTID"]
+    wework_touser = CONFIG["WEWORK_TOUSER"]
     telegram_token = CONFIG["TELEGRAM_BOT_TOKEN"]
     telegram_chat_id = CONFIG["TELEGRAM_CHAT_ID"]
 
@@ -2099,11 +2149,31 @@ def send_to_webhooks(
             dingtalk_url, report_data, report_type, update_info_to_send, proxy_url, mode
         )
 
-    # 发送到企业微信
-    if wework_url:
-        results["wework"] = send_to_wework(
-            wework_url, report_data, report_type, update_info_to_send, proxy_url, mode
-        )
+    # 发送到企业微信 (使用新的多机器人配置系统)
+    wework_results = send_to_wework_multi_robots(
+        report_data, report_type, update_info_to_send, proxy_url, mode
+    )
+    results.update(wework_results)
+    
+    # 兼容旧的企业微信配置方式
+    if not wework_results:
+        # 优先使用API机器人方式
+        if wework_corpid and wework_corpsecret and wework_agentid:
+            results["wework_robot_legacy"] = send_to_wework_robot(
+                wework_corpid,
+                wework_corpsecret,
+                wework_agentid,
+                wework_touser,
+                report_data,
+                report_type,
+                update_info_to_send,
+                proxy_url,
+                mode,
+            )
+        elif wework_url:
+            results["wework_legacy"] = send_to_wework(
+                wework_url, report_data, report_type, update_info_to_send, proxy_url, mode
+            )
 
     # 发送到 Telegram
     if telegram_token and telegram_chat_id:
@@ -2121,6 +2191,165 @@ def send_to_webhooks(
         print("未配置任何webhook URL，跳过通知发送")
 
     return results
+
+
+def render_wework_content(
+    report_data: Dict,
+    update_info: Optional[Dict] = None,
+    mode: str = "daily",
+) -> str:
+    """渲染企业微信消息内容 - 优化格式更易读"""
+    text_content = ""
+    
+    total_titles = sum(
+        len(stat["titles"]) for stat in report_data["stats"] if stat["count"] > 0
+    )
+    now = get_beijing_time()
+    
+    # 标题部分 - 使用更清晰的格式
+    text_content += f"📊 **TrendRadar 热点分析报告**\n\n"
+    text_content += f"📈 **总新闻数：** {total_titles} 条\n"
+    text_content += f"⏰ **更新时间：** {now.strftime('%Y-%m-%d %H:%M:%S')}\n\n"
+    
+    if mode == "incremental":
+        text_content += "🔄 **增量模式** - 仅显示新增匹配内容\n\n"
+    elif mode == "current":
+        text_content += "🎯 **当前榜单模式** - 显示当前热门内容\n\n"
+    else:
+        text_content += "📋 **当日汇总模式** - 显示全天匹配内容\n\n"
+    
+    text_content += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+    
+    # 频率词统计部分
+    if report_data["stats"]:
+        total_count = len(report_data["stats"])
+        
+        for i, stat in enumerate(report_data["stats"], 1):
+            word = stat["word"]
+            count = stat["count"]
+            
+            # 根据热度使用不同的图标
+            if count >= 10:
+                icon = "🔥"
+                emphasis = "**"
+            elif count >= 5:
+                icon = "📈"
+                emphasis = "**"
+            else:
+                icon = "📌"
+                emphasis = ""
+            
+            text_content += f"{icon} **[{i}/{total_count}] {word}** - {emphasis}{count}{emphasis} 条相关新闻\n\n"
+            
+            # 新闻列表
+            for j, title_data in enumerate(stat["titles"], 1):
+                formatted_title = format_title_for_platform(
+                    "wework", title_data, show_source=True
+                )
+                text_content += f"   {j}. {formatted_title}\n"
+            
+            # 词组间分隔
+            if i < total_count:
+                text_content += "\n" + "─" * 30 + "\n\n"
+    else:
+        if mode == "incremental":
+            mode_text = "增量模式下暂无新增匹配的热点词汇"
+        elif mode == "current":
+            mode_text = "当前榜单模式下暂无匹配的热点词汇"
+        else:
+            mode_text = "暂无匹配的热点词汇"
+        text_content += f"📭 {mode_text}\n\n"
+    
+    # 新增新闻部分
+    if report_data["new_titles"]:
+        text_content += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+        text_content += f"🆕 **本次新增热点新闻** ({report_data['total_new_count']} 条)\n\n"
+        
+        for source_data in report_data["new_titles"]:
+            text_content += f"📰 **{source_data['source_name']}** ({len(source_data['titles'])} 条)\n"
+            
+            for j, title_data in enumerate(source_data["titles"], 1):
+                title_data_copy = title_data.copy()
+                title_data_copy["is_new"] = False
+                formatted_title = format_title_for_platform(
+                    "wework", title_data_copy, show_source=False
+                )
+                text_content += f"   {j}. {formatted_title}\n"
+            text_content += "\n"
+    
+    # 失败平台提示
+    if report_data["failed_ids"]:
+        text_content += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+        text_content += "⚠️ **数据获取失败的平台：**\n\n"
+        for id_value in report_data["failed_ids"]:
+            text_content += f"   • {id_value}\n"
+        text_content += "\n"
+    
+    # 版本更新提示
+    if update_info:
+        text_content += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+        text_content += f"🔔 **发现新版本** {update_info['remote_version']}，当前版本 {update_info['current_version']}\n\n"
+    
+    text_content += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+    text_content += "📱 TrendRadar 热点监控系统"
+    
+    return text_content
+
+
+def send_to_wework_multi_robots(
+    report_data: Dict,
+    report_type: str,
+    update_info: Optional[Dict] = None,
+    proxy_url: Optional[str] = None,
+    mode: str = "daily",
+) -> Dict[str, bool]:
+    """发送到企业微信多机器人配置系统"""
+    try:
+        # 导入企微发送器
+        from wework_sender import WeworkSender
+        from wework_config_manager import WeworkConfigManager
+        
+        # 初始化配置管理器和发送器
+        config_manager = WeworkConfigManager()
+        sender = WeworkSender(config_manager)
+        
+        # 检查是否有有效的机器人配置
+        valid_robots = config_manager.get_valid_robots()
+        if not valid_robots:
+            print("📤 企业微信: 未找到有效的机器人配置，跳过发送")
+            return {}
+        
+        print(f"📤 企业微信: 找到 {len(valid_robots)} 个有效机器人配置")
+        
+        # 渲染消息内容
+        content = render_wework_content(report_data, update_info, mode)
+        
+        # 发送到所有有效的机器人
+        robot_results = sender.send_to_all_valid_robots(content, report_type, proxy_url)
+        
+        # 转换结果格式，添加前缀以区分不同机器人
+        results = {}
+        for robot_id, success in robot_results.items():
+            robot = config_manager.get_robot_by_id(robot_id)
+            if robot:
+                robot_name = robot["name"]
+                robot_type = robot["type"]
+                key = f"wework_{robot_type}_{robot_id[:8]}"  # 使用前8位ID作为标识
+                results[key] = success
+                
+                if success:
+                    print(f"✅ 企业微信 {robot_name} ({robot_type}) 发送成功")
+                else:
+                    print(f"❌ 企业微信 {robot_name} ({robot_type}) 发送失败")
+        
+        return results
+        
+    except ImportError:
+        print("⚠️ 企业微信多机器人模块未找到，跳过新配置系统")
+        return {}
+    except Exception as e:
+        print(f"❌ 企业微信多机器人发送出错: {e}")
+        return {}
 
 
 def send_to_feishu(
@@ -2273,6 +2502,112 @@ def send_to_wework(
             return False
 
     print(f"企业微信所有 {len(batches)} 批次发送完成 [{report_type}]")
+    return True
+
+
+def get_wework_access_token(
+    corpid: str, corpsecret: str, proxy_url: Optional[str] = None
+) -> Optional[str]:
+    """获取企业微信 access_token"""
+    url = "https://qyapi.weixin.qq.com/cgi-bin/gettoken"
+    params = {"corpid": corpid, "corpsecret": corpsecret}
+    
+    proxies = None
+    if proxy_url:
+        proxies = {"http": proxy_url, "https": proxy_url}
+    
+    try:
+        response = requests.get(url, params=params, proxies=proxies, timeout=30)
+        response.raise_for_status()
+        
+        result = response.json()
+        if result.get("errcode") == 0:
+            return result.get("access_token")
+        else:
+            print(f"获取企业微信 access_token 失败：{result.get('errmsg')}")
+            return None
+    except Exception as e:
+        print(f"获取企业微信 access_token 出错：{e}")
+        return None
+
+
+def send_to_wework_robot(
+    corpid: str,
+    corpsecret: str,
+    agentid: str,
+    touser: str,
+    report_data: Dict,
+    report_type: str,
+    update_info: Optional[Dict] = None,
+    proxy_url: Optional[str] = None,
+    mode: str = "daily",
+) -> bool:
+    """发送到企业微信机器人（支持分批发送）"""
+    # 获取 access_token
+    access_token = get_wework_access_token(corpid, corpsecret, proxy_url)
+    if not access_token:
+        print(f"企业微信机器人发送失败 [{report_type}]：无法获取 access_token")
+        return False
+    
+    headers = {"Content-Type": "application/json"}
+    proxies = None
+    if proxy_url:
+        proxies = {"http": proxy_url, "https": proxy_url}
+    
+    # 获取分批内容
+    batches = split_content_into_batches(report_data, "wework", update_info, mode=mode)
+    
+    print(f"企业微信机器人消息分为 {len(batches)} 批次发送 [{report_type}]")
+    
+    # 逐批发送
+    for i, batch_content in enumerate(batches, 1):
+        batch_size = len(batch_content.encode("utf-8"))
+        print(
+            f"发送企业微信机器人第 {i}/{len(batches)} 批次，大小：{batch_size} 字节 [{report_type}]"
+        )
+        
+        # 添加批次标识
+        if len(batches) > 1:
+            batch_header = f"**[第 {i}/{len(batches)} 批次]**\n\n"
+            batch_content = batch_header + batch_content
+        
+        # 构建消息体
+        payload = {
+            "touser": touser,
+            "msgtype": "markdown",
+            "agentid": agentid,
+            "markdown": {"content": batch_content},
+            "safe": 0,
+        }
+        
+        url = f"https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token={access_token}"
+        
+        try:
+            response = requests.post(
+                url, headers=headers, json=payload, proxies=proxies, timeout=30
+            )
+            if response.status_code == 200:
+                result = response.json()
+                if result.get("errcode") == 0:
+                    print(f"企业微信机器人第 {i}/{len(batches)} 批次发送成功 [{report_type}]")
+                    # 批次间间隔
+                    if i < len(batches):
+                        time.sleep(CONFIG["BATCH_SEND_INTERVAL"])
+                else:
+                    print(
+                        f"企业微信机器人第 {i}/{len(batches)} 批次发送失败 [{report_type}]，错误：{result.get('errmsg')}"
+                    )
+                    return False
+            else:
+                print(
+                    f"企业微信机器人第 {i}/{len(batches)} 批次发送失败 [{report_type}]，状态码：{response.status_code}"
+                )
+                return False
+        except Exception as e:
+            print(f"企业微信机器人第 {i}/{len(batches)} 批次发送出错 [{report_type}]：{e}")
+            return False
+    
+    print(f"企业微信机器人所有 {len(batches)} 批次发送完成 [{report_type}]")
     return True
 
 
@@ -2448,14 +2783,29 @@ class NewsAnalyzer:
 
     def _has_webhook_configured(self) -> bool:
         """检查是否配置了webhook"""
-        return any(
+        # 检查传统的webhook配置
+        traditional_webhooks = any(
             [
                 CONFIG["FEISHU_WEBHOOK_URL"],
                 CONFIG["DINGTALK_WEBHOOK_URL"],
                 CONFIG["WEWORK_WEBHOOK_URL"],
+                (CONFIG["WEWORK_CORPID"] and CONFIG["WEWORK_CORPSECRET"] and CONFIG["WEWORK_AGENTID"]),
                 (CONFIG["TELEGRAM_BOT_TOKEN"] and CONFIG["TELEGRAM_CHAT_ID"]),
             ]
         )
+        
+        # 检查企业微信多机器人配置
+        wework_multi_robots = False
+        try:
+            from wework_config_manager import WeworkConfigManager
+            config_manager = WeworkConfigManager()
+            valid_robots = config_manager.get_valid_robots()
+            wework_multi_robots = len(valid_robots) > 0
+        except Exception as e:
+            # 如果导入或初始化失败，忽略错误
+            pass
+        
+        return traditional_webhooks or wework_multi_robots
 
     def _has_valid_content(
         self, stats: List[Dict], new_titles: Optional[Dict] = None

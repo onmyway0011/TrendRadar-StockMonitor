@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-08-05T08:00:13.713Z",
+  "results": [
+    {
+      "name": "后端测试",
+      "success": true,
+      "output": "  console.log\n    [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit\n\n      at _log (node_modules/dotenv/lib/main.js:139:11)\n\n  console.log\n    Received image upload request\n\n      at log (src/index.js:47:11)\n\n----------------|---------|----------|---------|---------|-------------------------------------------------------------------\nFile            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                                 \n----------------|---------|----------|---------|---------|-------------------------------------------------------------------\nAll files       |   72.36 |    45.45 |   88.88 |   72.36 |                                                                   \n TrendRadar     |     100 |      100 |     100 |     100 |                                                                   \n  server.js     |     100 |      100 |     100 |     100 |                                                                   \n TrendRadar/src |      72 |    45.45 |   88.88 |      72 |                                                                   \n  index.js      |      72 |    45.45 |   88.88 |      72 | 49,59-60,69-70,77,87-88,97-98,109,118-119,124-125,137-145,154-156 \n----------------|---------|----------|---------|---------|-------------------------------------------------------------------\n",
+      "round": 1
+    },
+    {
+      "name": "前端测试",
+      "success": true,
+      "output": "前端项目不存在，跳过测试",
+      "round": 1
+    }
+  ],
+  "summary": {
+    "totalTests": 2,
+    "passed": 2,
+    "failed": 0
+  }
+}

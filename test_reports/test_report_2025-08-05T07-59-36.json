@@ -1,0 +1,56 @@
+{
+  "timestamp": "2025-08-05T07:59:36.125Z",
+  "results": [
+    {
+      "name": "后端测试",
+      "success": false,
+      "error": "Command failed: npx jest --config jest.config.js\nnpm error code EAGAIN\nnpm error syscall spawn sh\nnpm error path /Users/ON-MY-WAY/快手/AICODE/TrendRadar\nnpm error errno -35\nnpm error spawn sh EAGAIN\nnpm error command sh -c \"jest\" --config jest.config.js\nnpm error A complete log of this run can be found in: /Users/ON-MY-WAY/.npm/_logs/2025-08-05T07_59_32_249Z-debug-0.log\n",
+      "round": 1
+    },
+    {
+      "name": "前端测试",
+      "success": true,
+      "output": "前端项目不存在，跳过测试",
+      "round": 1
+    },
+    {
+      "name": "后端修复",
+      "success": true,
+      "round": 1
+    },
+    {
+      "name": "后端测试",
+      "success": false,
+      "error": "Command failed: npx jest --config jest.config.js\nnode:events:485\n      throw er; // Unhandled 'error' event\n      ^\n\nError: spawn /usr/local/Cellar/node/24.4.1/bin/node EAGAIN\n    at ChildProcess._handle.onexit (node:internal/child_process:286:19)\n    at onErrorNT (node:internal/child_process:484:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\nEmitted 'error' event on ChildProcess instance at:\n    at ChildProcess._handle.onexit (node:internal/child_process:292:12)\n    at onErrorNT (node:internal/child_process:484:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {\n  errno: -35,\n  code: 'EAGAIN',\n  syscall: 'spawn /usr/local/Cellar/node/24.4.1/bin/node',\n  path: '/usr/local/Cellar/node/24.4.1/bin/node',\n  spawnargs: [\n    '/Users/ON-MY-WAY/.npm/_npx/b8d86e6551a4f492/node_modules/jest-worker/build/processChild.js'\n  ]\n}\n\nNode.js v24.4.1\n",
+      "round": 2
+    },
+    {
+      "name": "前端测试",
+      "success": true,
+      "output": "前端项目不存在，跳过测试",
+      "round": 2
+    },
+    {
+      "name": "后端修复",
+      "success": true,
+      "round": 2
+    },
+    {
+      "name": "后端测试",
+      "success": false,
+      "error": "Command failed: npx jest --config jest.config.js\nnpm error code EAGAIN\nnpm error syscall spawn sh\nnpm error path /Users/ON-MY-WAY/快手/AICODE/TrendRadar\nnpm error errno -35\nnpm error spawn sh EAGAIN\nnpm error command sh -c \"jest\" --config jest.config.js\nnpm error A complete log of this run can be found in: /Users/ON-MY-WAY/.npm/_logs/2025-08-05T07_59_35_191Z-debug-0.log\n",
+      "round": 3
+    },
+    {
+      "name": "前端测试",
+      "success": true,
+      "output": "前端项目不存在，跳过测试",
+      "round": 3
+    }
+  ],
+  "summary": {
+    "totalTests": 8,
+    "passed": 5,
+    "failed": 3
+  }
+}

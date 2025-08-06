@@ -6,7 +6,17 @@
   "scripts": {
     "test": "node run_tests.js",
     "test:backend": "jest",
-    "test:frontend": "cd client && npm test"
+    "test:frontend": "cd client && npm test",
+    "test:watch": "node test_monitor.js",
+    "test:coverage": "node coverage_analyzer.js",
+    "test:ci": "jest --coverage --ci --watchAll=false",
+    "test:fix": "node auto_fixer.js",
+    "test:all": "npm run test:fix && npm run test && npm run test:coverage",
+    "test:dashboard": "node test_dashboard.js",
+    "test:dashboard:watch": "node test_dashboard.js --watch",
+    "demo": "node demo.js",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.28.0",

@@ -1,0 +1,56 @@
+{
+  "timestamp": "2025-08-05T07:59:04.373Z",
+  "results": [
+    {
+      "name": "后端测试",
+      "success": false,
+      "error": "Command failed: npx jest --config jest.config.js\nnpm error code EAGAIN\nnpm error syscall spawn sh\nnpm error path /Users/ON-MY-WAY/快手/AICODE/TrendRadar\nnpm error errno -35\nnpm error spawn sh EAGAIN\nnpm error command sh -c \"jest\" --config jest.config.js\nnpm error A complete log of this run can be found in: /Users/ON-MY-WAY/.npm/_logs/2025-08-05T07_59_00_766Z-debug-0.log\n",
+      "round": 1
+    },
+    {
+      "name": "前端测试",
+      "success": true,
+      "output": "前端项目不存在，跳过测试",
+      "round": 1
+    },
+    {
+      "name": "后端修复",
+      "success": true,
+      "round": 1
+    },
+    {
+      "name": "后端测试",
+      "success": false,
+      "error": "Command failed: npx jest --config jest.config.js\nnpm error code EAGAIN\nnpm error syscall spawn sh\nnpm error path /Users/ON-MY-WAY/快手/AICODE/TrendRadar\nnpm error errno -35\nnpm error spawn sh EAGAIN\nnpm error command sh -c \"jest\" --config jest.config.js\nnpm error A complete log of this run can be found in: /Users/ON-MY-WAY/.npm/_logs/2025-08-05T07_59_01_937Z-debug-0.log\n",
+      "round": 2
+    },
+    {
+      "name": "前端测试",
+      "success": true,
+      "output": "前端项目不存在，跳过测试",
+      "round": 2
+    },
+    {
+      "name": "后端修复",
+      "success": true,
+      "round": 2
+    },
+    {
+      "name": "后端测试",
+      "success": false,
+      "error": "Command failed: npx jest --config jest.config.js\nnpm error code EAGAIN\nnpm error syscall spawn sh\nnpm error path /Users/ON-MY-WAY/快手/AICODE/TrendRadar\nnpm error errno -35\nnpm error spawn sh EAGAIN\nnpm error command sh -c \"jest\" --config jest.config.js\nnpm error A complete log of this run can be found in: /Users/ON-MY-WAY/.npm/_logs/2025-08-05T07_59_03_473Z-debug-0.log\n",
+      "round": 3
+    },
+    {
+      "name": "前端测试",
+      "success": true,
+      "output": "前端项目不存在，跳过测试",
+      "round": 3
+    }
+  ],
+  "summary": {
+    "totalTests": 8,
+    "passed": 5,
+    "failed": 3
+  }
+}

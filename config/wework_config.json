@@ -1,0 +1,121 @@
+{
+  "wework_api_robots": [
+    {
+      "id": "default_api",
+      "name": "默认API机器人",
+      "type": "api",
+      "enabled": true,
+      "config": {
+        "corpid": "",
+        "corpsecret": "",
+        "agentid": "",
+        "touser": "@all"
+      }
+    },
+    {
+      "id": "8dd39120-1b1d-4759-9866-10e3e4f2eee5",
+      "name": "测试API机器人",
+      "type": "api",
+      "enabled": true,
+      "config": {
+        "corpid": "test_corpid",
+        "corpsecret": "test_corpsecret",
+        "agentid": "test_agentid",
+        "touser": "@all"
+      }
+    },
+    {
+      "id": "98cb7125-9ad4-43d6-925e-436a0d8e222f",
+      "name": "测试API机器人",
+      "type": "api",
+      "enabled": true,
+      "config": {
+        "corpid": "test_corpid",
+        "corpsecret": "test_corpsecret",
+        "agentid": "test_agentid",
+        "touser": "@all"
+      }
+    },
+    {
+      "id": "bd5022ae-1106-4340-b839-10d6ff9601a8",
+      "name": "生产环境API机器人",
+      "type": "api",
+      "enabled": true,
+      "config": {
+        "corpid": "prod_corpid",
+        "corpsecret": "prod_corpsecret",
+        "agentid": "prod_agentid",
+        "touser": "@all"
+      }
+    },
+    {
+      "id": "b3ef3d11-944b-44e4-9b74-4b5e64106cdd",
+      "name": "有效API配置",
+      "type": "api",
+      "enabled": true,
+      "config": {
+        "corpid": "",
+        "corpsecret": "",
+        "agentid": "",
+        "touser": "@all"
+      }
+    }
+  ],
+  "wework_webhook_robots": [
+    {
+      "id": "default_webhook",
+      "name": "默认群聊机器人",
+      "type": "webhook",
+      "enabled": true,
+      "config": {
+        "webhook_url": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=fabf5a90-0a7d-4998-8e69-794e31a6ae31"
+      }
+    },
+    {
+      "id": "a1fb30e0-eeea-4620-8420-f2092092cab6",
+      "name": "测试群聊机器人",
+      "type": "webhook",
+      "enabled": true,
+      "config": {
+        "webhook_url": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=fabf5a90-0a7d-4998-8e69-794e31a6ae31"
+      }
+    },
+    {
+      "id": "6e9dfa9f-c7ca-4167-995b-725ec890359f",
+      "name": "测试群聊机器人",
+      "type": "webhook",
+      "enabled": true,
+      "config": {
+        "webhook_url": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=fabf5a90-0a7d-4998-8e69-794e31a6ae31"
+      }
+    },
+    {
+      "id": "b73a9973-2788-4f51-b1b4-0ab48524777d",
+      "name": "开发环境群聊机器人",
+      "type": "webhook",
+      "enabled": true,
+      "config": {
+        "webhook_url": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=dev-key"
+      }
+    },
+    {
+      "id": "7a2dbfe3-7ed7-4cc0-b61f-6e53597fb742",
+      "name": "测试环境群聊机器人",
+      "type": "webhook",
+      "enabled": true,
+      "config": {
+        "webhook_url": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=test-key"
+      }
+    },
+    {
+      "id": "02baa670-2d83-4208-85c5-924353666526",
+      "name": "有效群聊配置",
+      "type": "webhook",
+      "enabled": true,
+      "config": {
+        "webhook_url": ""
+      }
+    }
+  ],
+  "last_updated": "2025-08-05T17:46:26.593420"
+}

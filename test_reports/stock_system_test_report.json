@@ -1,0 +1,113 @@
+{
+  "timestamp": "2025-08-06T13:56:11.307080",
+  "summary": {
+    "total_tests": 17,
+    "passed": 17,
+    "failed": 0,
+    "success_rate": "100.0%"
+  },
+  "test_results": [
+    {
+      "test_name": "文件 stock_monitor.py",
+      "success": true,
+      "message": "文件存在",
+      "timestamp": "2025-08-06T13:56:03.238322"
+    },
+    {
+      "test_name": "文件 stock_web_config.py",
+      "success": true,
+      "message": "文件存在",
+      "timestamp": "2025-08-06T13:56:03.238342"
+    },
+    {
+      "test_name": "文件 stock_scheduler.py",
+      "success": true,
+      "message": "文件存在",
+      "timestamp": "2025-08-06T13:56:03.238370"
+    },
+    {
+      "test_name": "文件 start_stock_monitor.py",
+      "success": true,
+      "message": "文件存在",
+      "timestamp": "2025-08-06T13:56:03.238380"
+    },
+    {
+      "test_name": "文件 templates/stock_dashboard.html",
+      "success": true,
+      "message": "文件存在",
+      "timestamp": "2025-08-06T13:56:03.238392"
+    },
+    {
+      "test_name": "文件 config/stock_config.json",
+      "success": true,
+      "message": "文件存在",
+      "timestamp": "2025-08-06T13:56:03.238403"
+    },
+    {
+      "test_name": "文件 requirements.txt",
+      "success": true,
+      "message": "文件存在",
+      "timestamp": "2025-08-06T13:56:03.238411"
+    },
+    {
+      "test_name": "依赖包 yfinance",
+      "success": true,
+      "message": "导入成功",
+      "timestamp": "2025-08-06T13:56:04.181759"
+    },
+    {
+      "test_name": "依赖包 requests",
+      "success": true,
+      "message": "导入成功",
+      "timestamp": "2025-08-06T13:56:04.272555"
+    },
+    {
+      "test_name": "依赖包 flask",
+      "success": true,
+      "message": "导入成功",
+      "timestamp": "2025-08-06T13:56:04.396201"
+    },
+    {
+      "test_name": "依赖包 pandas",
+      "success": true,
+      "message": "导入成功",
+      "timestamp": "2025-08-06T13:56:05.008523"
+    },
+    {
+      "test_name": "依赖包 pytz",
+      "success": true,
+      "message": "导入成功",
+      "timestamp": "2025-08-06T13:56:05.039906"
+    },
+    {
+      "test_name": "股票配置文件",
+      "success": true,
+      "message": "配置文件存在，包含4只股票",
+      "timestamp": "2025-08-06T13:56:05.041872"
+    },
+    {
+      "test_name": "企微配置文件",
+      "success": true,
+      "message": "企微配置文件存在",
+      "timestamp": "2025-08-06T13:56:05.041910"
+    },
+    {
+      "test_name": "股票监控模块导入",
+      "success": true,
+      "message": "模块导入成功",
+      "timestamp": "2025-08-06T13:56:05.654841"
+    },
+    {
+      "test_name": "股票数据获取",
+      "success": true,
+      "message": "模拟数据获取成功",
+      "timestamp": "2025-08-06T13:56:09.293903"
+    },
+    {
+      "test_name": "Web服务器",
+      "success": true,
+      "message": "Web服务器正在运行（响应较慢）",
+      "timestamp": "2025-08-06T13:56:11.306865"
+    }
+  ]
+}
