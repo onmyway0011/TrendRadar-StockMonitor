@@ -1,0 +1,162 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2025-11-13 17:40:59</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">国产 中国</td>
+                <td class="count">6</td>
+                <td class="percentage">2.35%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=%E4%BB%8E%E5%8D%81%E4%BA%94%E8%BF%90%E4%BC%9A%E7%9C%8B%E2%80%9C%E4%B8%AD%E5%9B%BD%E9%80%9F%E5%BA%A6%E2%80%9D" target="_blank" class="news-link">从十五运会看“中国速度”</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 17时40分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28347062&amp;amp;topic_name=%E6%97%A5%E9%9F%A9%E6%97%A5%E5%B8%B8%E6%80%AA%E4%B8%AD%E5%9B%BD%2C%E7%BD%91%E5%8F%8B%E8%B0%83%E4%BE%83%E8%80%81%E4%B8%AD%E5%BE%88%E5%BF%99" target="_blank" class="news-link">日韩日常怪中国,网友调侃老中很忙</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 17时40分</font><br>[知乎] <a href="https://www.zhihu.com/question/1966268120500004120" target="_blank" class="news-link">为什么西方国家大多在去核电，而中国却大力发展核电？难道不怕核泄漏吗？</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 17时40分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_31950980" target="_blank" class="news-link">泰方将涉赌诈头目佘智江引渡回中国</a> [12] <font color='grey'>- 17时40分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7571383317687468095/" target="_blank" class="news-link">中国澳门选手朱雨玲晋级四强创历史</a> [25] <font color='grey'>- 17时40分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7572082818814053938/" target="_blank" class="news-link">专家：中国南北船厂齐开工藏着大心思</a> [30] <font color='grey'>- 17时40分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">美国</td>
+                <td class="count">6</td>
+                <td class="percentage">2.35%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E7%BE%8E%E5%9B%BD%E6%94%BF%E5%BA%9C%E5%8F%B2%E4%B8%8A%E6%9C%80%E9%95%BF%E5%81%9C%E6%91%86%E7%BB%93%E6%9D%9F" target="_blank" class="news-link">美国政府史上最长停摆结束</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 17时40分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3759245" target="_blank" class="news-link">美国财长贝森特：特朗普谈到向年收入低于10万美元的家庭发放2000美元的退税</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 17时40分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8oFCuwr7cLg" target="_blank" class="news-link">特朗普签署法案，美国史上最长政府“停摆”结束</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 17时40分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3759271" target="_blank" class="news-link">众议院通过临时拨款法案 ，美国政府开启“漫长重启”</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 17时40分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E6%94%BF%E5%BA%9C%E7%BB%93%E6%9D%9F%E5%8F%B2%E4%B8%8A%E6%9C%80%E9%95%BF%E2%80%9C%E5%81%9C%E6%91%86%E2%80%9D" target="_blank" class="news-link">美国政府结束史上最长“停摆”</a> [20] <font color='grey'>- 17时40分</font><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7572102617325637166/" target="_blank" class="news-link">美国政府重新开门 这次能坚持多久</a> [29] <font color='grey'>- 17时40分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word"># 美国关税重点关注 关税 贸易战 贸易 进口 出口 关税壁垒 贸易协定 贸易谈判 反倾销 制裁 禁运 贸易逆差 贸易顺差 WTO 世贸组织</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[凤凰网] <a href="https://news.ifeng.com/c/8oFWtudEQJD" target="_blank" class="news-link">涉中美大豆贸易，商务部最新发声</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 17时40分</font><br><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8oFWvQ7DoKW" target="_blank" class="news-link">鲁比奥：对俄制裁手段已几乎耗尽，不知道还需要再做些什么</a> [6] <font color='grey'>- 17时40分</font></div><br>[财联社热门] <a href="https://www.cls.cn/detail/2199591" target="_blank" class="news-link">事关安世半导体问题，中美大豆贸易等，商务部最新发声</a> [7] <font color='grey'>- 17时40分</font><br>[知乎] <a href="https://www.zhihu.com/question/1972054532130304171" target="_blank" class="news-link">缅甸亚太新城犯罪集团主犯佘智江被引渡回国，这次成功引渡有何意义？佘智江将面临哪些法律制裁？</a> [11] <font color='grey'>- 17时40分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">chatgpt Sam Altman openai</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3759294" target="_blank" class="news-link">阿里股价直线拉升！“通义千问”全面对标ChatGPT，进军C端市场</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 17时40分</font><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2199601" target="_blank" class="news-link">阿里秘密启动“千问”项目 将推出国际版与ChatGPT竞争</a> [11] <font color='grey'>- 17时40分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[抖音] <a href="https://www.douyin.com/hot/2304052" target="_blank" class="news-link">淄博卖苹果大哥是J人吧</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 17时40分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3759220" target="_blank" class="news-link">段永平：不懂企业最好别投，A股我只买了茅台，苹果未来翻1-3倍存在可能，只是现在不便宜，还有一个赚钱方法是它</a> [9] <font color='grey'>- 17时40分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2199055" target="_blank" class="news-link">AI争霸已切换至“能源战场”，大摩预测2028年美国电力缺口达20%！</a> [8] <font color='grey'>- 17时40分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2199040" target="_blank" class="news-link">券商晨会精华：有色牛市再进阶，AI和机器人新材料乘风而起</a> [12] <font color='grey'>- 17时40分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">宇树 王兴兴</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2199402" target="_blank" class="news-link">宇树推出首款轮式人形机器人</a> [9] <font color='grey'>- 17时40分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">马斯克 特斯拉</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_31947522" target="_blank" class="news-link">段永平最新访谈：聊巴菲特、苹果、茅台、拼多多、特斯拉，永远要算你的机会成本（附2万字实录）</a> [7] <font color='grey'>- 17时40分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">AMD</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3759214" target="_blank" class="news-link">科技股再度下挫，道指四连涨创新高，AMD大涨9%，黄金四连涨，原油重挫</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 17时40分</font></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">机器人</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2199366" target="_blank" class="news-link">一汽、江淮密集招标 人形机器人加速“上岗”主机厂、产业链公司将受益</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 17时40分</font></td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3759255" target="_blank" class="news-link">美联储再现人事变动！主张“12月不降息”的亚特兰大联储主席明年2月退休</a> [8] <font color='grey'>- 17时40分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 3 条)</h3>
+        <h4>今日头条 (1 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7572102617325637166/" target="_blank" class="news-link">美国政府重新开门 这次能坚持多久</a> [29]</li></ul><h4>财联社热门 (1 条)</h4><ul><li><a href="https://www.cls.cn/detail/2199601" target="_blank" class="news-link">阿里秘密启动“千问”项目 将推出国际版与ChatGPT竞争</a> [11]</li></ul><h4>凤凰网 (1 条)</h4><ul><li><a href="https://news.ifeng.com/c/8oFWvQ7DoKW" target="_blank" class="news-link">鲁比奥：对俄制裁手段已几乎耗尽，不知道还需要再做些什么</a> [6]</li></ul></div>
+    </body>
+    </html>
+    
