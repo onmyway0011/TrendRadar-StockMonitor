@@ -1,0 +1,186 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2025-11-19 15:13:26</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">国产 中国</td>
+                <td class="count">20</td>
+                <td class="percentage">7.84%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=%E6%97%A5%E5%AA%92%EF%BC%9A%E4%B8%AD%E5%9B%BD%E5%B7%B2%E6%9A%82%E5%81%9C%E8%BF%9B%E5%8F%A3%E6%97%A5%E6%9C%AC%E6%B0%B4%E4%BA%A7%E5%93%81" target="_blank" class="news-link">日媒：中国已暂停进口日本水产品</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 15时13分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E6%97%A5%E5%AA%92%E7%A7%B0%E4%B8%AD%E5%9B%BD%E5%B0%86%E6%9A%82%E5%81%9C%E8%BF%9B%E5%8F%A3%E6%97%A5%E6%9C%AC%E6%B0%B4%E4%BA%A7%E5%93%81" target="_blank" class="news-link">日媒称中国将暂停进口日本水产品</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 15时13分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8oPIJDvQJcF" target="_blank" class="news-link">日媒：中国已向日本通报暂停进口日本水产品</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 15时13分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E4%B8%AD%E5%9B%BD%E5%A4%A9%E7%A9%BA%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84" target="_blank" class="news-link">中国天空是什么样的</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 15时13分</font><br>[微博] <a href="https://m.weibo.cn/search?containerid=100103type%3D1%26t%3D10%26q%3D%23%E9%BC%93%E5%8A%B1%E5%8C%96%E5%A6%86%E5%93%81%E6%96%B0%E5%93%81%E4%B8%AD%E5%9B%BD%E9%A6%96%E5%8F%91%23&amp;stream_entry_id=31&amp;isnewpage=1&amp;extparam=seat%3D1%26dgr%3D0%26cate%3D5001%26stream_entry_id%3D31%26pos%3D2%26realpos%3D3%26lcate%3D5001%26band_rank%3D3%26filter_type%3Drealtimehot%26q%3D%2523%25E9%25BC%2593%25E5%258A%25B1%25E5%258C%2596%25E5%25A6%2586%25E5%2593%2581%25E6%2596%25B0%25E5%2593%2581%25E4%25B8%25AD%25E5%259B%25BD%25E9%25A6%2596%25E5%258F%2591%2523%26c_type%3D31%26flag%3D0%26display_time%3D1763457662%26pre_seqid%3D17634576620800280340176&amp;launchid=10000360-page_H5" target="_blank" class="news-link">鼓励化妆品新品中国首发</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 15时13分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2204669" target="_blank" class="news-link">国台办回应高市早苗涉台错误言行：日方应立即停止干涉中国内政</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 15时13分</font><br>[微博] <a href="https://m.weibo.cn/search?containerid=100103type%3D1%26t%3D10%26q%3D%23%E6%97%A5%E6%9C%AC%E5%A4%96%E5%8A%A1%E7%9C%81%E5%AE%98%E5%91%98%E7%A6%BB%E5%BC%80%E4%B8%AD%E5%9B%BD%E5%A4%96%E4%BA%A4%E9%83%A8%23&amp;stream_entry_id=31&amp;isnewpage=1&amp;extparam=seat%3D1%26dgr%3D0%26cate%3D5001%26stream_entry_id%3D31%26pos%3D4%26realpos%3D5%26lcate%3D5001%26band_rank%3D5%26filter_type%3Drealtimehot%26q%3D%2523%25E6%2597%25A5%25E6%259C%25AC%25E5%25A4%2596%25E5%258A%25A1%25E7%259C%2581%25E5%25AE%2598%25E5%2591%2598%25E7%25A6%25BB%25E5%25BC%2580%25E4%25B8%25AD%25E5%259B%25BD%25E5%25A4%2596%25E4%25BA%25A4%25E9%2583%25A8%2523%26c_type%3D31%26flag%3D0%26display_time%3D1763457662%26pre_seqid%3D17634576620800280340176&amp;launchid=10000360-page_H5" target="_blank" class="news-link">日本外务省官员离开中国外交部</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 15时13分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_31990050" target="_blank" class="news-link">日方抗议中国海警船巡航钓鱼岛，外交部：已当场驳回，并提出反交涉</a> [6] <font color='grey'>- 15时13分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7573254780828057619/" target="_blank" class="news-link">中国军网在海外发布备战视频</a> [7] <font color='grey'>- 15时13分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_31991988" target="_blank" class="news-link">日本艺人美依礼芽、矢野浩二相继发文：永远支持一个中国</a> [7] <font color='grey'>- 15时13分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2204445" target="_blank" class="news-link">美国科技股抛售潮持续！瑞银高呼：是时候将目光投向中国了</a> [7] <font color='grey'>- 15时13分</font><br>[微博] <a href="https://m.weibo.cn/search?containerid=100103type%3D1%26t%3D10%26q%3D%23%E6%97%A5%E6%96%B9%E5%BF%85%E9%A1%BB%E7%BB%99%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E4%B8%80%E4%B8%AA%E4%BA%A4%E4%BB%A3%23&amp;stream_entry_id=31&amp;isnewpage=1&amp;extparam=seat%3D1%26dgr%3D0%26cate%3D5001%26stream_entry_id%3D31%26pos%3D7%26realpos%3D7%26lcate%3D5001%26band_rank%3D7%26filter_type%3Drealtimehot%26q%3D%2523%25E6%2597%25A5%25E6%2596%25B9%25E5%25BF%2585%25E9%25A1%25BB%25E7%25BB%2599%25E4%25B8%25AD%25E5%259B%25BD%25E4%25BA%25BA%25E6%25B0%2591%25E4%25B8%2580%25E4%25B8%25AA%25E4%25BA%25A4%25E4%25BB%25A3%2523%26c_type%3D31%26flag%3D0%26display_time%3D1763457662%26pre_seqid%3D17634576620800280340176&amp;launchid=10000360-page_H5" target="_blank" class="news-link">日方必须给中国人民一个交代</a> [7] <font color='grey'>- 15时13分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8oOvhzhr4xt" target="_blank" class="news-link">英方炒作所谓“中国间谍威胁”，中使馆回应</a> [8] <font color='grey'>- 15时13分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E6%97%A5%E6%9C%AC%E7%94%B5%E8%A7%86%E5%8F%B0%EF%BC%9A%E2%80%9C14%E4%BA%BF%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%BE%88%E6%84%A4%E6%80%92%E2%80%9D" target="_blank" class="news-link">日本电视台：“14亿中国人很愤怒”</a> [9] <font color='grey'>- 15时13分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_31989771" target="_blank" class="news-link">日本外务省官员离开中国外交部，面对媒体提问未给出任何表态</a> [9] <font color='grey'>- 15时13分</font><br>[知乎] <a href="https://www.zhihu.com/question/1974421884121653526" target="_blank" class="news-link">国安部披露近年来破获一批日本间谍情报机关针对中国的渗透窃密间谍案件，哪些信息值得关注？有哪些警示？</a> [10] <font color='grey'>- 15时13分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_31907814" target="_blank" class="news-link">日本旅游消费股大跌背后：中国游客对日本旅游业意味着什么？</a> [11] <font color='grey'>- 15时13分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%8A%A0%E6%B2%99%E5%86%B3%E8%AE%AE%E9%80%9A%E8%BF%87%20%E4%B8%AD%E5%9B%BD%E5%BC%83%E6%9D%83" target="_blank" class="news-link">加沙决议通过 中国弃权</a> [14] <font color='grey'>- 15时13分</font><br>[微博] <a href="https://m.weibo.cn/search?containerid=100103type%3D1%26t%3D10%26q%3D%23%E9%AB%98%E5%B8%82%E6%8B%BF%E5%8F%B0%E6%B9%BE%E6%90%9E%E4%BA%8B%E5%88%AB%E6%80%AA%E4%B8%AD%E5%9B%BD%E8%B0%88%E7%90%89%E7%90%83%E6%9C%89%E4%BA%8B%23&amp;stream_entry_id=31&amp;isnewpage=1&amp;extparam=seat%3D1%26dgr%3D0%26cate%3D5001%26stream_entry_id%3D31%26pos%3D24%26realpos%3D24%26lcate%3D5001%26band_rank%3D24%26filter_type%3Drealtimehot%26q%3D%2523%25E9%25AB%2598%25E5%25B8%2582%25E6%258B%25BF%25E5%258F%25B0%25E6%25B9%25BE%25E6%2590%259E%25E4%25BA%258B%25E5%2588%25AB%25E6%2580%25AA%25E4%25B8%25AD%25E5%259B%25BD%25E8%25B0%2588%25E7%2590%2589%25E7%2590%2583%25E6%259C%2589%25E4%25BA%258B%2523%26c_type%3D31%26flag%3D1%26display_time%3D1763457662%26pre_seqid%3D17634576620800280340176&amp;launchid=10000360-page_H5" target="_blank" class="news-link">高市拿台湾搞事别怪中国谈琉球有事</a> [24] <font color='grey'>- 15时13分</font><br>[微博] <a href="https://m.weibo.cn/search?containerid=100103type%3D1%26t%3D10%26q%3D%23%E6%97%A5%E6%9C%AC%E9%83%A8%E5%88%86%E9%85%92%E5%BA%97%E5%BC%80%E5%A7%8B%E9%81%AD%E4%B8%AD%E5%9B%BD%E9%A1%BE%E5%AE%A2%E9%80%80%E8%AE%A2%23&amp;stream_entry_id=31&amp;isnewpage=1&amp;extparam=seat%3D1%26dgr%3D0%26cate%3D5001%26stream_entry_id%3D31%26pos%3D29%26realpos%3D29%26lcate%3D5001%26band_rank%3D29%26filter_type%3Drealtimehot%26q%3D%2523%25E6%2597%25A5%25E6%259C%25AC%25E9%2583%25A8%25E5%2588%2586%25E9%2585%2592%25E5%25BA%2597%25E5%25BC%2580%25E5%25A7%258B%25E9%2581%25AD%25E4%25B8%25AD%25E5%259B%25BD%25E9%25A1%25BE%25E5%25AE%25A2%25E9%2580%2580%25E8%25AE%25A2%2523%26c_type%3D31%26flag%3D1%26display_time%3D1763457662%26pre_seqid%3D17634576620800280340176&amp;launchid=10000360-page_H5" target="_blank" class="news-link">日本部分酒店开始遭中国顾客退订</a> [29] <font color='grey'>- 15时13分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">马斯克 特斯拉</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[凤凰网] <a href="https://news.ifeng.com/c/8oPCQzNPXrX" target="_blank" class="news-link">马斯克现身白宫参加晚宴(图)</a> [10] <font color='grey'>- 15时13分</font><br>[知乎] <a href="https://www.zhihu.com/question/1973721840783417550" target="_blank" class="news-link">如何看待马斯克预测「20 年内人类意识有望上传至机器人实现永生」？你认为能实现么？</a> [11] <font color='grey'>- 15时13分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7573762239518228521/" target="_blank" class="news-link">马斯克出席特朗普与沙特王储晚宴</a> [13] <font color='grey'>- 15时13分</font><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7574272284144193074/" target="_blank" class="news-link">马斯克和特朗普“破镜重圆”了吗</a> [29] <font color='grey'>- 15时13分</font></div><br>[今日头条] <a href="https://www.toutiao.com/trending/7573718606148616218/" target="_blank" class="news-link">高管离职潮是因为马斯克不务正业吗</a> [30] <font color='grey'>- 15时13分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">谷歌 google gemini deepmind</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2204501" target="_blank" class="news-link">AI大模型“新王”加冕 奥尔特曼发来贺电 谷歌做对了什么？</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 15时13分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3759657" target="_blank" class="news-link">谷歌最强大AI模型来了！Gemini 3发布首日即投入搜索、App和开发者平台同步上线</a> [6] <font color='grey'>- 15时13分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3759673" target="_blank" class="news-link">Gemini 3的意义：AI已超越“幻觉阶段”，逼近人类，“人机协作”将从“人对AI纠错”走向“人指导AI工作”</a> [7] <font color='grey'>- 15时13分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=Gemini3%E4%B8%BA%E4%BD%95%E6%98%AF%E7%9B%AE%E5%89%8D%E6%9C%80%E5%BC%BAAI" target="_blank" class="news-link">Gemini3为何是目前最强AI</a> [7] <font color='grey'>- 15时13分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E7%8E%8B%E8%87%AA%E5%A6%82%E6%B7%B1%E5%BA%A6%E4%BD%93%E9%AA%8C%E8%B0%B7%E6%AD%8CAI" target="_blank" class="news-link">王自如深度体验谷歌AI</a> [9] <font color='grey'>- 15时13分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28347260&amp;amp;topic_name=%E7%88%86%E5%86%B2%E6%A6%9C%E9%A6%96%21%E8%B1%86%E5%8C%85%E5%8F%8D%E8%B6%85AI%E8%80%81%E5%A4%A7%E5%93%A5%E7%99%BB%E9%A1%B6" target="_blank" class="news-link">爆冲榜首!豆包反超AI老大哥登顶</a> [7] <font color='grey'>- 15时13分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2204415" target="_blank" class="news-link">千问APP有望被打造成超级入口 阿里AI生态链企业或全面受益</a> [11] <font color='grey'>- 15时13分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_31941227" target="_blank" class="news-link">财晓得｜AI正在如何改写教育类APP版图？</a> [15] <font color='grey'>- 15时13分</font><br>[抖音] <a href="https://www.douyin.com/hot/2310465" target="_blank" class="news-link">Plain Jane Remix编舞跳起来</a> [22] <font color='grey'>- 15时13分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">美国</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3759625" target="_blank" class="news-link">美国10月18日当周首申人数为23.2万人，政府停摆致官方报告持续缺席</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 15时13分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7573599626864394267/" target="_blank" class="news-link">高市早苗妄想拉美国下水</a> [12] <font color='grey'>- 15时13分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_31988287" target="_blank" class="news-link">专访｜美国前气候特使斯特恩：下一场大选后美国会回归气候外交舞台</a> [14] <font color='grey'>- 15时13分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E6%B2%99%E7%89%B9%E7%A1%AE%E8%AE%A4%E5%AF%B9%E7%BE%8E%E5%9B%BD%E6%8A%95%E8%B5%84%E5%A2%9E%E8%87%B31%E4%B8%87%E4%BA%BF%E7%BE%8E%E5%85%83" target="_blank" class="news-link">沙特确认对美国投资增至1万亿美元</a> [25] <font color='grey'>- 15时13分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">小米 雷军 xiaomi</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2204599" target="_blank" class="news-link">小米集团股价跌破40港元，较6月最高点已跌超30%</a> [8] <font color='grey'>- 15时13分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E5%B0%8F%E7%B1%B3%E9%9B%86%E5%9B%A2%E8%82%A1%E4%BB%B7%E8%B7%8C%E7%A0%B440%E6%B8%AF%E5%85%83" target="_blank" class="news-link">小米集团股价跌破40港元</a> [15] <font color='grey'>- 15时13分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28347235&amp;amp;topic_name=%E9%AB%98%E7%AE%A1%E5%85%BB%E6%B0%B4%E5%86%9B%3F%E5%B0%8F%E7%B1%B3%E8%88%86%E8%AE%BA%E6%88%98%E7%82%B8%E9%94%85%E5%85%A8%E7%BD%91" target="_blank" class="news-link">高管养水军?小米舆论战炸锅全网</a> [18] <font color='grey'>- 15时13分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2204401" target="_blank" class="news-link">【早报】与日方外交官磋商后对结果满意吗？中方：当然不满意；特朗普：美联储主席人选已定</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 15时13分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3759659" target="_blank" class="news-link">特朗普称“已经知道我的美联储主席人选”，贝森特：可能在圣诞节前宣布</a> [8] <font color='grey'>- 15时13分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2204486" target="_blank" class="news-link">美联储12月不降息概率已大于降息？许多人并不信……</a> [9] <font color='grey'>- 15时13分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">黄仁勋 英伟达 NVIDIA</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3759603" target="_blank" class="news-link">英伟达财报前市场情绪谨慎，标普连跌四日，科技股重挫，比特币、现货黄金反弹</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 15时13分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2204561" target="_blank" class="news-link">英伟达财报倒计时！期权市场暗示：史上最大单日市值巨震要来了？</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 15时13分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word"># 美国关税重点关注 关税 贸易战 贸易 进口 出口 关税壁垒 贸易协定 贸易谈判 反倾销 制裁 禁运 贸易逆差 贸易顺差 WTO 世贸组织</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7573610499775430675/" target="_blank" class="news-link">日媒：中方暂停进口日本水产品</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 15时13分</font><br>[抖音] <a href="https://www.douyin.com/hot/2311223" target="_blank" class="news-link">日媒：中方暂停进口日本水产品</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 15时13分</font></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">华为 任正非 鸿蒙 HarmonyOS</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7573682559507529791/" target="_blank" class="news-link">鸿蒙HarmonyOS 6最新适配机型公布</a> [26] <font color='grey'>- 15时13分</font></td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td class="word">微软 Microsoft</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3759654" target="_blank" class="news-link">“AI闭环”扩大：英伟达、微软联手150亿美元投资Anthropic，“OpenAI对手”的估值已达3500亿美元</a> [10] <font color='grey'>- 15时13分</font></td>
+            </tr>
+        
+            <tr>
+                <td>12</td>
+                <td class="word">手机</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[抖音] <a href="https://www.douyin.com/hot/2309556" target="_blank" class="news-link">交换你手机里的秋树</a> [14] <font color='grey'>- 15时13分</font></td>
+            </tr>
+        
+            <tr>
+                <td>13</td>
+                <td class="word">机器人</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3759621" target="_blank" class="news-link">刚刚，中美机器人爆发了一场论战</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 15时13分</font></td>
+            </tr>
+        
+            <tr>
+                <td>14</td>
+                <td class="word">科技</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/1974396544791834987" target="_blank" class="news-link">江苏科技大学通报郭某学术造假事件，已解聘并报案，此事还有哪些疑点？校方在引进审核中是否存在失职责任？</a> [6] <font color='grey'>- 15时13分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 1 条)</h3>
+        <h4>今日头条 (1 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7574272284144193074/" target="_blank" class="news-link">马斯克和特朗普“破镜重圆”了吗</a> [29]</li></ul></div>
+    </body>
+    </html>
+    
