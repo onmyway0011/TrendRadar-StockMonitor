@@ -1,0 +1,183 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2025-12-05 15:39:28</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">国产 中国</td>
+                <td class="count">6</td>
+                <td class="percentage">2.35%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3760773" target="_blank" class="news-link">“国产GPU第一股”！摩尔线程大涨502%，中一签赚28万，早期投资者暴赚6200倍</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 15时39分</font><br>[知乎] <a href="https://www.zhihu.com/question/1979657460173271330" target="_blank" class="news-link">中国内地贡献近一半《疯狂动物城 2》全球票房，这对好莱坞和中国电影市场意味着什么？</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 15时39分</font><br>[抖音] <a href="https://www.douyin.com/hot/2326652" target="_blank" class="news-link">中国企业多赛道领跑世界</a> [9] <font color='grey'>- 15时39分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7580185142270885931/" target="_blank" class="news-link">演员周柯宇已成为中国公民</a> [13] <font color='grey'>- 15时39分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%9C%9F%E8%B1%86%E4%B8%BA%E4%BD%95%E6%B2%A1%E6%88%90%E4%B8%BA%E4%B8%AD%E5%9B%BD%E4%BA%BA%E7%9A%84%E4%B8%BB%E9%A3%9F" target="_blank" class="news-link">土豆为何没成为中国人的主食</a> [15] <font color='grey'>- 15时39分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E6%B3%95%E5%9B%BD%E5%AA%92%E4%BD%93%E8%AE%B0%E5%BD%95%E4%B8%8B%E4%B8%AD%E5%9B%BD%E5%86%9B%E4%BA%BA%E9%A3%8E%E9%87%87" target="_blank" class="news-link">法国媒体记录下中国军人风采</a> [28] <font color='grey'>- 15时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">华为 任正非 鸿蒙 HarmonyOS</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2220393" target="_blank" class="news-link">任正非最新发声！涉及人工智能，信息量很大</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 15时39分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E4%BB%BB%E6%AD%A3%E9%9D%9E%E6%9C%80%E6%96%B0%E8%AE%B2%E8%AF%9D%EF%BC%9A%E8%83%BD%E6%91%B8%E9%AB%98%E5%B0%B1%E4%B8%8D%E8%A6%81%E5%8E%BB%E6%91%B8%E4%BD%8E" target="_blank" class="news-link">任正非最新讲话：能摸高就不要去摸低</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 15时39分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7579430128343400489/" target="_blank" class="news-link">华为Mate X7开售即告罄</a> [14] <font color='grey'>- 15时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3760711" target="_blank" class="news-link">美股涨势消减，小盘股指逼近历史高点，美债比特币下挫，铜价回落</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 15时39分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3760712" target="_blank" class="news-link">大佬Gave警告：美联储财政部合流大局已定，明年美债或先崩，亚洲货币升值将终结黄金牛市</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 15时39分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3760719" target="_blank" class="news-link">推动加息，日本央行如何“巧取”高市早苗</a> [9] <font color='grey'>- 15时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">京东 刘强东</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7579899346179837481/" target="_blank" class="news-link">美团京东淘宝声明：自愿执行国标</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 15时39分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%A2%E4%BA%AC%E4%B8%9C%E6%B7%98%E5%AE%9D%E5%A3%B0%E6%98%8E%EF%BC%9A%E8%87%AA%E6%84%BF%E6%89%A7%E8%A1%8C%E5%9B%BD%E6%A0%87" target="_blank" class="news-link">美团京东淘宝声明：自愿执行国标</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 15时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">黄仁勋 英伟达 NVIDIA</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3760706" target="_blank" class="news-link">黄仁勋万字访谈：AI竞赛无“终点线”，技术迭代才是关键，33年来每天都觉得公司要倒闭</a> [7] <font color='grey'>- 15时39分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3760723" target="_blank" class="news-link">迎战TPU与Trainium？英伟达再度发文“自证”：GB200 NVL72可将开源AI模型性能最高提升10倍</a> [8] <font color='grey'>- 15时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">美国</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3760740" target="_blank" class="news-link">美国就业进入“不裁不招”模式：上周首申创逾三年新低，招聘计划大幅下降</a> [6] <font color='grey'>- 15时39分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8opagkmQbnv" target="_blank" class="news-link">涉嫌在“国会山骚乱”前夕放置炸弹，美国一名男子被捕</a> [9] <font color='grey'>- 15时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">胖东来 于东来</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=%E8%83%96%E4%B8%9C%E6%9D%A5%E6%8B%9B%E8%81%98%EF%BC%9A50%E5%B2%81%E4%BB%A5%E4%B8%8B+%E5%B9%B4%E8%96%AA100%E4%B8%87%E8%B5%B7" target="_blank" class="news-link">胖东来招聘：50岁以下 年薪100万起</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 15时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">DeepSeek 梁文锋</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%AE%9E%E6%B5%8B%E6%AC%A7%E6%B4%B2%E7%89%88Deepseek%E6%B0%B4%E5%B9%B3%E5%A6%82%E4%BD%95" target="_blank" class="news-link">实测欧洲版Deepseek水平如何</a> [21] <font color='grey'>- 15时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">哪吒 饺子</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/1979270755616252908" target="_blank" class="news-link">员工误将剧毒物质加入饺子馅，店主中毒死亡，店主被判担责 70%，员工 20%，如何解读这一判决？</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 15时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">微软 Microsoft</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2220301" target="_blank" class="news-link">美国小盘股指数创新高 微软商业版Office涨价 | 环球市场</a> [8] <font color='grey'>- 15时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2220406" target="_blank" class="news-link">专访中央党校教授汪玉凯：政策稳定性将是重要考量，或强化AI与数字经济部署|中央经济工作会议前瞻</a> [11] <font color='grey'>- 15时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>12</td>
+                <td class="word">手机</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/1980210536189748299" target="_blank" class="news-link">如何看待周鸿祎「豆包手机助手拿捏所有 App，直击互联网大厂的护城河」的观点？</a> [15] <font color='grey'>- 15时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>13</td>
+                <td class="word">机器人</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2220290" target="_blank" class="news-link">北京将建全球首个国家人形机器人赛训基地 人形机器人产业化持续加速</a> [12] <font color='grey'>- 15时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>14</td>
+                <td class="word">科技</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=%E9%A6%96%E4%B8%AA%E9%A6%96%E5%8F%B0%E9%A6%96%E6%AC%A1%EF%BC%81%E5%A4%9A%E9%A2%86%E5%9F%9F%E5%AE%9E%E7%8E%B0%E7%A7%91%E6%8A%80%E7%AA%81%E7%A0%B4" target="_blank" class="news-link">首个首台首次！多领域实现科技突破</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 15时39分</font></td>
+            </tr>
+        
+        </table>
+    
+    </body>
+    </html>
+    
