@@ -1,0 +1,170 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2025-12-12 11:05:01</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">美国</td>
+                <td class="count">9</td>
+                <td class="percentage">3.53%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7582512390676463626/" target="_blank" class="news-link">牛弹琴：美国要组建C5替代G7</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 11时05分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8p12Z0bylC2" target="_blank" class="news-link">美国要组建C5，全世界大吃一惊</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 11时05分</font><br><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/1982479594176127837" target="_blank" class="news-link">中兴通讯股价大跌，公司称正与美国司法部就有关事项进行沟通，释放出哪些信号 ？</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 11时05分</font></div><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3761205" target="_blank" class="news-link">美国上周首申人数增4.4万人，创2020年来最大增幅，续请人数骤降至8个月低点</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 11时05分</font><br><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8p1995QT56u" target="_blank" class="news-link">针对美国会年度报告，香港、澳门特区政府同日发声</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 11时05分</font></div><br>[今日头条] <a href="https://www.toutiao.com/trending/7582051109947932681/" target="_blank" class="news-link">日本前将领称珍珠港事件是美国栽赃</a> [6] <font color='grey'>- 11时05分</font><br><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E7%BE%8E%E5%9B%BD%E6%83%B3%E5%92%8C%E4%B8%AD%E4%BF%84%E5%8D%B0%E6%97%A5%E7%BB%84%E5%BB%BA%E6%A0%B8%E5%BF%83%E4%BA%94%E5%9B%BD%23&amp;t=31&amp;band_rank=6&amp;Refer=top" target="_blank" class="news-link">美国想和中俄印日组建核心五国</a> [6] <font color='grey'>- 11时05分</font></div><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E8%A6%81%E7%BB%84%E5%BB%BAC5+%E5%85%A8%E4%B8%96%E7%95%8C%E5%A4%A7%E5%90%83%E4%B8%80%E6%83%8A" target="_blank" class="news-link">美国要组建C5 全世界大吃一惊</a> [13] <font color='grey'>- 11时05分</font><br><div class='new-title'>🆕 [澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32153835" target="_blank" class="news-link">中兴通讯午后大跌，公司称正与美国司法部就有关事项进行沟通</a> [13] <font color='grey'>- 11时05分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">国产 中国</td>
+                <td class="count">8</td>
+                <td class="percentage">3.14%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7582594615455256105/" target="_blank" class="news-link">从全球视野看中国经济发展大逻辑</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 11时05分</font><br><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8p1Itj9nawH" target="_blank" class="news-link">美国北极大使空缺近1年，美议员敦促鲁比奥：别让中国…</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 11时05分</font></div><br>[凤凰网] <a href="https://news.ifeng.com/c/8ozxD78LjGA" target="_blank" class="news-link">美军高官又狂了：中国造船速度遥遥领先，咱不得枕戈待旦啊</a> [8] <font color='grey'>- 11时05分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7581525248953335871/" target="_blank" class="news-link">中国经济展现强劲韧性</a> [9] <font color='grey'>- 11时05分</font><br><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8p1EAzI2ocN" target="_blank" class="news-link">美议员加戏：别用中国的了，万一打起来…</a> [10] <font color='grey'>- 11时05分</font></div><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E7%B4%A7%E6%80%A5%E6%8F%90%E9%86%92%EF%BC%9A%E8%AF%B7%E5%9C%A8%E6%97%A5%E4%B8%AD%E5%9B%BD%E5%85%AC%E6%B0%91%E8%BF%9B%E8%A1%8C%E7%99%BB%E8%AE%B0" target="_blank" class="news-link">紧急提醒：请在日中国公民进行登记</a> [17] <font color='grey'>- 11时05分</font><br><div class='new-title'>🆕 [澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32154235" target="_blank" class="news-link">中方提醒中国公民暂勿前往日本是否为了反制高市涉台言论？外交部回应</a> [20] <font color='grey'>- 11时05分</font></div><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28347862&amp;amp;topic_name=%E6%99%BA%E5%95%86%E6%B4%BC%E5%9C%B0%21%E6%97%A5%E7%BD%91%E6%B0%91%E5%9D%9A%E4%BF%A1%E4%B8%AD%E5%9B%BD%E5%88%B6%E9%80%A0%E5%9C%B0%E9%9C%87" target="_blank" class="news-link">智商洼地!日网民坚信中国制造地震</a> [22] <font color='grey'>- 11时05分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">chatgpt Sam Altman openai</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2227243" target="_blank" class="news-link">GPT-5.2来了！OpenAI称其为“最强专业知识工作大模型”</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 11时05分</font><br><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/1982718694623768873" target="_blank" class="news-link">GPT-5.2 正式发布，OpenAI 称其为「最强专业知识工作大模型」，有哪些技术亮点？</a> [7] <font color='grey'>- 11时05分</font></div><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%AE%9E%E6%B5%8BChatGPT5.2%E6%9C%89%E5%A4%9A%E5%BC%BA" target="_blank" class="news-link">实测ChatGPT5.2有多强</a> [10] <font color='grey'>- 11时05分</font></div><br>[百度热搜] <a href="https://www.baidu.com/s?wd=GPT-5.2%E6%9D%A5%E4%BA%86%EF%BC%81OpenAI%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83" target="_blank" class="news-link">GPT-5.2来了！OpenAI最新发布</a> [20] <font color='grey'>- 11时05分</font><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90ChatGPT5.2" target="_blank" class="news-link">全面解析ChatGPT5.2</a> [29] <font color='grey'>- 11时05分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/1981776734798963285" target="_blank" class="news-link">苹果原装取卡针被传由铂金制成，回收价超 300 元，官方称是一种非晶态合金，这种金属有哪些特点？</a> [8] <font color='grey'>- 11时05分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7582537158314115113/" target="_blank" class="news-link">奶奶用暖气片给孙子烤苹果干</a> [14] <font color='grey'>- 11时05分</font><br><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E5%A5%B6%E5%A5%B6%E7%94%A8%E6%9A%96%E6%B0%94%E7%89%87%E7%83%A4%E8%8B%B9%E6%9E%9C%E5%B9%B2%23&amp;t=31&amp;band_rank=24&amp;Refer=top" target="_blank" class="news-link">奶奶用暖气片烤苹果干</a> [24] <font color='grey'>- 11时05分</font></div><br><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E5%A5%B6%E5%A5%B6%E7%94%A8%E6%9A%96%E6%B0%94%E7%89%87%E7%BB%99%E5%AD%99%E5%AD%90%E7%83%A4%E8%8B%B9%E6%9E%9C%E5%B9%B2%23&amp;t=31&amp;band_rank=25&amp;Refer=top" target="_blank" class="news-link">奶奶用暖气片给孙子烤苹果干</a> [25] <font color='grey'>- 11时05分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3761175" target="_blank" class="news-link">AI担忧打压纳指，甲骨文大跌11%，道指新高，白银大涨、与伦铜均创新高，人民币升破7.05</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 11时05分</font><br><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3761222" target="_blank" class="news-link">博通上季AI芯片收入加速增74%，料本季翻倍猛增，但积压订单逊色 | 财报见闻</a> [8] <font color='grey'>- 11时05分</font></div><br><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8p1EpDusf8A" target="_blank" class="news-link">特朗普破大妨：美国AI电力遥遥领先，都归功于我</a> [12] <font color='grey'>- 11时05分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">小米 雷军 xiaomi</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=%E6%9D%91%E6%94%AF%E4%B9%A6%E5%8D%96%E5%B0%8F%E7%B1%B3%E8%A2%AB%E5%B0%8F%E7%B1%B3%E6%B3%95%E5%8A%A1%E6%8A%95%E8%AF%89%E4%B8%8B%E6%9E%B6" target="_blank" class="news-link">村支书卖小米被小米法务投诉下架</a> [6] <font color='grey'>- 11时05分</font><br><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E5%B0%8F%E7%B1%B3%E5%9B%9E%E5%BA%94%E6%9D%91%E6%94%AF%E4%B9%A6%E5%8D%96%E5%B0%8F%E7%B1%B3%E8%A2%AB%E6%8A%95%E8%AF%89%23&amp;t=31&amp;band_rank=22&amp;Refer=top" target="_blank" class="news-link">小米回应村支书卖小米被投诉</a> [22] <font color='grey'>- 11时05分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">马斯克 特斯拉</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28347877&amp;amp;topic_name=%E7%89%B9%E6%96%AF%E6%8B%89%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%91%94%E5%80%92%E6%91%98%E9%95%9C%E8%A2%AB%E7%BE%A4%E5%98%B2" target="_blank" class="news-link">特斯拉机器人摔倒摘镜被群嘲</a> [16] <font color='grey'>- 11时05分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32153532" target="_blank" class="news-link">每天只睡6个小时的马斯克，经常在关于AI的噩梦中惊醒</a> [18] <font color='grey'>- 11时05分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2227262" target="_blank" class="news-link">美股收盘：道指、标普携手刷新收盘纪录 甲骨文拖累纳指走低</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 11时05分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3761195" target="_blank" class="news-link">大空头Burry警告：美联储RMP意在掩盖银行体系脆弱性，本质上是重启QE</a> [9] <font color='grey'>- 11时05分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">华为 任正非 鸿蒙 HarmonyOS</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7581973446574293028/" target="_blank" class="news-link">曝华为Mate 70系列销量突破千万台</a> [26] <font color='grey'>- 11时05分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">谷歌 google gemini deepmind</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3761213" target="_blank" class="news-link">OpenAI发布GPT-5.2迎战Gemini，号称智能体编码最强，赶超人类专家，Altman料1月解除红色警报</a> [7] <font color='grey'>- 11时05分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td class="word">机器人</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2227214" target="_blank" class="news-link">全球第二大私募股权巨头宣布推动部署1万台人形机器人</a> [12] <font color='grey'>- 11时05分</font></td>
+            </tr>
+        
+            <tr>
+                <td>12</td>
+                <td class="word"># 美国关税重点关注 关税 贸易战 贸易 进口 出口 关税壁垒 贸易协定 贸易谈判 反倾销 制裁 禁运 贸易逆差 贸易顺差 WTO 世贸组织</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [抖音] <a href="https://www.douyin.com/hot/2333771" target="_blank" class="news-link">越南出手锁死稀土矿石出口</a> [14] <font color='grey'>- 11时05分</font></div></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 18 条)</h3>
+        <h4>今日头条 (1 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7581973446574293028/" target="_blank" class="news-link">曝华为Mate 70系列销量突破千万台</a> [26]</li></ul><h4>华尔街见闻 (2 条)</h4><ul><li><a href="https://wallstreetcn.com/articles/3761213" target="_blank" class="news-link">OpenAI发布GPT-5.2迎战Gemini，号称智能体编码最强，赶超人类专家，Altman料1月解除红色警报</a> [7]</li><li><a href="https://wallstreetcn.com/articles/3761222" target="_blank" class="news-link">博通上季AI芯片收入加速增74%，料本季翻倍猛增，但积压订单逊色 | 财报见闻</a> [8]</li></ul><h4>澎湃新闻 (2 条)</h4><ul><li><a href="https://m.thepaper.cn/newsDetail_forward_32153835" target="_blank" class="news-link">中兴通讯午后大跌，公司称正与美国司法部就有关事项进行沟通</a> [13]</li><li><a href="https://m.thepaper.cn/newsDetail_forward_32154235" target="_blank" class="news-link">中方提醒中国公民暂勿前往日本是否为了反制高市涉台言论？外交部回应</a> [20]</li></ul><h4>bilibili 热搜 (2 条)</h4><ul><li><a href="https://search.bilibili.com/all?keyword=%E5%AE%9E%E6%B5%8BChatGPT5.2%E6%9C%89%E5%A4%9A%E5%BC%BA" target="_blank" class="news-link">实测ChatGPT5.2有多强</a> [10]</li><li><a href="https://search.bilibili.com/all?keyword=%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90ChatGPT5.2" target="_blank" class="news-link">全面解析ChatGPT5.2</a> [29]</li></ul><h4>凤凰网 (4 条)</h4><ul><li><a href="https://news.ifeng.com/c/8p1Itj9nawH" target="_blank" class="news-link">美国北极大使空缺近1年，美议员敦促鲁比奥：别让中国…</a> <font color='red'><strong>[4]</strong></font></li><li><a href="https://news.ifeng.com/c/8p1995QT56u" target="_blank" class="news-link">针对美国会年度报告，香港、澳门特区政府同日发声</a> <font color='red'><strong>[5]</strong></font></li><li><a href="https://news.ifeng.com/c/8p1EAzI2ocN" target="_blank" class="news-link">美议员加戏：别用中国的了，万一打起来…</a> [10]</li><li><a href="https://news.ifeng.com/c/8p1EpDusf8A" target="_blank" class="news-link">特朗普破大妨：美国AI电力遥遥领先，都归功于我</a> [12]</li></ul><h4>微博 (4 条)</h4><ul><li><a href="https://s.weibo.com/weibo?q=%23%E7%BE%8E%E5%9B%BD%E6%83%B3%E5%92%8C%E4%B8%AD%E4%BF%84%E5%8D%B0%E6%97%A5%E7%BB%84%E5%BB%BA%E6%A0%B8%E5%BF%83%E4%BA%94%E5%9B%BD%23&amp;t=31&amp;band_rank=6&amp;Refer=top" target="_blank" class="news-link">美国想和中俄印日组建核心五国</a> [6]</li><li><a href="https://s.weibo.com/weibo?q=%23%E5%B0%8F%E7%B1%B3%E5%9B%9E%E5%BA%94%E6%9D%91%E6%94%AF%E4%B9%A6%E5%8D%96%E5%B0%8F%E7%B1%B3%E8%A2%AB%E6%8A%95%E8%AF%89%23&amp;t=31&amp;band_rank=22&amp;Refer=top" target="_blank" class="news-link">小米回应村支书卖小米被投诉</a> [22]</li><li><a href="https://s.weibo.com/weibo?q=%23%E5%A5%B6%E5%A5%B6%E7%94%A8%E6%9A%96%E6%B0%94%E7%89%87%E7%83%A4%E8%8B%B9%E6%9E%9C%E5%B9%B2%23&amp;t=31&amp;band_rank=24&amp;Refer=top" target="_blank" class="news-link">奶奶用暖气片烤苹果干</a> [24]</li><li><a href="https://s.weibo.com/weibo?q=%23%E5%A5%B6%E5%A5%B6%E7%94%A8%E6%9A%96%E6%B0%94%E7%89%87%E7%BB%99%E5%AD%99%E5%AD%90%E7%83%A4%E8%8B%B9%E6%9E%9C%E5%B9%B2%23&amp;t=31&amp;band_rank=25&amp;Refer=top" target="_blank" class="news-link">奶奶用暖气片给孙子烤苹果干</a> [25]</li></ul><h4>抖音 (1 条)</h4><ul><li><a href="https://www.douyin.com/hot/2333771" target="_blank" class="news-link">越南出手锁死稀土矿石出口</a> [14]</li></ul><h4>知乎 (2 条)</h4><ul><li><a href="https://www.zhihu.com/question/1982479594176127837" target="_blank" class="news-link">中兴通讯股价大跌，公司称正与美国司法部就有关事项进行沟通，释放出哪些信号 ？</a> <font color='red'><strong>[3]</strong></font></li><li><a href="https://www.zhihu.com/question/1982718694623768873" target="_blank" class="news-link">GPT-5.2 正式发布，OpenAI 称其为「最强专业知识工作大模型」，有哪些技术亮点？</a> [7]</li></ul></div>
+    </body>
+    </html>
+    
