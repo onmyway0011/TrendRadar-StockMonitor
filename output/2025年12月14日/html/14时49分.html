@@ -1,0 +1,170 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2025-12-14 14:49:48</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">国产 中国</td>
+                <td class="count">8</td>
+                <td class="percentage">3.14%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2228757" target="_blank" class="news-link">近一个月21家A股上市公司公告终止并购重组 热门国产算力芯片龙头赫然在列</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 14时49分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7583544120682204723/" target="_blank" class="news-link">2026年中国经济向“内”求变</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 14时49分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2228711" target="_blank" class="news-link">比摩尔线程更“难抢” 沐曦股份会是下一只国产GPU“大肉签”吗？</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 14时49分</font><br>[抖音] <a href="https://www.douyin.com/hot/2335953" target="_blank" class="news-link">外媒眼中的中国经济关键词</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 14时49分</font><br>[抖音] <a href="https://www.douyin.com/hot/2335957" target="_blank" class="news-link">中国电影正成为促进消费重要引擎</a> [9] <font color='grey'>- 14时49分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32171435" target="_blank" class="news-link">打卡中国｜从老街烟火到揽山入城，南昌打造更多文旅新场景</a> [15] <font color='grey'>- 14时49分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E4%B8%AD%E5%9B%BD%E5%8F%A4%E4%BA%BA%E5%A6%82%E4%BD%95%E7%86%AC%E8%BF%87%E5%AF%92%E5%86%B7%E5%86%AC%E5%A4%A9" target="_blank" class="news-link">中国古人如何熬过寒冷冬天</a> [16] <font color='grey'>- 14时49分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E8%8A%AC%E5%85%B0%E9%80%89%E7%BE%8E%E5%B0%8F%E5%A7%90%E6%AD%A7%E8%A7%86%E4%B8%AD%E5%9B%BD%E4%BA%BA+%E8%A2%AB%E5%89%A5%E5%A4%BA%E5%A4%B4%E8%A1%94" target="_blank" class="news-link">芬兰选美小姐歧视中国人 被剥夺头衔</a> [22] <font color='grey'>- 14时49分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2228565" target="_blank" class="news-link">美股收盘：AI交易连遭打击 三大指数集体收跌 博通重挫逾11%</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 14时49分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/premium/articles/3761351?layout=wscn-layout" target="_blank" class="news-link">付鹏：前瞻2026市场核心主线——关注美债利率曲线与AI应用落地的三种可能【付鹏说13】</a> [6] <font color='grey'>- 14时49分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32171273" target="_blank" class="news-link">媒体：“声音被偷”？滥用AI要不得</a> [8] <font color='grey'>- 14时49分</font><br>[抖音] <a href="https://www.douyin.com/hot/2335414" target="_blank" class="news-link">我的AI员工也太能干了</a> [14] <font color='grey'>- 14时49分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32172560" target="_blank" class="news-link">姚期智院士：人工智能要从模仿走向推理，从局部技能到全身协同</a> [20] <font color='grey'>- 14时49分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">美国</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[凤凰网] <a href="https://news.ifeng.com/c/8p4oYCxIqX7" target="_blank" class="news-link">美国加州硅谷华人纪念南京大屠杀，冀推动立法设立纪念日</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 14时49分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3761358" target="_blank" class="news-link">巨变酝酿中？美国财政部将“合并”美联储，贝森特才是真正的“影子联储主席”</a> [7] <font color='grey'>- 14时49分</font><br><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3761350" target="_blank" class="news-link">当美国股市走向“邀请制”：私募交易催生越来越多巨无霸私企，普通散户被“拒之门外”</a> [10] <font color='grey'>- 14时49分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=%E6%B3%BD%E8%BF%9E%E6%96%AF%E5%9F%BA%E6%89%8B%E6%8C%81%E6%9C%80%E6%96%B0%E6%AC%BEiPhone%E5%9C%A8%E5%89%8D%E7%BA%BF%E8%87%AA%E6%8B%8D" target="_blank" class="news-link">泽连斯基手持最新款iPhone在前线自拍</a> [23] <font color='grey'>- 14时49分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=%23iPhone17%E4%B8%AD%E5%9B%BD%E5%B8%82%E5%9C%BA%E5%8D%96%E7%88%86%23&amp;t=31&amp;band_rank=27&amp;Refer=top" target="_blank" class="news-link">iPhone17中国市场卖爆</a> [27] <font color='grey'>- 14时49分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">胖东来 于东来</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=%E8%83%96%E4%B8%9C%E6%9D%A589%E5%85%83%E5%8D%AB%E8%A1%A3%E6%AF%9B%E5%88%A9%E6%B6%A63.4%E5%85%83" target="_blank" class="news-link">胖东来89元卫衣毛利润3.4元</a> [17] <font color='grey'>- 14时49分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">宇树 王兴兴</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2228623" target="_blank" class="news-link">机器人年终盘点①：宇树科技官宣IPO，掀起行业资本浪潮</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 14时49分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">小米 雷军 xiaomi</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32171752" target="_blank" class="news-link">谭案说法｜用“雷氏营销”卖小米，为何被小米投诉？</a> [9] <font color='grey'>- 14时49分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">机器人</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2228749" target="_blank" class="news-link">人形机器人细分龙头年内涨超300% 梳理产业链成本占比居前A股名单</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 14时49分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">芯片 光刻机</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2228810" target="_blank" class="news-link">近一个月这些上市公司被“踏破门槛”！算力芯片“双龙头”获机构组团调研，机构来访接待量居前的个股名单一览</a> [8] <font color='grey'>- 14时49分</font></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">月球 登月 火星 宇宙 飞船</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3761354" target="_blank" class="news-link">“宇宙行”CEO表态支持，预测市场对沃什出任新美联储主席概率激增</a> [8] <font color='grey'>- 14时49分</font></td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3761338" target="_blank" class="news-link">财政部：用好用足各类政府债券资金，发行超长期特别国债，推动投资止跌回稳</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 14时49分</font></td>
+            </tr>
+        
+            <tr>
+                <td>12</td>
+                <td class="word"># 美国关税重点关注 关税 贸易战 贸易 进口 出口 关税壁垒 贸易协定 贸易谈判 反倾销 制裁 禁运 贸易逆差 贸易顺差 WTO 世贸组织</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28347945&amp;amp;topic_name=%E4%BA%94%E8%99%8E%E4%B8%8A%E5%B0%86%E9%9B%86%E7%BB%93%21%E5%88%B6%E8%A3%81%E6%A0%A1%E5%9B%AD%E5%A2%99%E9%AD%94%E6%80%94%E5%A5%B3" target="_blank" class="news-link">五虎上将集结!制裁校园墙魔怔女</a> [17] <font color='grey'>- 14时49分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 1 条)</h3>
+        <h4>华尔街见闻 (1 条)</h4><ul><li><a href="https://wallstreetcn.com/articles/3761350" target="_blank" class="news-link">当美国股市走向“邀请制”：私募交易催生越来越多巨无霸私企，普通散户被“拒之门外”</a> [10]</li></ul></div>
+    </body>
+    </html>
+    
