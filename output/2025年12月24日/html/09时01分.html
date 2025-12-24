@@ -1,0 +1,146 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2025-12-24 09:01:15</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">国产 中国</td>
+                <td class="count">7</td>
+                <td class="percentage">2.75%</td>
+                <td class="titles">[凤凰网] <a href="https://news.ifeng.com/c/8pJuhmbbgzk" target="_blank" class="news-link">美国“飞手”怒了：我爱国货，但抱歉，中国无人机无可替代</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 09时01分</font><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7586993825218825771/" target="_blank" class="news-link">泰柬双双感谢中国调停说明什么</a> [6] <font color='grey'>- 09时01分</font></div><br>[凤凰网] <a href="https://news.ifeng.com/c/8pJnBoVeMvD" target="_blank" class="news-link">中国父子偷渡美国，6岁儿子“失踪”？媒体：两人已被遣返</a> [7] <font color='grey'>- 09时01分</font><br><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3761901" target="_blank" class="news-link">习近平对中央企业工作作出重要指示强调，充分认识职责使命，更好服务党和国家工作大局，为中国式现代化建设贡献更大力量</a> [10] <font color='grey'>- 09时01分</font></div><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32227837" target="_blank" class="news-link">美将大疆无人机列入“受管制清单”，外交部：坚决反对无理打压中国企业</a> [12] <font color='grey'>- 09时01分</font><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E4%BC%8A%E6%9C%97%E5%9C%A8%E5%AE%89%E7%90%86%E4%BC%9A%E6%84%9F%E8%B0%A2%E4%B8%AD%E5%9B%BD" target="_blank" class="news-link">伊朗在安理会感谢中国</a> [19] <font color='grey'>- 09时01分</font></div><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E6%8A%95%E4%B8%8B%E8%B5%9E%E6%88%90%E7%A5%A8+%E5%AE%89%E7%90%86%E4%BC%9A%E5%85%A8%E7%A5%A8%E9%80%9A%E8%BF%87" target="_blank" class="news-link">中国投下赞成票 安理会全票通过</a> [26] <font color='grey'>- 09时01分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">京东 刘强东</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7586801494486728745/" target="_blank" class="news-link">巴黎仓库被盗损失3亿？京东回应</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 09时01分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E5%B7%B4%E9%BB%8E%E4%BB%93%E5%BA%93%E8%A2%AB%E7%9B%97%E6%8D%9F%E5%A4%B13%E4%BA%BF%EF%BC%9F%E4%BA%AC%E4%B8%9C%E6%B7%B1%E5%A4%9C%E5%9B%9E%E5%BA%94" target="_blank" class="news-link">巴黎仓库被盗损失3亿？京东深夜回应</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 09时01分</font><br><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/1986870862725529845" target="_blank" class="news-link">京东称巴黎仓库遭盗抢称损失与实际情况有较大出入，此前被曝损失 3 亿人民币，会造成多大影响？损失由谁承担？</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 09时01分</font></div><br><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E4%BA%AC%E4%B8%9C%E5%9B%9E%E5%BA%94%E6%B3%95%E5%9B%BD%E4%BB%93%E5%BA%93%E5%A4%B1%E7%AA%83%23&amp;t=31&amp;band_rank=17&amp;Refer=top" target="_blank" class="news-link">京东回应法国仓库失窃</a> [17] <font color='grey'>- 09时01分</font></div><br>[抖音] <a href="https://www.douyin.com/hot/2345480" target="_blank" class="news-link">京东法国巴黎仓库被盗</a> [21] <font color='grey'>- 09时01分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">美国</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3761934" target="_blank" class="news-link">美国第三季度GDP增长4.3%创两年来最快增速，PCE物价指数2.9%</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 09时01分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E7%BE%8E%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4%E6%85%A2%E4%BA%864.8%E5%BE%AE%E7%A7%92" target="_blank" class="news-link">美国标准时间慢了4.8微秒</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 09时01分</font><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E6%9D%8E%E5%87%AF%E5%B0%94%E6%94%B9%E5%9B%9E%E7%BE%8E%E5%9B%BD%E5%9B%BD%E7%B1%8D" target="_blank" class="news-link">李凯尔改回美国国籍</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 09时01分</font></div><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7587005063814450707/" target="_blank" class="news-link">对委动武的代价可能超出美国想象</a> [9] <font color='grey'>- 09时01分</font></div><br>[微博] <a href="https://s.weibo.com/weibo?q=%23%E7%BE%8E%E5%9B%BD%E6%96%A9%E6%9D%80%E7%BA%BF%E7%8E%B0%E8%B1%A1%23&amp;t=31&amp;band_rank=28&amp;Refer=top" target="_blank" class="news-link">美国斩杀线现象</a> [28] <font color='grey'>- 09时01分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">黄仁勋 英伟达 NVIDIA</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2238248" target="_blank" class="news-link">美股收盘：日线四连涨标普收新高 英伟达升3%领涨七巨头</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 09时01分</font><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2238263" target="_blank" class="news-link">英媒：英伟达放风春节前向中国客户交付H200芯片</a> [6] <font color='grey'>- 09时01分</font></div><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E7%BE%8E%E8%82%A1%E6%94%B6%E7%9B%98%EF%BC%9A%E8%8B%B1%E4%BC%9F%E8%BE%BE%E6%B6%A8%E8%B6%853%25" target="_blank" class="news-link">美股收盘：英伟达涨超3%</a> [15] <font color='grey'>- 09时01分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3761889" target="_blank" class="news-link">铂钯期货双双涨停，沪银新高，A股冲高回落，地产走强，商业航天跳水，N纳百川涨超400%，港股有色金属冲高回落</a> [7] <font color='grey'>- 09时01分</font><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2238272" target="_blank" class="news-link">特朗普表示不同意其观点的人不会成为美联储主席 | 环球市场</a> [10] <font color='grey'>- 09时01分</font></div><br>[财联社热门] <a href="https://www.cls.cn/detail/2238119" target="_blank" class="news-link">金银铜携手创新高 强势GDP数据压制美股期指 | 今夜看点</a> [11] <font color='grey'>- 09时01分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">流浪地球 郭帆 三体 刘慈欣</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=UP%E4%B8%BB%E7%94%A8AI%E6%94%B9%E5%86%99%E4%B8%89%E4%BD%93%E5%90%8D%E5%9C%BA%E9%9D%A2" target="_blank" class="news-link">UP主用AI改写三体名场面</a> [26] <font color='grey'>- 09时01分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=1%E4%B8%AA%E5%A5%B6%E6%B2%B9%E8%8B%B9%E6%9E%9C%E7%B3%96%E7%9B%B8%E5%BD%93%E4%BA%8E3%E7%A2%97%E7%B1%B3%E9%A5%AD" target="_blank" class="news-link">1个奶油苹果糖相当于3碗米饭</a> [25] <font color='grey'>- 09时01分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">汽车 自动驾驶</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[微博] <a href="https://s.weibo.com/weibo?q=%23L3%E7%BA%A7%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%B8%93%E7%94%A8%E6%AD%A3%E5%BC%8F%E5%8F%B7%E7%89%8C%E6%9D%A5%E4%BA%86%23&amp;t=31&amp;band_rank=5&amp;Refer=top" target="_blank" class="news-link">L3级自动驾驶专用正式号牌来了</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 09时01分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">科技</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3761906" target="_blank" class="news-link">科技股助标普收创新高，金银铜再新高，人民币强势逼近7.0，GDP强劲打击美债</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 09时01分</font></div></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 11 条)</h3>
+        <h4>今日头条 (2 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7586993825218825771/" target="_blank" class="news-link">泰柬双双感谢中国调停说明什么</a> [6]</li><li><a href="https://www.toutiao.com/trending/7587005063814450707/" target="_blank" class="news-link">对委动武的代价可能超出美国想象</a> [9]</li></ul><h4>百度热搜 (2 条)</h4><ul><li><a href="https://www.baidu.com/s?wd=%E4%BC%8A%E6%9C%97%E5%9C%A8%E5%AE%89%E7%90%86%E4%BC%9A%E6%84%9F%E8%B0%A2%E4%B8%AD%E5%9B%BD" target="_blank" class="news-link">伊朗在安理会感谢中国</a> [19]</li><li><a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E6%8A%95%E4%B8%8B%E8%B5%9E%E6%88%90%E7%A5%A8+%E5%AE%89%E7%90%86%E4%BC%9A%E5%85%A8%E7%A5%A8%E9%80%9A%E8%BF%87" target="_blank" class="news-link">中国投下赞成票 安理会全票通过</a> [26]</li></ul><h4>华尔街见闻 (2 条)</h4><ul><li><a href="https://wallstreetcn.com/articles/3761906" target="_blank" class="news-link">科技股助标普收创新高，金银铜再新高，人民币强势逼近7.0，GDP强劲打击美债</a> <font color='red'><strong>[1]</strong></font></li><li><a href="https://wallstreetcn.com/articles/3761901" target="_blank" class="news-link">习近平对中央企业工作作出重要指示强调，充分认识职责使命，更好服务党和国家工作大局，为中国式现代化建设贡献更大力量</a> [10]</li></ul><h4>bilibili 热搜 (1 条)</h4><ul><li><a href="https://search.bilibili.com/all?keyword=%E6%9D%8E%E5%87%AF%E5%B0%94%E6%94%B9%E5%9B%9E%E7%BE%8E%E5%9B%BD%E5%9B%BD%E7%B1%8D" target="_blank" class="news-link">李凯尔改回美国国籍</a> <font color='red'><strong>[4]</strong></font></li></ul><h4>财联社热门 (2 条)</h4><ul><li><a href="https://www.cls.cn/detail/2238263" target="_blank" class="news-link">英媒：英伟达放风春节前向中国客户交付H200芯片</a> [6]</li><li><a href="https://www.cls.cn/detail/2238272" target="_blank" class="news-link">特朗普表示不同意其观点的人不会成为美联储主席 | 环球市场</a> [10]</li></ul><h4>微博 (1 条)</h4><ul><li><a href="https://s.weibo.com/weibo?q=%23%E4%BA%AC%E4%B8%9C%E5%9B%9E%E5%BA%94%E6%B3%95%E5%9B%BD%E4%BB%93%E5%BA%93%E5%A4%B1%E7%AA%83%23&amp;t=31&amp;band_rank=17&amp;Refer=top" target="_blank" class="news-link">京东回应法国仓库失窃</a> [17]</li></ul><h4>知乎 (1 条)</h4><ul><li><a href="https://www.zhihu.com/question/1986870862725529845" target="_blank" class="news-link">京东称巴黎仓库遭盗抢称损失与实际情况有较大出入，此前被曝损失 3 亿人民币，会造成多大影响？损失由谁承担？</a> <font color='red'><strong>[1]</strong></font></li></ul></div>
+    </body>
+    </html>
+    
