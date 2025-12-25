@@ -1,0 +1,162 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2025-12-25 19:11:56</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">美国</td>
+                <td class="count">10</td>
+                <td class="percentage">3.92%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/1987239829688247081" target="_blank" class="news-link">强生爽身粉致癌案被判赔女子 110 亿元，为什么会被美国陪审团判赔这么多？真的能赔偿吗？</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 19时11分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8pNJR35BTlS" target="_blank" class="news-link">自己菜竟怪别人打压，“中方阻碍美国自主化稀土加工产业”</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 19时11分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E6%B2%88%E9%80%B8%E8%A7%A3%E6%9E%90%E7%BE%8E%E5%9B%BD%E6%96%A9%E6%9D%80%E7%BA%BF" target="_blank" class="news-link">沈逸解析美国斩杀线</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 19时11分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8pN2aQOWl4l" target="_blank" class="news-link">反转？美特使最新表态：美国无意征服</a> [7] <font color='grey'>- 19时11分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28348372&amp;amp;topic_name=%E6%96%A9%E6%9D%80%E7%BA%BF%E6%8F%AD%E5%BC%80%E7%BE%8E%E5%9B%BD%E4%B8%80%E8%A7%92%2C%E6%AE%96%E4%BA%BA%E5%85%88%E6%80%A5%E4%BA%86" target="_blank" class="news-link">斩杀线揭开美国一角,殖人先急了</a> [10] <font color='grey'>- 19时11分</font><br><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E8%BF%99%E4%B8%AA%E8%8A%82%E7%BE%8E%E5%9B%BD%E4%BA%BA%E8%BF%87%E5%BE%97%E4%B8%8D%E5%A4%AA%E8%88%92%E5%BF%83%23&amp;t=31&amp;band_rank=10&amp;Refer=top" target="_blank" class="news-link">这个节美国人过得不太舒心</a> [10] <font color='grey'>- 19时11分</font></div><br>[抖音] <a href="https://www.douyin.com/hot/2346980" target="_blank" class="news-link">欧盟警告反制美国</a> [14] <font color='grey'>- 19时11分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28348353&amp;amp;topic_name=%E4%B8%80%E5%A4%9C%E8%BF%94%E8%B4%AB%21%E7%BE%8E%E5%9B%BD%E5%AF%8C%E7%BF%81%E4%B9%9F%E9%9A%BE%E9%80%83%E6%96%A9%E6%9D%80" target="_blank" class="news-link">一夜返贫!美国富翁也难逃斩杀</a> [18] <font color='grey'>- 19时11分</font><br>[知乎] <a href="https://www.zhihu.com/question/1986918666340677378" target="_blank" class="news-link">美国人头上都有条成为流浪汉的「斩杀线」么，从经济角度如何看待这种现象？「斩杀线」背后的本质是什么？</a> [20] <font color='grey'>- 19时11分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=%E7%BE%8E%E5%9B%BD%E6%B5%81%E6%B5%AA%E5%A5%B3%E5%AD%A912%E5%B2%81%E5%90%B8%E6%AF%92%E8%A2%AB%E8%B5%B6%E5%87%BA%E5%AE%B6%E9%97%A8&amp;t=31&amp;band_rank=27&amp;Refer=top" target="_blank" class="news-link">美国流浪女孩12岁吸毒被赶出家门</a> [27] <font color='grey'>- 19时11分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">国产 中国</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[凤凰网] <a href="https://news.ifeng.com/c/8pMwqjZ8H6f" target="_blank" class="news-link">扎哈罗娃生日获普京颁发勋章：在中国长大，能讲一口流利北京话</a> [6] <font color='grey'>- 19时11分</font><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E6%B8%85%E5%8D%8E%E6%95%99%E6%8E%88%E5%B8%A6%E4%BD%A0%E7%9C%8B%E6%87%822025%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E" target="_blank" class="news-link">清华教授带你看懂2025中国经济</a> [9] <font color='grey'>- 19时11分</font></div><br>[知乎] <a href="https://www.zhihu.com/question/1987426605316924152" target="_blank" class="news-link">美国宣布未来 18 个月不对中国芯片加征额外关税，会对芯片市场带来怎样的影响？</a> [10] <font color='grey'>- 19时11分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7587690320272297478/" target="_blank" class="news-link">业内：明年或是中国股市配置价值元年</a> [13] <font color='grey'>- 19时11分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E4%BF%9D%E6%97%B6%E6%8D%B7%E4%B8%AD%E5%9B%BD%E5%9B%9E%E5%BA%94%E9%83%91%E5%B7%9E%E4%B8%80%E9%97%A8%E5%BA%97%E7%96%91%E4%BC%BC%E8%B7%91%E8%B7%AF" target="_blank" class="news-link">保时捷中国回应郑州一门店疑似跑路</a> [28] <font color='grey'>- 19时11分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">京东 刘强东</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[微博] <a href="https://s.weibo.com/weibo?q=%23%E5%88%98%E5%BC%BA%E4%B8%9C%E5%8F%91%E5%A5%96%E9%87%91%E6%9C%89%E5%91%98%E5%B7%A5%E5%A4%9A%E6%8B%BF1%E5%B9%B4%E5%B7%A5%E8%B5%84%23&amp;t=31&amp;band_rank=1&amp;Refer=top" target="_blank" class="news-link">刘强东发奖金有员工多拿1年工资</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 19时11分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E4%BA%AC%E4%B8%9C%E5%B9%B4%E7%BB%88%E5%A5%96%EF%BC%9A%E9%87%87%E9%94%80%E5%B9%B3%E5%9D%8725%E8%96%AA+%E4%B8%8A%E4%B8%8D%E5%B0%81%E9%A1%B6" target="_blank" class="news-link">京东年终奖：采销平均25薪 上不封顶</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 19时11分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7586916614898106411/" target="_blank" class="news-link">刘强东给京东员工送10万盒巧克力</a> [19] <font color='grey'>- 19时11分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">黄仁勋 英伟达 NVIDIA</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762030" target="_blank" class="news-link">200亿美元，英伟达“史上最大收购”？英伟达“收编”Groq，“招安”TPU创始人</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 19时11分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762016" target="_blank" class="news-link">英特尔美股盘前大跌5%，报道：英伟达暂缓推进测试英特尔18A工艺</a> [6] <font color='grey'>- 19时11分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762046" target="_blank" class="news-link">200亿美元买下Groq，英伟达图啥？</a> [8] <font color='grey'>- 19时11分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word"># 美国关税重点关注 关税 贸易战 贸易 进口 出口 关税壁垒 贸易协定 贸易谈判 反倾销 制裁 禁运 贸易逆差 贸易顺差 WTO 世贸组织</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2239877" target="_blank" class="news-link">事关TikTok、美对华半导体产品加征301关税，商务部回应</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 19时11分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32253416" target="_blank" class="news-link">商务部：坚决反对美对华半导体产品加征301关税，已提出严正交涉</a> [16] <font color='grey'>- 19时11分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7587541157169659967/" target="_blank" class="news-link">商务部回应美封锁进出委受制裁油轮</a> [25] <font color='grey'>- 19时11分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">华为 任正非 鸿蒙 HarmonyOS</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/1987299839021708915" target="_blank" class="news-link">鸿蒙版微信一年迭代超百次，还加入不少独家功能，如何评价鸿蒙版微信这一年的进展？</a> [16] <font color='grey'>- 19时11分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">马斯克 特斯拉</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28348385&amp;amp;topic_name=%E7%94%BB%E5%B8%88%E5%85%A8%E8%B7%91%E5%85%89%2C%E9%A9%AC%E6%96%AF%E5%85%8BAI%E8%B4%B4%E8%84%B8%E7%9B%97%E5%9B%BE" target="_blank" class="news-link">画师全跑光,马斯克AI贴脸盗图</a> [13] <font color='grey'>- 19时11分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32154249" target="_blank" class="news-link">AI中场时刻①｜摩擦白热化：搅动版权、入口与伦理之争</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 19时11分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">机器人</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2240066" target="_blank" class="news-link">【焦点复盘】创业板指探底回升收获5连涨，全市场超3700股飘红，机器人概念现批量涨停</a> [10] <font color='grey'>- 19时11分</font></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">科技</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2240089" target="_blank" class="news-link">【数据看盘】7.39亿元资金抢筹金风科技 多家实力游资集体出逃海南发展</a> [8] <font color='grey'>- 19时11分</font></td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3761989" target="_blank" class="news-link">平安夜美股债汇涨，标普新高，黄金失守4500，人民币三连涨，加密货币疲软</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 19时11分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 3 条)</h3>
+        <h4>bilibili 热搜 (1 条)</h4><ul><li><a href="https://search.bilibili.com/all?keyword=%E6%B8%85%E5%8D%8E%E6%95%99%E6%8E%88%E5%B8%A6%E4%BD%A0%E7%9C%8B%E6%87%822025%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E" target="_blank" class="news-link">清华教授带你看懂2025中国经济</a> [9]</li></ul><h4>微博 (1 条)</h4><ul><li><a href="https://s.weibo.com/weibo?q=%23%E8%BF%99%E4%B8%AA%E8%8A%82%E7%BE%8E%E5%9B%BD%E4%BA%BA%E8%BF%87%E5%BE%97%E4%B8%8D%E5%A4%AA%E8%88%92%E5%BF%83%23&amp;t=31&amp;band_rank=10&amp;Refer=top" target="_blank" class="news-link">这个节美国人过得不太舒心</a> [10]</li></ul><h4>知乎 (1 条)</h4><ul><li><a href="https://www.zhihu.com/question/1987299839021708915" target="_blank" class="news-link">鸿蒙版微信一年迭代超百次，还加入不少独家功能，如何评价鸿蒙版微信这一年的进展？</a> [16]</li></ul></div>
+    </body>
+    </html>
+    
