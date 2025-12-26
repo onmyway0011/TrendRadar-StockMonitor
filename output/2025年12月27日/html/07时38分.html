@@ -1,0 +1,146 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2025-12-27 07:38:56</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">美国</td>
+                <td class="count">14</td>
+                <td class="percentage">5.49%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762107" target="_blank" class="news-link">特朗普圣诞夜动手！美国空袭尼日利亚，目标直指石油和稀土？</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 07时38分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E7%BE%8E%E5%9B%BD%E4%B8%AD%E4%BA%A7%E6%98%AF%E5%A6%82%E4%BD%95%E6%BB%91%E8%90%BD%E7%9A%84" target="_blank" class="news-link">美国中产是如何滑落的</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 07时38分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28348450&amp;amp;topic_name=%E5%BC%80%E7%81%B5%E8%A7%86%E7%9C%8B%E7%BE%8E%E5%9B%BD%2C%E5%BD%B1%E8%A7%86%E4%BD%9C%E5%93%81%E6%97%A9%E6%9C%89%E5%89%A7%E9%80%8F" target="_blank" class="news-link">开灵视看美国,影视作品早有剧透</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 07时38分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7588097192406482971/" target="_blank" class="news-link">法德英等国一致“强烈谴责”美国</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 07时38分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%9C%86%E8%84%B8%E8%B0%88%E7%BE%8E%E5%9B%BD%E6%96%A9%E6%9D%80%E7%BA%BF" target="_blank" class="news-link">圆脸谈美国斩杀线</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 07时38分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8pP8YdeoliP" target="_blank" class="news-link">欧盟二号人物：我们绝不能屈服美国的要求，放弃监管和自身价值</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 07时38分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7587291619201417257/" target="_blank" class="news-link">中方制裁20家美国企业</a> [6] <font color='grey'>- 07时38分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E7%BE%8E%E5%9B%BD%E6%96%A9%E6%9D%80%E7%BA%BF%E4%B8%BA%E4%BB%80%E4%B9%88%E7%81%AB%E4%BA%86" target="_blank" class="news-link">美国斩杀线为什么火了</a> [6] <font color='grey'>- 07时38分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7587665279485329451/" target="_blank" class="news-link">37%美国人拿不出400美元应急</a> [7] <font color='grey'>- 07时38分</font><br>[知乎] <a href="https://www.zhihu.com/question/1987258049723926442" target="_blank" class="news-link">掉下斩杀线的美国人为何不能降低美国用人成本?</a> [12] <font color='grey'>- 07时38分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E4%B8%80%E5%A5%B3%E5%AD%90%E6%8C%A4%E7%97%98%E7%97%98%E8%87%B4%E5%8D%8A%E8%BE%B9%E8%84%B8%E9%9D%A2%E7%98%AB" target="_blank" class="news-link">美国一女子挤痘痘致半边脸面瘫</a> [13] <font color='grey'>- 07时38分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32257394" target="_blank" class="news-link">中方对20家美国军工相关企业及高级管理人员采取反制措施</a> [16] <font color='grey'>- 07时38分</font><br>[抖音] <a href="https://www.douyin.com/hot/2348300" target="_blank" class="news-link">中方制裁20家美国军工企业</a> [19] <font color='grey'>- 07时38分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E5%8A%AA%E5%8A%9B%E5%B7%A5%E4%BD%9C%E4%B9%9F%E9%9A%BE%E9%80%83%E7%BE%8E%E5%9B%BD%E2%80%9C%E6%96%A9%E6%9D%80%E7%BA%BF%E2%80%9D" target="_blank" class="news-link">努力工作也难逃美国“斩杀线”</a> [20] <font color='grey'>- 07时38分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">国产 中国</td>
+                <td class="count">12</td>
+                <td class="percentage">4.71%</td>
+                <td class="titles">[凤凰网] <a href="https://news.ifeng.com/c/8pOsGb4wd2o" target="_blank" class="news-link">美媒感叹：今年最重要的一课，“永远别低估中国”</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 07时38分</font><br>[知乎] <a href="https://www.zhihu.com/question/1987628052843364654" target="_blank" class="news-link">如何评价睡前消息称国产茶类饮品（点名某茶姬）咖啡因含量过高，是准毒品的擦边球？</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 07时38分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7588111292624322614/" target="_blank" class="news-link">大国工程见证中国之“变”</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 07时38分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=5%E4%B8%87%E5%85%AC%E9%87%8C%EF%BC%81%E4%B8%AD%E5%9B%BD%E9%AB%98%E9%93%81%E8%BF%90%E8%90%A5%E9%87%8C%E7%A8%8B%E6%96%B0%E7%AA%81%E7%A0%B4" target="_blank" class="news-link">5万公里！中国高铁运营里程新突破</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 07时38分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=%23%E8%BF%99%E4%BA%9B%E5%A4%A7%E5%9B%BD%E5%B7%A5%E7%A8%8B%E8%A7%81%E8%AF%81%E4%B8%AD%E5%9B%BD%E4%B9%8B%E5%8F%98%23&amp;t=31&amp;band_rank=3&amp;Refer=top" target="_blank" class="news-link">这些大国工程见证中国之变</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 07时38分</font><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7587991359123115561/" target="_blank" class="news-link">菲律宾渔民海上漂3天中国海军救援</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 07时38分</font></div><br>[凤凰网] <a href="https://news.ifeng.com/c/8pOxTTdBTb5" target="_blank" class="news-link">对印度游客简化签证程序，中国为何现在“出手”？</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 07时38分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8pOsqY3DwLX" target="_blank" class="news-link">美媒自问自答：特朗普“黄金舰队”能匹敌中国吗？难</a> [6] <font color='grey'>- 07时38分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32256548" target="_blank" class="news-link">中国首例！8岁患儿性腺呈“双性”，切除睾丸组织后冷冻卵巢组织</a> [11] <font color='grey'>- 07时38分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%9B%BD%E4%BA%A7%E6%8A%97%E6%97%A5FPS%E6%8A%B5%E6%8A%97%E8%80%85%E6%9C%80%E6%96%B0PV" target="_blank" class="news-link">国产抗日FPS抵抗者最新PV</a> [14] <font color='grey'>- 07时38分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7588030244548791851/" target="_blank" class="news-link">中国最重要的“东西大动脉”要来了</a> [20] <font color='grey'>- 07时38分</font><br>[抖音] <a href="https://www.douyin.com/hot/2348272" target="_blank" class="news-link">在中国我们不说我们用唱的</a> [22] <font color='grey'>- 07时38分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=2025%E5%B9%B4%E5%BA%A6AI%E5%A5%BD%E7%94%A8%E5%B7%A5%E5%85%B7" target="_blank" class="news-link">2025年度AI好用工具</a> [13] <font color='grey'>- 07时38分</font><br>[知乎] <a href="https://www.zhihu.com/question/1914008682825520046" target="_blank" class="news-link">科研创新 idea 要不要告诉 AI?</a> [16] <font color='grey'>- 07时38分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=174%E5%90%8D%E5%8C%97%E5%A4%A7%E5%AD%A6%E7%94%9F%E8%BF%8E%E7%89%B9%E6%AE%8A%E8%80%83%E8%AF%95%EF%BC%9A%E5%AF%B9%E5%86%B3AI" target="_blank" class="news-link">174名北大学生迎特殊考试：对决AI</a> [18] <font color='grey'>- 07时38分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=AI%E9%9F%B3%E4%B9%90MV%E7%BB%A9%E6%95%88%E6%94%B9%E8%BF%9B%E8%AE%A1%E5%88%92" target="_blank" class="news-link">AI音乐MV绩效改进计划</a> [23] <font color='grey'>- 07时38分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">华为 任正非 鸿蒙 HarmonyOS</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=%E5%8D%8E%E4%B8%BA%E6%82%AC%E8%B5%8F300%E4%B8%87%E5%85%83%E6%B1%82%E8%A7%A3%E9%9A%BE%E9%A2%98" target="_blank" class="news-link">华为悬赏300万元求解难题</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 07时38分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2241363" target="_blank" class="news-link">华为：全球悬赏300万元解决AI时代的存储难题</a> [6] <font color='grey'>- 07时38分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">小米 雷军 xiaomi</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7587944818110811694/" target="_blank" class="news-link">卢伟冰将7999元小米新机口误成799</a> [29] <font color='grey'>- 07时38分</font><br>[抖音] <a href="https://www.douyin.com/hot/2347928" target="_blank" class="news-link">小米17Ultra徕卡版有什么不一样</a> [30] <font color='grey'>- 07时38分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles"><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3762133" target="_blank" class="news-link">节后首日美股微跌，白银暴涨10%，纽铜涨5%，和平曙光重挫油价</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 07时38分</font></div><br>[财联社热门] <a href="https://www.cls.cn/detail/2241565" target="_blank" class="news-link">美股三大期指涨跌不一 市场静待“圣诞老人行情” | 今夜看点</a> [8] <font color='grey'>- 07时38分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%B0%8F%E6%96%87%E5%93%A5%E5%87%8C%E6%99%A8%E7%9C%8B%E6%AC%A3%E5%B0%8F%E8%90%8C%E5%BA%93%E5%85%8B" target="_blank" class="news-link">小文哥凌晨看欣小萌库克</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 07时38分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">手机</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7588012557438550035/" target="_blank" class="news-link">女子手机充电到天亮爆炸全身烧伤70%</a> [12] <font color='grey'>- 07时38分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">月球 登月 火星 宇宙 飞船</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%8D%B0%E5%BA%A6%E7%9A%84%E7%99%BB%E6%9C%88%E8%AE%A1%E5%88%92%E5%8F%AF%E8%A1%8C%E5%90%97" target="_blank" class="news-link">印度的登月计划可行吗</a> [12] <font color='grey'>- 07时38分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 2 条)</h3>
+        <h4>今日头条 (1 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7587991359123115561/" target="_blank" class="news-link">菲律宾渔民海上漂3天中国海军救援</a> <font color='red'><strong>[4]</strong></font></li></ul><h4>华尔街见闻 (1 条)</h4><ul><li><a href="https://wallstreetcn.com/articles/3762133" target="_blank" class="news-link">节后首日美股微跌，白银暴涨10%，纽铜涨5%，和平曙光重挫油价</a> <font color='red'><strong>[2]</strong></font></li></ul></div>
+    </body>
+    </html>
+    
