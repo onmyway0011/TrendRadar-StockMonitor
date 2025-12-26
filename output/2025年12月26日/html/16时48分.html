@@ -1,0 +1,138 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2025-12-26 16:48:05</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">国产 中国</td>
+                <td class="count">10</td>
+                <td class="percentage">3.92%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E2%80%9C%E4%B8%9C%E8%A5%BF%E5%A4%A7%E5%8A%A8%E8%84%89%E2%80%9D%E8%A6%81%E6%9D%A5%E4%BA%86" target="_blank" class="news-link">中国最重要的“东西大动脉”要来了</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 16时48分</font><br>[知乎] <a href="https://www.zhihu.com/question/1987628052843364654" target="_blank" class="news-link">如何评价睡前消息称国产茶类饮品（点名某茶姬）咖啡因含量过高，是准毒品的擦边球？</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 16时48分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8pOoPZGLVgT" target="_blank" class="news-link">倒打一耙！日本防相声称中国航母战力提升，要尽快与美防长面谈</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 16时48分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%9B%BD%E4%BA%A7%E6%8A%97%E6%97%A5FPS%E6%8A%B5%E6%8A%97%E8%80%85%E6%9C%80%E6%96%B0PV" target="_blank" class="news-link">国产抗日FPS抵抗者最新PV</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 16时48分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8pOSTawSWI3" target="_blank" class="news-link">特朗普官宣“黄金舰队”计划：真不是冲着中国，两国关系可好了</a> [6] <font color='grey'>- 16时48分</font><br><div class='new-title'>🆕 [抖音] <a href="https://www.douyin.com/hot/2348246" target="_blank" class="news-link">节气里的大美中国</a> [6] <font color='grey'>- 16时48分</font></div><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762093" target="_blank" class="news-link">8.67亿英镑，中国巨头拿下南美顶级铜金矿！该矿已被国际同行验证多年，但因开发难度高而陷入犹豫</a> [7] <font color='grey'>- 16时48分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7588030244548791851/" target="_blank" class="news-link">中国最重要的“东西大动脉”要来了</a> [9] <font color='grey'>- 16时48分</font><br><div class='new-title'>🆕 [澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32256548" target="_blank" class="news-link">中国首例！8岁患儿性腺呈“双性”，切除睾丸组织后冷冻卵巢组织</a> [18] <font color='grey'>- 16时48分</font></div><br>[抖音] <a href="https://www.douyin.com/hot/2347821" target="_blank" class="news-link">2024年中国GDP最终核实公告发布</a> [22] <font color='grey'>- 16时48分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">美国</td>
+                <td class="count">8</td>
+                <td class="percentage">3.14%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762107" target="_blank" class="news-link">特朗普圣诞夜动手！美国空袭尼日利亚，目标直指石油和稀土？</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 16时48分</font><br>[知乎] <a href="https://www.zhihu.com/question/1987258049723926442" target="_blank" class="news-link">掉下斩杀线的美国人为何不能降低美国用人成本?</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 16时48分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8pON1XpVPsF" target="_blank" class="news-link">美国务卿：美方愿促成柬泰对话</a> [8] <font color='grey'>- 16时48分</font><br>[知乎] <a href="https://www.zhihu.com/question/1986615844910932809" target="_blank" class="news-link">美国斩杀线为什么刚好在 1/e 附近？</a> [13] <font color='grey'>- 16时48分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7587665279485329451/" target="_blank" class="news-link">37%美国人拿不出400美元应急</a> [19] <font color='grey'>- 16时48分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28348372&amp;amp;topic_name=%E6%96%A9%E6%9D%80%E7%BA%BF%E6%8F%AD%E5%BC%80%E7%BE%8E%E5%9B%BD%E4%B8%80%E8%A7%92%2C%E6%AE%96%E4%BA%BA%E5%85%88%E6%80%A5%E4%BA%86" target="_blank" class="news-link">斩杀线揭开美国一角,殖人先急了</a> [26] <font color='grey'>- 16时48分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E4%B8%80%E4%BA%BA%E5%BD%A9%E7%A5%A8%E4%B8%AD%E5%A5%96%E8%B6%85127%E4%BA%BF%E5%85%83" target="_blank" class="news-link">美国一人彩票中奖超127亿元</a> [27] <font color='grey'>- 16时48分</font><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7587613443210068022/" target="_blank" class="news-link">美国一便利店遭强拆式“0元购”</a> [30] <font color='grey'>- 16时48分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2240698" target="_blank" class="news-link">国家发改委：国家创业投资引导基金将对集成电路、人工智能、航空航天、低空经济等领域的早期项目和企业加大投资力度</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 16时48分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2240534" target="_blank" class="news-link">1200亿美元“幽灵债务”：翻开AI巨头们不想让你看的另一本账</a> [8] <font color='grey'>- 16时48分</font><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%8D%9A%E5%A3%AB%E4%B8%8EAI%E8%81%94%E6%89%8B%E9%80%A0%E5%87%BA%E5%8D%83%E5%BA%A6%E9%98%BB%E7%87%83%E6%96%B0%E5%9E%8B%E6%9D%90%E6%96%99" target="_blank" class="news-link">博士与AI联手造出千度阻燃新型材料</a> [12] <font color='grey'>- 16时48分</font></div><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2239926" target="_blank" class="news-link">《科创板日报》评选2025十大科技热词出炉，AI成绝对主线</a> [12] <font color='grey'>- 16时48分</font></div><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=UP%E4%B8%BB%E7%94%A8AI%E6%8C%91%E6%88%98%E8%82%89%E9%B8%BD%E6%B8%B8%E6%88%8F" target="_blank" class="news-link">UP主用AI挑战肉鸽游戏</a> [14] <font color='grey'>- 16时48分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">马斯克 特斯拉</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2240694" target="_blank" class="news-link">马斯克今年赚了地球上其他人一生都赚不到的钱！</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 16时48分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E8%A7%A3%E6%9E%90%E9%A9%AC%E6%96%AF%E5%85%8B25%E5%B9%B4%E6%9C%80%E6%96%B0%E7%81%AB%E6%98%9F%E7%A7%BB%E6%B0%91%E8%AE%A1%E5%88%92" target="_blank" class="news-link">解析马斯克25年最新火星移民计划</a> [22] <font color='grey'>- 16时48分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28348385&amp;amp;topic_name=%E7%94%BB%E5%B8%88%E5%85%A8%E8%B7%91%E5%85%89%2C%E9%A9%AC%E6%96%AF%E5%85%8BAI%E8%B4%B4%E8%84%B8%E7%9B%97%E5%9B%BE" target="_blank" class="news-link">画师全跑光,马斯克AI贴脸盗图</a> [28] <font color='grey'>- 16时48分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">黄仁勋 英伟达 NVIDIA</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762068" target="_blank" class="news-link">英伟达急了？或被谷歌TPU逼到墙角，黄仁勋不惜代价也要“收编”Groq</a> [6] <font color='grey'>- 16时48分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762072" target="_blank" class="news-link">POS机快刷爆了！200亿、50亿、10亿，黄仁勋用美金“爆买”一切</a> [8] <font color='grey'>- 16时48分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">京东 刘强东</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[抖音] <a href="https://www.douyin.com/hot/2347425" target="_blank" class="news-link">京东发布2025年终奖公告</a> [23] <font color='grey'>- 16时48分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%B0%8F%E6%96%87%E5%93%A5%E5%87%8C%E6%99%A8%E7%9C%8B%E6%AC%A3%E5%B0%8F%E8%90%8C%E5%BA%93%E5%85%8B" target="_blank" class="news-link">小文哥凌晨看欣小萌库克</a> [10] <font color='grey'>- 16时48分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">机器人</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2240767" target="_blank" class="news-link">2025年终盘点|主机厂深度跨界机器人、低空经济赛道 产业融合带动数万亿经济增量</a> [6] <font color='grey'>- 16时48分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 6 条)</h3>
+        <h4>今日头条 (1 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7587613443210068022/" target="_blank" class="news-link">美国一便利店遭强拆式“0元购”</a> [30]</li></ul><h4>澎湃新闻 (1 条)</h4><ul><li><a href="https://m.thepaper.cn/newsDetail_forward_32256548" target="_blank" class="news-link">中国首例！8岁患儿性腺呈“双性”，切除睾丸组织后冷冻卵巢组织</a> [18]</li></ul><h4>bilibili 热搜 (2 条)</h4><ul><li><a href="https://search.bilibili.com/all?keyword=%E5%8D%9A%E5%A3%AB%E4%B8%8EAI%E8%81%94%E6%89%8B%E9%80%A0%E5%87%BA%E5%8D%83%E5%BA%A6%E9%98%BB%E7%87%83%E6%96%B0%E5%9E%8B%E6%9D%90%E6%96%99" target="_blank" class="news-link">博士与AI联手造出千度阻燃新型材料</a> [12]</li><li><a href="https://search.bilibili.com/all?keyword=UP%E4%B8%BB%E7%94%A8AI%E6%8C%91%E6%88%98%E8%82%89%E9%B8%BD%E6%B8%B8%E6%88%8F" target="_blank" class="news-link">UP主用AI挑战肉鸽游戏</a> [14]</li></ul><h4>财联社热门 (1 条)</h4><ul><li><a href="https://www.cls.cn/detail/2239926" target="_blank" class="news-link">《科创板日报》评选2025十大科技热词出炉，AI成绝对主线</a> [12]</li></ul><h4>抖音 (1 条)</h4><ul><li><a href="https://www.douyin.com/hot/2348246" target="_blank" class="news-link">节气里的大美中国</a> [6]</li></ul></div>
+    </body>
+    </html>
+    
