@@ -1,0 +1,154 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-01-02 12:14:04</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">国产 中国</td>
+                <td class="count">14</td>
+                <td class="percentage">5.49%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32298591" target="_blank" class="news-link">中国公民明日起可免签前往土耳其：相关搜索翻倍增长，春节期间赴土耳其旅游热度或明显升温</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 12时14分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2246177" target="_blank" class="news-link">2026年中国航天任务“日程排满” 这些大事值得期待</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 12时14分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8pZwfQHXmTL" target="_blank" class="news-link">新年第一天，中国仗义执言很火大</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 12时14分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2246164" target="_blank" class="news-link">推进科创板上市！ 国产GPU四小龙燧原科技完成IPO辅导</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 12时14分</font><br><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%9B%BD%E4%BA%BA%E9%80%A0%E5%A4%AA%E9%98%B3%E5%AE%9E%E9%AA%8C%E5%8F%88%E6%9C%89%E6%96%B0%E7%AA%81%E7%A0%B4%23&amp;t=31&amp;band_rank=2&amp;Refer=top" target="_blank" class="news-link">中国人造太阳实验又有新突破</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 12时14分</font></div><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E5%A4%A9%E5%AE%AB%E4%B8%8E%E7%A5%9E%E5%B7%9E%E5%90%8C%E6%A1%86%E7%9A%84%E4%B8%AD%E5%9B%BD%E5%BC%8F%E6%B5%AA%E6%BC%AB" target="_blank" class="news-link">天宫与神州同框的中国式浪漫</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 12时14分</font><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E2%80%9C%E4%BA%BA%E9%80%A0%E5%A4%AA%E9%98%B3%E2%80%9D%E5%AE%9E%E9%AA%8C%E5%8F%88%E6%9C%89%E6%96%B0%E7%AA%81%E7%A0%B4" target="_blank" class="news-link">中国“人造太阳”实验又有新突破</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 12时14分</font></div><br>[财联社热门] <a href="https://www.cls.cn/detail/2246008" target="_blank" class="news-link">美股收盘：三大指数低调收官 中国金龙指数全年累计上涨11.33%</a> [11] <font color='grey'>- 12时14分</font><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2246281" target="_blank" class="news-link">大涨超100%！“港股国产GPU第一股”壁仞科技上市 一手赚近4000港元</a> [12] <font color='grey'>- 12时14分</font></div><br>[百度热搜] <a href="https://www.baidu.com/s?wd=2026%E4%B8%AD%E5%9B%BD%E7%A1%AC%E6%A0%B8%E7%A7%91%E6%8A%80%E5%B0%86%E5%86%8D%E6%AC%A1%E9%9C%87%E6%92%BC%E4%B8%96%E7%95%8C" target="_blank" class="news-link">2026中国硬核科技将再次震撼世界</a> [15] <font color='grey'>- 12时14分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32301901" target="_blank" class="news-link">新华社评论员：续写中国奇迹新篇章</a> [16] <font color='grey'>- 12时14分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%9B%BD%E4%BA%A7TPS%E6%96%B0%E4%BD%9C%E9%A6%96%E6%9B%9D" target="_blank" class="news-link">国产TPS新作首曝</a> [18] <font color='grey'>- 12时14分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E6%96%B0%E5%B9%B4%E7%AC%AC%E4%B8%80%E5%A4%A9+%E4%B8%AD%E5%9B%BD%E4%BB%97%E4%B9%89%E6%89%A7%E8%A8%80%E5%BE%88%E7%81%AB%E5%A4%A7" target="_blank" class="news-link">新年第一天 中国仗义执言很火大</a> [20] <font color='grey'>- 12时14分</font><br><div class='new-title'>🆕 [抖音] <a href="https://www.douyin.com/hot/2354057" target="_blank" class="news-link">中国奇谭2开播</a> [29] <font color='grey'>- 12时14分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">DeepSeek 梁文锋</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762429" target="_blank" class="news-link">梁文锋署名，DeepSeek元旦新论文要开启架构新篇章</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 12时14分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=UP%E4%B8%BB%E8%A7%A3%E8%AF%BBDeepSeek%E6%A2%81%E6%96%87%E9%94%8B%E6%96%B0%E8%AE%BA%E6%96%87" target="_blank" class="news-link">UP主解读DeepSeek梁文锋新论文</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 12时14分</font><br>[知乎] <a href="https://www.zhihu.com/question/1990084005744362243" target="_blank" class="news-link">如何理解 DeepSeek 最新提出的 mHC 架构？</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 12时14分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=DeepSeek%E6%A2%81%E6%96%87%E9%94%8B%E5%8F%88%E5%8F%91%E8%AE%BA%E6%96%87%E4%BA%86" target="_blank" class="news-link">DeepSeek梁文锋又发论文了</a> [11] <font color='grey'>- 12时14分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762433" target="_blank" class="news-link">SemiAnalysis深度报告：美国电网跟不上，AI数据中心“自建电厂”跟时间赛跑</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 12时14分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2245258" target="_blank" class="news-link">展望半导体2026三大关键词：存储、AI、国产化</a> [8] <font color='grey'>- 12时14分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2246252" target="_blank" class="news-link">【早报】加大对科技投资！全球主权财富基金资产突破15万亿美元；AI加速全球可控核聚变商业化进程</a> [10] <font color='grey'>- 12时14分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=%E7%BB%88%E4%BA%8E%E6%87%82%E8%80%81%E4%BA%BA%E5%88%86%E4%B8%8D%E6%B8%85ai%E7%9A%84%E6%97%A0%E5%8A%9B%E6%84%9F%E4%BA%86&amp;t=31&amp;band_rank=18&amp;Refer=top" target="_blank" class="news-link">终于懂老人分不清ai的无力感了</a> [18] <font color='grey'>- 12时14分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762427" target="_blank" class="news-link">2025年最后一天，美联储“创纪录放水”</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 12时14分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2246014" target="_blank" class="news-link">【早报】今起存量“公积金+商贷”利率将同步下调；蓝箭航天科创板IPO获受理</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 12时14分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32292469" target="_blank" class="news-link">即将揭晓！三位美联储主席竞逐者，谁能笑到最后？</a> [9] <font color='grey'>- 12时14分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8pZwQivoI8w" target="_blank" class="news-link">即将揭晓！三位美联储主席竞逐者，谁能笑到最后？</a> [10] <font color='grey'>- 12时14分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">美国</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[微博] <a href="https://s.weibo.com/weibo?q=%23%E7%BE%8E%E5%9B%BD%E5%85%B3%E7%A8%8E%E5%A4%A7%E6%A3%92%E6%89%93%E4%BA%86%E8%87%AA%E5%B7%B1%E4%BA%BA%23&amp;t=31&amp;band_rank=7&amp;Refer=top" target="_blank" class="news-link">美国关税大棒打了自己人</a> [7] <font color='grey'>- 12时14分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32299363" target="_blank" class="news-link">美国阿拉斯加州发生5.7级地震，震源深度10千米</a> [14] <font color='grey'>- 12时14分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">马斯克 特斯拉</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2246232" target="_blank" class="news-link">马斯克称脑机设备今年启动“大规模生产” 植入方式也有关键进步</a> [9] <font color='grey'>- 12时14分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[微博] <a href="https://s.weibo.com/weibo?q=%E5%8E%9F%E6%9D%A5Safari%E6%89%8D%E6%98%AFiPhone%E9%9A%90%E8%97%8F%E7%9A%84%E8%B5%84%E6%BA%90%E5%A4%A7%E6%88%B7&amp;t=31&amp;band_rank=27&amp;Refer=top" target="_blank" class="news-link">原来Safari才是iPhone隐藏的资源大户</a> [27] <font color='grey'>- 12时14分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">机器人</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7590546795705404954/" target="_blank" class="news-link">2026人形机器人能迎来“奇点时刻”吗</a> [9] <font color='grey'>- 12时14分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">科技</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3762444" target="_blank" class="news-link">新年首个交易日，恒科涨超3%，壁仞科技首日涨90%，百度大涨8%，人民币继续走强</a> [8] <font color='grey'>- 12时14分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">月球 登月 火星 宇宙 飞船</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28348614&amp;amp;topic_name=%E6%95%A3%E4%BA%86%E5%90%A7%21FGO%E6%9C%88%E7%90%83%E6%98%A5%E6%99%9A%E6%B2%A1%E6%B4%BB%E4%BA%86" target="_blank" class="news-link">散了吧!FGO月球春晚没活了</a> [24] <font color='grey'>- 12时14分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 5 条)</h3>
+        <h4>百度热搜 (1 条)</h4><ul><li><a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E2%80%9C%E4%BA%BA%E9%80%A0%E5%A4%AA%E9%98%B3%E2%80%9D%E5%AE%9E%E9%AA%8C%E5%8F%88%E6%9C%89%E6%96%B0%E7%AA%81%E7%A0%B4" target="_blank" class="news-link">中国“人造太阳”实验又有新突破</a> <font color='red'><strong>[5]</strong></font></li></ul><h4>华尔街见闻 (1 条)</h4><ul><li><a href="https://wallstreetcn.com/articles/3762444" target="_blank" class="news-link">新年首个交易日，恒科涨超3%，壁仞科技首日涨90%，百度大涨8%，人民币继续走强</a> [8]</li></ul><h4>财联社热门 (1 条)</h4><ul><li><a href="https://www.cls.cn/detail/2246281" target="_blank" class="news-link">大涨超100%！“港股国产GPU第一股”壁仞科技上市 一手赚近4000港元</a> [12]</li></ul><h4>微博 (1 条)</h4><ul><li><a href="https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%9B%BD%E4%BA%BA%E9%80%A0%E5%A4%AA%E9%98%B3%E5%AE%9E%E9%AA%8C%E5%8F%88%E6%9C%89%E6%96%B0%E7%AA%81%E7%A0%B4%23&amp;t=31&amp;band_rank=2&amp;Refer=top" target="_blank" class="news-link">中国人造太阳实验又有新突破</a> <font color='red'><strong>[2]</strong></font></li></ul><h4>抖音 (1 条)</h4><ul><li><a href="https://www.douyin.com/hot/2354057" target="_blank" class="news-link">中国奇谭2开播</a> [29]</li></ul></div>
+    </body>
+    </html>
+    
