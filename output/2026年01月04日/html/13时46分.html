@@ -1,0 +1,146 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-01-04 13:46:35</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">美国</td>
+                <td class="count">24</td>
+                <td class="percentage">9.41%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762484" target="_blank" class="news-link">美国“闪击”委内瑞拉：特朗普称将“管理”委内瑞拉直至实施“安全”过渡，深度介入石油产业</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 13时46分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28348656&amp;amp;topic_name=%E6%8A%A2%E7%9F%B3%E6%B2%B9%21%E7%BE%8E%E5%9B%BD%E6%8E%A5%E7%AE%A1%E5%A7%94%E5%86%85%E7%91%9E%E6%8B%89" target="_blank" class="news-link">抢石油!美国接管委内瑞拉</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 13时46分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762477" target="_blank" class="news-link">持续一小时！美国空袭委内瑞拉，特朗普称抓获马杜罗及其夫人，即将召开发布会</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 13时46分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8pdFWFG5ZeI" target="_blank" class="news-link">牛弹琴：美国这次入侵，未必都是坏事</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 13时46分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E8%A7%A3%E6%9E%90%E6%8A%93%E6%8D%95%E9%A9%AC%E6%9D%9C%E7%BD%97%E8%83%8C%E5%90%8E%E7%9A%84%E7%BE%8E%E5%9B%BD%E6%84%8F%E5%9B%BE" target="_blank" class="news-link">解析抓捕马杜罗背后的美国意图</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 13时46分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2246776" target="_blank" class="news-link">【早报】载有马杜罗的飞机抵达美国纽约；i茅台：飞天茅台每人每日限购6瓶</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 13时46分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7589984169174912554/" target="_blank" class="news-link">美国强掳马杜罗意欲何为</a> [6] <font color='grey'>- 13时46分</font><br>[知乎] <a href="https://www.zhihu.com/question/1990845589127189143" target="_blank" class="news-link">委内瑞拉总统被美国陆军三角洲部队抓获，委政局会发生哪些变化？会带来哪些连锁反应？</a> [6] <font color='grey'>- 13时46分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762488" target="_blank" class="news-link">未来委内瑞拉局势会怎么走？美国悍然对一个主权国家使用武力，究竟想做什么？</a> [7] <font color='grey'>- 13时46分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762490" target="_blank" class="news-link">马杜罗被美国“闪击”，委内瑞拉“传说中的600亿美元比特币”会流向何方？</a> [8] <font color='grey'>- 13时46分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762487" target="_blank" class="news-link">美国“闪击”委内瑞拉，全球原油市场或将“波澜不惊”</a> [9] <font color='grey'>- 13时46分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8pdRGasIZec" target="_blank" class="news-link">意大利政府声明称：美国是正当防御</a> [9] <font color='grey'>- 13时46分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32307902" target="_blank" class="news-link">特朗普发布马杜罗在美国军舰上的照片</a> [11] <font color='grey'>- 13时46分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8pdL68clJ3r" target="_blank" class="news-link">高市早苗准备到美国求特朗普撑腰，但日本可能被移出发达国家行列</a> [12] <font color='grey'>- 13时46分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32307535" target="_blank" class="news-link">俄罗斯要求美国立即澄清有关马杜罗的情况</a> [14] <font color='grey'>- 13时46分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E7%BE%8E%E5%9B%BD%E9%97%AA%E5%87%BB%E5%A7%94%E5%86%85%E7%91%9E%E6%8B%89%E6%97%B6%E9%97%B4%E7%BA%BF" target="_blank" class="news-link">美国闪击委内瑞拉时间线</a> [14] <font color='grey'>- 13时46分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32308670" target="_blank" class="news-link">特朗普：美国将组建一个团队管理委内瑞拉</a> [15] <font color='grey'>- 13时46分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32307551" target="_blank" class="news-link">美国司法部长：马杜罗已被起诉，被控多项罪名</a> [16] <font color='grey'>- 13时46分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32309185" target="_blank" class="news-link">马杜罗被美军蒙眼带往美国，委局势后续走向高度不明朗</a> [17] <font color='grey'>- 13时46分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32307342" target="_blank" class="news-link">美议员称马杜罗将在美国接受审判</a> [18] <font color='grey'>- 13时46分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E4%B8%80%E5%8F%A3%E6%B0%94%E7%9C%8B%E5%AE%8C%E7%BE%8E%E5%9B%BD2025%E6%8A%BD%E8%B1%A1%E4%BA%8B" target="_blank" class="news-link">一口气看完美国2025抽象事</a> [19] <font color='grey'>- 13时46分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32307321" target="_blank" class="news-link">美国突袭委内瑞拉抓获马杜罗，多国强烈谴责</a> [20] <font color='grey'>- 13时46分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E7%BE%8E%E5%9B%BD%E4%B8%BA%E4%BD%95%E8%AF%95%E5%9B%BE%E6%8E%A8%E7%BF%BB%E9%A9%AC%E6%9D%9C%E7%BD%97%E6%94%BF%E5%BA%9C" target="_blank" class="news-link">美国为何试图推翻马杜罗政府</a> [25] <font color='grey'>- 13时46分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E6%80%8E%E4%B9%88%E8%BF%98%E6%B2%A1%E7%BB%9F%E4%B8%80%E5%BA%A6%E9%87%8F%E8%A1%A1" target="_blank" class="news-link">美国怎么还没统一度量衡</a> [26] <font color='grey'>- 13时46分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">国产 中国</td>
+                <td class="count">6</td>
+                <td class="percentage">2.35%</td>
+                <td class="titles">[微博] <a href="https://s.weibo.com/weibo?q=%23%E8%B4%BA%E8%AF%8D%E9%87%8C%E7%9A%84%E4%B8%AD%E5%9B%BD%23&amp;t=31&amp;band_rank=3&amp;Refer=top" target="_blank" class="news-link">贺词里的中国</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 13时46分</font><br>[知乎] <a href="https://www.zhihu.com/question/1983832240598294967" target="_blank" class="news-link">张宏院士称「资源型科研」正在摧毁中国科研文化，什么是「资源型科研」？它造成了哪些问题？</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 13时46分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2246709" target="_blank" class="news-link">外交部和中国驻委内瑞拉使馆提醒中国公民近期暂勿前往委内瑞拉</a> [12] <font color='grey'>- 13时46分</font><br>[知乎] <a href="https://www.zhihu.com/question/36791055" target="_blank" class="news-link">扬州炒饭早在 1990 年就被中华烹饪协会认定为淮扬菜，并收录到《中国名菜录》，为什么还会有人认为是粤菜？</a> [19] <font color='grey'>- 13时46分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7591147976015003694/" target="_blank" class="news-link">两名中国公民在日本被严重撞伤</a> [20] <font color='grey'>- 13时46分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E9%A9%BB%E6%97%A5%E6%9C%AC%E5%A4%A7%E4%BD%BF%E9%A6%86%EF%BC%9A%E5%9C%A8%E6%97%A5%E5%85%AC%E6%B0%91%E6%B3%A8%E6%84%8F%E5%AE%89%E5%85%A8" target="_blank" class="news-link">中国驻日本大使馆：在日公民注意安全</a> [25] <font color='grey'>- 13时46分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%A4%AE%E8%A7%86%E7%82%B9%E5%90%8DAI%E9%AD%94%E6%94%B9%E4%B9%B1%E8%B1%A1" target="_blank" class="news-link">央视点名AI魔改乱象</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 13时46分</font><br>[抖音] <a href="https://www.douyin.com/hot/2356059" target="_blank" class="news-link">美食博主手搓对抗AI的一年</a> [7] <font color='grey'>- 13时46分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">DeepSeek 梁文锋</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/1990117220391622363" target="_blank" class="news-link">DeepSeek 发布开年新论文，提出全新 MHC 架构，有何创新与应用前景？</a> [10] <font color='grey'>- 13时46分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">小米 雷军 xiaomi</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/1990730441259444046" target="_blank" class="news-link">小米辟谣「小米 17 Ultra 徕卡版变焦环造假」，公布变焦环结构原理，怎样看待这一回应？</a> [20] <font color='grey'>- 13时46分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">马斯克 特斯拉</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/1990786085630998063" target="_blank" class="news-link">法国对马斯克旗下聊天机器人 Grok 涉嫌生成色情内容启动调查，具体情况如何？</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 13时46分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/1989279702389584371" target="_blank" class="news-link">网友称苹果手机电池健康度用到 0%，客服回应现实中没见过，什么情况下会到 0%？你手机最低到过多少？</a> [18] <font color='grey'>- 13时46分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">机器人</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A1%A8%E6%BC%94%E6%AD%A6%E6%9C%AF+%E5%B0%86%E5%90%8C%E4%BC%B4%E8%B8%B9%E9%A3%9E%E4%BA%8C%E9%87%8C%E5%9C%B0" target="_blank" class="news-link">机器人表演武术 将同伴踹飞二里地</a> [7] <font color='grey'>- 13时46分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">科技</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762474" target="_blank" class="news-link">美股新年首个交易日：能源等防御性板块领涨，科技股下跌</a> [10] <font color='grey'>- 13时46分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 1 条)</h3>
+        <h4>百度热搜 (1 条)</h4><ul><li><a href="https://www.baidu.com/s?wd=%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A1%A8%E6%BC%94%E6%AD%A6%E6%9C%AF+%E5%B0%86%E5%90%8C%E4%BC%B4%E8%B8%B9%E9%A3%9E%E4%BA%8C%E9%87%8C%E5%9C%B0" target="_blank" class="news-link">机器人表演武术 将同伴踹飞二里地</a> [7]</li></ul></div>
+    </body>
+    </html>
+    
