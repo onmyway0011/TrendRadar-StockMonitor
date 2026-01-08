@@ -1,0 +1,154 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-01-08 12:55:54</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">美国</td>
+                <td class="count">18</td>
+                <td class="percentage">7.06%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7592747008662749210/" target="_blank" class="news-link">美国退出66个国际组织</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 12时55分</font><br>[抖音] <a href="https://www.douyin.com/hot/2360512" target="_blank" class="news-link">美国一口气退66个群</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 12时55分</font><br>[知乎] <a href="https://www.zhihu.com/question/1992497349604438807" target="_blank" class="news-link">特朗普签署备忘录宣布美国退出 66 个国际组织，如何解读？特朗普为何近期大动作频频？</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 12时55分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E9%80%80%E5%87%BA66%E4%B8%AA%E5%9B%BD%E9%99%85%E7%BB%84%E7%BB%87" target="_blank" class="news-link">美国退出66个国际组织</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 12时55分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32336532" target="_blank" class="news-link">美国宣布已扣押“贝拉1”号油轮</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 12时55分</font><br><div class='new-title'>🆕 [凤凰网] <a href="https://finance.ifeng.com/c/8pkAbqGJef5" target="_blank" class="news-link">天价比特币，被美国“黑吃黑”？起底太子集团创始人陈志</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 12时55分</font></div><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762716" target="_blank" class="news-link">“唐罗主义”变现？雪佛龙急调11艘油轮，正将委内瑞拉原油掠回美国</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 12时55分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E5%AF%B9%E6%A0%BC%E9%99%B5%E5%85%B0%E5%B2%9B%E6%94%B9%E5%8F%A3" target="_blank" class="news-link">美国对格陵兰岛改口</a> [6] <font color='grey'>- 12时55分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2251144" target="_blank" class="news-link">美国大幅改写官方膳食指南：远离超加工食品 尽量在家做饭</a> [7] <font color='grey'>- 12时55分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762767" target="_blank" class="news-link">“小非农”温和复苏，美国12月ADP就业人数增长4.1万人，扭转前月下滑趋势</a> [8] <font color='grey'>- 12时55分</font><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E7%BE%8E%E5%9B%BD%E4%B8%80%E5%8F%A3%E6%B0%94%E9%80%8066%E4%B8%AA%E7%BE%A4" target="_blank" class="news-link">美国一口气退66个群</a> [8] <font color='grey'>- 12时55分</font></div><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2251321" target="_blank" class="news-link">5000万桶石油只是开始？美国宣称：将“无限期”控制委内瑞拉石油销售</a> [9] <font color='grey'>- 12时55分</font></div><br>[凤凰网] <a href="https://news.ifeng.com/c/8pk6RERKOE8" target="_blank" class="news-link">万斯：符合美国的国家利益，委内瑞拉才能卖石油</a> [9] <font color='grey'>- 12时55分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=%23%E7%BE%8E%E5%9B%BD%E4%B8%80%E5%8F%A3%E6%B0%94%E9%80%8066%E4%B8%AA%E7%BE%A4%23&amp;t=31&amp;band_rank=9&amp;Refer=top" target="_blank" class="news-link">美国一口气退66个群</a> [9] <font color='grey'>- 12时55分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8pjzLqhROOo" target="_blank" class="news-link">泽连斯基呼吁美国对卡德罗夫动手，卡德罗夫回应</a> [10] <font color='grey'>- 12时55分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2251140" target="_blank" class="news-link">美国务卿：下周将就格陵兰岛议题与丹麦举行会谈</a> [12] <font color='grey'>- 12时55分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32340360" target="_blank" class="news-link">特朗普指示美国退出“不再符合美国利益”的66个国际组织</a> [13] <font color='grey'>- 12时55分</font><br><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E7%BE%8E%E5%9B%BD%E5%90%9E%E5%B9%B6%E6%A0%BC%E9%99%B5%E5%85%B0%E5%B2%9B%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%A1%88%23&amp;t=31&amp;band_rank=28&amp;Refer=top" target="_blank" class="news-link">美国吞并格陵兰岛的四种方案</a> [28] <font color='grey'>- 12时55分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">国产 中国</td>
+                <td class="count">11</td>
+                <td class="percentage">4.31%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32335799" target="_blank" class="news-link">媒体：太子集团创始人陈志被捕并遣送中国</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 12时55分</font><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E4%BD%8E%E7%A9%BA%E7%BB%8F%E6%B5%8E%E4%B8%80%E9%A3%9E%E5%86%B2%E5%A4%A9" target="_blank" class="news-link">中国低空经济一飞冲天</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 12时55分</font></div><br>[财联社热门] <a href="https://www.cls.cn/detail/2251220" target="_blank" class="news-link">中国规模最大ETF更名，6万亿ETF市场迎来命名全面规范化</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 12时55分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762736" target="_blank" class="news-link">美国将“代销”委内瑞拉石油，并要求委切断与中国、俄罗斯的经济联系！外交部：典型的霸凌行径</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 12时55分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32335458" target="_blank" class="news-link">宜家上海宝山商场何时关店？会有清仓活动吗？宜家中国回应</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 12时55分</font><br>[知乎] <a href="https://www.zhihu.com/question/1992231089972982641" target="_blank" class="news-link">中国是土豆生产第一大国，可为什么没有像西方国家一样将土豆作为主食「C 位」？</a> [7] <font color='grey'>- 12时55分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E4%B8%AD%E5%9B%BD%E5%A5%87%E8%B0%AD2%E7%86%8A%E7%94%9F%E6%98%AF%E6%97%B7%E9%87%8E" target="_blank" class="news-link">中国奇谭2熊生是旷野</a> [9] <font color='grey'>- 12时55分</font><br>[抖音] <a href="https://www.douyin.com/hot/2360544" target="_blank" class="news-link">U23亚洲杯中国队首战伊拉克</a> [13] <font color='grey'>- 12时55分</font><br>[抖音] <a href="https://www.douyin.com/hot/2360023" target="_blank" class="news-link">中国在委合法权益必须得到保护</a> [15] <font color='grey'>- 12时55分</font><br>[抖音] <a href="https://www.douyin.com/hot/2360055" target="_blank" class="news-link">中国出口管制戳中日本软肋了吗</a> [22] <font color='grey'>- 12时55分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%9B%BD%E5%85%AC%E6%B0%91%E8%A2%AB%E5%8D%B0%E6%96%B9%E6%8B%92%E7%BB%9D%E5%85%A5%E5%A2%83%E5%B9%B6%E5%8A%9D%E8%BF%94%23&amp;t=31&amp;band_rank=26&amp;Refer=top" target="_blank" class="news-link">中国公民被印方拒绝入境并劝返</a> [26] <font color='grey'>- 12时55分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">米哈游 原神 星穹铁道</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles"><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%8E%9F%E7%A5%9E%E5%B0%91%E5%A5%B3%E8%A7%92%E8%89%B2PV" target="_blank" class="news-link">原神少女角色PV</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 12时55分</font></div><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28348786&amp;amp;topic_name=%E9%B8%A1%E5%93%A5%E4%B8%8D%E5%86%8D%E9%B8%BD%21%E5%8E%9F%E7%A5%9E%E5%8A%A8%E7%94%BB%E4%BB%8D%E5%9C%A8%E6%8E%A8%E8%BF%9B" target="_blank" class="news-link">鸡哥不再鸽!原神动画仍在推进</a> [13] <font color='grey'>- 12时55分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28348772&amp;amp;topic_name=%E5%B0%91%E5%A5%B3%E8%B7%B3%E6%A5%BC%E8%BA%AB%E4%BA%A1%2C%E9%81%97%E8%A8%80%E7%AB%9F%E6%98%AF%E5%8E%9F%E7%A5%9E%E5%8F%B0%E8%AF%8D" target="_blank" class="news-link">少女跳楼身亡,遗言竟是原神台词</a> [15] <font color='grey'>- 12时55分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28348762&amp;amp;topic_name=2026%E6%96%B0%E6%99%8B%E7%83%82%E6%A2%97%E8%AF%9E%E7%94%9F%3A%E5%8E%9F%E7%A5%9ENB" target="_blank" class="news-link">2026新晋烂梗诞生:原神NB</a> [26] <font color='grey'>- 12时55分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">小米 雷军 xiaomi</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[微博] <a href="https://s.weibo.com/weibo?q=%23%E7%8E%8B%E8%85%BE%E4%BB%8E%E5%B0%8F%E7%B1%B3%E7%A6%BB%E5%BC%80%E5%90%8E%E6%88%90%E7%AB%8B%E6%96%B0%E5%85%AC%E5%8F%B8%23&amp;t=31&amp;band_rank=5&amp;Refer=top" target="_blank" class="news-link">王腾从小米离开后成立新公司</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 12时55分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7592803705355767339/" target="_blank" class="news-link">小米前高管王腾成立新公司</a> [15] <font color='grey'>- 12时55分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7592581602924826163/" target="_blank" class="news-link">雷军晒超强钢发明专利证书</a> [17] <font color='grey'>- 12时55分</font><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7592414329543233030/" target="_blank" class="news-link">尚界Z7官图发布 剑指小米SU7</a> [30] <font color='grey'>- 12时55分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word"># 美国关税重点关注 关税 贸易战 贸易 进口 出口 关税壁垒 贸易协定 贸易谈判 反倾销 制裁 禁运 贸易逆差 贸易顺差 WTO 世贸组织</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E4%B8%AD%E6%96%B9%E5%9B%9E%E5%BA%94%E5%AF%B9%E6%97%A5%E5%87%BA%E5%8F%A3%E7%AE%A1%E5%88%B6" target="_blank" class="news-link">中方回应对日出口管制</a> [10] <font color='grey'>- 12时55分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2251201" target="_blank" class="news-link">我国对日本二氯二氢硅发起反倾销调查 半导体材料“需求扩张+替代加速”共振</a> [13] <font color='grey'>- 12时55分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7592529565205970950/" target="_blank" class="news-link">出口管制锁住日本扩武迷梦</a> [16] <font color='grey'>- 12时55分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28348770&amp;amp;topic_name=%E6%8E%90%E6%96%AD%21%E4%B8%AD%E6%96%B9%E7%A6%81%E6%AD%A2%E5%AF%B9%E6%97%A5%E5%87%BA%E5%8F%A3%E4%B8%A4%E7%94%A8%E7%89%A9%E9%A1%B9" target="_blank" class="news-link">掐断!中方禁止对日出口两用物项</a> [18] <font color='grey'>- 12时55分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">黄仁勋 英伟达 NVIDIA</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E8%8B%B1%E4%BC%9F%E8%BE%BE%E5%8F%91%E5%B8%83DLSS%204.5" target="_blank" class="news-link">英伟达发布DLSS 4.5</a> [21] <font color='grey'>- 12时55分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[抖音] <a href="https://www.douyin.com/hot/2360141" target="_blank" class="news-link">iPhone13全系开启限时半价换电池</a> [17] <font color='grey'>- 12时55分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2251233" target="_blank" class="news-link">AI引爆存储芯片涨价潮！三星Q4营业利润飙升208% 创历史新高</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 12时55分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">机器人</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32300324" target="_blank" class="news-link">人形机器人量产提速，背后有哪些联动支撑？｜出发，2026</a> [16] <font color='grey'>- 12时55分</font></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3762734" target="_blank" class="news-link">美经济数据喜忧参半，美股涨势暂歇，美债受捧，美元两连涨，金银铜跌离高位</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 12时55分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 7 条)</h3>
+        <h4>今日头条 (1 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7592414329543233030/" target="_blank" class="news-link">尚界Z7官图发布 剑指小米SU7</a> [30]</li></ul><h4>百度热搜 (1 条)</h4><ul><li><a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E4%BD%8E%E7%A9%BA%E7%BB%8F%E6%B5%8E%E4%B8%80%E9%A3%9E%E5%86%B2%E5%A4%A9" target="_blank" class="news-link">中国低空经济一飞冲天</a> <font color='red'><strong>[3]</strong></font></li></ul><h4>bilibili 热搜 (2 条)</h4><ul><li><a href="https://search.bilibili.com/all?keyword=%E5%8E%9F%E7%A5%9E%E5%B0%91%E5%A5%B3%E8%A7%92%E8%89%B2PV" target="_blank" class="news-link">原神少女角色PV</a> <font color='red'><strong>[2]</strong></font></li><li><a href="https://search.bilibili.com/all?keyword=%E7%BE%8E%E5%9B%BD%E4%B8%80%E5%8F%A3%E6%B0%94%E9%80%8066%E4%B8%AA%E7%BE%A4" target="_blank" class="news-link">美国一口气退66个群</a> [8]</li></ul><h4>财联社热门 (1 条)</h4><ul><li><a href="https://www.cls.cn/detail/2251321" target="_blank" class="news-link">5000万桶石油只是开始？美国宣称：将“无限期”控制委内瑞拉石油销售</a> [9]</li></ul><h4>凤凰网 (1 条)</h4><ul><li><a href="https://finance.ifeng.com/c/8pkAbqGJef5" target="_blank" class="news-link">天价比特币，被美国“黑吃黑”？起底太子集团创始人陈志</a> <font color='red'><strong>[4]</strong></font></li></ul><h4>微博 (1 条)</h4><ul><li><a href="https://s.weibo.com/weibo?q=%23%E7%BE%8E%E5%9B%BD%E5%90%9E%E5%B9%B6%E6%A0%BC%E9%99%B5%E5%85%B0%E5%B2%9B%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%A1%88%23&amp;t=31&amp;band_rank=28&amp;Refer=top" target="_blank" class="news-link">美国吞并格陵兰岛的四种方案</a> [28]</li></ul></div>
+    </body>
+    </html>
+    
