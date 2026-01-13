@@ -1,0 +1,178 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-01-13 18:47:51</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">10</td>
+                <td class="percentage">3.92%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2256114" target="_blank" class="news-link">工信部：实施工业互联网与人工智能融合赋能行动 推动人工智能技术在工业全链条渗透</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 18时47分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E4%B8%AD%E5%9B%BD%E6%A0%B8%E8%81%9A%E5%8F%98%E8%A3%85%E7%BD%AE%E8%9E%8D%E5%85%A5AI%E6%8A%80%E6%9C%AF" target="_blank" class="news-link">中国核聚变装置融入AI技术</a> [6] <font color='grey'>- 18时47分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=EDG%E5%AE%98%E5%AE%A3Maokai%E5%9B%9E%E5%BD%92" target="_blank" class="news-link">EDG官宣Maokai回归</a> [7] <font color='grey'>- 18时47分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2255873" target="_blank" class="news-link">【午报】三大指数小幅下挫，AI医疗方向全线爆发，商业航天概念股大幅分化</a> [10] <font color='grey'>- 18时47分</font><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2256264" target="_blank" class="news-link">一图看懂 | GEO爆火，AI新时代打破搜索“旧秩序”</a> [11] <font color='grey'>- 18时47分</font></div><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=UP%E4%B8%BB%E5%88%86%E6%9E%90AI%E5%B0%86%E5%A6%82%E4%BD%95%E5%BD%B1%E5%93%8D%E7%94%B5%E7%AB%9E%E8%A1%8C%E4%B8%9A" target="_blank" class="news-link">UP主分析AI将如何影响电竞行业</a> [13] <font color='grey'>- 18时47分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2255787" target="_blank" class="news-link">AI引爆存储芯片需求！SK海力士将豪掷近130亿美元建设封装厂</a> [13] <font color='grey'>- 18时47分</font><br>[知乎] <a href="https://www.zhihu.com/question/1994352106249873378" target="_blank" class="news-link">张文宏不支持把 AI 引入病历系统，恐造成医生诊断能力缺失，这种担忧是否合理？在其他专业领域也类似么？</a> [18] <font color='grey'>- 18时47分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E9%9F%A9%E6%9C%8D93%25%E8%83%9C%E7%8E%87%E8%B4%A6%E5%8F%B7%E6%98%AFAI%E5%90%97" target="_blank" class="news-link">韩服93%胜率账号是AI吗</a> [19] <font color='grey'>- 18时47分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=%23%E5%BC%A0%E6%96%87%E5%AE%8F%E7%A7%B0%E6%8B%92%E7%BB%9D%E5%B0%86AI%E5%BC%95%E5%85%A5%E5%8C%BB%E9%99%A2%E7%97%85%E5%8E%86%E7%B3%BB%E7%BB%9F%23&amp;t=31&amp;band_rank=30&amp;Refer=top" target="_blank" class="news-link">张文宏称拒绝将AI引入医院病历系统</a> [30] <font color='grey'>- 18时47分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word"># 美国关税重点关注 关税 贸易战 贸易 进口 出口 关税壁垒 贸易协定 贸易谈判 反倾销 制裁 禁运 贸易逆差 贸易顺差 WTO 世贸组织</td>
+                <td class="count">7</td>
+                <td class="percentage">2.75%</td>
+                <td class="titles">[凤凰网] <a href="https://news.ifeng.com/c/8psk7MrpBZR" target="_blank" class="news-link">美将对伊朗商业伙伴加征25%关税，中方回应</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 18时47分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7594742775778643502/" target="_blank" class="news-link">中方回应美对伊朗贸易伙伴加税25%</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 18时47分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2256043" target="_blank" class="news-link">美将对与伊朗开展商业往来的国家征收25%关税，外交部回应</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 18时47分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763124" target="_blank" class="news-link">特朗普：对伊朗贸易伙伴征收25%关税，油价短线走高</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 18时47分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32372812" target="_blank" class="news-link">特朗普：对伊朗贸易伙伴征收25%关税</a> [12] <font color='grey'>- 18时47分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28348983&amp;amp;topic_name=%E7%A6%81%E8%BF%90%E5%8D%A1%E8%84%96%E5%AD%90%2C%E9%AB%98%E5%B8%82%E6%97%A9%E8%8B%97%E6%80%A5%E7%9C%BC%E4%BA%86" target="_blank" class="news-link">禁运卡脖子,高市早苗急眼了</a> [24] <font color='grey'>- 18时47分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E6%96%B9%E5%9B%9E%E5%BA%94%E7%BE%8E%E5%AF%B9%E4%BC%8A%E6%9C%97%E5%95%86%E4%B8%9A%E4%BC%99%E4%BC%B4%E5%8A%A0%E5%BE%81%E5%85%B3%E7%A8%8E" target="_blank" class="news-link">中方回应美对伊朗商业伙伴加征关税</a> [27] <font color='grey'>- 18时47分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">国产 中国</td>
+                <td class="count">6</td>
+                <td class="percentage">2.35%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7594567269456399915/" target="_blank" class="news-link">数读中国开局新活力</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 18时47分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32369186" target="_blank" class="news-link">中国一口气申报20万颗卫星，意味着什么？</a> [6] <font color='grey'>- 18时47分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7593672166011387945/" target="_blank" class="news-link">郑丽文：正常台湾人认同自己是中国人</a> [8] <font color='grey'>- 18时47分</font><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E4%B8%AD%E6%96%B9%E5%B0%86%E4%BF%9D%E6%8A%A4%E5%9C%A8%E4%BC%8A%E4%B8%AD%E5%9B%BD%E5%85%AC%E6%B0%91%E5%AE%89%E5%85%A8" target="_blank" class="news-link">中方将保护在伊中国公民安全</a> [11] <font color='grey'>- 18时47分</font></div><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32368230" target="_blank" class="news-link">明查｜印度人膜拜能对抗中国的自制核弹头？实为印度教湿婆林伽运输画面</a> [15] <font color='grey'>- 18时47分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28348980&amp;amp;topic_name=%E7%A2%B0%E7%93%B7%E4%B8%AD%E5%9B%BD%E4%B8%8A%E7%98%BE%2C%E5%B0%8F%E6%B3%89%E8%BF%9B%E6%AC%A1%E5%8F%88%E7%8A%AF%E7%97%85" target="_blank" class="news-link">碰瓷中国上瘾,小泉进次又犯病</a> [30] <font color='grey'>- 18时47分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">美国</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[凤凰网] <a href="https://news.ifeng.com/c/8pso6PvxQPt" target="_blank" class="news-link">梅德韦杰夫讽刺：美国再不抓紧，格陵兰就要入俄了</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 18时47分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8pslTiqBz0e" target="_blank" class="news-link">美国两州把特朗普政府告了</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 18时47分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32373300" target="_blank" class="news-link">美国国务院要求美国公民立即离开伊朗</a> [8] <font color='grey'>- 18时47分</font><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2256174" target="_blank" class="news-link">商务部：对原产于美国和韩国的进口太阳能级多晶硅继续征收反倾销税 实施期限为5年</a> [9] <font color='grey'>- 18时47分</font></div><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E7%BE%8E%E5%9B%BD%E5%90%91%E9%AB%98%E7%B3%96%E5%8F%91%E5%87%BA%E6%8C%91%E6%88%98" target="_blank" class="news-link">美国向高糖发出挑战</a> [21] <font color='grey'>- 18时47分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763139" target="_blank" class="news-link">A股成交再创历史天量！创业板跌2%，商业航天集体回调，新“易中天”延续强势，恒指涨近1%，医药股活跃，碳酸锂逆势涨超7%</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 18时47分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763132" target="_blank" class="news-link">“美联储通讯社”：鲍威尔上周五接到传票，思考整个周末后，美联储主席决定“公开对抗特朗普”</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 18时47分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763105" target="_blank" class="news-link">美股Q4财报季开启！高盛：标普500盈利预期“太保守”，本周银行股表现成关键风向标</a> [9] <font color='grey'>- 18时47分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28349044&amp;amp;topic_name=%E5%B7%9D%E6%99%AE%E4%B8%8B%E9%9C%B8%E7%8E%8B%E4%BB%A4%3A%E4%BF%A1%E7%94%A8%E5%8D%A1%E5%88%A9%E7%8E%87%E7%A0%8D%E5%8D%8A" target="_blank" class="news-link">川普下霸王令:信用卡利率砍半</a> [11] <font color='grey'>- 18时47分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">胖东来 于东来</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/1994386274556016378" target="_blank" class="news-link">永辉超市效仿胖东来 20 个月难止连亏，为什么「越学越亏」？永辉还有哪些更好的出路？</a> [9] <font color='grey'>- 18时47分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E9%A1%BE%E5%AE%A2%E9%80%9B%E8%83%96%E4%B8%9C%E6%9D%A5%E6%89%93%E7%A2%8E%E7%9B%98%E5%AD%90%E5%8F%8D%E8%A2%AB%E9%81%93%E6%AD%89" target="_blank" class="news-link">顾客逛胖东来打碎盘子反被道歉</a> [16] <font color='grey'>- 18时47分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E6%B0%B8%E8%BE%89%E8%B6%85%E5%B8%82%E6%95%88%E4%BB%BF%E8%83%96%E4%B8%9C%E6%9D%A520%E4%B8%AA%E6%9C%88%E9%9A%BE%E6%AD%A2%E8%BF%9E%E4%BA%8F" target="_blank" class="news-link">永辉超市效仿胖东来20个月难止连亏</a> [28] <font color='grey'>- 18时47分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">DeepSeek 梁文锋</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763151" target="_blank" class="news-link">梁文锋署名新论文：给大模型配本“字典”，计算、记忆分家后智商爆表，剧透DeepSeek V4？</a> [8] <font color='grey'>- 18时47分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E6%A2%81%E6%96%87%E9%94%8B%E6%96%B0%E8%AE%BA%E6%96%87%E5%89%A7%E9%80%8F%E4%B8%8B%E4%B8%80%E4%BB%A3%E6%A8%A1%E5%9E%8B" target="_blank" class="news-link">梁文锋新论文剧透下一代模型</a> [8] <font color='grey'>- 18时47分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">马斯克 特斯拉</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles"><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E6%8A%80%E6%9C%AF%E6%8B%86%E8%A7%A3%E7%96%91%E4%BC%BC%E9%A9%AC%E6%96%AF%E5%85%8BAI%E8%B4%A6%E5%8F%B7" target="_blank" class="news-link">技术拆解疑似马斯克AI账号</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 18时47分</font></div><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E9%9F%A9%E6%9C%8D%E9%A9%AC%E6%96%AF%E5%85%8BAI%E4%BA%8B%E4%BB%B6%E7%96%91%E7%82%B9%E8%A7%A3%E6%9E%90" target="_blank" class="news-link">韩服马斯克AI事件疑点解析</a> [9] <font color='grey'>- 18时47分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">谷歌 google gemini deepmind</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763053" target="_blank" class="news-link">美股走V新高，谷歌破4万亿，阿里暴涨10%领衔中概大涨，金银大涨创新高</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 18时47分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763115" target="_blank" class="news-link">苹果选中Gemini，谷歌登上“4万亿”</a> [6] <font color='grey'>- 18时47分</font></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">米哈游 原神 星穹铁道</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%8E%9F%E7%A5%9E%E5%B0%91%E5%A5%B3%E8%A7%92%E8%89%B2%E9%A2%84%E5%91%8A" target="_blank" class="news-link">原神少女角色预告</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 18时47分</font></td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7594676685853691398/" target="_blank" class="news-link">发布15年后iPhone 4突然爆火</a> [24] <font color='grey'>- 18时47分</font></td>
+            </tr>
+        
+            <tr>
+                <td>12</td>
+                <td class="word">手机</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=%E5%8F%91%E5%B8%8315%E5%B9%B4%E7%9A%84%E6%89%8B%E6%9C%BA%E7%AA%81%E7%84%B6%E7%88%86%E7%BA%A2" target="_blank" class="news-link">发布15年的手机突然爆红</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 18时47分</font></td>
+            </tr>
+        
+            <tr>
+                <td>13</td>
+                <td class="word">月球 登月 火星 宇宙 飞船</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E8%B6%85%E8%8B%B1%E5%AE%87%E5%AE%99%E4%B8%80%E5%91%A8%E5%A4%A7%E4%BA%8B%E7%9B%98%E7%82%B9" target="_blank" class="news-link">超英宇宙一周大事盘点</a> [12] <font color='grey'>- 18时47分</font></div></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 6 条)</h3>
+        <h4>bilibili 热搜 (4 条)</h4><ul><li><a href="https://search.bilibili.com/all?keyword=%E6%8A%80%E6%9C%AF%E6%8B%86%E8%A7%A3%E7%96%91%E4%BC%BC%E9%A9%AC%E6%96%AF%E5%85%8BAI%E8%B4%A6%E5%8F%B7" target="_blank" class="news-link">技术拆解疑似马斯克AI账号</a> <font color='red'><strong>[3]</strong></font></li><li><a href="https://search.bilibili.com/all?keyword=%E9%9F%A9%E6%9C%8D%E9%A9%AC%E6%96%AF%E5%85%8BAI%E4%BA%8B%E4%BB%B6%E7%96%91%E7%82%B9%E8%A7%A3%E6%9E%90" target="_blank" class="news-link">韩服马斯克AI事件疑点解析</a> [9]</li><li><a href="https://search.bilibili.com/all?keyword=%E4%B8%AD%E6%96%B9%E5%B0%86%E4%BF%9D%E6%8A%A4%E5%9C%A8%E4%BC%8A%E4%B8%AD%E5%9B%BD%E5%85%AC%E6%B0%91%E5%AE%89%E5%85%A8" target="_blank" class="news-link">中方将保护在伊中国公民安全</a> [11]</li><li><a href="https://search.bilibili.com/all?keyword=%E8%B6%85%E8%8B%B1%E5%AE%87%E5%AE%99%E4%B8%80%E5%91%A8%E5%A4%A7%E4%BA%8B%E7%9B%98%E7%82%B9" target="_blank" class="news-link">超英宇宙一周大事盘点</a> [12]</li></ul><h4>财联社热门 (2 条)</h4><ul><li><a href="https://www.cls.cn/detail/2256174" target="_blank" class="news-link">商务部：对原产于美国和韩国的进口太阳能级多晶硅继续征收反倾销税 实施期限为5年</a> [9]</li><li><a href="https://www.cls.cn/detail/2256264" target="_blank" class="news-link">一图看懂 | GEO爆火，AI新时代打破搜索“旧秩序”</a> [11]</li></ul></div>
+    </body>
+    </html>
+    
