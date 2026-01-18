@@ -1,0 +1,167 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-01-18 19:35:12</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">美国</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[凤凰网] <a href="https://news.ifeng.com/c/8q05A8HPhF5" target="_blank" class="news-link">罕见！以色列总理公开叫板美国</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 19时35分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32409469" target="_blank" class="news-link">美国因格陵兰岛问题对欧洲8国加征关税，多国回应：不可接受</a> [7] <font color='grey'>- 19时35分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2261257" target="_blank" class="news-link">美国因格陵兰岛问题对欧洲8国加征关税 多国回应：不可接受</a> [7] <font color='grey'>- 19时35分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32408022" target="_blank" class="news-link">白宫官员：守卫格陵兰岛花了美国的钱，那它就不该属于丹麦</a> [14] <font color='grey'>- 19时35分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28349276&amp;amp;topic_name=%E5%BD%BB%E5%BA%95%E5%A4%B1%E6%8E%A7%21%E7%BE%8E%E5%9B%BDICE%E6%AF%92%E6%9D%80%E5%A9%B4%E5%84%BF" target="_blank" class="news-link">彻底失控!美国ICE毒杀婴儿</a> [17] <font color='grey'>- 19时35分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word"># 美国关税重点关注 关税 贸易战 贸易 进口 出口 关税壁垒 贸易协定 贸易谈判 反倾销 制裁 禁运 贸易逆差 贸易顺差 WTO 世贸组织</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763525" target="_blank" class="news-link">为夺格陵兰岛，美再挥关税大棒、欧洲8国集体反击</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 19时35分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8q0nQjJB7h7" target="_blank" class="news-link">特朗普发黑白照：我是关税之王(图)</a> [6] <font color='grey'>- 19时35分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28349295&amp;amp;topic_name=%E4%BA%89%E5%A4%BA%E6%A0%BC%E9%99%B5%E5%85%B0%2C%E7%BE%8E%E5%85%B3%E7%A8%8E%E5%A4%A7%E6%A3%92%E7%97%9B%E5%87%BB%E6%AC%A7%E6%B4%B2" target="_blank" class="news-link">争夺格陵兰,美关税大棒痛击欧洲</a> [7] <font color='grey'>- 19时35分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32409493" target="_blank" class="news-link">欧盟将举行紧急会议，商讨格陵兰岛及美关税问题</a> [11] <font color='grey'>- 19时35分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32409467" target="_blank" class="news-link">马克龙：美关税威胁“不可接受”</a> [17] <font color='grey'>- 19时35分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763527" target="_blank" class="news-link">谁是新主席、起诉鲍威尔、颠覆美联储？围绕美联储的各种斗争，下周分胜负？</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 19时35分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763532" target="_blank" class="news-link">异军突起！周四与特朗普会面顺利，贝莱德的里德尔竞选美联储主席呼声渐起</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 19时35分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2261105" target="_blank" class="news-link">央行开年启动结构性降息，近30万亿到期定存何去何从？一线：存款偏好依旧强烈，理财、基金未现流入</a> [6] <font color='grey'>- 19时35分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">黄仁勋 英伟达 NVIDIA</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2261261" target="_blank" class="news-link">SK海力士、三星加速HBF商业化进程 “HBM之父”：最快明年用于英伟达产品</a> [10] <font color='grey'>- 19时35分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7596560716807540270/" target="_blank" class="news-link">甘肃退伍老兵抱紧黄仁勋狂揽上千亿</a> [24] <font color='grey'>- 19时35分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763530" target="_blank" class="news-link">当“AI编程”越来越容易，新浪潮正出现：人人可做的“微应用”和一人顶团队的“超级程序员”</a> [6] <font color='grey'>- 19时35分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763531" target="_blank" class="news-link">“飙升的电费”成为美国中选焦点，AI数据中心站上“政治火山口”</a> [8] <font color='grey'>- 19时35分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">国产 中国</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/1995983641810068302" target="_blank" class="news-link">U23 亚洲杯半决赛，中国队将对战越南，有哪些看点？中国队有多大机会取胜？</a> [9] <font color='grey'>- 19时35分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7596619845571972671/" target="_blank" class="news-link">美媒：美封锁策略挡不住中国科技崛起</a> [23] <font color='grey'>- 19时35分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">芯片 光刻机</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2261102" target="_blank" class="news-link">我国芯片制造核心装备取得重要突破</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 19时35分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2261258" target="_blank" class="news-link">【早报】事关存储芯片！美商务部长100%关税威慑；我国芯片制造核心装备取得重要突破</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 19时35分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">DeepSeek 梁文锋</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763534" target="_blank" class="news-link">没有商业模式--DeepSeek最坚固的“护城河”</a> [9] <font color='grey'>- 19时35分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">小米 雷军 xiaomi</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7596556794626129930/" target="_blank" class="news-link">雷军送花圈悼念聂卫平</a> [27] <font color='grey'>- 19时35分</font></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">马斯克 特斯拉</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/1995914466735388213" target="_blank" class="news-link">马斯克以「构成欺诈」为由向 OpenAI 、微软索赔 1340 亿美元，具体是怎么回事？他能索赔成功吗？</a> [16] <font color='grey'>- 19时35分</font></td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td class="word">chatgpt Sam Altman openai</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763533" target="_blank" class="news-link">编程从此不再有门槛！Claude Code火爆出圈，接近“ChatGPT的横空出世”</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 19时35分</font></td>
+            </tr>
+        
+            <tr>
+                <td>12</td>
+                <td class="word">手机</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/1995989293034861647" target="_blank" class="news-link">男子偶遇东北虎，慌乱中掏出手机拍视频，这种行为有多危险？野外遇到老虎该怎样应对？</a> [6] <font color='grey'>- 19时35分</font></td>
+            </tr>
+        
+        </table>
+    
+    </body>
+    </html>
+    
