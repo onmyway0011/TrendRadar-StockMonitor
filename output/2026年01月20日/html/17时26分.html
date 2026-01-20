@@ -1,0 +1,146 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-01-20 17:26:06</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">国产 中国</td>
+                <td class="count">9</td>
+                <td class="percentage">3.53%</td>
+                <td class="titles"><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E4%B8%AD%E5%9B%BD%E8%BD%BD%E4%BA%BA%E8%88%AA%E5%A4%A9%E9%A6%96%E6%AC%A1%E5%BA%94%E6%80%A5%E8%A1%8C%E5%8A%A8%E5%85%A8%E7%BA%AA%E5%AE%9E" target="_blank" class="news-link">中国载人航天首次应急行动全纪实</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 17时26分</font></div><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32415962" target="_blank" class="news-link">日本政府统计数据：去年12月赴日中国游客同比下降40%</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 17时26分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%9B%BD%E8%BD%BD%E4%BA%BA%E8%88%AA%E5%A4%A9%E9%A6%96%E6%AC%A1%E5%BA%94%E6%80%A5%E8%A1%8C%E5%8A%A8%23&amp;t=31&amp;band_rank=3&amp;Refer=top" target="_blank" class="news-link">中国载人航天首次应急行动</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 17时26分</font><br>[抖音] <a href="https://www.douyin.com/hot/2374196" target="_blank" class="news-link">三大引擎点亮2025中国经济</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 17时26分</font><br>[知乎] <a href="https://www.zhihu.com/question/1995961345640768063" target="_blank" class="news-link">中国火箭一天双失利，长征三号乙与谷神星二号分别出了什么问题？</a> [6] <font color='grey'>- 17时26分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8q3WlIzYyxY" target="_blank" class="news-link">1名中国公民在阿富汗首都爆炸事件中死亡</a> [8] <font color='grey'>- 17时26分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7596548586914185262/" target="_blank" class="news-link">中国进口商购买约6万吨加拿大油菜籽</a> [10] <font color='grey'>- 17时26分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E2%80%9C%E6%88%90%E4%B8%BA%E4%B8%AD%E5%9B%BD%E4%BA%BA%E2%80%9D%E5%92%8B%E5%B0%B1%E5%9C%A8%E6%B5%B7%E5%A4%96%E7%81%AB%E4%BA%86" target="_blank" class="news-link">“成为中国人”咋就在海外火了</a> [14] <font color='grey'>- 17时26分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E9%9F%A9%E5%9B%BD%E7%BE%8E%E9%A3%9F%E7%BB%BC%E8%89%BA%E6%88%90%E4%B8%AD%E5%9B%BD%E2%80%9C%E7%A1%AC%E6%A0%B8%E5%AE%A3%E4%BC%A0%E7%89%87%E2%80%9D" target="_blank" class="news-link">韩国美食综艺成中国“硬核宣传片”</a> [28] <font color='grey'>- 17时26分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">美国</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763623" target="_blank" class="news-link">特朗普“私信”震惊欧洲：“因未获诺贝尔和平奖，我不再只考虑“和平”，美国必须完全控制格陵兰”</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 17时26分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%9C%86%E8%84%B8%E8%AF%84%E7%BE%8E%E5%9B%BD%E5%AF%B9%E6%AC%A7%E6%B4%B28%E5%9B%BD%E5%8A%A0%E7%A8%8E" target="_blank" class="news-link">圆脸评美国对欧洲8国加税</a> [10] <font color='grey'>- 17时26分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7597320741830410294/" target="_blank" class="news-link">美国特工破门误抓一老挝裔美公民</a> [17] <font color='grey'>- 17时26分</font><br>[知乎] <a href="https://www.zhihu.com/question/1995879633401374340" target="_blank" class="news-link">特朗普重返白宫一周年，怎样评价他这一年的执政成绩？给美国带来了什么？</a> [17] <font color='grey'>- 17时26分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E7%BE%8E%E5%9B%BD%E4%B8%BA%E4%BD%95%E6%88%90%E7%AB%8B%E5%92%8C%E5%B9%B3%E5%A7%94%E5%91%98%E4%BC%9A" target="_blank" class="news-link">美国为何成立和平委员会</a> [25] <font color='grey'>- 17时26分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">谷歌 google gemini deepmind</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles"><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2262987" target="_blank" class="news-link">谷歌Gemini商业化高歌猛进 API调用量5个月暴增140%</a> [13] <font color='grey'>- 17时26分</font></div><br>[知乎] <a href="https://www.zhihu.com/question/1996233131175462349" target="_blank" class="news-link">谷歌 Gemini 准确率从 21% 提升至 97% 仅靠「复制粘贴」，这意味着什么？</a> [13] <font color='grey'>- 17时26分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763546" target="_blank" class="news-link">格陵兰引发关税战风险，美股债休市，欧股重创，人民币升破6.96，金银新高</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 17时26分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3763645" target="_blank" class="news-link">拍卖遇冷！日债抛售潮加剧、收益率迈入“4时代”，40年期国债上升27基点至4.215%</a> [7] <font color='grey'>- 17时26分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word"># 美国关税重点关注 关税 贸易战 贸易 进口 出口 关税壁垒 贸易协定 贸易谈判 反倾销 制裁 禁运 贸易逆差 贸易顺差 WTO 世贸组织</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7597243975523598399/" target="_blank" class="news-link">法德英三国就美关税威胁表态</a> [23] <font color='grey'>- 17时26分</font><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7596915056739094035/" target="_blank" class="news-link">美媒：格陵兰关税粉碎欧盟绥靖计划</a> [26] <font color='grey'>- 17时26分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28349346&amp;amp;topic_name=%E7%89%A2A%E6%9C%80%E6%96%B0%E5%8A%9B%E4%BD%9C%21%E2%80%9C%E7%B3%96%E9%9C%9C%E8%8B%B9%E6%9E%9C%E2%80%9D%E5%A4%AA%E5%90%93%E4%BA%BA" target="_blank" class="news-link">牢A最新力作!“糖霜苹果”太吓人</a> [16] <font color='grey'>- 17时26分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2263371" target="_blank" class="news-link">关税、热战、AI！世界目光齐聚达沃斯 特朗普携“史上最大代表团”参会</a> [8] <font color='grey'>- 17时26分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">手机</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=%E9%AB%98%E4%B8%AD%E7%94%9F%E5%B8%A6%E6%89%8B%E6%9C%BA%E8%A2%AB%E5%81%9C%E8%AF%BE1%E4%B8%AA%E6%9C%88+%E5%AE%B6%E9%95%BF%E6%97%A0%E5%A5%88" target="_blank" class="news-link">高中生带手机被停课1个月 家长无奈</a> [16] <font color='grey'>- 17时26分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">月球 登月 火星 宇宙 飞船</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2263341" target="_blank" class="news-link">嫦娥六号月球样品中首次发现天然单壁碳纳米管与石墨碳</a> [12] <font color='grey'>- 17时26分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 3 条)</h3>
+        <h4>今日头条 (1 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7596915056739094035/" target="_blank" class="news-link">美媒：格陵兰关税粉碎欧盟绥靖计划</a> [26]</li></ul><h4>bilibili 热搜 (1 条)</h4><ul><li><a href="https://search.bilibili.com/all?keyword=%E4%B8%AD%E5%9B%BD%E8%BD%BD%E4%BA%BA%E8%88%AA%E5%A4%A9%E9%A6%96%E6%AC%A1%E5%BA%94%E6%80%A5%E8%A1%8C%E5%8A%A8%E5%85%A8%E7%BA%AA%E5%AE%9E" target="_blank" class="news-link">中国载人航天首次应急行动全纪实</a> <font color='red'><strong>[1]</strong></font></li></ul><h4>财联社热门 (1 条)</h4><ul><li><a href="https://www.cls.cn/detail/2262987" target="_blank" class="news-link">谷歌Gemini商业化高歌猛进 API调用量5个月暴增140%</a> [13]</li></ul></div>
+    </body>
+    </html>
+    
