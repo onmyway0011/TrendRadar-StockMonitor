@@ -1,0 +1,170 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-01-28 21:30:26</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">国产 中国</td>
+                <td class="count">12</td>
+                <td class="percentage">4.71%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=%E8%8B%B1%E5%9B%BD%E9%A6%96%E7%9B%B8%EF%BC%9A%E4%B8%AD%E5%9B%BD%E5%B7%B2%E7%BB%8F%E5%B4%9B%E8%B5%B7" target="_blank" class="news-link">英国首相：中国已经崛起</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 21时30分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32475047" target="_blank" class="news-link">前瞻｜英国首相时隔8年访华：搁置争议，要从中国带回去“亮眼成果”</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 21时30分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%9B%BD%E4%BA%A7%E6%AD%A6%E4%BE%A0%E5%8D%95%E6%9C%BA%E6%9E%95%E5%88%80%E6%AD%8C%E9%A6%96%E6%9B%9D" target="_blank" class="news-link">国产武侠单机枕刀歌首曝</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 21时30分</font><br>[抖音] <a href="https://www.douyin.com/hot/2381805" target="_blank" class="news-link">法媒：中国不再是“低端作坊”</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 21时30分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2272800" target="_blank" class="news-link">誓保主力箭首飞和回收成功！中国商火年度会议亮目标 可复用成2026航天关键词</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 21时30分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=%231%E5%90%8D%E4%B8%AD%E5%9B%BD%E7%B1%8D%E6%B8%B8%E5%AE%A2%E4%BF%84%E7%BD%97%E6%96%AF%E6%AD%BB%E4%BA%A1%23&amp;t=31&amp;band_rank=5&amp;Refer=top" target="_blank" class="news-link">1名中国籍游客俄罗斯死亡</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 21时30分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28349843&amp;amp;topic_name=%E4%B8%AD%E5%9B%BD%E6%B3%A1%E9%9D%A2%E5%BE%81%E6%9C%8D%E9%9F%A9%E6%98%9F%2C%E5%90%A7%E9%9D%A2%E5%A4%9F%E6%9D%83%E5%A8%81" target="_blank" class="news-link">中国泡面征服韩星,吧面够权威</a> [6] <font color='grey'>- 21时30分</font><br>[知乎] <a href="https://www.zhihu.com/question/1999500466661380856" target="_blank" class="news-link">斯塔默于 28 日至 31 日对中国进行正式访问，也是英首相时隔八年再次访华，哪些信息值得关注？</a> [6] <font color='grey'>- 21时30分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3764316" target="_blank" class="news-link">未来几周看涨到150美元！花旗高喊白银是“打了兴奋剂的黄金”，中国主导、印度跟买，但全球ETF净流出</a> [7] <font color='grey'>- 21时30分</font><br>[抖音] <a href="https://www.douyin.com/hot/2381691" target="_blank" class="news-link">中国军号发日语海报</a> [12] <font color='grey'>- 21时30分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7599743945732276267/" target="_blank" class="news-link">英国首相：中国已经崛起</a> [18] <font color='grey'>- 21时30分</font><br><div class='new-title'>🆕 [抖音] <a href="https://www.douyin.com/hot/2382110" target="_blank" class="news-link">英国首相称中国已崛起</a> [21] <font color='grey'>- 21时30分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2272264" target="_blank" class="news-link">火力全开！2026开年泰康平安新华等超10亿险资南下，狂扫港股AI、生物医药IPO</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 21时30分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3764353" target="_blank" class="news-link">史上最强业绩！SK海力士Q4营业利润翻倍至19.2万亿韩元 ，AI内存需求持续旺盛| 财报见闻</a> [10] <font color='grey'>- 21时30分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2272316" target="_blank" class="news-link">赛道路演连轴转，听众不够用了？AI、太空、光伏谁在C位？</a> [10] <font color='grey'>- 21时30分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2272560" target="_blank" class="news-link">华尔街传奇大空头“剑指”数据中心：AI交易中最不该碰的领域！</a> [11] <font color='grey'>- 21时30分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=AI%E5%B0%86%E6%9B%BF%E4%BB%A39200%E4%B8%87%E5%B7%A5%E4%BD%9C%E5%B2%97%E4%BD%8D" target="_blank" class="news-link">AI将替代9200万工作岗位</a> [17] <font color='grey'>- 21时30分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">科技</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3764253" target="_blank" class="news-link">科技巨头财报前标普五连阳，美元重挫创四年新低，黄金又新高，原油拉升，期银跳水</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 21时30分</font><br><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3764338" target="_blank" class="news-link">美联储决议前，强劲财报提振科技股，纳指期货涨0.9%，美元止跌，黄金5300，银、铜、铝集体上涨</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 21时30分</font></div><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3764309" target="_blank" class="news-link">希捷科技电话会：“都卖完了！”CEO称客户更关心供货而非价格，订单已谈到2027年</a> [9] <font color='grey'>- 21时30分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2272832" target="_blank" class="news-link">【数据看盘】量化、游资激烈博弈网宿科技，“北向+机构+游资”集体出逃三维通信</a> [9] <font color='grey'>- 21时30分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E8%87%AA%E7%84%B6%E4%B8%8E%E7%A7%91%E6%8A%80%E5%81%A5%E8%BA%AB%E7%9A%84%E5%8A%9B%E9%87%8F%E5%B7%AE%E8%B7%9D" target="_blank" class="news-link">自然与科技健身的力量差距</a> [17] <font color='grey'>- 21时30分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">美国</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[凤凰网] <a href="https://news.ifeng.com/c/8qHiTLSBV91" target="_blank" class="news-link">美国贸易代表坐不住了：印度占便宜了！</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 21时30分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E7%BE%8E%E5%9B%BD%E6%8C%81%E7%BB%AD%E5%A2%9E%E5%85%B5%E4%B8%AD%E4%B8%9C" target="_blank" class="news-link">美国持续增兵中东</a> [12] <font color='grey'>- 21时30分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E5%8D%A1%E5%B0%BC%EF%BC%9A%E7%8E%B0%E5%9C%A8%E7%9A%84%E7%BE%8E%E5%9B%BD%E5%87%A0%E4%B9%8E%E4%BB%80%E4%B9%88%E9%83%BD%E4%B8%8D%E6%AD%A3%E5%B8%B8" target="_blank" class="news-link">卡尼：现在的美国几乎什么都不正常</a> [15] <font color='grey'>- 21时30分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32479888" target="_blank" class="news-link">万斯当面警告韩国总理不得惩罚美国科技公司，否则加征关税</a> [18] <font color='grey'>- 21时30分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2272439" target="_blank" class="news-link">就在今晚！美联储2026年首份利率决议即将出炉</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 21时30分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3764320" target="_blank" class="news-link">沪指震荡上涨，多只宽基ETF成交再刷天量，金银股大面积涨停，恒指大涨创近五年新高，鸣鸣很忙上市首日飙涨70%</a> [6] <font color='grey'>- 21时30分</font><br><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3764356" target="_blank" class="news-link">今夜美联储决议，暂停降息已成共识，但鲍威尔拿的是鸽派剧本？</a> [8] <font color='grey'>- 21时30分</font></div><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2272925" target="_blank" class="news-link">美股“七巨头”财报即将亮相：投资者该关注哪些要点？</a> [8] <font color='grey'>- 21时30分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">京东 刘强东</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles"><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7600286412567674890/" target="_blank" class="news-link">刘强东老家“村晚”现机器人舞王</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 21时30分</font></div><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7600389283316289051/" target="_blank" class="news-link">刘强东老家村民称和老伴两次领4万块</a> [13] <font color='grey'>- 21时30分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">胖东来 于东来</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E8%83%96%E4%B8%9C%E6%9D%A5%E9%87%91%E6%9D%A1%E5%8F%AA%E5%89%A9%E5%8D%81%E6%9D%A5%E5%9D%97%E4%BA%86%23&amp;t=31&amp;band_rank=9&amp;Refer=top" target="_blank" class="news-link">胖东来金条只剩十来块了</a> [9] <font color='grey'>- 21时30分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">宇树 王兴兴</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32475040" target="_blank" class="news-link">宇树等机器人企业扎堆上春晚，谁是去年全球出货量第一？</a> [11] <font color='grey'>- 21时30分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">米哈游 原神 星穹铁道</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%8E%9F%E7%A5%9E%E7%99%BD%E9%A9%AC%E4%BB%99%E4%BA%BAPV" target="_blank" class="news-link">原神白马仙人PV</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 21时30分</font></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">字节 张一鸣</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/1999415789258826467" target="_blank" class="news-link">如何看待马化腾罕见点评字节和阿里的 AI 策略？</a> [8] <font color='grey'>- 21时30分</font></td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td class="word">谷歌 google gemini deepmind</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3764292" target="_blank" class="news-link">谷歌云正式官宣涨价，其中北美地区翻倍</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 21时30分</font></td>
+            </tr>
+        
+            <tr>
+                <td>12</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/35519508" target="_blank" class="news-link">iPhone 在中国为什么这么火？</a> [13] <font color='grey'>- 21时30分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 7 条)</h3>
+        <h4>今日头条 (2 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7600286412567674890/" target="_blank" class="news-link">刘强东老家“村晚”现机器人舞王</a> <font color='red'><strong>[4]</strong></font></li><li><a href="https://www.toutiao.com/trending/7600389283316289051/" target="_blank" class="news-link">刘强东老家村民称和老伴两次领4万块</a> [13]</li></ul><h4>华尔街见闻 (2 条)</h4><ul><li><a href="https://wallstreetcn.com/articles/3764338" target="_blank" class="news-link">美联储决议前，强劲财报提振科技股，纳指期货涨0.9%，美元止跌，黄金5300，银、铜、铝集体上涨</a> <font color='red'><strong>[4]</strong></font></li><li><a href="https://wallstreetcn.com/articles/3764356" target="_blank" class="news-link">今夜美联储决议，暂停降息已成共识，但鲍威尔拿的是鸽派剧本？</a> [8]</li></ul><h4>财联社热门 (1 条)</h4><ul><li><a href="https://www.cls.cn/detail/2272925" target="_blank" class="news-link">美股“七巨头”财报即将亮相：投资者该关注哪些要点？</a> [8]</li></ul><h4>微博 (1 条)</h4><ul><li><a href="https://s.weibo.com/weibo?q=%23%E8%83%96%E4%B8%9C%E6%9D%A5%E9%87%91%E6%9D%A1%E5%8F%AA%E5%89%A9%E5%8D%81%E6%9D%A5%E5%9D%97%E4%BA%86%23&amp;t=31&amp;band_rank=9&amp;Refer=top" target="_blank" class="news-link">胖东来金条只剩十来块了</a> [9]</li></ul><h4>抖音 (1 条)</h4><ul><li><a href="https://www.douyin.com/hot/2382110" target="_blank" class="news-link">英国首相称中国已崛起</a> [21]</li></ul></div>
+    </body>
+    </html>
+    
