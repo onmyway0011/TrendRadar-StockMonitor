@@ -1,0 +1,138 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-02-02 23:31:40</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">国产 中国</td>
+                <td class="count">10</td>
+                <td class="percentage">3.92%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2277893" target="_blank" class="news-link">中共中央、国务院：要建成以首都为核心的世界一流都市圈、先行示范中国式现代化的首善之区</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 23时31分</font><br>[抖音] <a href="https://www.douyin.com/hot/2387610" target="_blank" class="news-link">春节档国产片题材百花齐放</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 23时31分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3764708" target="_blank" class="news-link">金银暴跌之后，所有目光都盯着周一中国开盘</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 23时31分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/premium/articles/3764602?layout=wscn-layout" target="_blank" class="news-link">汇丰中国财富洞察：“十五五”开局政策精准发力，监管稳市有助A股长期健康发展|中国观点</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 23时31分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8qQ0uIlRI9q" target="_blank" class="news-link">“中国人追求高端品质，对西方白猪越来越不满”</a> [12] <font color='grey'>- 23时31分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7602057624414142483/" target="_blank" class="news-link">中国男篮对阵日本队选谁当主力控卫</a> [14] <font color='grey'>- 23时31分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E5%A4%96%E4%BA%A4%E9%83%A8%E5%9B%9E%E5%BA%94%E4%B8%AD%E5%9B%BD%E6%98%A5%E8%8A%82%E5%87%BA%E5%A2%83%E6%B8%B8%E9%A6%96%E9%80%89%E9%9F%A9%E5%9B%BD" target="_blank" class="news-link">外交部回应中国春节出境游首选韩国</a> [15] <font color='grey'>- 23时31分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E6%AD%AA%E6%9E%9C%E4%BB%81%E6%89%93%E5%87%BA%E7%A7%9F%E7%A9%BF%E8%B6%8A%E4%B8%AD%E5%9B%BD%E4%BD%93%E9%AA%8C%E6%B8%A9%E5%B7%AE" target="_blank" class="news-link">歪果仁打出租穿越中国体验温差</a> [16] <font color='grey'>- 23时31分</font><br>[知乎] <a href="https://www.zhihu.com/question/1903909147877023814" target="_blank" class="news-link">杭州是否已经稳居中国第五城？未来有可以撼动杭州地位的城市吗？</a> [18] <font color='grey'>- 23时31分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28350006&amp;amp;topic_name=%E6%AF%8F%E5%A4%A9%E4%B8%80%E4%B8%AA%E5%A5%87%E5%90%A7%E2%80%94%E5%9B%BD%E4%BA%A7%E6%89%8B%E5%8A%9E%E5%90%A7" target="_blank" class="news-link">每天一个奇吧—国产手办吧</a> [22] <font color='grey'>- 23时31分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">美国</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32498721" target="_blank" class="news-link">懂了｜美国亲手埋下“核种子”：6分钟看伊朗核问题的前世今生</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 23时31分</font><br>[知乎] <a href="https://www.zhihu.com/question/2001592697673179840" target="_blank" class="news-link">爱泼斯坦案文件曝出美国众多「大人物」丑行，为什么仍难平息公众质疑？这些文件对美国政商界冲击有多大？</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 23时31分</font><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2278170" target="_blank" class="news-link">美股稀土板块盘前走强 据称美国拟启动“金库计划” 复制石油储备模式</a> [13] <font color='grey'>- 23时31分</font></div><br>[知乎] <a href="https://www.zhihu.com/question/2001602613729322897" target="_blank" class="news-link">美国司法部公布爱泼斯坦案诡异照片，两块鸡肉中间有一个物体被涂黑，事件的真相是什么？</a> [17] <font color='grey'>- 23时31分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles"><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3764730" target="_blank" class="news-link">商品暴跌震动市场！美股指集体低开，纳指跌0.4%，甲骨文逆势涨4%，现货金银“V”型反转，布油跌5%</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 23时31分</font></div><br>[凤凰网] <a href="https://news.ifeng.com/c/8qQ5ADB6pGS" target="_blank" class="news-link">金银崩盘、韩指熔断，和美联储主席提名人有关？</a> [8] <font color='grey'>- 23时31分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2278222" target="_blank" class="news-link">黄金白银剧烈波动 美股三大期指集体下跌 | 今夜看点</a> [11] <font color='grey'>- 23时31分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28350007&amp;amp;topic_name=%E6%97%A5%E6%9C%AC%E7%B1%B3%E4%BB%B7%E9%A3%9E%E5%A4%A9%2C%E5%BC%80%E5%90%AF%E5%8F%B2%E8%AF%97%E9%80%9A%E8%83%80" target="_blank" class="news-link">日本米价飞天,开启史诗通胀</a> [19] <font color='grey'>- 23时31分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32511275" target="_blank" class="news-link">两会对话｜如何不做AI时代的文盲？如何防止“AI说胡话”？黄海清委员这样建议</a> [10] <font color='grey'>- 23时31分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2278216" target="_blank" class="news-link">元宝红包建群“根本停不下来” 千问投30亿发起攻势 大厂春节AI战升级</a> [10] <font color='grey'>- 23时31分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">米哈游 原神 星穹铁道</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%8E%9F%E7%A5%9E%E7%99%BD%E9%A9%AC%E4%BB%99%E4%BA%BA%E9%A2%84%E5%91%8A" target="_blank" class="news-link">原神白马仙人预告</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 23时31分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">马斯克 特斯拉</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28350003&amp;amp;topic_name=%E8%90%9D%E8%8E%89%E5%B2%9B%E5%85%BD%E8%A1%8C%E6%9B%9D%E5%85%89%2C%E9%A9%AC%E6%96%AF%E5%85%8B%E6%80%A5%E6%92%87%E6%B8%85" target="_blank" class="news-link">萝莉岛兽行曝光,马斯克急撇清</a> [18] <font color='grey'>- 23时31分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">手机</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7602181463979114505/" target="_blank" class="news-link">手机店遭鹿闯入老板误认是恶犬</a> [30] <font color='grey'>- 23时31分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">月球 登月 火星 宇宙 飞船</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/1999822903160635822" target="_blank" class="news-link">广东 10 岁小学生 28 元自制望远镜能看清月球陨石坑，这说明了什么？</a> [15] <font color='grey'>- 23时31分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 2 条)</h3>
+        <h4>华尔街见闻 (1 条)</h4><ul><li><a href="https://wallstreetcn.com/articles/3764730" target="_blank" class="news-link">商品暴跌震动市场！美股指集体低开，纳指跌0.4%，甲骨文逆势涨4%，现货金银“V”型反转，布油跌5%</a> <font color='red'><strong>[2]</strong></font></li></ul><h4>财联社热门 (1 条)</h4><ul><li><a href="https://www.cls.cn/detail/2278170" target="_blank" class="news-link">美股稀土板块盘前走强 据称美国拟启动“金库计划” 复制石油储备模式</a> [13]</li></ul></div>
+    </body>
+    </html>
+    
