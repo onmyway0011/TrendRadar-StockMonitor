@@ -1,0 +1,146 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-02-03 21:58:22</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">国产 中国</td>
+                <td class="count">8</td>
+                <td class="percentage">3.14%</td>
+                <td class="titles">[凤凰网] <a href="https://news.ifeng.com/c/8qRbfAGXhdh" target="_blank" class="news-link">特朗普希望中国也加入核军控谈判，中方回应</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 21时58分</font><br>[知乎] <a href="https://www.zhihu.com/question/2000871816202327666" target="_blank" class="news-link">中国团队在《细胞》发文，将癌细胞标记为「猪细胞」引发免疫排斥，这项突破对癌症治疗有何意义？</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 21时58分</font><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E7%94%B5%E5%8A%9B%E6%9C%89%E5%A4%9A%E5%BC%BA" target="_blank" class="news-link">中国电力有多强</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 21时58分</font></div><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3764808" target="_blank" class="news-link">黄金牛市还在吗？华尔街坚定看多：技术性回调不要怕，中国买家已成黄金市场强劲支柱！</a> [7] <font color='grey'>- 21时58分</font><br><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3764840" target="_blank" class="news-link">中国有色金属工业协会：研究将“铜精矿”纳入国家储备</a> [9] <font color='grey'>- 21时58分</font></div><br>[抖音] <a href="https://www.douyin.com/hot/2388122" target="_blank" class="news-link">被冬奥会中国代表团队服种草了</a> [9] <font color='grey'>- 21时58分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28350116&amp;amp;topic_name=%E4%B8%8A%E5%B8%9D%E5%9C%A8%E4%B8%AD%E5%9B%BD%3F%E8%80%81%E5%A4%96%E9%9B%86%E4%BD%93%E9%AD%94%E6%80%94" target="_blank" class="news-link">上帝在中国?老外集体魔怔</a> [14] <font color='grey'>- 21时58分</font><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A4%A7%E5%9E%8B%E5%95%86%E8%B6%85%E5%BE%88%E5%B0%91%E5%8D%96%E5%9B%BD%E4%BA%A7%E9%A6%99%E8%95%89" target="_blank" class="news-link">为什么大型商超很少卖国产香蕉</a> [19] <font color='grey'>- 21时58分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">7</td>
+                <td class="percentage">2.75%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2279188" target="_blank" class="news-link">【焦点复盘】市场盘中再现深V反转，全市场超120股涨逾10%，AI软硬件双双回暖</a> [6] <font color='grey'>- 21时58分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E6%98%A5%E8%8A%82%E4%B8%BA%E4%BD%95%E6%88%90%E4%B8%BAAI%E7%BA%A2%E5%8C%85%E4%B8%BB%E6%88%98%E5%9C%BA" target="_blank" class="news-link">春节为何成为AI红包主战场</a> [7] <font color='grey'>- 21时58分</font><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2279363" target="_blank" class="news-link">市值一日蒸发480亿！寒武纪否认市场传闻但股价难止跌 投资人士：AI芯片龙头稀缺性或在消退</a> [9] <font color='grey'>- 21时58分</font></div><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2279310" target="_blank" class="news-link">一图看懂 | 官宣与xAI合并，SpaceX接下来还有哪些大动作？</a> [10] <font color='grey'>- 21时58分</font></div><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2279165" target="_blank" class="news-link">一图看懂|三大巨头豪掷45亿！2026春节AI红包大战打响</a> [12] <font color='grey'>- 21时58分</font></div><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E8%A7%A3%E8%AF%BBSpaceX%E6%94%B6%E8%B4%ADxAI" target="_blank" class="news-link">解读SpaceX收购xAI</a> [14] <font color='grey'>- 21时58分</font><br><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/1999077818584228918" target="_blank" class="news-link">腾讯推出社交 AI 「元宝派」，它的用处有哪些？会重塑线上社交习惯吗？</a> [15] <font color='grey'>- 21时58分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">马斯克 特斯拉</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3764779" target="_blank" class="news-link">Space X收购xAI，“火箭+AI+社交平台”超级巨头成型，马斯克剑指太空数据中心</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 21时58分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8qRtxXxufFZ" target="_blank" class="news-link">马斯克，被传唤</a> [6] <font color='grey'>- 21时58分</font><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7602620308612189722/" target="_blank" class="news-link">马斯克被法司法部门传唤</a> [14] <font color='grey'>- 21时58分</font></div><br><div class='new-title'>🆕 [澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32520975" target="_blank" class="news-link">估值1.25万亿美元！马斯克宣布SpaceX收购xAI：瞄准太空AI基础设施</a> [18] <font color='grey'>- 21时58分</font></div><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28350084&amp;amp;topic_name=%E9%A9%AC%E6%96%AF%E5%85%8B%E8%B7%A8%E6%80%A7%E5%88%AB%E5%A5%B3%E5%84%BF%E5%BC%80%E9%94%A4%E4%BA%B2%E7%88%B9" target="_blank" class="news-link">马斯克跨性别女儿开锤亲爹</a> [20] <font color='grey'>- 21时58分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">美国</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[凤凰网] <a href="https://v.ifeng.com/c/8qRUD8gsXhC" target="_blank" class="news-link">牢A与高志凯连麦：美国高层认为“斩杀线”是正常的</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 21时58分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3764771" target="_blank" class="news-link">远超预期！美国1月ISM制造业PMI创2022年2月以来最快</a> [8] <font color='grey'>- 21时58分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32520089" target="_blank" class="news-link">以色列对美国与伊朗谈判提“三不”强硬要求</a> [9] <font color='grey'>- 21时58分</font><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E6%96%B9%E5%9B%9E%E5%BA%94%E7%BE%8E%E5%9B%BD%E6%AC%B2%E5%87%8F%E5%B0%91%E7%A8%80%E5%9C%9F%E5%AF%B9%E5%8D%8E%E4%BE%9D%E8%B5%96" target="_blank" class="news-link">中方回应美国欲减少稀土对华依赖</a> [22] <font color='grey'>- 21时58分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3764730" target="_blank" class="news-link">美制造业数据托底风险偏好，美股、加密货币齐反弹、美元续涨，金银企稳，原油重挫</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 21时58分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3764793" target="_blank" class="news-link">大反弹！白银涨11%，黄金涨6%，纳指期货涨超0.5%，存储板块美股盘前走高，欧股集体高开，韩股大涨6%</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 21时58分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2279068" target="_blank" class="news-link">沃什提名美联储主席或陷入程序僵局 极端情况下将拖延至2027年！</a> [8] <font color='grey'>- 21时58分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word"># 美国关税重点关注 关税 贸易战 贸易 进口 出口 关税壁垒 贸易协定 贸易谈判 反倾销 制裁 禁运 贸易逆差 贸易顺差 WTO 世贸组织</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3764775" target="_blank" class="news-link">特朗普：莫迪同意停购俄油，美印达成贸易协议，将降低印度关税</a> [6] <font color='grey'>- 21时58分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32521377" target="_blank" class="news-link">释新闻｜美印贸易协议达成：关税已降，俄油难断？</a> [8] <font color='grey'>- 21时58分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">米哈游 原神 星穹铁道</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/2001969998810342884" target="_blank" class="news-link">如何评价 2026 年 2 月米哈游《原神》璃月古诗《琅风 兹白》？</a> [10] <font color='grey'>- 21时58分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">京东 刘强东</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=%E4%BA%AC%E4%B8%9C%EF%BC%9A%E6%98%A5%E8%8A%829%E5%A4%A9%E5%8F%91%E8%B6%8513%E4%BA%BF%E5%85%83%E7%BB%99%E4%B8%80%E7%BA%BF%E5%91%98%E5%B7%A5" target="_blank" class="news-link">京东：春节9天发超13亿元给一线员工</a> [17] <font color='grey'>- 21时58分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7601798567728021555/" target="_blank" class="news-link">男子买盆栽苹果树 苹果竟插上去的</a> [28] <font color='grey'>- 21时58分</font></div></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 11 条)</h3>
+        <h4>今日头条 (2 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7602620308612189722/" target="_blank" class="news-link">马斯克被法司法部门传唤</a> [14]</li><li><a href="https://www.toutiao.com/trending/7601798567728021555/" target="_blank" class="news-link">男子买盆栽苹果树 苹果竟插上去的</a> [28]</li></ul><h4>百度热搜 (3 条)</h4><ul><li><a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E7%94%B5%E5%8A%9B%E6%9C%89%E5%A4%9A%E5%BC%BA" target="_blank" class="news-link">中国电力有多强</a> <font color='red'><strong>[3]</strong></font></li><li><a href="https://www.baidu.com/s?wd=%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A4%A7%E5%9E%8B%E5%95%86%E8%B6%85%E5%BE%88%E5%B0%91%E5%8D%96%E5%9B%BD%E4%BA%A7%E9%A6%99%E8%95%89" target="_blank" class="news-link">为什么大型商超很少卖国产香蕉</a> [19]</li><li><a href="https://www.baidu.com/s?wd=%E4%B8%AD%E6%96%B9%E5%9B%9E%E5%BA%94%E7%BE%8E%E5%9B%BD%E6%AC%B2%E5%87%8F%E5%B0%91%E7%A8%80%E5%9C%9F%E5%AF%B9%E5%8D%8E%E4%BE%9D%E8%B5%96" target="_blank" class="news-link">中方回应美国欲减少稀土对华依赖</a> [22]</li></ul><h4>华尔街见闻 (1 条)</h4><ul><li><a href="https://wallstreetcn.com/articles/3764840" target="_blank" class="news-link">中国有色金属工业协会：研究将“铜精矿”纳入国家储备</a> [9]</li></ul><h4>澎湃新闻 (1 条)</h4><ul><li><a href="https://m.thepaper.cn/newsDetail_forward_32520975" target="_blank" class="news-link">估值1.25万亿美元！马斯克宣布SpaceX收购xAI：瞄准太空AI基础设施</a> [18]</li></ul><h4>财联社热门 (3 条)</h4><ul><li><a href="https://www.cls.cn/detail/2279363" target="_blank" class="news-link">市值一日蒸发480亿！寒武纪否认市场传闻但股价难止跌 投资人士：AI芯片龙头稀缺性或在消退</a> [9]</li><li><a href="https://www.cls.cn/detail/2279310" target="_blank" class="news-link">一图看懂 | 官宣与xAI合并，SpaceX接下来还有哪些大动作？</a> [10]</li><li><a href="https://www.cls.cn/detail/2279165" target="_blank" class="news-link">一图看懂|三大巨头豪掷45亿！2026春节AI红包大战打响</a> [12]</li></ul><h4>知乎 (1 条)</h4><ul><li><a href="https://www.zhihu.com/question/1999077818584228918" target="_blank" class="news-link">腾讯推出社交 AI 「元宝派」，它的用处有哪些？会重塑线上社交习惯吗？</a> [15]</li></ul></div>
+    </body>
+    </html>
+    
