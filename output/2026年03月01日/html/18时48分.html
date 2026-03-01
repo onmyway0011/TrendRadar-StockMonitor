@@ -1,0 +1,146 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-03-01 18:48:07</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">国产 中国</td>
+                <td class="count">12</td>
+                <td class="percentage">4.71%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7611343591226785811/" target="_blank" class="news-link">连场逆转！中国男篮胜中国台北</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 18时48分</font><br>[抖音] <a href="https://www.douyin.com/hot/2415081" target="_blank" class="news-link">中国男篮力克中国台北男篮</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 18时48分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E5%86%9B%E5%8F%B7%EF%BC%9A%E6%88%91%E4%BB%AC%E4%B8%8D%E6%9C%9F%E5%BE%85%E4%BD%86%E7%BB%9D%E4%B8%8D%E6%83%A7%E6%80%95" target="_blank" class="news-link">中国军号：我们不期待但绝不惧怕</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 18时48分</font><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E4%B8%AD%E5%9B%BD%E7%94%B7%E7%AF%AE%E6%88%98%E8%83%9C%E4%B8%AD%E5%9B%BD%E5%8F%B0%E5%8C%97" target="_blank" class="news-link">中国男篮战胜中国台北</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 18时48分</font></div><br>[微博] <a href="https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%9B%BD%E7%94%B7%E7%AF%AE%E9%99%A9%E8%83%9C%E4%B8%AD%E5%9B%BD%E5%8F%B0%E5%8C%97%E7%94%B7%E7%AF%AE%23&amp;t=31&amp;band_rank=2&amp;Refer=top" target="_blank" class="news-link">中国男篮险胜中国台北男篮</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 18时48分</font><br>[知乎] <a href="https://www.zhihu.com/question/26913812" target="_blank" class="news-link">为什么中国很少有人穿三件套西服？</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 18时48分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%A4%E8%BF%9E%E8%83%9C%EF%BC%81%E4%B8%AD%E5%9B%BD%E7%94%B7%E7%AF%AE%E6%88%98%E8%83%9C%E4%B8%AD%E5%9B%BD%E5%8F%B0%E5%8C%97%E9%98%9F" target="_blank" class="news-link">两连胜！中国男篮战胜中国台北队</a> [7] <font color='grey'>- 18时48分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%9B%BD%E7%94%B7%E7%AF%AEvs%E4%B8%AD%E5%9B%BD%E5%8F%B0%E5%8C%97%E7%94%B7%E7%AF%AE%23&amp;t=31&amp;band_rank=9&amp;Refer=top" target="_blank" class="news-link">中国男篮vs中国台北男篮</a> [9] <font color='grey'>- 18时48分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8r8HbwEHkpu" target="_blank" class="news-link">在伊中国留学生：这一年来，我在伊朗经历了三次断网、两次撤离</a> [11] <font color='grey'>- 18时48分</font><br>[知乎] <a href="https://www.zhihu.com/question/2011386796848739905" target="_blank" class="news-link">贵州选手丰配友在东京马拉松上跑出 2:05:58，刷新中国选手的马拉松成绩纪录，如何评价该成绩？</a> [14] <font color='grey'>- 18时48分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E3%80%8A%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E8%A7%A3%E6%94%BE%E5%86%9B%E9%A2%84%E5%A4%87%E5%BD%B9%E4%BA%BA%E5%91%98%E8%AF%81%E3%80%8B%E5%90%AF%E7%94%A8" target="_blank" class="news-link">《中国人民解放军预备役人员证》启用</a> [21] <font color='grey'>- 18时48分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28351115&amp;amp;topic_name=%E9%A6%8B%E5%93%AD%E4%BA%86%21%E8%80%81%E5%A4%96%E5%A4%B8%E7%88%86%E4%B8%AD%E5%9B%BD%E5%9C%B0%E5%9B%BE" target="_blank" class="news-link">馋哭了!老外夸爆中国地图</a> [25] <font color='grey'>- 18时48分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">美国</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[凤凰网] <a href="https://news.ifeng.com/c/8r8HbwEHkpv" target="_blank" class="news-link">伊朗外长：美国为何在谈判期间发动攻击，明明协议触手可及</a> [7] <font color='grey'>- 18时48分</font><br>[知乎] <a href="https://www.zhihu.com/question/2011378472312930691" target="_blank" class="news-link">伊朗国家媒体确认哈梅内伊遇害，伊朗谁会接班，美国为何或放弃巴列维，国际市场预期是否快速降温？</a> [15] <font color='grey'>- 18时48分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E7%B2%BE%E5%87%86%E8%A2%AD%E5%87%BB%E5%93%88%E6%A2%85%E5%86%85%E4%BC%8A+%E8%B0%81%E6%98%AF%E5%86%85%E9%AC%BC" target="_blank" class="news-link">美国精准袭击哈梅内伊 谁是内鬼</a> [17] <font color='grey'>- 18时48分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28351135&amp;amp;topic_name=%E7%BE%8E%E5%9B%BD%E5%87%BA%E5%85%B5%2C%E8%81%94%E6%89%8B%E4%BB%A5%E5%86%9B%E7%82%B8%E4%BC%8A%E6%9C%97" target="_blank" class="news-link">美国出兵,联手以军炸伊朗</a> [17] <font color='grey'>- 18时48分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">手机</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[凤凰网] <a href="https://news.ifeng.com/c/8r881Z9Ep2t" target="_blank" class="news-link">伊朗女子学校惨遭轰炸，民众手机被黑弹出“援军已至！”</a> [12] <font color='grey'>- 18时48分</font><br><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%230.003%E5%85%8B%E9%BB%84%E9%87%91%E6%89%8B%E6%9C%BA%E8%B4%B4%E6%8A%98%E7%AE%97%E5%85%8B%E4%BB%B7%E8%BE%BE%E4%B8%87%E5%85%83%23&amp;t=31&amp;band_rank=18&amp;Refer=top" target="_blank" class="news-link">0.003克黄金手机贴折算克价达万元</a> [18] <font color='grey'>- 18时48分</font></div><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28351120&amp;amp;topic_name=%E4%BA%B2%E5%A6%88%E8%AF%95%E6%8E%A2%E5%84%BF%E5%AD%90%E4%B9%B0%E6%89%8B%E6%9C%BA%E8%A2%AB%E6%8B%92" target="_blank" class="news-link">亲妈试探儿子买手机被拒</a> [23] <font color='grey'>- 18时48分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">小米 雷军 xiaomi</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[抖音] <a href="https://www.douyin.com/hot/2414918" target="_blank" class="news-link">小米超跑正式亮相</a> [17] <font color='grey'>- 18时48分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28351149&amp;amp;topic_name=%E5%B0%8F%E7%B1%B3%E6%86%8B%E5%A4%A7%E6%8B%9B%2C%E6%A6%82%E5%BF%B5%E8%B6%85%E8%B7%91%E7%99%BB%E5%9C%BA" target="_blank" class="news-link">小米憋大招,概念超跑登场</a> [18] <font color='grey'>- 18时48分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">机器人</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2298678" target="_blank" class="news-link">【早报】美以袭击伊朗，伊朗反击；我国首个国家级人形机器人与具身智能标准体系发布</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 18时48分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2298376" target="_blank" class="news-link">事关人形机器人！我国首个国家级标准体系发布 产业迫近临界点</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 18时48分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">米哈游 原神 星穹铁道</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/2011440581239403245" target="_blank" class="news-link">如何评价《原神》2026 年 3 月 1 日更新的幻想真境剧诗（冰雷风）?</a> [13] <font color='grey'>- 18时48分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">chatgpt Sam Altman openai</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E8%A7%A3%E8%AF%BBOpenAI%E8%8E%B7%E5%8D%83%E4%BA%BF%E7%BE%8E%E5%85%83%E6%8A%95%E8%B5%84%E8%83%8C%E5%90%8E" target="_blank" class="news-link">解读OpenAI获千亿美元投资背后</a> [13] <font color='grey'>- 18时48分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2298674" target="_blank" class="news-link">环球下周看点：中东战火走向何处 美国非农数据、苹果新品亮相</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 18时48分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3766437" target="_blank" class="news-link">伊朗紧张局势推高油价，美联储年内降息空间&quot;正在消失&quot;</a> [8] <font color='grey'>- 18时48分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 2 条)</h3>
+        <h4>bilibili 热搜 (1 条)</h4><ul><li><a href="https://search.bilibili.com/all?keyword=%E4%B8%AD%E5%9B%BD%E7%94%B7%E7%AF%AE%E6%88%98%E8%83%9C%E4%B8%AD%E5%9B%BD%E5%8F%B0%E5%8C%97" target="_blank" class="news-link">中国男篮战胜中国台北</a> <font color='red'><strong>[2]</strong></font></li></ul><h4>微博 (1 条)</h4><ul><li><a href="https://s.weibo.com/weibo?q=%230.003%E5%85%8B%E9%BB%84%E9%87%91%E6%89%8B%E6%9C%BA%E8%B4%B4%E6%8A%98%E7%AE%97%E5%85%8B%E4%BB%B7%E8%BE%BE%E4%B8%87%E5%85%83%23&amp;t=31&amp;band_rank=18&amp;Refer=top" target="_blank" class="news-link">0.003克黄金手机贴折算克价达万元</a> [18]</li></ul></div>
+    </body>
+    </html>
+    
