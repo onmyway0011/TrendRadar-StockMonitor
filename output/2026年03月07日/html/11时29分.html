@@ -1,0 +1,154 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-03-07 11:29:18</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">9</td>
+                <td class="percentage">3.53%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3766910" target="_blank" class="news-link">养龙虾，今年最大AI风暴</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 11时29分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E7%9C%9F%E5%AE%9E%E9%94%90%E8%AF%84TES%E6%89%93%E9%87%8ENaiyou%E8%A2%AB%E8%B0%83%E6%9F%A5" target="_blank" class="news-link">真实锐评TES打野Naiyou被调查</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 11时29分</font><br><div class='new-title'>🆕 [澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32712738" target="_blank" class="news-link">申观两会｜当AI按下加速键，人与行业将走向何方？</a> [6] <font color='grey'>- 11时29分</font></div><br>[今日头条] <a href="https://www.toutiao.com/trending/7614214812960034340/" target="_blank" class="news-link">破5亿播放AI短剧成本仅3000元</a> [7] <font color='grey'>- 11时29分</font><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E8%A7%A3%E8%AF%BB%E5%88%B7%E7%88%86%E5%A4%96%E7%BD%91%E7%9A%84AI%E5%8D%B1%E6%9C%BA%E9%A2%84%E8%A8%80" target="_blank" class="news-link">解读刷爆外网的AI危机预言</a> [7] <font color='grey'>- 11时29分</font></div><br>[凤凰网] <a href="https://news.ifeng.com/c/8rHKBpbeROT" target="_blank" class="news-link">他把AI模型卖给美军，如今却害怕成为“末日博士”</a> [11] <font color='grey'>- 11时29分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=TESnaiyou%20%E5%81%87%E8%B5%9B&amp;t=31&amp;band_rank=19&amp;Refer=top" target="_blank" class="news-link">TESnaiyou 假赛</a> [19] <font color='grey'>- 11时29分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=TES%E4%B8%8A%E6%8A%A5Naiyou%E4%B8%8D%E5%BD%93%E8%A1%8C%E4%B8%BA" target="_blank" class="news-link">TES上报Naiyou不当行为</a> [24] <font color='grey'>- 11时29分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E9%80%90%E5%B8%A7%E5%88%86%E6%9E%90TES%E8%B5%9B%E5%9C%BANaiyou%E6%93%8D%E4%BD%9C" target="_blank" class="news-link">逐帧分析TES赛场Naiyou操作</a> [26] <font color='grey'>- 11时29分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">美国</td>
+                <td class="count">8</td>
+                <td class="percentage">3.14%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3766902" target="_blank" class="news-link">非农爆冷叠加中东战火，美国股汇齐跌，大宗商品指数历史新高，美油飙升16%，“恐慌指数”VIX大涨</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 11时29分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E7%BC%BA%E7%94%B5%E5%A6%82%E4%BD%95%E5%BD%B1%E5%93%8D%E7%BE%8E%E5%9B%BD%E6%9C%AA%E6%9D%A5" target="_blank" class="news-link">缺电如何影响美国未来</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 11时29分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3766920" target="_blank" class="news-link">爆冷！美国2月非农就业人口减少9.2万，前两月就业下修6.9万，失业率意外升至4.4%</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 11时29分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8rHQ0lIfh8O" target="_blank" class="news-link">打伊朗，有人替美国算了笔账</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 11时29分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2305718" target="_blank" class="news-link">美国2月非农意外录得“负增长” 交易员加大美联储降息押注</a> [8] <font color='grey'>- 11时29分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2305700" target="_blank" class="news-link">美国2月非农意外转负 三大期指集体走低 | 今夜看点</a> [10] <font color='grey'>- 11时29分</font><br>[知乎] <a href="https://www.zhihu.com/question/2013354916630979959" target="_blank" class="news-link">伊朗称摧毁位阿联酋和约旦的「萨德」反导系统雷达，此前已摧毁两部，这对美国及其中东盟友将产生哪些影响？</a> [11] <font color='grey'>- 11时29分</font><br><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/2013370440400274363" target="_blank" class="news-link">美国 2 月非农向下大超预期，失业率再次增长，美元 / 金银走势负相关，宏观数据矛盾突出，对此你怎么看？</a> [17] <font color='grey'>- 11时29分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">国产 中国</td>
+                <td class="count">6</td>
+                <td class="percentage">2.35%</td>
+                <td class="titles"><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E5%9C%A8%E6%A0%A1%E7%94%9F%E8%BE%BE2.8%E4%BA%BF" target="_blank" class="news-link">中国在校生达2.8亿</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 11时29分</font></div><br>[凤凰网] <a href="https://news.ifeng.com/c/8rHEqQ5d8hb" target="_blank" class="news-link">伊朗有限“锁喉”：中国尚能应对，美西方措手不及，局势如何发展</a> [6] <font color='grey'>- 11时29分</font><br><div class='new-title'>🆕 [澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32713285" target="_blank" class="news-link">9岁中国女孩埃及骑马遇“危险坐骑”，一段教科书式“海外维权”火了</a> [12] <font color='grey'>- 11时29分</font></div><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32712222" target="_blank" class="news-link">十五五，十五问｜健康中国建设，如何提质增效再出发</a> [17] <font color='grey'>- 11时29分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32714219" target="_blank" class="news-link">经济主题记者会｜吴清问答十要点：谈创业板改革、中国资产吸引力</a> [20] <font color='grey'>- 11时29分</font><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E4%B8%AD%E5%9B%BD%E4%B8%8B%E4%BB%A3%E6%B0%B4%E9%9D%A2%E4%BD%9C%E6%88%98%E8%88%B0%E8%89%87%E5%95%A5%E6%A0%B7" target="_blank" class="news-link">中国下代水面作战舰艇啥样</a> [20] <font color='grey'>- 11时29分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles"><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/2013008792070169856" target="_blank" class="news-link">苹果为什么不出低于一公斤的电脑？</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 11时29分</font></div><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E8%8B%B9%E6%9E%9C%E6%96%B0%E5%93%81%E7%9F%AD%E7%9A%84%E5%8F%91%E5%B8%83%E4%BC%9A" target="_blank" class="news-link">苹果新品短的发布会</a> [9] <font color='grey'>- 11时29分</font></div><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E8%8B%B9%E6%9E%9C%E6%98%A5%E5%AD%A3%E6%96%B0%E5%93%81%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C" target="_blank" class="news-link">苹果春季新品快速体验</a> [28] <font color='grey'>- 11时29分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">手机</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=%E6%89%8B%E6%9C%BA%E6%94%AF%E4%BB%98%E4%B8%80%E5%AE%9A%E8%A6%81%E6%89%93%E5%BC%80%E8%BF%99%E4%B8%89%E9%81%93%E9%94%81" target="_blank" class="news-link">手机支付一定要打开这三道锁</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 11时29分</font><br>[知乎] <a href="https://www.zhihu.com/question/2011191797058148248" target="_blank" class="news-link">面对手机集体涨价，普通消费者和手机厂商中谁将受最大冲击？</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 11时29分</font><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=50%E5%B2%81%E5%A5%B3%E5%AD%90%E6%B7%B1%E5%A4%9C%E6%91%B8%E9%BB%91%E5%88%B7%E6%89%8B%E6%9C%BA%E7%AA%81%E5%8F%91%E5%A4%B1%E6%98%8E" target="_blank" class="news-link">50岁女子深夜摸黑刷手机突发失明</a> [30] <font color='grey'>- 11时29分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">比亚迪 王传福</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7613798835642744878/" target="_blank" class="news-link">比亚迪5分钟闪充冲击蔚来换电护城河</a> [15] <font color='grey'>- 11时29分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">小米 雷军 xiaomi</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2305626" target="_blank" class="news-link">“龙虾” 炸翻AI圈！雷军下场 鹅厂排长队</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 11时29分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">科技</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E6%9C%AA%E6%9D%A55%E5%B9%B4%E8%BF%99%E4%BA%9B%E5%89%8D%E6%B2%BF%E7%A7%91%E6%8A%80%E5%88%9B%E6%96%B0%E5%80%BC%E5%BE%97%E6%9C%9F%E5%BE%85%23&amp;t=31&amp;band_rank=9&amp;Refer=top" target="_blank" class="news-link">未来5年这些前沿科技创新值得期待</a> [9] <font color='grey'>- 11时29分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2305872" target="_blank" class="news-link">美股收盘：油价暴涨叠加就业数据疲软 三大指数集体收跌</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 11时29分</font></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word"># 美国关税重点关注 关税 贸易战 贸易 进口 出口 关税壁垒 贸易协定 贸易谈判 反倾销 制裁 禁运 贸易逆差 贸易顺差 WTO 世贸组织</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28351475&amp;amp;topic_name=%E7%A4%BE%E4%BC%9A%E5%93%A5%E9%AB%98%E9%93%81%E5%90%B8%E7%83%9F%2C%E9%81%AD%E4%B9%98%E8%AD%A6%E5%88%B6%E8%A3%81" target="_blank" class="news-link">社会哥高铁吸烟,遭乘警制裁</a> [11] <font color='grey'>- 11时29分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 11 条)</h3>
+        <h4>今日头条 (1 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7613798835642744878/" target="_blank" class="news-link">比亚迪5分钟闪充冲击蔚来换电护城河</a> [15]</li></ul><h4>百度热搜 (2 条)</h4><ul><li><a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E5%9C%A8%E6%A0%A1%E7%94%9F%E8%BE%BE2.8%E4%BA%BF" target="_blank" class="news-link">中国在校生达2.8亿</a> <font color='red'><strong>[4]</strong></font></li><li><a href="https://www.baidu.com/s?wd=50%E5%B2%81%E5%A5%B3%E5%AD%90%E6%B7%B1%E5%A4%9C%E6%91%B8%E9%BB%91%E5%88%B7%E6%89%8B%E6%9C%BA%E7%AA%81%E5%8F%91%E5%A4%B1%E6%98%8E" target="_blank" class="news-link">50岁女子深夜摸黑刷手机突发失明</a> [30]</li></ul><h4>澎湃新闻 (2 条)</h4><ul><li><a href="https://m.thepaper.cn/newsDetail_forward_32712738" target="_blank" class="news-link">申观两会｜当AI按下加速键，人与行业将走向何方？</a> [6]</li><li><a href="https://m.thepaper.cn/newsDetail_forward_32713285" target="_blank" class="news-link">9岁中国女孩埃及骑马遇“危险坐骑”，一段教科书式“海外维权”火了</a> [12]</li></ul><h4>bilibili 热搜 (3 条)</h4><ul><li><a href="https://search.bilibili.com/all?keyword=%E8%A7%A3%E8%AF%BB%E5%88%B7%E7%88%86%E5%A4%96%E7%BD%91%E7%9A%84AI%E5%8D%B1%E6%9C%BA%E9%A2%84%E8%A8%80" target="_blank" class="news-link">解读刷爆外网的AI危机预言</a> [7]</li><li><a href="https://search.bilibili.com/all?keyword=%E8%8B%B9%E6%9E%9C%E6%96%B0%E5%93%81%E7%9F%AD%E7%9A%84%E5%8F%91%E5%B8%83%E4%BC%9A" target="_blank" class="news-link">苹果新品短的发布会</a> [9]</li><li><a href="https://search.bilibili.com/all?keyword=%E4%B8%AD%E5%9B%BD%E4%B8%8B%E4%BB%A3%E6%B0%B4%E9%9D%A2%E4%BD%9C%E6%88%98%E8%88%B0%E8%89%87%E5%95%A5%E6%A0%B7" target="_blank" class="news-link">中国下代水面作战舰艇啥样</a> [20]</li></ul><h4>微博 (1 条)</h4><ul><li><a href="https://s.weibo.com/weibo?q=%23%E6%9C%AA%E6%9D%A55%E5%B9%B4%E8%BF%99%E4%BA%9B%E5%89%8D%E6%B2%BF%E7%A7%91%E6%8A%80%E5%88%9B%E6%96%B0%E5%80%BC%E5%BE%97%E6%9C%9F%E5%BE%85%23&amp;t=31&amp;band_rank=9&amp;Refer=top" target="_blank" class="news-link">未来5年这些前沿科技创新值得期待</a> [9]</li></ul><h4>知乎 (2 条)</h4><ul><li><a href="https://www.zhihu.com/question/2013008792070169856" target="_blank" class="news-link">苹果为什么不出低于一公斤的电脑？</a> <font color='red'><strong>[5]</strong></font></li><li><a href="https://www.zhihu.com/question/2013370440400274363" target="_blank" class="news-link">美国 2 月非农向下大超预期，失业率再次增长，美元 / 金银走势负相关，宏观数据矛盾突出，对此你怎么看？</a> [17]</li></ul></div>
+    </body>
+    </html>
+    
