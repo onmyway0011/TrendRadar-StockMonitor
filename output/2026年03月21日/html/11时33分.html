@@ -1,0 +1,154 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-03-21 11:33:44</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">美国</td>
+                <td class="count">8</td>
+                <td class="percentage">3.14%</td>
+                <td class="titles"><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8rfRldwHGb9" target="_blank" class="news-link">美国有条件放松对伊朗油品的制裁，为期30天</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 11时33分</font></div><br><div class='new-title'>🆕 [澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32805006" target="_blank" class="news-link">美国批准临时交付和销售源自伊朗的石油</a> [11] <font color='grey'>- 11时33分</font></div><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E9%A9%BB%E4%BC%8A%E6%8B%89%E5%85%8B%E4%BD%BF%E9%A6%86%E9%81%AD%E8%A2%AD" target="_blank" class="news-link">美国驻伊拉克使馆遭袭</a> [16] <font color='grey'>- 11时33分</font><br><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/2018595180429726456" target="_blank" class="news-link">美国批准临时交付和销售源自伊朗的石油，原因为何？如何看待美方此举？</a> [16] <font color='grey'>- 11时33分</font></div><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E5%8A%A8%E4%BD%9C%E5%B7%A8%E6%98%9F%E6%9F%A5%E5%85%8B%C2%B7%E8%AF%BA%E9%87%8C%E6%96%AF%E5%8E%BB%E4%B8%96" target="_blank" class="news-link">美国动作巨星查克·诺里斯去世</a> [18] <font color='grey'>- 11时33分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28352090&amp;amp;topic_name=%E7%90%83%E5%9C%BA%E5%BE%97%E6%84%8F%2C%E5%A7%94%E5%86%85%E7%91%9E%E6%8B%89%E5%87%BB%E8%B4%A5%E7%BE%8E%E5%9B%BD" target="_blank" class="news-link">球场得意,委内瑞拉击败美国</a> [22] <font color='grey'>- 11时33分</font><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E7%89%B9%E6%9C%97%E6%99%AE%E7%A7%B0%E6%B2%A1%E6%9C%89%E7%BE%8E%E5%9B%BD%E5%8C%97%E7%BA%A6%E6%98%AF%E2%80%9C%E7%BA%B8%E8%80%81%E8%99%8E%E2%80%9D" target="_blank" class="news-link">特朗普称没有美国北约是“纸老虎”</a> [27] <font color='grey'>- 11时33分</font></div><br><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E4%BC%8A%E6%9C%97%E7%A7%B0%E6%89%93%E5%87%BB%E7%BE%8E%E5%9B%BD%E6%B5%B7%E5%86%9B%E7%AC%AC%E4%BA%94%E8%88%B0%E9%98%9F%23&amp;t=31&amp;band_rank=29&amp;Refer=top" target="_blank" class="news-link">伊朗称打击美国海军第五舰队</a> [29] <font color='grey'>- 11时33分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">7</td>
+                <td class="percentage">2.75%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3767994" target="_blank" class="news-link">中东局势叠加美联储加息预期，美股连跌四周，全球债市遭遇“血洗”，黄金创43年最大单周跌幅</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 11时33分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2320209" target="_blank" class="news-link">美股收盘：七巨头齐挫纳指收低2% 三大指数连跌四周</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 11时33分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3768006" target="_blank" class="news-link">美股期货跌幅扩大，报道：特朗普考虑占领或封锁伊朗哈尔克岛</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 11时33分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3768024" target="_blank" class="news-link">美联储理事沃勒：有理由对高油价谨慎，但若就业疲软，今年晚些时候再主张降息</a> [7] <font color='grey'>- 11时33分</font><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2320248" target="_blank" class="news-link">“美联储加息”噩梦恐成真？美银：需先满足三大条件</a> [11] <font color='grey'>- 11时33分</font></div><br>[财联社热门] <a href="https://www.cls.cn/detail/2319906" target="_blank" class="news-link">油价高位震荡 美股或连跌四周 逼近回调区间 | 今夜看点</a> [12] <font color='grey'>- 11时33分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E7%BE%8E%E8%81%94%E5%82%A8%E7%BB%B4%E6%8C%81%E5%88%A9%E7%8E%87%E4%B8%8D%E5%8F%98%E6%9C%89%E4%BD%95%E5%BD%B1%E5%93%8D" target="_blank" class="news-link">美联储维持利率不变有何影响</a> [18] <font color='grey'>- 11时33分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">宇树 王兴兴</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2319719" target="_blank" class="news-link">宇树科技招股书公开 冲刺科创板具身智能第一股</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 11时33分</font><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%AE%87%E6%A0%91%E7%A7%91%E6%8A%80IPO%E6%8B%9B%E8%82%A1%E4%B9%A6%E8%A7%A3%E8%AF%BB" target="_blank" class="news-link">宇树科技IPO招股书解读</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 11时33分</font></div><br>[抖音] <a href="https://www.douyin.com/hot/2437665" target="_blank" class="news-link">宇树科技IPO申请被受理</a> [8] <font color='grey'>- 11时33分</font><br><div class='new-title'>🆕 [澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32802764" target="_blank" class="news-link">人形机器人出货全球第一！从宇树招股书看王兴兴的“技术野心”与“扩张蓝图”</a> [13] <font color='grey'>- 11时33分</font></div><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32801162" target="_blank" class="news-link">宇树科技科创板IPO获受理：拟募资42.02亿元，去年营收17亿元</a> [18] <font color='grey'>- 11时33分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">国产 中国</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=%E9%A6%96%E6%AC%A1%E3%80%81%E7%A1%AC%E6%A0%B8%E7%AA%81%E7%A0%B4%EF%BC%81%E4%B8%AD%E5%9B%BD%E5%A4%9A%E9%A2%86%E5%9F%9F%E6%88%90%E6%9E%9C%E4%B8%8A%E6%96%B0" target="_blank" class="news-link">首次、硬核突破！中国多领域成果上新</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 11时33分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E8%8F%B2%E9%A3%9E%E6%9C%BA%E9%9D%9E%E6%B3%95%E9%97%AF%E5%85%A5%E4%B8%AD%E5%9B%BD%E7%A9%BA%E5%9F%9F+%E8%A7%A3%E6%94%BE%E5%86%9B%E9%A9%B1%E7%A6%BB" target="_blank" class="news-link">菲飞机非法闯入中国空域 解放军驱离</a> [10] <font color='grey'>- 11时33分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E7%AC%AC%E4%BA%8C%E8%89%98%E5%9B%BD%E4%BA%A7%E5%A4%A7%E5%9E%8B%E9%82%AE%E8%BD%AE%E6%9D%A5%E4%BA%86" target="_blank" class="news-link">第二艘国产大型邮轮来了</a> [16] <font color='grey'>- 11时33分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32801671" target="_blank" class="news-link">墨西哥媒体称墨方正考虑对中国投资进行“经济安全审查”，商务部回应</a> [19] <font color='grey'>- 11时33分</font><br>[知乎] <a href="https://www.zhihu.com/question/13885979277" target="_blank" class="news-link">现在很多中国人 是不是对糖尿病有过度的恐惧？</a> [19] <font color='grey'>- 11时33分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28352126&amp;amp;topic_name=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%A4%AA%E7%BB%95%2CAI%E6%80%A5%E9%9C%80%E4%B8%AD%E6%96%87%E5%90%8D" target="_blank" class="news-link">人工智能太绕,AI急需中文名</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 11时33分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28352108&amp;amp;topic_name=%E9%85%8D%E9%9F%B3%E5%9C%88%E9%9B%86%E4%BD%93%E5%A3%B0%E8%AE%A8%2C%E6%8A%B5%E5%88%B6AI%E7%9B%97%E5%A3%B0" target="_blank" class="news-link">配音圈集体声讨,抵制AI盗声</a> [10] <font color='grey'>- 11时33分</font><br>[抖音] <a href="https://www.douyin.com/hot/2436316" target="_blank" class="news-link">未来十年AI拼的是什么</a> [10] <font color='grey'>- 11时33分</font><br><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/2017644548151616976" target="_blank" class="news-link">如何评价耀客推出 AI 演员秦凌岳、林汐颜，被指撞脸翟子路、赵今麦张子枫？AI 艺人仿真人版权边界如何界定？</a> [17] <font color='grey'>- 11时33分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">手机</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32801130" target="_blank" class="news-link">实探涨价后手机市场：价格敏感型消费者犹豫，店员建议“早点入手”</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 11时33分</font><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7619505849735581226/" target="_blank" class="news-link">小小内存条压弯了手机厂的腰</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 11时33分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">小米 雷军 xiaomi</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3767973" target="_blank" class="news-link">沪指失守4000点，光伏、锂电走强，油气、化工回调、恒科指跌超2%，阿里跌6%、小米跌超8%</a> [6] <font color='grey'>- 11时33分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">黄仁勋 英伟达 NVIDIA</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E8%8B%B1%E4%BC%9F%E8%BE%BE%E5%B8%82%E5%80%BC%E8%92%B8%E5%8F%91%E5%8D%83%E4%BA%BF%E7%9A%84%E8%83%8C%E5%90%8E" target="_blank" class="news-link">英伟达市值蒸发千亿的背后</a> [13] <font color='grey'>- 11时33分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">chatgpt Sam Altman openai</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/2016876183153768141" target="_blank" class="news-link">程序员利用 ChatGPT 设计癌症疫苗拯救爱犬，「肿瘤真的缩小了」，这一事件有哪些意义或影响？</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 11时33分</font></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">科技</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28352144&amp;amp;topic_name=%E5%8D%B0%E5%BA%A6%E5%AE%9E%E5%8A%9B%E9%9C%B2%E9%A6%85%2C%E7%A7%91%E6%8A%80%E5%85%A8%E7%BA%BF%E6%8B%89%E8%83%AF" target="_blank" class="news-link">印度实力露馅,科技全线拉胯</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 11时33分</font></div></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 11 条)</h3>
+        <h4>今日头条 (1 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7619505849735581226/" target="_blank" class="news-link">小小内存条压弯了手机厂的腰</a> <font color='red'><strong>[5]</strong></font></li></ul><h4>百度热搜 (1 条)</h4><ul><li><a href="https://www.baidu.com/s?wd=%E7%89%B9%E6%9C%97%E6%99%AE%E7%A7%B0%E6%B2%A1%E6%9C%89%E7%BE%8E%E5%9B%BD%E5%8C%97%E7%BA%A6%E6%98%AF%E2%80%9C%E7%BA%B8%E8%80%81%E8%99%8E%E2%80%9D" target="_blank" class="news-link">特朗普称没有美国北约是“纸老虎”</a> [27]</li></ul><h4>澎湃新闻 (2 条)</h4><ul><li><a href="https://m.thepaper.cn/newsDetail_forward_32805006" target="_blank" class="news-link">美国批准临时交付和销售源自伊朗的石油</a> [11]</li><li><a href="https://m.thepaper.cn/newsDetail_forward_32802764" target="_blank" class="news-link">人形机器人出货全球第一！从宇树招股书看王兴兴的“技术野心”与“扩张蓝图”</a> [13]</li></ul><h4>bilibili 热搜 (1 条)</h4><ul><li><a href="https://search.bilibili.com/all?keyword=%E5%AE%87%E6%A0%91%E7%A7%91%E6%8A%80IPO%E6%8B%9B%E8%82%A1%E4%B9%A6%E8%A7%A3%E8%AF%BB" target="_blank" class="news-link">宇树科技IPO招股书解读</a> <font color='red'><strong>[5]</strong></font></li></ul><h4>财联社热门 (1 条)</h4><ul><li><a href="https://www.cls.cn/detail/2320248" target="_blank" class="news-link">“美联储加息”噩梦恐成真？美银：需先满足三大条件</a> [11]</li></ul><h4>凤凰网 (1 条)</h4><ul><li><a href="https://news.ifeng.com/c/8rfRldwHGb9" target="_blank" class="news-link">美国有条件放松对伊朗油品的制裁，为期30天</a> <font color='red'><strong>[2]</strong></font></li></ul><h4>贴吧 (1 条)</h4><ul><li><a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28352144&amp;amp;topic_name=%E5%8D%B0%E5%BA%A6%E5%AE%9E%E5%8A%9B%E9%9C%B2%E9%A6%85%2C%E7%A7%91%E6%8A%80%E5%85%A8%E7%BA%BF%E6%8B%89%E8%83%AF" target="_blank" class="news-link">印度实力露馅,科技全线拉胯</a> <font color='red'><strong>[3]</strong></font></li></ul><h4>微博 (1 条)</h4><ul><li><a href="https://s.weibo.com/weibo?q=%23%E4%BC%8A%E6%9C%97%E7%A7%B0%E6%89%93%E5%87%BB%E7%BE%8E%E5%9B%BD%E6%B5%B7%E5%86%9B%E7%AC%AC%E4%BA%94%E8%88%B0%E9%98%9F%23&amp;t=31&amp;band_rank=29&amp;Refer=top" target="_blank" class="news-link">伊朗称打击美国海军第五舰队</a> [29]</li></ul><h4>知乎 (2 条)</h4><ul><li><a href="https://www.zhihu.com/question/2018595180429726456" target="_blank" class="news-link">美国批准临时交付和销售源自伊朗的石油，原因为何？如何看待美方此举？</a> [16]</li><li><a href="https://www.zhihu.com/question/2017644548151616976" target="_blank" class="news-link">如何评价耀客推出 AI 演员秦凌岳、林汐颜，被指撞脸翟子路、赵今麦张子枫？AI 艺人仿真人版权边界如何界定？</a> [17]</li></ul></div>
+    </body>
+    </html>
+    
