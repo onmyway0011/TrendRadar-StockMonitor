@@ -1,0 +1,130 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-04-07 12:44:14</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">美国</td>
+                <td class="count">9</td>
+                <td class="percentage">3.53%</td>
+                <td class="titles"><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7625827495429836338/" target="_blank" class="news-link">美国载人绕月任务刷新人类历史纪录</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 12时44分</font></div><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3769326" target="_blank" class="news-link">伊朗拒绝临时停火，提10项条款回应美国停战提议，称只要领导层认为合适就继续战斗</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 12时44分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2335995" target="_blank" class="news-link">特朗普：该由美国收霍尔木兹海峡“通行费”</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 12时44分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3769328" target="_blank" class="news-link">特朗普：伊朗停战回应还不够好，要“拿走石油”，7日最终期限不可改，美国该收霍尔木兹通行费</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 12时44分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8s7WhbxpGX0" target="_blank" class="news-link">特朗普：该由美国收霍尔木兹通行费</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 12时44分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7625659418251628074/" target="_blank" class="news-link">伊朗回应美国停战提议 包含10项条款</a> [7] <font color='grey'>- 12时44分</font><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7625841755636072491/" target="_blank" class="news-link">新加坡前外长：美国变得极度危险</a> [8] <font color='grey'>- 12时44分</font></div><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E8%BD%BD%E4%BA%BA%E7%BB%95%E6%9C%88%E4%BB%BB%E5%8A%A1%E6%89%93%E7%A0%B4%E4%BA%BA%E7%B1%BB%E5%8E%86%E5%8F%B2%E7%BA%AA%E5%BD%95" target="_blank" class="news-link">美国载人绕月任务打破人类历史纪录</a> [8] <font color='grey'>- 12时44分</font></div><br><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3769325" target="_blank" class="news-link">通胀压力飙升！美国3月ISM服务业PMI回落至54，支付价格创近三年新高</a> [10] <font color='grey'>- 12时44分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">国产 中国</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles"><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E5%9B%BD%E6%B0%91%E5%85%9A%E4%B8%BB%E5%B8%AD%E9%83%91%E4%B8%BD%E6%96%87%E4%BB%8A%E8%B5%B4%E4%B8%8A%E6%B5%B7" target="_blank" class="news-link">中国国民党主席郑丽文今赴上海</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 12时44分</font></div><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2336160" target="_blank" class="news-link">中国证监会短线交易新规今起施行</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 12时44分</font></div><br><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/2024803246716315093" target="_blank" class="news-link">中国前女首富、唐僧饰演者迟重瑞的妻子陈丽华逝世，如何评价她的一生？她有哪些故事令你印象深刻？</a> [6] <font color='grey'>- 12时44分</font></div><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2336012" target="_blank" class="news-link">中国储能企业出海进行时：订单高增叠加海外建厂潮</a> [9] <font color='grey'>- 12时44分</font></div><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E8%AF%81%E7%9B%91%E4%BC%9A%E7%9F%AD%E7%BA%BF%E4%BA%A4%E6%98%93%E6%96%B0%E8%A7%84%E4%BB%8A%E8%B5%B7%E6%96%BD%E8%A1%8C" target="_blank" class="news-link">中国证监会短线交易新规今起施行</a> [24] <font color='grey'>- 12时44分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7625463207994179611/" target="_blank" class="news-link">中国AI大模型调用量连续五周超美国</a> [10] <font color='grey'>- 12时44分</font><br>[知乎] <a href="https://www.zhihu.com/question/667901263" target="_blank" class="news-link">如果创造一个汉字来代替「AI」这个词，你会如何创造它的字形与发音，为什么？</a> [10] <font color='grey'>- 12时44分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32911737" target="_blank" class="news-link">易烊千玺被“换脸”？红果短剧：坚决打击AI短剧素材违规使用、无授权盗用等行为</a> [19] <font color='grey'>- 12时44分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3769329" target="_blank" class="news-link">伊朗拒停战提议，特朗普警告7日晚动手，美股指“闪跌”但收涨，美油再创近四年新高</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 12时44分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2335967" target="_blank" class="news-link">美股收盘：标普纳指连涨四天 存储概念走强希捷收新高</a> [6] <font color='grey'>- 12时44分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">米哈游 原神 星穹铁道</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/2020099142253303675" target="_blank" class="news-link">如何评价《崩坏：星穹铁道》4.1 版本的「差分宇宙·乐园漫记」？</a> [18] <font color='grey'>- 12时44分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">科技</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3769300" target="_blank" class="news-link">美股开盘小幅上涨，存储板块涨幅居前，希捷科技涨幅扩大至逾7%，创历史新高</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 12时44分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word"># 美国关税重点关注 关税 贸易战 贸易 进口 出口 关税壁垒 贸易协定 贸易谈判 反倾销 制裁 禁运 贸易逆差 贸易顺差 WTO 世贸组织</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%85%89%E4%BC%8F%E4%BA%A7%E5%93%81%E5%87%BA%E5%8F%A3%E9%80%80%E7%A8%8E%E4%B8%BA%E4%BD%95%E5%8F%96%E6%B6%88" target="_blank" class="news-link">光伏产品出口退税为何取消</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 12时44分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 9 条)</h3>
+        <h4>今日头条 (2 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7625827495429836338/" target="_blank" class="news-link">美国载人绕月任务刷新人类历史纪录</a> <font color='red'><strong>[1]</strong></font></li><li><a href="https://www.toutiao.com/trending/7625841755636072491/" target="_blank" class="news-link">新加坡前外长：美国变得极度危险</a> [8]</li></ul><h4>百度热搜 (2 条)</h4><ul><li><a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E5%9B%BD%E6%B0%91%E5%85%9A%E4%B8%BB%E5%B8%AD%E9%83%91%E4%B8%BD%E6%96%87%E4%BB%8A%E8%B5%B4%E4%B8%8A%E6%B5%B7" target="_blank" class="news-link">中国国民党主席郑丽文今赴上海</a> <font color='red'><strong>[4]</strong></font></li><li><a href="https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E8%BD%BD%E4%BA%BA%E7%BB%95%E6%9C%88%E4%BB%BB%E5%8A%A1%E6%89%93%E7%A0%B4%E4%BA%BA%E7%B1%BB%E5%8E%86%E5%8F%B2%E7%BA%AA%E5%BD%95" target="_blank" class="news-link">美国载人绕月任务打破人类历史纪录</a> [8]</li></ul><h4>华尔街见闻 (1 条)</h4><ul><li><a href="https://wallstreetcn.com/articles/3769325" target="_blank" class="news-link">通胀压力飙升！美国3月ISM服务业PMI回落至54，支付价格创近三年新高</a> [10]</li></ul><h4>财联社热门 (2 条)</h4><ul><li><a href="https://www.cls.cn/detail/2336160" target="_blank" class="news-link">中国证监会短线交易新规今起施行</a> <font color='red'><strong>[4]</strong></font></li><li><a href="https://www.cls.cn/detail/2336012" target="_blank" class="news-link">中国储能企业出海进行时：订单高增叠加海外建厂潮</a> [9]</li></ul><h4>知乎 (2 条)</h4><ul><li><a href="https://www.zhihu.com/question/2024803246716315093" target="_blank" class="news-link">中国前女首富、唐僧饰演者迟重瑞的妻子陈丽华逝世，如何评价她的一生？她有哪些故事令你印象深刻？</a> [6]</li><li><a href="https://www.zhihu.com/question/2020099142253303675" target="_blank" class="news-link">如何评价《崩坏：星穹铁道》4.1 版本的「差分宇宙·乐园漫记」？</a> [18]</li></ul></div>
+    </body>
+    </html>
+    
