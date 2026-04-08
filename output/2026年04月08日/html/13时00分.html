@@ -1,0 +1,186 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-04-08 13:00:29</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">DeepSeek 梁文锋</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles"><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=DeepSeek%E6%9B%B4%E6%96%B0%E4%B8%93%E5%AE%B6%E6%A8%A1%E5%BC%8F" target="_blank" class="news-link">DeepSeek更新专家模式</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 13时00分</font></div><br>[知乎] <a href="https://www.zhihu.com/question/2024876426596291384" target="_blank" class="news-link">DeepSeek 更新「快速模式」和「专家模式」，二者有何区别？这是否意味着 V4 快来了？</a> [7] <font color='grey'>- 13时00分</font><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=DeepSeek%E9%87%8D%E8%A6%81%E6%9B%B4%E6%96%B0%EF%BC%9A%E4%B8%8A%E7%BA%BF%E4%B8%93%E5%AE%B6%E6%A8%A1%E5%BC%8F" target="_blank" class="news-link">DeepSeek重要更新：上线专家模式</a> [16] <font color='grey'>- 13时00分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3769370" target="_blank" class="news-link">美伊谈判现逆转信号，美股抹平跌幅，盘后又见TACO，美股指期货大涨，油价大跳水，金银跳涨</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 13时00分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2337193" target="_blank" class="news-link">美股收盘：巴基斯坦斡旋提议救场 标普纳指惊险收获五连涨</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 13时00分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2337241" target="_blank" class="news-link">美伊接受巴基斯坦停火提议 美股期货贵金属暴涨、油价重挫 | 环球市场</a> [7] <font color='grey'>- 13时00分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">claude Anthropic</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles"><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=UP%E4%B8%BB%E8%A7%A3%E8%AF%BBClaude%E6%96%B0%E6%A8%A1%E5%9E%8BMythos" target="_blank" class="news-link">UP主解读Claude新模型Mythos</a> [7] <font color='grey'>- 13时00分</font></div><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=Claude%E9%98%B2%E8%AF%9D%E7%97%A8%E6%8F%92%E4%BB%B6%E7%88%86%E7%81%AB" target="_blank" class="news-link">Claude防话痨插件爆火</a> [21] <font color='grey'>- 13时00分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles"><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/2023389785188745917" target="_blank" class="news-link">宁波高二女生将 AI「豆包」视为灵魂伴侣并为之休学，青少年过度沉迷 AI 会带来哪些风险？</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 13时00分</font></div><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28352871&amp;amp;topic_name=AI%E6%9F%93%E6%8C%87%E9%AC%BC%E7%81%AD%2C%E6%97%A5%E7%BD%91%E5%8F%8B%E6%B0%94%E6%80%A5%E8%B7%B3%E8%84%9A" target="_blank" class="news-link">AI染指鬼灭,日网友气急跳脚</a> [18] <font color='grey'>- 13时00分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">手机</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[抖音] <a href="https://www.douyin.com/hot/2458213" target="_blank" class="news-link">千禧年复古手机开箱</a> [8] <font color='grey'>- 13时00分</font><br><div class='new-title'>🆕 [澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32916576" target="_blank" class="news-link">禁用社交平台与不买智能手机，澳大利亚与爱尔兰的两种童年路径</a> [13] <font color='grey'>- 13时00分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word"># 美国关税重点关注 关税 贸易战 贸易 进口 出口 关税壁垒 贸易协定 贸易谈判 反倾销 制裁 禁运 贸易逆差 贸易顺差 WTO 世贸组织</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%85%89%E4%BC%8F%E4%BA%A7%E5%93%81%E5%87%BA%E5%8F%A3%E9%80%80%E7%A8%8E%E4%B8%BA%E4%BD%95%E5%8F%96%E6%B6%88" target="_blank" class="news-link">光伏产品出口退税为何取消</a> [15] <font color='grey'>- 13时00分</font><br>[知乎] <a href="https://www.zhihu.com/question/2025115079616590813" target="_blank" class="news-link">伊朗公布提交给美方的十点计划核心内容，包括全额赔偿伊朗的损失、解除制裁等，美方会接受吗？</a> [16] <font color='grey'>- 13时00分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">小米 雷军 xiaomi</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/2024907625075160689" target="_blank" class="news-link">小米遭知名私募怒怼，市值再跌 280 多亿，资本在担心什么？你对小米的未来怎么看？</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 13时00分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">马斯克 特斯拉</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28352857&amp;amp;topic_name=%E5%A4%A7%E9%AD%94%E7%8E%8B%E8%BF%8E%E6%88%98%E7%A1%AC%E5%88%9A%E9%A9%AC%E6%96%AF%E5%85%8BAI" target="_blank" class="news-link">大魔王迎战硬刚马斯克AI</a> [23] <font color='grey'>- 13时00分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">chatgpt Sam Altman openai</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E6%9B%9DGPT6%E6%9C%AC%E6%9C%88%E5%8F%91%E5%B8%83" target="_blank" class="news-link">曝ChatGPT6本月发布</a> [16] <font color='grey'>- 13时00分</font></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">机器人</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E5%8F%88%E4%B8%80%E6%AC%BE%E4%B8%AD%E5%9B%BD%E2%80%9C%E6%9C%BA%E5%99%A8%E4%BA%BA%E2%80%9D%E7%81%AB%E9%81%8D%E5%85%A8%E7%90%83" target="_blank" class="news-link">又一款中国“机器人”火遍全球</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 13时00分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td class="word">国产 中国</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[凤凰网] <a href="https://news.ifeng.com/c/8s8yvBMhUVU" target="_blank" class="news-link">伊朗表态，感谢中国、俄罗斯</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 13时00分</font></td>
+            </tr>
+        
+            <tr>
+                <td>12</td>
+                <td class="word">美国</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32918729" target="_blank" class="news-link">伊朗媒体：伊朗已关闭与美国的所有外交渠道和间接沟通渠道</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 13时00分</font></td>
+            </tr>
+        
+            <tr>
+                <td>13</td>
+                <td class="word">科技</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E6%96%B0%E7%A7%91%E6%8A%80%E6%97%97%E8%88%B0%E5%B0%8F%E9%B9%8FGX%E6%9D%A5%E4%BA%86%23&amp;t=31&amp;band_rank=27&amp;Refer=top" target="_blank" class="news-link">新科技旗舰小鹏GX来了</a> [27] <font color='grey'>- 13时00分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>14</td>
+                <td class="word">月球 登月 火星 宇宙 飞船</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7625889731192782898/" target="_blank" class="news-link">人类为什么一定要登月</a> [8] <font color='grey'>- 13时00分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 7 条)</h3>
+        <h4>百度热搜 (2 条)</h4><ul><li><a href="https://www.baidu.com/s?wd=%E5%8F%88%E4%B8%80%E6%AC%BE%E4%B8%AD%E5%9B%BD%E2%80%9C%E6%9C%BA%E5%99%A8%E4%BA%BA%E2%80%9D%E7%81%AB%E9%81%8D%E5%85%A8%E7%90%83" target="_blank" class="news-link">又一款中国“机器人”火遍全球</a> <font color='red'><strong>[1]</strong></font></li><li><a href="https://www.baidu.com/s?wd=DeepSeek%E9%87%8D%E8%A6%81%E6%9B%B4%E6%96%B0%EF%BC%9A%E4%B8%8A%E7%BA%BF%E4%B8%93%E5%AE%B6%E6%A8%A1%E5%BC%8F" target="_blank" class="news-link">DeepSeek重要更新：上线专家模式</a> [16]</li></ul><h4>澎湃新闻 (1 条)</h4><ul><li><a href="https://m.thepaper.cn/newsDetail_forward_32916576" target="_blank" class="news-link">禁用社交平台与不买智能手机，澳大利亚与爱尔兰的两种童年路径</a> [13]</li></ul><h4>bilibili 热搜 (2 条)</h4><ul><li><a href="https://search.bilibili.com/all?keyword=DeepSeek%E6%9B%B4%E6%96%B0%E4%B8%93%E5%AE%B6%E6%A8%A1%E5%BC%8F" target="_blank" class="news-link">DeepSeek更新专家模式</a> <font color='red'><strong>[3]</strong></font></li><li><a href="https://search.bilibili.com/all?keyword=UP%E4%B8%BB%E8%A7%A3%E8%AF%BBClaude%E6%96%B0%E6%A8%A1%E5%9E%8BMythos" target="_blank" class="news-link">UP主解读Claude新模型Mythos</a> [7]</li></ul><h4>微博 (1 条)</h4><ul><li><a href="https://s.weibo.com/weibo?q=%23%E6%96%B0%E7%A7%91%E6%8A%80%E6%97%97%E8%88%B0%E5%B0%8F%E9%B9%8FGX%E6%9D%A5%E4%BA%86%23&amp;t=31&amp;band_rank=27&amp;Refer=top" target="_blank" class="news-link">新科技旗舰小鹏GX来了</a> [27]</li></ul><h4>知乎 (1 条)</h4><ul><li><a href="https://www.zhihu.com/question/2023389785188745917" target="_blank" class="news-link">宁波高二女生将 AI「豆包」视为灵魂伴侣并为之休学，青少年过度沉迷 AI 会带来哪些风险？</a> <font color='red'><strong>[5]</strong></font></li></ul></div>
+    </body>
+    </html>
+    
