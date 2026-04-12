@@ -1,0 +1,146 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-04-12 21:54:51</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">美国</td>
+                <td class="count">6</td>
+                <td class="percentage">2.35%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3769753" target="_blank" class="news-link">美伊谈判“无果而终”，伊朗称“由于美方贪婪和野心”，万斯表态“已展现灵活和诚意，将返回美国”</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 21时54分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3769748" target="_blank" class="news-link">美伊谈判进行中！伊朗称美国同意在黎巴嫩停火</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 21时54分</font><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7627461864176255030/" target="_blank" class="news-link">加拿大告别依赖美国 军费转向本土</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 21时54分</font></div><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32954111" target="_blank" class="news-link">美国副总统万斯：美伊谈判未达成共识，将返回美国</a> [7] <font color='grey'>- 21时54分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32954265" target="_blank" class="news-link">美国副总统万斯离开巴基斯坦，伊朗代表团将于12日离开</a> [11] <font color='grey'>- 21时54分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8sGZdXAQIfk" target="_blank" class="news-link">美国加州州长热门人选涉嫌性侵遭调查</a> [11] <font color='grey'>- 21时54分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles"><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E5%A4%AE%E8%A7%86%E6%9B%9D%E5%85%89AI%E9%80%A0%E9%BB%84%E4%BA%A7%E4%B8%9A%E9%93%BE%23&amp;t=31&amp;band_rank=5&amp;Refer=top" target="_blank" class="news-link">央视曝光AI造黄产业链</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 21时54分</font></div><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%9B%BD%E4%BA%A7AI%E6%A8%A1%E5%9E%8B%E4%B8%BA%E4%BD%95%E5%A4%A7%E5%A4%9A%E5%85%8D%E8%B4%B9" target="_blank" class="news-link">国产AI模型为何大多免费</a> [8] <font color='grey'>- 21时54分</font><br>[抖音] <a href="https://www.douyin.com/hot/2462368" target="_blank" class="news-link">我也来试一下这个wait</a> [27] <font color='grey'>- 21时54分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8D%96%E7%93%9C" target="_blank" class="news-link">人工智能卖瓜</a> [30] <font color='grey'>- 21时54分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">机器人</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9F%AD%E8%B7%91%E7%A0%B4%E7%BA%AA%E5%BD%95%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8" target="_blank" class="news-link">机器人短跑破纪录有什么用</a> [9] <font color='grey'>- 21时54分</font><br>[抖音] <a href="https://www.douyin.com/hot/2463701" target="_blank" class="news-link">人形机器人半马完成全流程测试</a> [9] <font color='grey'>- 21时54分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28353086&amp;amp;topic_name=%E6%B0%B4%E5%86%9B%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%B5%B0%E9%94%99%E7%89%87%E5%9C%BA%E9%9C%B2%E9%A9%AC%E8%84%9A" target="_blank" class="news-link">水军机器人走错片场露马脚</a> [11] <font color='grey'>- 21时54分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%B7%91%E6%AD%A5%E5%A7%BF%E5%8A%BF%E5%83%8F%E6%88%90%E9%BE%99" target="_blank" class="news-link">人形机器人跑步姿势像成龙</a> [23] <font color='grey'>- 21时54分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">国产 中国</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles"><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=4K%E4%BF%AE%E5%A4%8D%E4%B8%AD%E5%9B%BD%E4%BA%BA%E9%A6%96%E9%A3%9E%E5%A4%AA%E7%A9%BA%E7%94%BB%E9%9D%A2" target="_blank" class="news-link">4K修复中国人首飞太空画面</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 21时54分</font></div><br><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%9B%BD%E8%88%AA%E5%A4%A9%E4%B8%8D%E6%96%AD%E5%88%B7%E6%96%B0%E5%AE%87%E5%AE%99%E7%BA%A7%E7%B2%BE%E5%BD%A9%23&amp;t=31&amp;band_rank=3&amp;Refer=top" target="_blank" class="news-link">中国航天不断刷新宇宙级精彩</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 21时54分</font></div><br>[抖音] <a href="https://www.douyin.com/hot/2464160" target="_blank" class="news-link">中国航天事业跑出加速度</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 21时54分</font><br>[知乎] <a href="https://www.zhihu.com/question/26984941" target="_blank" class="news-link">为什么在中国用香水容易被嫌弃？</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 21时54分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">宇树 王兴兴</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/2026580932996456466" target="_blank" class="news-link">宇树机器人百米冲刺 10 米每秒，逼近博尔特记录，这个速度是什么水平？能应用到哪些现实场景？</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 21时54分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%AE%87%E6%A0%91%E5%86%8D%E6%AC%A1%E5%88%B7%E6%96%B0%E4%B8%96%E7%95%8C%E7%BA%AA%E5%BD%95" target="_blank" class="news-link">宇树再次刷新世界纪录</a> [20] <font color='grey'>- 21时54分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2341358" target="_blank" class="news-link">环球下周看点：中东两周停火暂稳市场 美股财报季检验盈利韧性</a> [13] <font color='grey'>- 21时54分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E6%9D%8E%E5%A4%A7%E9%9C%84%E8%A7%A3%E8%AF%BB%E7%BE%8E%E8%82%A1%E5%8D%95%E5%91%A8%E8%A1%A8%E7%8E%B0" target="_blank" class="news-link">李大霄解读美股单周表现</a> [15] <font color='grey'>- 21时54分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">小米 雷军 xiaomi</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7627799526945852991/" target="_blank" class="news-link">小米股票为何跌跌不休</a> [20] <font color='grey'>- 21时54分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">chatgpt Sam Altman openai</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2341199" target="_blank" class="news-link">突发！OpenAI掌门奥尔特曼家差点被烧 本人愤怒发长文回应</a> [9] <font color='grey'>- 21时54分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">科技</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [抖音] <a href="https://www.douyin.com/hot/2464180" target="_blank" class="news-link">“营养点滴”是黑科技还是新套路</a> [12] <font color='grey'>- 21时54分</font></div></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 5 条)</h3>
+        <h4>今日头条 (1 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7627461864176255030/" target="_blank" class="news-link">加拿大告别依赖美国 军费转向本土</a> <font color='red'><strong>[4]</strong></font></li></ul><h4>百度热搜 (1 条)</h4><ul><li><a href="https://www.baidu.com/s?wd=4K%E4%BF%AE%E5%A4%8D%E4%B8%AD%E5%9B%BD%E4%BA%BA%E9%A6%96%E9%A3%9E%E5%A4%AA%E7%A9%BA%E7%94%BB%E9%9D%A2" target="_blank" class="news-link">4K修复中国人首飞太空画面</a> <font color='red'><strong>[3]</strong></font></li></ul><h4>微博 (2 条)</h4><ul><li><a href="https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%9B%BD%E8%88%AA%E5%A4%A9%E4%B8%8D%E6%96%AD%E5%88%B7%E6%96%B0%E5%AE%87%E5%AE%99%E7%BA%A7%E7%B2%BE%E5%BD%A9%23&amp;t=31&amp;band_rank=3&amp;Refer=top" target="_blank" class="news-link">中国航天不断刷新宇宙级精彩</a> <font color='red'><strong>[3]</strong></font></li><li><a href="https://s.weibo.com/weibo?q=%23%E5%A4%AE%E8%A7%86%E6%9B%9D%E5%85%89AI%E9%80%A0%E9%BB%84%E4%BA%A7%E4%B8%9A%E9%93%BE%23&amp;t=31&amp;band_rank=5&amp;Refer=top" target="_blank" class="news-link">央视曝光AI造黄产业链</a> <font color='red'><strong>[5]</strong></font></li></ul><h4>抖音 (1 条)</h4><ul><li><a href="https://www.douyin.com/hot/2464180" target="_blank" class="news-link">“营养点滴”是黑科技还是新套路</a> [12]</li></ul></div>
+    </body>
+    </html>
+    
