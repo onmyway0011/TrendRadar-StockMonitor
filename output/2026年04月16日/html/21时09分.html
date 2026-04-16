@@ -1,0 +1,154 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-04-16 21:09:13</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">国产 中国</td>
+                <td class="count">27</td>
+                <td class="percentage">10.59%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2346043" target="_blank" class="news-link">外交部提醒：赴美国中国公民注意入境安全风险</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 21时09分</font><br>[抖音] <a href="https://www.douyin.com/hot/2468252" target="_blank" class="news-link">中国驻日大使馆接连遭恐怖威胁</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 21时09分</font><br>[知乎] <a href="https://www.zhihu.com/question/2028144905344623639" target="_blank" class="news-link">中国驻日本大使馆接连遭受到恐怖威胁，包括有人称在使馆内安装远距离遥控炸弹等，哪些信息值得关注？</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 21时09分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32977763" target="_blank" class="news-link">视频丨法国全票通过！“将不义之财归还中国”</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 21时09分</font><br>[抖音] <a href="https://www.douyin.com/hot/2468225" target="_blank" class="news-link">速览中国经济一季报亮点</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 21时09分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E2%80%9C%E5%B7%B4%E9%93%81%E2%80%9D%E7%A1%AC%E6%A0%B8%E8%A1%A8%E7%99%BD%EF%BC%9A%E4%B8%AD%E5%9B%BD%E5%BC%BA%E6%88%91%E4%BB%AC%E5%B0%B1%E5%BC%BA" target="_blank" class="news-link">“巴铁”硬核表白：中国强我们就强</a> [6] <font color='grey'>- 21时09分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8sN67BgzZfw" target="_blank" class="news-link">中方回应斯里兰卡9名中国人被逮捕</a> [6] <font color='grey'>- 21时09分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7629092863972327443/" target="_blank" class="news-link">中国驻日大使馆接连遭到恐怖威胁</a> [7] <font color='grey'>- 21时09分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8sN4vJfV3wx" target="_blank" class="news-link">20位中国学者被美国拒绝入境</a> [7] <font color='grey'>- 21时09分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3770099" target="_blank" class="news-link">实现良好开局！一季度中国GDP同比增长5.0%</a> [8] <font color='grey'>- 21时09分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7628239684956520490/" target="_blank" class="news-link">警察带台胞走中国公民专用通道</a> [10] <font color='grey'>- 21时09分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32977876" target="_blank" class="news-link">观察丨广交会境外采购商超21万，采购商们为何青睐中国企业？</a> [10] <font color='grey'>- 21时09分</font><br><div class='new-title'>🆕 [抖音] <a href="https://www.douyin.com/hot/2468545" target="_blank" class="news-link">中国海洋采油技术有多牛</a> [10] <font color='grey'>- 21时09分</font></div><br>[凤凰网] <a href="https://news.ifeng.com/c/8sN5mIzhL8T" target="_blank" class="news-link">中国驻日大使馆接连遭到恐怖威胁</a> [11] <font color='grey'>- 21时09分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E9%A9%BB%E6%97%A5%E5%A4%A7%E4%BD%BF%E9%A6%86%E6%8E%A5%E8%BF%9E%E9%81%AD%E5%88%B0%E6%81%90%E6%80%96%E5%A8%81%E8%83%81" target="_blank" class="news-link">中国驻日大使馆接连遭到恐怖威胁</a> [12] <font color='grey'>- 21时09分</font><br><div class='new-title'>🆕 [抖音] <a href="https://www.douyin.com/hot/2468059" target="_blank" class="news-link">中国驻布基纳法索使馆发布提醒</a> [13] <font color='grey'>- 21时09分</font></div><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32981931" target="_blank" class="news-link">法国全票通过法案，圆明园文物或有望回中国，法议员：雨果希望的一天终于到来</a> [14] <font color='grey'>- 21时09分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7628829127155826738/" target="_blank" class="news-link">伊朗总统感谢中国</a> [18] <font color='grey'>- 21时09分</font><br>[抖音] <a href="https://www.douyin.com/hot/2467795" target="_blank" class="news-link">中国11人参加斯诺克世锦赛</a> [18] <font color='grey'>- 21时09分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7629248367163424787/" target="_blank" class="news-link">约20名中国学者赴美参会被拒绝入境</a> [21] <font color='grey'>- 21时09分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7628617507208859172/" target="_blank" class="news-link">法国馆藏中国文物数量仅次于英国</a> [24] <font color='grey'>- 21时09分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E6%96%B9%E5%9B%9E%E5%BA%949%E5%90%8D%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%9C%A8%E6%96%AF%E9%87%8C%E5%85%B0%E5%8D%A1%E8%A2%AB%E9%80%AE%E6%8D%95" target="_blank" class="news-link">中方回应9名中国人在斯里兰卡被逮捕</a> [25] <font color='grey'>- 21时09分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7628544773641732106/" target="_blank" class="news-link">苏林乘高铁赴广西对中国高铁聊不停</a> [26] <font color='grey'>- 21时09分</font><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E6%B3%95%E5%9B%BD%E9%A6%86%E8%97%8F%E4%B8%AD%E5%9B%BD%E6%96%87%E7%89%A9%E6%95%B0%E9%87%8F%E4%BB%85%E6%AC%A1%E4%BA%8E%E8%8B%B1%E5%9B%BD" target="_blank" class="news-link">法国馆藏中国文物数量仅次于英国</a> [26] <font color='grey'>- 21时09分</font></div><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E5%A4%96%E4%BA%A4%E9%83%A8%E6%8F%90%E9%86%92%E8%B5%B4%E7%BE%8E%E5%9B%BD%E4%B8%AD%E5%9B%BD%E5%85%AC%E6%B0%91%E6%B3%A8%E6%84%8F%E9%A3%8E%E9%99%A9" target="_blank" class="news-link">外交部提醒赴美国中国公民注意风险</a> [28] <font color='grey'>- 21时09分</font><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=20%E4%BD%8D%E4%B8%AD%E5%9B%BD%E5%AD%A6%E8%80%85%E8%A2%AB%E7%BE%8E%E5%9B%BD%E6%8B%92%E7%BB%9D%E5%85%A5%E5%A2%83" target="_blank" class="news-link">20位中国学者被美国拒绝入境</a> [29] <font color='grey'>- 21时09分</font></div><br>[今日头条] <a href="https://www.toutiao.com/trending/7628357070983675950/" target="_blank" class="news-link">巴基斯坦客商：中国强我们就强</a> [30] <font color='grey'>- 21时09分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28353314&amp;amp;topic_name=%E7%95%AA%E8%8C%84%E4%BD%9C%E8%80%85AI%E4%BB%A3%E7%AC%94%2C%E8%AF%BB%E8%80%85%E7%99%BD%E8%BF%BD" target="_blank" class="news-link">番茄作者AI代笔,读者白追</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 21时09分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32976727" target="_blank" class="news-link">警惕人工智能让人类陷入“自恋”</a> [7] <font color='grey'>- 21时09分</font><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E6%9B%9D%E5%B8%B8%E6%98%A5%E8%97%A4%E5%90%8D%E6%A0%A1%E7%94%A8%E6%89%93%E5%AD%97%E6%9C%BA%E5%AF%B9%E6%8A%97AI" target="_blank" class="news-link">曝常春藤名校用打字机对抗AI</a> [8] <font color='grey'>- 21时09分</font></div><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28353249&amp;amp;topic_name=AI%E6%89%BF%E8%AF%BA%E8%B5%9410%E4%B8%87%2C%E7%94%A8%E6%88%B7%E7%B4%A2%E8%B5%94%E8%B4%A5%E8%AF%89" target="_blank" class="news-link">AI承诺赔10万,用户索赔败诉</a> [22] <font color='grey'>- 21时09分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28353287&amp;amp;topic_name=%E7%8E%A9%E5%AE%B6AI%E7%94%9F%E5%9B%BE%E6%8D%A7%E6%B4%9B%E5%85%8B%2C%E7%BD%91%E5%8F%8B%E4%B8%80%E7%A7%92%E6%88%B3%E7%A9%BF" target="_blank" class="news-link">玩家AI生图捧洛克,网友一秒戳穿</a> [24] <font color='grey'>- 21时09分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">美国</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[凤凰网] <a href="https://news.ifeng.com/c/8sMQrPZN74e" target="_blank" class="news-link">霍尔木兹海峡之后，印媒担心美国盯上马六甲海峡</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 21时09分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3770081" target="_blank" class="news-link">特朗普：美国“很有可能”在4月下旬英国国王访美前与伊朗达成协议</a> [7] <font color='grey'>- 21时09分</font><br>[知乎] <a href="https://www.zhihu.com/question/2027115873823973436" target="_blank" class="news-link">美国和伊朗打了一个多月，一共烧了多少钱？</a> [12] <font color='grey'>- 21时09分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7628284506704805939/" target="_blank" class="news-link">伊朗：美国成以色列“第七个行政区”</a> [15] <font color='grey'>- 21时09分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_32981650" target="_blank" class="news-link">一图看懂｜美国如何封锁霍尔木兹海峡？</a> [15] <font color='grey'>- 21时09分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3770050" target="_blank" class="news-link">特朗普：鲍威尔若届满不走就解雇，沃什上任后利率可能会下降</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 21时09分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3770046" target="_blank" class="news-link">贝森特：美联储若需推迟降息&quot;我理解&quot;，私募信贷不存在系统性风险</a> [6] <font color='grey'>- 21时09分</font><br><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3770123" target="_blank" class="news-link">“反手做空，趁现在还来得及”！高盛交易员警告美股涨过头，抛出6笔对冲交易</a> [10] <font color='grey'>- 21时09分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">米哈游 原神 星穹铁道</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28353268&amp;amp;topic_name=%E5%B4%A93%E7%8B%82%E8%B5%9A%E6%95%B0%E4%BA%BF%2C%E8%80%81%E8%94%A1%E6%A2%AD%E5%93%88%E6%90%9E%E5%8E%9F%E7%A5%9E" target="_blank" class="news-link">崩3狂赚数亿,老蔡梭哈搞原神</a> [15] <font color='grey'>- 21时09分</font><br><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/2026319512622966551" target="_blank" class="news-link">如何看待《崩坏星穹铁道》即将上线的银狼 LV.999 强度？</a> [20] <font color='grey'>- 21时09分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">马斯克 特斯拉</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3770007" target="_blank" class="news-link">谈判曙光与强劲财报双重提振市场，标普历史新高，纳指十一连涨，特斯拉大涨近8%</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 21时09分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3770049" target="_blank" class="news-link">特斯拉AI芯片里程碑！马斯克官宣AI5成功流片，双芯性能对标Blackwell</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 21时09分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">黄仁勋 英伟达 NVIDIA</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles"><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7628901409706786858/" target="_blank" class="news-link">黄仁勋：芯片不是浓缩铀 卖中国咋了</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 21时09分</font></div><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E9%BB%84%E4%BB%81%E5%8B%8B%EF%BC%9A%E8%8A%AF%E7%89%87%E4%B8%8D%E6%98%AF%E6%B5%93%E7%BC%A9%E9%93%80+%E5%8D%96%E4%B8%AD%E5%9B%BD%E5%92%8B%E4%BA%86" target="_blank" class="news-link">黄仁勋：芯片不是浓缩铀 卖中国咋了</a> [22] <font color='grey'>- 21时09分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">手机</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/2027762134264673438" target="_blank" class="news-link">游戏主播芜湖大司马吐槽「每天需要狂送手机才能维持人气」，为什么现在游戏主播越来越难做了？</a> [14] <font color='grey'>- 21时09分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=%23%E9%99%AA91%E5%B2%81%E5%A4%A7%E7%88%B7%E7%8E%A9%E6%89%8B%E6%9C%BA%E6%9C%88%E5%85%A55000%23&amp;t=31&amp;band_rank=18&amp;Refer=top" target="_blank" class="news-link">陪91岁大爷玩手机月入5000</a> [18] <font color='grey'>- 21时09分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">华为 任正非 鸿蒙 HarmonyOS</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/2027778862646408771" target="_blank" class="news-link">如何看待 IDC 发布 2026 第一季度国内手机出货量数据，华为居首苹果次席，小米跌出前五？</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 21时09分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">科技</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2346360" target="_blank" class="news-link">【数据看盘】多家机构激烈博弈大族激光 量化联手游资抢筹长信科技</a> [11] <font color='grey'>- 21时09分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 10 条)</h3>
+        <h4>今日头条 (1 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7628901409706786858/" target="_blank" class="news-link">黄仁勋：芯片不是浓缩铀 卖中国咋了</a> <font color='red'><strong>[2]</strong></font></li></ul><h4>百度热搜 (3 条)</h4><ul><li><a href="https://www.baidu.com/s?wd=%E9%BB%84%E4%BB%81%E5%8B%8B%EF%BC%9A%E8%8A%AF%E7%89%87%E4%B8%8D%E6%98%AF%E6%B5%93%E7%BC%A9%E9%93%80+%E5%8D%96%E4%B8%AD%E5%9B%BD%E5%92%8B%E4%BA%86" target="_blank" class="news-link">黄仁勋：芯片不是浓缩铀 卖中国咋了</a> [22]</li><li><a href="https://www.baidu.com/s?wd=%E6%B3%95%E5%9B%BD%E9%A6%86%E8%97%8F%E4%B8%AD%E5%9B%BD%E6%96%87%E7%89%A9%E6%95%B0%E9%87%8F%E4%BB%85%E6%AC%A1%E4%BA%8E%E8%8B%B1%E5%9B%BD" target="_blank" class="news-link">法国馆藏中国文物数量仅次于英国</a> [26]</li><li><a href="https://www.baidu.com/s?wd=20%E4%BD%8D%E4%B8%AD%E5%9B%BD%E5%AD%A6%E8%80%85%E8%A2%AB%E7%BE%8E%E5%9B%BD%E6%8B%92%E7%BB%9D%E5%85%A5%E5%A2%83" target="_blank" class="news-link">20位中国学者被美国拒绝入境</a> [29]</li></ul><h4>华尔街见闻 (1 条)</h4><ul><li><a href="https://wallstreetcn.com/articles/3770123" target="_blank" class="news-link">“反手做空，趁现在还来得及”！高盛交易员警告美股涨过头，抛出6笔对冲交易</a> [10]</li></ul><h4>bilibili 热搜 (1 条)</h4><ul><li><a href="https://search.bilibili.com/all?keyword=%E6%9B%9D%E5%B8%B8%E6%98%A5%E8%97%A4%E5%90%8D%E6%A0%A1%E7%94%A8%E6%89%93%E5%AD%97%E6%9C%BA%E5%AF%B9%E6%8A%97AI" target="_blank" class="news-link">曝常春藤名校用打字机对抗AI</a> [8]</li></ul><h4>抖音 (2 条)</h4><ul><li><a href="https://www.douyin.com/hot/2468545" target="_blank" class="news-link">中国海洋采油技术有多牛</a> [10]</li><li><a href="https://www.douyin.com/hot/2468059" target="_blank" class="news-link">中国驻布基纳法索使馆发布提醒</a> [13]</li></ul><h4>知乎 (2 条)</h4><ul><li><a href="https://www.zhihu.com/question/2027778862646408771" target="_blank" class="news-link">如何看待 IDC 发布 2026 第一季度国内手机出货量数据，华为居首苹果次席，小米跌出前五？</a> <font color='red'><strong>[3]</strong></font></li><li><a href="https://www.zhihu.com/question/2026319512622966551" target="_blank" class="news-link">如何看待《崩坏星穹铁道》即将上线的银狼 LV.999 强度？</a> [20]</li></ul></div>
+    </body>
+    </html>
+    
