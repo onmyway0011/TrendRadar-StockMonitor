@@ -1,0 +1,178 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-04-30 13:42:36</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">国产 中国</td>
+                <td class="count">9</td>
+                <td class="percentage">3.53%</td>
+                <td class="titles"><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E8%BF%99%E6%89%8D%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84%E2%80%9C%E4%B8%AD%E5%9B%BD%E5%A5%A2%E4%BE%88%E5%93%81%E2%80%9D" target="_blank" class="news-link">这才是真正的“中国奢侈品”</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 13时42分</font></div><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E8%A2%81%E9%9A%86%E5%B9%B3%E5%BC%9F%E5%AD%90%E6%8A%8A%E9%9D%9E%E6%B4%B2%E5%A4%A7%E7%B1%B3%E5%B8%A6%E5%9B%9E%E4%B8%AD%E5%9B%BD" target="_blank" class="news-link">袁隆平弟子把非洲大米带回中国</a> [9] <font color='grey'>- 13时42分</font></div><br>[百度热搜] <a href="https://www.baidu.com/s?wd=23%E5%B2%81%E4%B8%AD%E5%9B%BD%E5%A5%B3%E5%AD%A9%E5%9C%A8%E6%BE%B3%E8%A2%AB%E4%B8%A4%E5%A5%B3%E5%AD%90%E6%89%93%E6%88%90%E9%87%8D%E4%BC%A4" target="_blank" class="news-link">23岁中国女孩在澳被两女子打成重伤</a> [17] <font color='grey'>- 13时42分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%9B%BD%E7%A9%BA%E9%97%B4%E7%AB%99%E5%BF%AB%E8%A6%81%E4%BD%8F%E4%B8%8D%E4%B8%8B%E4%BA%86%23&amp;t=31&amp;band_rank=18&amp;Refer=top" target="_blank" class="news-link">中国空间站快要住不下了</a> [18] <font color='grey'>- 13时42分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E5%BD%93%E7%BE%8E%E5%9B%BD%E5%A4%B1%E5%8E%BB%E6%B8%B8%E5%AE%A2+%E4%B8%AD%E5%9B%BD%E6%8E%A5%E4%BD%8F%E4%BA%86%E4%B8%96%E7%95%8C" target="_blank" class="news-link">当美国失去游客 中国接住了世界</a> [21] <font color='grey'>- 13时42分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7634100325905891379/" target="_blank" class="news-link">比利时副首相：恭喜中国 叹为观止</a> [25] <font color='grey'>- 13时42分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28353864&amp;amp;topic_name=%E4%B8%AD%E5%9B%BD%E5%A4%A7%E8%92%9C%E8%A2%AB%E7%BE%8E%E5%88%97%E4%B8%BA%E5%A8%81%E8%83%81" target="_blank" class="news-link">中国大蒜被美列为威胁</a> [25] <font color='grey'>- 13时42分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E5%8C%88%E7%89%99%E5%88%A9%E5%8F%98%E5%B1%80%E4%BC%9A%E5%BD%B1%E5%93%8D%E4%B8%AD%E5%9B%BD%E6%8A%95%E8%B5%84%E5%90%97" target="_blank" class="news-link">匈牙利变局会影响中国投资吗</a> [30] <font color='grey'>- 13时42分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28353842&amp;amp;topic_name=%E6%A0%B9%E5%9F%BA%E5%A4%AA%E8%84%86%21%E5%9B%BD%E4%BA%A7%E6%8A%B9%E8%8C%B6%E5%86%B2%E5%87%BB%E6%97%A5%E6%9C%AC" target="_blank" class="news-link">根基太脆!国产抹茶冲击日本</a> [30] <font color='grey'>- 13时42分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">7</td>
+                <td class="percentage">2.75%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3771214" target="_blank" class="news-link">美联储34年最大分歧叠加油价飙升，美债重挫，美股横盘，美元走强，黄金三连跌</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 13时42分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3771302" target="_blank" class="news-link">鲍威尔“告别会”现34年最大分歧，美联储再次按兵不动，但四票委反对决议声明</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 13时42分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2360392" target="_blank" class="news-link">告别“国债逆回购”！今日正式更名“通用回购逆回购”，一文看懂</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 13时42分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3771306" target="_blank" class="news-link">鲍威尔“最后一舞”：将留任美联储理事、不当影子主席，四票反对反映委员会重心趋于中性（附全文）</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 13时42分</font><br><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8sk3JJHRdyH" target="_blank" class="news-link">鲍威尔宣布留任美联储理事，特朗普嘲讽：他找不到工作</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 13时42分</font></div><br>[抖音] <a href="https://www.douyin.com/hot/2483941" target="_blank" class="news-link">美联储宣布维持利率不变</a> [8] <font color='grey'>- 13时42分</font><br><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E7%BE%8E%E8%81%94%E5%82%A8%E7%BB%B4%E6%8C%81%E5%88%A9%E7%8E%87%E4%B8%8D%E5%8F%98" target="_blank" class="news-link">美联储维持利率不变</a> [27] <font color='grey'>- 13时42分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2360312" target="_blank" class="news-link">AI驱动多项业务增长！Alphabet创四年最强季度营收增速，云业务飙升63%</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 13时42分</font><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2360653" target="_blank" class="news-link">美股科技“四巨头”同日放榜 “AI烧钱”大战愈演愈烈</a> [8] <font color='grey'>- 13时42分</font></div><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28353890&amp;amp;topic_name=AI%E9%AD%94%E6%94%B9%E9%BB%91%E8%A2%8D%2C%E6%98%9F%E5%85%89%E5%A7%90%E8%A2%AB%E7%8E%A9%E5%9D%8F" target="_blank" class="news-link">AI魔改黑袍,星光姐被玩坏</a> [9] <font color='grey'>- 13时42分</font><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2360333" target="_blank" class="news-link">美股燃料电池龙头暴涨超27% SOFC或成AI数据中心供电首选</a> [13] <font color='grey'>- 13时42分</font></div><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_33079055" target="_blank" class="news-link">不再当好好先生！特朗普发AI持枪图威胁伊朗</a> [14] <font color='grey'>- 13时42分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">美国</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles"><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8sk3fWMxCT9" target="_blank" class="news-link">世卫组织：美国还欠着会费，也看不出来想补缴</a> [7] <font color='grey'>- 13时42分</font></div><br>[知乎] <a href="https://www.zhihu.com/question/2032758360743883157" target="_blank" class="news-link">美媒称特朗普准备长期封锁伊朗，旨在迫使伊朗做出「核让步」，如何看待美国这一举动？目前美伊局势如何？</a> [15] <font color='grey'>- 13时42分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7633585482072604698/" target="_blank" class="news-link">英王嘲讽美国：没英国你们在说法语</a> [16] <font color='grey'>- 13时42分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">微软 Microsoft</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles"><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3771319" target="_blank" class="news-link">“科技四巨头”罕见同日财报：谷歌大涨Meta重挫，谷歌、微软和亚马逊云增长迅猛，谷歌和Meta上调资本开支</a> [6] <font color='grey'>- 13时42分</font></div><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3771312" target="_blank" class="news-link">微软上季营收超预期增长，Azure云收入增40%，资本支出意外放缓 | 财报见闻</a> [8] <font color='grey'>- 13时42分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_33078828" target="_blank" class="news-link">来论丨印度380亿罚单砸向苹果：揭示中印营商环境的真实差距</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 13时42分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=%E8%8B%B9%E6%9E%9C%E5%8D%B0%E5%BA%A6%E7%94%9F%E4%BA%A7%E7%BA%BF%E9%99%B7%E5%85%A5%E5%81%9C%E6%91%86&amp;t=31&amp;band_rank=16&amp;Refer=top" target="_blank" class="news-link">苹果印度生产线陷入停摆</a> [16] <font color='grey'>- 13时42分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word"># 美国关税重点关注 关税 贸易战 贸易 进口 出口 关税壁垒 贸易协定 贸易谈判 反倾销 制裁 禁运 贸易逆差 贸易顺差 WTO 世贸组织</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles"><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8sk5cTawAIc" target="_blank" class="news-link">日本拟向菲律宾出口护卫舰</a> [11] <font color='grey'>- 13时42分</font></div><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7634117821189852713/" target="_blank" class="news-link">为何俄石油出口遇冷</a> [23] <font color='grey'>- 13时42分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">DeepSeek 梁文锋</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E4%BB%8E%E7%A1%85%E8%B0%B7%E8%A7%86%E8%A7%92%E7%9C%8BDeepSeekV4" target="_blank" class="news-link">从硅谷视角看DeepSeekV4</a> [18] <font color='grey'>- 13时42分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">宇树 王兴兴</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28353878&amp;amp;topic_name=%E5%81%B7%E5%9B%BD%E5%86%8D%E7%8E%B0%2C%E5%AE%87%E6%A0%91%E6%9C%BA%E5%99%A8%E7%8B%97%E6%88%90%E6%97%A5%E6%9C%AC%E8%B4%A7" target="_blank" class="news-link">偷国再现,宇树机器狗成日本货</a> [12] <font color='grey'>- 13时42分</font></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">小米 雷军 xiaomi</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E7%8E%8B%E8%85%BE%E7%A7%B0%E5%8A%A0%E4%BB%93%E4%BA%86%E5%B0%8F%E7%B1%B3%E8%82%A1%E7%A5%A8%23&amp;t=31&amp;band_rank=7&amp;Refer=top" target="_blank" class="news-link">王腾称加仓了小米股票</a> [7] <font color='grey'>- 13时42分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td class="word">马斯克 特斯拉</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E9%A9%AC%E6%96%AF%E5%85%8B%E5%A4%A9%E4%BB%B7%E8%96%AA%E9%85%AC%E4%B8%8E%E7%81%AB%E6%98%9F%E7%A7%BB%E6%B0%91%E6%8C%82%E9%92%A9" target="_blank" class="news-link">马斯克天价薪酬与火星移民挂钩</a> [15] <font color='grey'>- 13时42分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>12</td>
+                <td class="word">谷歌 google gemini deepmind</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3771311" target="_blank" class="news-link">谷歌母公司Q1营收超预期增长22%，AI驱动多板块业务增长，云业务大增63%</a> [9] <font color='grey'>- 13时42分</font></td>
+            </tr>
+        
+            <tr>
+                <td>13</td>
+                <td class="word">科技</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2360375" target="_blank" class="news-link">4月30日投资避雷针：闻泰科技、华夏幸福等20余股将被实施ST</a> [7] <font color='grey'>- 13时42分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 12 条)</h3>
+        <h4>今日头条 (1 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7634117821189852713/" target="_blank" class="news-link">为何俄石油出口遇冷</a> [23]</li></ul><h4>百度热搜 (2 条)</h4><ul><li><a href="https://www.baidu.com/s?wd=%E8%BF%99%E6%89%8D%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84%E2%80%9C%E4%B8%AD%E5%9B%BD%E5%A5%A2%E4%BE%88%E5%93%81%E2%80%9D" target="_blank" class="news-link">这才是真正的“中国奢侈品”</a> <font color='red'><strong>[1]</strong></font></li><li><a href="https://www.baidu.com/s?wd=%E8%A2%81%E9%9A%86%E5%B9%B3%E5%BC%9F%E5%AD%90%E6%8A%8A%E9%9D%9E%E6%B4%B2%E5%A4%A7%E7%B1%B3%E5%B8%A6%E5%9B%9E%E4%B8%AD%E5%9B%BD" target="_blank" class="news-link">袁隆平弟子把非洲大米带回中国</a> [9]</li></ul><h4>华尔街见闻 (1 条)</h4><ul><li><a href="https://wallstreetcn.com/articles/3771319" target="_blank" class="news-link">“科技四巨头”罕见同日财报：谷歌大涨Meta重挫，谷歌、微软和亚马逊云增长迅猛，谷歌和Meta上调资本开支</a> [6]</li></ul><h4>bilibili 热搜 (2 条)</h4><ul><li><a href="https://search.bilibili.com/all?keyword=%E9%A9%AC%E6%96%AF%E5%85%8B%E5%A4%A9%E4%BB%B7%E8%96%AA%E9%85%AC%E4%B8%8E%E7%81%AB%E6%98%9F%E7%A7%BB%E6%B0%91%E6%8C%82%E9%92%A9" target="_blank" class="news-link">马斯克天价薪酬与火星移民挂钩</a> [15]</li><li><a href="https://search.bilibili.com/all?keyword=%E7%BE%8E%E8%81%94%E5%82%A8%E7%BB%B4%E6%8C%81%E5%88%A9%E7%8E%87%E4%B8%8D%E5%8F%98" target="_blank" class="news-link">美联储维持利率不变</a> [27]</li></ul><h4>财联社热门 (2 条)</h4><ul><li><a href="https://www.cls.cn/detail/2360653" target="_blank" class="news-link">美股科技“四巨头”同日放榜 “AI烧钱”大战愈演愈烈</a> [8]</li><li><a href="https://www.cls.cn/detail/2360333" target="_blank" class="news-link">美股燃料电池龙头暴涨超27% SOFC或成AI数据中心供电首选</a> [13]</li></ul><h4>凤凰网 (3 条)</h4><ul><li><a href="https://news.ifeng.com/c/8sk3JJHRdyH" target="_blank" class="news-link">鲍威尔宣布留任美联储理事，特朗普嘲讽：他找不到工作</a> <font color='red'><strong>[5]</strong></font></li><li><a href="https://news.ifeng.com/c/8sk3fWMxCT9" target="_blank" class="news-link">世卫组织：美国还欠着会费，也看不出来想补缴</a> [7]</li><li><a href="https://news.ifeng.com/c/8sk5cTawAIc" target="_blank" class="news-link">日本拟向菲律宾出口护卫舰</a> [11]</li></ul><h4>微博 (1 条)</h4><ul><li><a href="https://s.weibo.com/weibo?q=%23%E7%8E%8B%E8%85%BE%E7%A7%B0%E5%8A%A0%E4%BB%93%E4%BA%86%E5%B0%8F%E7%B1%B3%E8%82%A1%E7%A5%A8%23&amp;t=31&amp;band_rank=7&amp;Refer=top" target="_blank" class="news-link">王腾称加仓了小米股票</a> [7]</li></ul></div>
+    </body>
+    </html>
+    
