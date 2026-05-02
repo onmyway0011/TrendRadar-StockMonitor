@@ -1,0 +1,162 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-05-03 07:34:45</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">美国</td>
+                <td class="count">6</td>
+                <td class="percentage">2.35%</td>
+                <td class="titles">[凤凰网] <a href="https://news.ifeng.com/c/8snfLKxL2Qm" target="_blank" class="news-link">五角大楼上演“抓马内斗”，昔日“越南难民”今成美国海军掌门人</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 07时34分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8so6eb1hVjp" target="_blank" class="news-link">新战线突然开辟，特朗普怒率美国“两线作战”</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 07时34分</font><br><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8soLPWxz4Pu" target="_blank" class="news-link">伊朗副外长：球在美国一边，做好两手准备</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 07时34分</font></div><br>[知乎] <a href="https://www.zhihu.com/question/2033868695617933924" target="_blank" class="news-link">特朗普签署新制裁令，称「几乎能立即」接管古巴，当前美古双边谈判情况如何，古巴能顶住美国的经济封锁吗？</a> [6] <font color='grey'>- 07时34分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7634486645609709594/" target="_blank" class="news-link">美国人正在逃离美国</a> [16] <font color='grey'>- 07时34分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7634799324623306803/" target="_blank" class="news-link">中方代表在联合国谈美国不交会费</a> [21] <font color='grey'>- 07时34分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2362027" target="_blank" class="news-link">国产AI芯片龙头集体迎来业绩兑现 销售规模全线高增</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 07时34分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_33091903" target="_blank" class="news-link">专访｜赵又廷：别让AI取代我就行</a> [9] <font color='grey'>- 07时34分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28353950&amp;amp;topic_name=%E8%B5%9B%E9%81%93%E6%8C%A4%E7%88%86%2CAI%E7%9F%AD%E5%89%A7%E6%94%B6%E7%9B%8A%E4%B8%8D%E5%A4%9F%E7%94%B5%E8%B4%B9" target="_blank" class="news-link">赛道挤爆,AI短剧收益不够电费</a> [9] <font color='grey'>- 07时34分</font><br><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3771481" target="_blank" class="news-link">AI CPU推高DDR5内存需求，存储芯片“超级周期”或延续至2027年</a> [10] <font color='grey'>- 07时34分</font></div><br>[知乎] <a href="https://www.zhihu.com/question/2031784120653697717" target="_blank" class="news-link">AI 时代已经来了，为什么很多人明知道它重要，却迟迟不敢真正开始？</a> [17] <font color='grey'>- 07时34分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">马斯克 特斯拉</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2361824" target="_blank" class="news-link">马斯克去年总薪酬：1583.6亿美元？实际到手：0美元！</a> [7] <font color='grey'>- 07时34分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8snnwdxDs8v" target="_blank" class="news-link">“我真是个傻瓜”，马斯克大战OpenAI索赔1500亿美元</a> [11] <font color='grey'>- 07时34分</font><br>[知乎] <a href="https://www.zhihu.com/question/2033597739573965448" target="_blank" class="news-link">马斯克 2025 年总薪酬 1583.6 亿美元，全部为股票奖励，因考核没过，实际薪酬为零，如何看待此事？</a> [13] <font color='grey'>- 07时34分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E9%A9%AC%E6%96%AF%E5%85%8B%E5%8E%BB%E5%B9%B4%E5%9C%A8%E7%89%B9%E6%96%AF%E6%8B%89%E6%8C%A3%E4%BA%860%E7%BE%8E%E5%85%83" target="_blank" class="news-link">马斯克去年在特斯拉挣了0美元</a> [22] <font color='grey'>- 07时34分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">国产 中国</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2362134" target="_blank" class="news-link">商务部发布禁令，阻断美国对5家中国企业实施涉伊朗石油制裁措施</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 07时34分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7635280367229865526/" target="_blank" class="news-link">中国新155毫米舰炮出海试射意味什么</a> [10] <font color='grey'>- 07时34分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8sn5FwWdXRA" target="_blank" class="news-link">林毅夫：中国人均GDP达到美国一半时，美国就会接受中国崛起</a> [10] <font color='grey'>- 07时34分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_33092138" target="_blank" class="news-link">纪念丨汉学家宇文所安提供了理解中国文学的新范式</a> [20] <font color='grey'>- 07时34分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3771482" target="_blank" class="news-link">新美联储通讯社：从“降不降息”到“加息条件”，美联储内部讨论重心转向</a> [7] <font color='grey'>- 07时34分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3771483" target="_blank" class="news-link">美股股指创新高，下跌个股却远超上涨？高盛：动量拥挤，逆转将引发剧烈回撤</a> [9] <font color='grey'>- 07时34分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2362019" target="_blank" class="news-link">美股收盘：三大内存股收创纪录 标普纳指连两日刷新高</a> [12] <font color='grey'>- 07时34分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[百度热搜] <a href="https://www.baidu.com/s?wd=CEO%E7%A7%B0%E8%BF%BD%E8%A7%85%E6%89%8B%E6%9C%BA%E8%A6%81%E4%B8%8E%E8%8B%B9%E6%9E%9C%E4%B8%89%E6%98%9F%E4%B8%89%E5%88%86%E5%A4%A9%E4%B8%8B" target="_blank" class="news-link">CEO称追觅手机要与苹果三星三分天下</a> [15] <font color='grey'>- 07时34分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7634483314263212075/" target="_blank" class="news-link">CEO称追觅手机要与苹果三星三分天下</a> [30] <font color='grey'>- 07时34分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">手机</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28353949&amp;amp;topic_name=%E6%89%8B%E6%AC%A0%E6%83%B9%E7%A5%B8%2C%E6%8D%A1%E6%89%8B%E6%9C%BA%E4%B8%A2%E5%BC%83%E5%80%92%E8%B5%946%E5%8D%83" target="_blank" class="news-link">手欠惹祸,捡手机丢弃倒赔6千</a> [10] <font color='grey'>- 07时34分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_33092359" target="_blank" class="news-link">媒体：泉州一高校因学生走路看手机劝退学生还辞退4名教师？各方回应</a> [13] <font color='grey'>- 07时34分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">胖东来 于东来</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/2033884291512229961" target="_blank" class="news-link">男子探店质疑胖东来 249 元毛巾暴利，被起诉名誉侵权，胖东来为何高调起诉？如何区分合理批评与诽谤？</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 07时34分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">DeepSeek 梁文锋</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/2032857350361626424" target="_blank" class="news-link">如何看待 deepseek v4 pro2.5 折特价延长到 5 月 31 日？</a> [20] <font color='grey'>- 07时34分</font></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">黄仁勋 英伟达 NVIDIA</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3771479" target="_blank" class="news-link">SemiAnalysis：下游大模型公司已经爆赚，英伟达、台积电还能赚更多</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 07时34分</font></td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td class="word">月球 登月 火星 宇宙 飞船</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[抖音] <a href="https://www.douyin.com/hot/2486300" target="_blank" class="news-link">罗峰配吹梦到西洲宇宙感绝了</a> [18] <font color='grey'>- 07时34分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 2 条)</h3>
+        <h4>华尔街见闻 (1 条)</h4><ul><li><a href="https://wallstreetcn.com/articles/3771481" target="_blank" class="news-link">AI CPU推高DDR5内存需求，存储芯片“超级周期”或延续至2027年</a> [10]</li></ul><h4>凤凰网 (1 条)</h4><ul><li><a href="https://news.ifeng.com/c/8soLPWxz4Pu" target="_blank" class="news-link">伊朗副外长：球在美国一边，做好两手准备</a> <font color='red'><strong>[5]</strong></font></li></ul></div>
+    </body>
+    </html>
+    
