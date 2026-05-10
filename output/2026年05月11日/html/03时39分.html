@@ -1,0 +1,170 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-05-11 03:39:17</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">国产 中国</td>
+                <td class="count">10</td>
+                <td class="percentage">3.92%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28354154&amp;amp;topic_name=%E5%8F%88%E5%81%B7%3F%E4%B8%AD%E5%9B%BD%E5%AD%A9%E5%AD%90%E5%96%84%E4%B8%BE%E8%A2%AB%E6%97%A5%E6%9C%AC%E8%AE%A4%E9%A2%86" target="_blank" class="news-link">又偷?中国孩子善举被日本认领</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 03时39分</font><br>[抖音] <a href="https://www.douyin.com/hot/2494408" target="_blank" class="news-link">世乒赛男团决赛：中国vs日本</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 03时39分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%9B%BD%E6%BD%9C%E6%B0%B4%E5%99%A8%E5%8F%91%E7%8E%B0%E6%B7%B1%E6%B5%B7%E7%94%9F%E5%91%BD%E7%BB%BF%E6%B4%B2%23&amp;t=31&amp;band_rank=3&amp;Refer=top" target="_blank" class="news-link">中国潜水器发现深海生命绿洲</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 03时39分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E2%80%9C%E4%B8%AD%E5%9B%BD%E5%8F%91%E5%87%BA%E8%AD%A6%E5%91%8A+%E5%BC%95%E8%B5%B7%E5%A4%9A%E5%9B%BD%E5%85%B1%E9%B8%A3%E2%80%9D" target="_blank" class="news-link">“中国发出警告 引起多国共鸣”</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 03时39分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_33152120" target="_blank" class="news-link">孙颖莎独得2分！中国女团逆转日本，世乒赛团体赛七连冠</a> [6] <font color='grey'>- 03时39分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=%23%E4%B8%AD%E5%9B%BD%E7%94%B7%E5%9B%A2vs%E6%97%A5%E6%9C%AC%23&amp;t=31&amp;band_rank=13&amp;Refer=top" target="_blank" class="news-link">中国男团vs日本</a> [13] <font color='grey'>- 03时39分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28354130&amp;amp;topic_name=%E4%B8%AD%E5%9B%BD%E6%B5%B7%E5%86%9B%E6%88%96%E5%B0%86%E8%BF%8E%E6%9D%A5%E6%A0%B8%E8%88%AA%E6%AF%8D" target="_blank" class="news-link">中国海军或将迎来核航母</a> [15] <font color='grey'>- 03时39分</font><br>[微博] <a href="https://s.weibo.com/weibo?q=%E5%AD%99%E9%A2%96%E8%8E%8E%E6%96%B0%E4%B8%96%E7%BA%AA%E4%B8%AD%E5%9B%BD%E5%A5%B3%E4%B9%92%E5%8D%95%E5%B1%8A%E6%9C%80%E4%BD%B3%E6%88%98%E7%BB%A9&amp;t=31&amp;band_rank=15&amp;Refer=top" target="_blank" class="news-link">孙颖莎新世纪中国女乒单届最佳战绩</a> [15] <font color='grey'>- 03时39分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E7%9C%9F%E6%9C%89%E4%B8%AA%E5%9C%B0%E6%96%B9%E5%8F%AB%E2%80%9C%E5%A6%88%E5%A6%88%E2%80%9D" target="_blank" class="news-link">中国真有个地方叫“妈妈”</a> [24] <font color='grey'>- 03时39分</font><br><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%E6%B0%B8%E8%BF%9C%E5%8F%AF%E4%BB%A5%E7%9B%B8%E4%BF%A1%E4%B8%AD%E5%9B%BD%E4%B9%92%E4%B9%93&amp;t=31&amp;band_rank=24&amp;Refer=top" target="_blank" class="news-link">永远可以相信中国乒乓</a> [24] <font color='grey'>- 03时39分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">DeepSeek 梁文锋</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/2036432998422115875" target="_blank" class="news-link">DeepSeek 大范围开放识图模式，你能用了吗？体验感如何？</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 03时39分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2367192" target="_blank" class="news-link">周末要闻汇总：DeepSeek据悉拟募资最高500亿元人民币；证监会查处2起财务造假案件</a> [13] <font color='grey'>- 03时39分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28354128&amp;amp;topic_name=DeepSeek%E7%9D%81%E7%9C%BC%2C%E5%BC%80%E6%94%BE%E8%AF%86%E5%9B%BE%E6%A8%A1%E5%BC%8F" target="_blank" class="news-link">DeepSeek睁眼,开放识图模式</a> [24] <font color='grey'>- 03时39分</font><br>[今日头条] <a href="https://www.toutiao.com/trending/7638234526786784804/" target="_blank" class="news-link">Kimi与DeepSeek到底谁更值钱</a> [30] <font color='grey'>- 03时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3771913" target="_blank" class="news-link">美联储高官：如果AI成了，那会加息；如果AI败了，那会滞胀</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 03时39分</font><br>[抖音] <a href="https://www.douyin.com/hot/2494006" target="_blank" class="news-link">妈妈的AI在岁月里具象</a> [7] <font color='grey'>- 03时39分</font><br>[bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=AI%E6%97%B6%E4%BB%A3%E5%A6%82%E4%BD%95%E8%AF%84%E4%BB%B7%E5%90%84%E4%B8%93%E4%B8%9A" target="_blank" class="news-link">AI时代如何评价各专业</a> [9] <font color='grey'>- 03时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">字节 张一鸣</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2367077" target="_blank" class="news-link">【早报】字节被爆今年AI支出将超2000亿；我国第四代自主超导量子计算机上线</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 03时39分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2367107" target="_blank" class="news-link">字节再加码！全球AI资本开支持续上修 算力步入全链通胀</a> [9] <font color='grey'>- 03时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">美国</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_33141230" target="_blank" class="news-link">“虎妈”时代结束？美国Beta型妈妈正在重新定义成功</a> [9] <font color='grey'>- 03时39分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28354123&amp;amp;topic_name=%E8%BD%AC%E7%A7%BB%E6%B3%A8%E6%84%8F%3F%E7%BE%8E%E5%9B%BD%E5%85%AC%E5%BC%80UFO%E6%96%87%E4%BB%B6" target="_blank" class="news-link">转移注意?美国公开UFO文件</a> [30] <font color='grey'>- 03时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">芯片 光刻机</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3771924" target="_blank" class="news-link">芯片股狂潮，还在加速</a> [8] <font color='grey'>- 03时39分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2367249" target="_blank" class="news-link">高溢价之忧！上交所因何重点监控全球芯片LOF，还有哪些高溢价品种要提防风险？</a> [12] <font color='grey'>- 03时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">科技</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2366912" target="_blank" class="news-link">谁是这波增量资金主力？融资净买入创年内新高，加杠杆押科技</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 03时39分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2366890" target="_blank" class="news-link">美科技股“火爆行情”很快结束？资深分析师列四大信号力证！</a> [7] <font color='grey'>- 03时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">比亚迪 王传福</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/2035827458860131259" target="_blank" class="news-link">比亚迪高管回应闪充温度高伤电池，具体说了什么，打消疑虑了吗？</a> [9] <font color='grey'>- 03时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">米哈游 原神 星穹铁道</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28354162&amp;amp;topic_name=%E5%8E%9F%E7%A5%9E%E7%A6%8F%E5%88%A9%E5%B7%AE%2C%E5%A4%96%E6%9C%8D%E7%8E%A9%E5%AE%B6%E5%B7%AE%E8%AF%84%E8%BD%B0%E7%82%B8" target="_blank" class="news-link">原神福利差,外服玩家差评轰炸</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 03时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/2035848170890948934" target="_blank" class="news-link">苹果被曝支付巨额溢价以确保 A18 Pro 芯片的供应，反映了哪些问题？成本会转嫁给用户吗？</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 03时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td class="word">机器人</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28354142&amp;amp;topic_name=%E9%9F%A9%E5%9B%BD%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%87%BA%E5%AE%B6%2C%E7%9A%88%E4%BE%9D%E4%BD%9B%E9%97%A8%E5%8F%97%E6%88%92" target="_blank" class="news-link">韩国机器人出家,皈依佛门受戒</a> [19] <font color='grey'>- 03时39分</font></td>
+            </tr>
+        
+            <tr>
+                <td>12</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3771916" target="_blank" class="news-link">远超预期！刚刚过去的财报季，美股“强得惊人”</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 03时39分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 1 条)</h3>
+        <h4>微博 (1 条)</h4><ul><li><a href="https://s.weibo.com/weibo?q=%E6%B0%B8%E8%BF%9C%E5%8F%AF%E4%BB%A5%E7%9B%B8%E4%BF%A1%E4%B8%AD%E5%9B%BD%E4%B9%92%E4%B9%93&amp;t=31&amp;band_rank=24&amp;Refer=top" target="_blank" class="news-link">永远可以相信中国乒乓</a> [24]</li></ul></div>
+    </body>
+    </html>
+    
