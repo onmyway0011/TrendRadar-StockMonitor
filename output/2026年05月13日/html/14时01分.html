@@ -1,0 +1,178 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-05-13 14:01:06</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">5</td>
+                <td class="percentage">1.96%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3772111" target="_blank" class="news-link">4月CPI意味着什么？“新美联储通讯社”：降息不再是2026年故事，沃什麻烦了</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 14时01分</font><br><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2369809" target="_blank" class="news-link">“加息噩梦”近了？美联储“昔日鸽派”：通胀走向错误，与关税、石油无关！</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 14时01分</font></div><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3772105" target="_blank" class="news-link">美股半导体指数跌超4%，高通重挫12%，英特尔大跌9.1%</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 14时01分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2369561" target="_blank" class="news-link">美参议院确认凯文·沃什出任美联储理事 为主席任命铺平道路</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 14时01分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2369615" target="_blank" class="news-link">印度政府上调黄金和白银的进口关税 美参议院确认沃什出任美联储理事 | 环球市场</a> [10] <font color='grey'>- 14时01分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">宇树 王兴兴</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_33162316" target="_blank" class="news-link">宇树发布首款载人变形机甲：一拳能锤倒砖墙，售价390万元起</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 14时01分</font><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E9%A9%AC%E6%96%AF%E5%85%8B%E7%82%B9%E8%B5%9E%E5%AE%87%E6%A0%91%E8%BD%BD%E4%BA%BA%E6%9C%BA%E7%94%B2%EF%BC%9A%E5%BE%88%E9%85%B7" target="_blank" class="news-link">马斯克点赞宇树载人机甲：很酷</a> [8] <font color='grey'>- 14时01分</font></div><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28354208&amp;amp;topic_name=%E9%92%A2%E9%93%81%E4%BE%A0%E6%88%90%E7%9C%9F%21%E5%AE%87%E6%A0%91%E5%8F%91%E5%B8%83%E8%BD%BD%E4%BA%BA%E6%9C%BA%E7%94%B2" target="_blank" class="news-link">钢铁侠成真!宇树发布载人机甲</a> [10] <font color='grey'>- 14时01分</font><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7638867621416386614/" target="_blank" class="news-link">马斯克点赞宇树载人机甲</a> [14] <font color='grey'>- 14时01分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">黄仁勋 英伟达 NVIDIA</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles"><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2369669" target="_blank" class="news-link">投资者在担心什么？美股芯片板块集体回调 市场静待英伟达财报定方向</a> [9] <font color='grey'>- 14时01分</font></div><br><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E9%BB%84%E4%BB%81%E5%8B%8B%E5%B9%B4%E8%96%AA%E7%BA%A62.47%E4%BA%BF%E5%85%83%23&amp;t=31&amp;band_rank=9&amp;Refer=top" target="_blank" class="news-link">黄仁勋年薪约2.47亿元</a> [9] <font color='grey'>- 14时01分</font></div><br><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7639232661902446106/" target="_blank" class="news-link">黄仁勋最后一刻登上特朗普访华专机</a> [11] <font color='grey'>- 14时01分</font></div><br><div class='new-title'>🆕 [抖音] <a href="https://www.douyin.com/hot/2497188" target="_blank" class="news-link">外媒：黄仁勋陪同特朗普访华</a> [13] <font color='grey'>- 14时01分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles"><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2369925" target="_blank" class="news-link">功率半导体密集涨价！AI数据中心成最大推手 业内预计供需紧张短期难解</a> [6] <font color='grey'>- 14时01分</font></div><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3772081" target="_blank" class="news-link">原油、AI芯片、房租“三连击”，今晚美国CPI恐“热辣滚烫”</a> [7] <font color='grey'>- 14时01分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3772082" target="_blank" class="news-link">从海力士奖金、三星罢工到全民红利，飙升的韩股吓懵了，这是AI时代的预演吗？</a> [8] <font color='grey'>- 14时01分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3772076" target="_blank" class="news-link">韩国AI红利：闪崩之后，悬念才刚开始</a> [9] <font color='grey'>- 14时01分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">美国</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3772040" target="_blank" class="news-link">美国通胀升温、美伊僵局持续，美股承压，芯片股拖累纳指，美油盘中涨近5%</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 14时01分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3772095" target="_blank" class="news-link">通胀烫得发红！美国4月CPI同比3.8%创近三年新高，核心CPI涨幅扩大至2.8%</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 14时01分</font><br><div class='new-title'>🆕 [凤凰网] <a href="https://news.ifeng.com/c/8t5mv472h4W" target="_blank" class="news-link">美国海军将建造史上最贵军舰：核动力“特朗普”级战列舰</a> [9] <font color='grey'>- 14时01分</font></div><br>[百度热搜] <a href="https://www.baidu.com/s?wd=16%E4%BD%8D%E7%BE%8E%E5%9B%BD%E5%95%86%E7%95%8C%E9%A2%86%E8%A2%96%E9%9A%8F%E7%89%B9%E6%9C%97%E6%99%AE%E8%AE%BF%E5%8D%8E" target="_blank" class="news-link">16位美国商界领袖随特朗普访华</a> [17] <font color='grey'>- 14时01分</font></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word">国产 中国</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_33162014" target="_blank" class="news-link">下药？软禁？中国拳击手的非洲惊魂</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 14时01分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8t5LRtnr9fz" target="_blank" class="news-link">曾留学中国的越南总理，有了新身份</a> [6] <font color='grey'>- 14时01分</font><br><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3772083" target="_blank" class="news-link">泡泡玛特Q1收入预增75％至80％，欧美市场增长放缓，中国线上渠道预增150% | 财报见闻</a> [10] <font color='grey'>- 14时01分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">芯片 光刻机</td>
+                <td class="count">3</td>
+                <td class="percentage">1.18%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2369590" target="_blank" class="news-link">美股收盘： 通胀升温及伊朗局势施压市场 芯片股普遍回调 三大股指涨跌不一</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 14时01分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2369664" target="_blank" class="news-link">5月13日投资避雷针：美股光通信、芯片板块回调 英特尔、闪迪跌超6%</a> [7] <font color='grey'>- 14时01分</font><br>[知乎] <a href="https://www.zhihu.com/question/2037578815958947124" target="_blank" class="news-link">深圳一对夫妻靠囤芯片，5 个月身价暴涨 320 亿元，存储涨价周期能维持多久？普通人能参与进来吗？</a> [17] <font color='grey'>- 14时01分</font></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">DeepSeek 梁文锋</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/2036544679387341657" target="_blank" class="news-link">DeepSeek-TUI 霸榜 GitHub，小白不到 10 元开发应用，将带来哪些影响？</a> [7] <font color='grey'>- 14时01分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">比亚迪 王传福</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [今日头条] <a href="https://www.toutiao.com/trending/7638809850164461606/" target="_blank" class="news-link">比亚迪取得充放电电路相关专利</a> [29] <font color='grey'>- 14时01分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">小米 雷军 xiaomi</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[微博] <a href="https://s.weibo.com/weibo?q=%23%E5%B0%8F%E7%B1%B317Max%E6%9D%A5%E4%BA%86%23&amp;t=31&amp;band_rank=18&amp;Refer=top" target="_blank" class="news-link">小米17Max来了</a> [18] <font color='grey'>- 14时01分</font></td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td class="word">马斯克 特斯拉</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2369623" target="_blank" class="news-link">【早报】马斯克、库克等将随特朗普访华；国内航线燃油附加费将上调</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 14时01分</font></td>
+            </tr>
+        
+            <tr>
+                <td>12</td>
+                <td class="word">谷歌 google gemini deepmind</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[财联社热门] <a href="https://www.cls.cn/detail/2369554" target="_blank" class="news-link">科技巨头竞逐太空算力新赛道！谷歌据悉接洽SpaceX发射轨道数据中心</a> [8] <font color='grey'>- 14时01分</font></td>
+            </tr>
+        
+            <tr>
+                <td>13</td>
+                <td class="word">月球 登月 火星 宇宙 飞船</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [bilibili 热搜] <a href="https://search.bilibili.com/all?keyword=%E6%8B%86%E8%A7%A3%E5%A4%A9%E8%88%9F%E8%B4%A7%E8%BF%90%E9%A3%9E%E8%88%B9%E6%BC%94%E5%8F%98%E5%8F%B2" target="_blank" class="news-link">拆解天舟货运飞船演变史</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 14时01分</font></div></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 12 条)</h3>
+        <h4>今日头条 (3 条)</h4><ul><li><a href="https://www.toutiao.com/trending/7639232661902446106/" target="_blank" class="news-link">黄仁勋最后一刻登上特朗普访华专机</a> [11]</li><li><a href="https://www.toutiao.com/trending/7638867621416386614/" target="_blank" class="news-link">马斯克点赞宇树载人机甲</a> [14]</li><li><a href="https://www.toutiao.com/trending/7638809850164461606/" target="_blank" class="news-link">比亚迪取得充放电电路相关专利</a> [29]</li></ul><h4>百度热搜 (1 条)</h4><ul><li><a href="https://www.baidu.com/s?wd=%E9%A9%AC%E6%96%AF%E5%85%8B%E7%82%B9%E8%B5%9E%E5%AE%87%E6%A0%91%E8%BD%BD%E4%BA%BA%E6%9C%BA%E7%94%B2%EF%BC%9A%E5%BE%88%E9%85%B7" target="_blank" class="news-link">马斯克点赞宇树载人机甲：很酷</a> [8]</li></ul><h4>华尔街见闻 (1 条)</h4><ul><li><a href="https://wallstreetcn.com/articles/3772083" target="_blank" class="news-link">泡泡玛特Q1收入预增75％至80％，欧美市场增长放缓，中国线上渠道预增150% | 财报见闻</a> [10]</li></ul><h4>bilibili 热搜 (1 条)</h4><ul><li><a href="https://search.bilibili.com/all?keyword=%E6%8B%86%E8%A7%A3%E5%A4%A9%E8%88%9F%E8%B4%A7%E8%BF%90%E9%A3%9E%E8%88%B9%E6%BC%94%E5%8F%98%E5%8F%B2" target="_blank" class="news-link">拆解天舟货运飞船演变史</a> <font color='red'><strong>[2]</strong></font></li></ul><h4>财联社热门 (3 条)</h4><ul><li><a href="https://www.cls.cn/detail/2369809" target="_blank" class="news-link">“加息噩梦”近了？美联储“昔日鸽派”：通胀走向错误，与关税、石油无关！</a> <font color='red'><strong>[4]</strong></font></li><li><a href="https://www.cls.cn/detail/2369925" target="_blank" class="news-link">功率半导体密集涨价！AI数据中心成最大推手 业内预计供需紧张短期难解</a> [6]</li><li><a href="https://www.cls.cn/detail/2369669" target="_blank" class="news-link">投资者在担心什么？美股芯片板块集体回调 市场静待英伟达财报定方向</a> [9]</li></ul><h4>凤凰网 (1 条)</h4><ul><li><a href="https://news.ifeng.com/c/8t5mv472h4W" target="_blank" class="news-link">美国海军将建造史上最贵军舰：核动力“特朗普”级战列舰</a> [9]</li></ul><h4>微博 (1 条)</h4><ul><li><a href="https://s.weibo.com/weibo?q=%23%E9%BB%84%E4%BB%81%E5%8B%8B%E5%B9%B4%E8%96%AA%E7%BA%A62.47%E4%BA%BF%E5%85%83%23&amp;t=31&amp;band_rank=9&amp;Refer=top" target="_blank" class="news-link">黄仁勋年薪约2.47亿元</a> [9]</li></ul><h4>抖音 (1 条)</h4><ul><li><a href="https://www.douyin.com/hot/2497188" target="_blank" class="news-link">外媒：黄仁勋陪同特朗普访华</a> [13]</li></ul></div>
+    </body>
+    </html>
+    
