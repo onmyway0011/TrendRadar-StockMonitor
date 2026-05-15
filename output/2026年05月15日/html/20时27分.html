@@ -1,0 +1,170 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>频率词统计报告</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2 { color: #333; }
+            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .word { font-weight: bold; }
+            .count { text-align: center; }
+            .percentage { text-align: center; }
+            .titles { max-width: 500px; }
+            .source { color: #666; font-style: italic; }
+            .error { color: #d9534f; }
+            .news-link { 
+                color: #007bff; 
+                text-decoration: none; 
+                border-bottom: 1px dotted #007bff;
+            }
+            .news-link:hover { 
+                color: #0056b3; 
+                text-decoration: underline; 
+            }
+            .news-link:visited { 
+                color: #6f42c1; 
+            }
+            .no-link { 
+                color: #333; 
+            }
+            .new-title {
+                background-color: #fff3cd;
+                border: 1px solid #ffc107;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 2px 0;
+            }
+            .new-section {
+                background-color: #d1ecf1;
+                border: 1px solid #bee5eb;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .new-section h3 {
+                color: #0c5460;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>频率词统计报告</h1>
+    <p>报告类型: 实时分析</p><p>总标题数: 255</p><p>生成时间: 2026-05-15 20:27:37</p>
+        <table>
+            <tr>
+                <th>排名</th>
+                <th>频率词</th>
+                <th>出现次数</th>
+                <th>占比</th>
+                <th>相关标题</th>
+            </tr>
+    
+            <tr>
+                <td>1</td>
+                <td class="word">美国</td>
+                <td class="count">8</td>
+                <td class="percentage">3.14%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_33181994" target="_blank" class="news-link">详讯丨习近平同美国总统特朗普在中南海小范围会晤</a> <font color='red'><strong>[1]</strong></font> <font color='grey'>- 20时27分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3772334" target="_blank" class="news-link">习近平同美国总统特朗普在中南海小范围会晤</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 20时27分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_33178453" target="_blank" class="news-link">详讯丨习近平为美国总统特朗普举行欢迎宴会</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 20时27分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2372297" target="_blank" class="news-link">习近平同美国总统特朗普在中南海小范围会晤</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 20时27分</font><br><div class='new-title'>🆕 [华尔街见闻] <a href="https://wallstreetcn.com/articles/3772343" target="_blank" class="news-link">美国总统特朗普结束访华</a> [7] <font color='grey'>- 20时27分</font></div><br><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/2038182916086297866" target="_blank" class="news-link">美国 4 月 PPI 上涨 6%，创近年来记录，同时 30 年期国债得标利率超 5%，创近 20 年来记录，你怎么看？</a> [16] <font color='grey'>- 20时27分</font></div><br>[今日头条] <a href="https://www.toutiao.com/trending/7638963075865100329/" target="_blank" class="news-link">中方回应是否同意未来购买美国石油</a> [19] <font color='grey'>- 20时27分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_33179041" target="_blank" class="news-link">以色列和黎巴嫩在美国举行新一轮谈判</a> [20] <font color='grey'>- 20时27分</font></td>
+            </tr>
+        
+            <tr>
+                <td>2</td>
+                <td class="word">国产 中国</td>
+                <td class="count">7</td>
+                <td class="percentage">2.75%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7639049468456992787/" target="_blank" class="news-link">特朗普离开这一幕中国军人尽显英姿</a> <font color='red'><strong>[2]</strong></font> <font color='grey'>- 20时27分</font><br>[知乎] <a href="https://www.zhihu.com/question/2038626152567281104" target="_blank" class="news-link">特朗普结束对中国的国事访问，乘专机离开北京，如何评价此次来访？</a> <font color='red'><strong>[3]</strong></font> <font color='grey'>- 20时27分</font><br>[百度热搜] <a href="https://www.baidu.com/s?wd=%E7%89%B9%E6%9C%97%E6%99%AE%E7%A6%BB%E5%BC%80%E8%BF%99%E4%B8%80%E5%B9%95%E4%B8%AD%E5%9B%BD%E5%86%9B%E4%BA%BA%E5%B0%BD%E6%98%BE%E8%8B%B1%E5%A7%BF" target="_blank" class="news-link">特朗普离开这一幕中国军人尽显英姿</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 20时27分</font><br>[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_33178770" target="_blank" class="news-link">联合国气候变化框架公约执秘答澎湃：中国气候领导力比以往任何时候都更重要</a> [8] <font color='grey'>- 20时27分</font><br>[凤凰网] <a href="https://news.ifeng.com/c/8t9I9uzAaxl" target="_blank" class="news-link">日本供应链企业慌了：丰田、日产加大采购中国零部件</a> [8] <font color='grey'>- 20时27分</font><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28354298&amp;amp;topic_name=%E6%B2%B9%E7%82%92%E9%A6%99%E6%96%99%3F%E5%B2%9B%E6%B0%91%E7%82%B9%E8%AF%84%E4%B8%AD%E5%9B%BD%E8%8F%9C" target="_blank" class="news-link">油炒香料?岛民点评中国菜</a> [9] <font color='grey'>- 20时27分</font><br><div class='new-title'>🆕 [百度热搜] <a href="https://www.baidu.com/s?wd=%E7%BD%97%E6%B0%B8%E6%B5%A9%E6%80%92%E6%80%BC%E4%BF%9D%E6%97%B6%E6%8D%B7%E4%B8%AD%E5%9B%BD%E9%AB%98%E7%AE%A1" target="_blank" class="news-link">罗永浩怒怼保时捷中国高管</a> [27] <font color='grey'>- 20时27分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>3</td>
+                <td class="word">黄仁勋 英伟达 NVIDIA</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3772300" target="_blank" class="news-link">AI热潮催生2026最大IPO！“英伟达挑战者”Cerebras首秀盘中翻倍高涨</a> [8] <font color='grey'>- 20时27分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3772306" target="_blank" class="news-link">老黄这趟中国没白来！英伟达七天累计涨20%，市值逼近6万亿美元大关</a> [10] <font color='grey'>- 20时27分</font><br><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/2037259013860087102" target="_blank" class="news-link">如果黄仁勋愿意，凭借英伟达目前造算力卡的技术，最高可以造出什么水平的游戏显卡？</a> [19] <font color='grey'>- 20时27分</font></div><br>[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28354290&amp;amp;topic_name=%E8%8B%B1%E4%BC%9F%E8%BE%BE%E5%B8%82%E5%80%BC%E7%8B%82%E9%A3%99%2C%E8%B6%85%E5%BE%B7%E5%9B%BDGDP" target="_blank" class="news-link">英伟达市值狂飙,超德国GDP</a> [28] <font color='grey'>- 20时27分</font></td>
+            </tr>
+        
+            <tr>
+                <td>4</td>
+                <td class="word">ai 人工智能</td>
+                <td class="count">4</td>
+                <td class="percentage">1.57%</td>
+                <td class="titles">[贴吧] <a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28354319&amp;amp;topic_name=AI%E5%85%A8%E5%91%98%E5%A8%98%E5%8C%96%2C%E8%B1%86%E5%8C%85%E5%8F%98%E5%91%86%E7%93%9C" target="_blank" class="news-link">AI全员娘化,豆包变呆瓜</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 20时27分</font><br>[财联社热门] <a href="https://www.cls.cn/detail/2372257" target="_blank" class="news-link">AI涨价风吹到利基型存储：原厂停产引发结构性缺货 SLC NAND年内预计再涨120%</a> [6] <font color='grey'>- 20时27分</font><br>[抖音] <a href="https://www.douyin.com/hot/2499805" target="_blank" class="news-link">云南小伙用AI制作短片爆红</a> [7] <font color='grey'>- 20时27分</font><br>[知乎] <a href="https://www.zhihu.com/question/2018783635805860978" target="_blank" class="news-link">有没有人试过把全世界已有的佛经喂给 AI 看看最后能不能生成一个赛博在世佛祖?</a> [7] <font color='grey'>- 20时27分</font></td>
+            </tr>
+        
+            <tr>
+                <td>5</td>
+                <td class="word">苹果 库克 iphone ipad mac ios</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[今日头条] <a href="https://www.toutiao.com/trending/7640011427918384646/" target="_blank" class="news-link">苹果手机为何宣布大降价</a> [21] <font color='grey'>- 20时27分</font><br><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23iPhone%E4%B8%80%E5%B9%B4%E4%B8%80%E6%8D%A2%E6%AF%94%E4%B8%89%E5%B9%B4%E4%B8%80%E6%8D%A2%E6%9B%B4%E7%9C%81%E9%92%B1%23&amp;t=31&amp;band_rank=26&amp;Refer=top" target="_blank" class="news-link">iPhone一年一换比三年一换更省钱</a> [26] <font color='grey'>- 20时27分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>6</td>
+                <td class="word"># 美股港股重点关注 美股 港股 纳斯达克 道琼斯 标普500 S&amp;P500 恒生指数 恒指 港交所 纽交所 NYSE NASDAQ 美联储 FED 加息 降息 利率 通胀 美债 国债 收益率</td>
+                <td class="count">2</td>
+                <td class="percentage">0.78%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3772341" target="_blank" class="news-link">全球长债收益率飙升，股市普遍下挫，白银跌破80美元，黄金跌超1%</a> <font color='red'><strong>[5]</strong></font> <font color='grey'>- 20时27分</font><br>[华尔街见闻] <a href="https://wallstreetcn.com/articles/3772345" target="_blank" class="news-link">恐慌升级！全球债市替沃什“提前加息”，美日英德长债收益率飙至多年新高</a> [6] <font color='grey'>- 20时27分</font></td>
+            </tr>
+        
+            <tr>
+                <td>7</td>
+                <td class="word">胖东来 于东来</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [微博] <a href="https://s.weibo.com/weibo?q=%23%E5%A5%B3%E5%AD%90%E5%8F%91%E7%8E%B0%E8%83%96%E4%B8%9C%E6%9D%A5%E9%94%99%E8%AF%AF%E8%A2%AB%E8%BF%BD%E7%9D%80%E5%A5%96%E5%8A%B1%E7%8E%B0%E9%87%91%23&amp;t=31&amp;band_rank=19&amp;Refer=top" target="_blank" class="news-link">女子发现胖东来错误被追着奖励现金</a> [19] <font color='grey'>- 20时27分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>8</td>
+                <td class="word">比亚迪 王传福</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[知乎] <a href="https://www.zhihu.com/question/2038053798040576268" target="_blank" class="news-link">比亚迪首款皮卡「鲨鱼」将在国内销售，能否改变现有市场格局？</a> [6] <font color='grey'>- 20时27分</font></td>
+            </tr>
+        
+            <tr>
+                <td>9</td>
+                <td class="word">微软 Microsoft</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[华尔街见闻] <a href="https://wallstreetcn.com/articles/3772311" target="_blank" class="news-link">特朗普Q1交易：大幅减持亚马逊、Meta和微软，买入英伟达、博通和苹果，抄底甲骨文、Adobe等软件股</a> <font color='red'><strong>[4]</strong></font> <font color='grey'>- 20时27分</font></td>
+            </tr>
+        
+            <tr>
+                <td>10</td>
+                <td class="word">chatgpt Sam Altman openai</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [知乎] <a href="https://www.zhihu.com/question/2038588162453104310" target="_blank" class="news-link">如何看待 Anthropic 估值反超 OpenAI ？</a> [18] <font color='grey'>- 20时27分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>11</td>
+                <td class="word">机器人</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles"><div class='new-title'>🆕 [财联社热门] <a href="https://www.cls.cn/detail/2372554" target="_blank" class="news-link">【每日收评】沪指与深成指双双跌超1%，全市场超3500股飘绿，机器人概念股逆势爆发</a> [11] <font color='grey'>- 20时27分</font></div></td>
+            </tr>
+        
+            <tr>
+                <td>12</td>
+                <td class="word">科技</td>
+                <td class="count">1</td>
+                <td class="percentage">0.39%</td>
+                <td class="titles">[澎湃新闻] <a href="https://m.thepaper.cn/newsDetail_forward_33179189" target="_blank" class="news-link">赣南师范大学科技学院通报“一学生发布虐猫影像”：开除学籍</a> [13] <font color='grey'>- 20时27分</font></td>
+            </tr>
+        
+        </table>
+    
+        <div class="new-section">
+            <h3>🆕 本次新增热点新闻 (共 8 条)</h3>
+        <h4>百度热搜 (1 条)</h4><ul><li><a href="https://www.baidu.com/s?wd=%E7%BD%97%E6%B0%B8%E6%B5%A9%E6%80%92%E6%80%BC%E4%BF%9D%E6%97%B6%E6%8D%B7%E4%B8%AD%E5%9B%BD%E9%AB%98%E7%AE%A1" target="_blank" class="news-link">罗永浩怒怼保时捷中国高管</a> [27]</li></ul><h4>华尔街见闻 (1 条)</h4><ul><li><a href="https://wallstreetcn.com/articles/3772343" target="_blank" class="news-link">美国总统特朗普结束访华</a> [7]</li></ul><h4>财联社热门 (1 条)</h4><ul><li><a href="https://www.cls.cn/detail/2372554" target="_blank" class="news-link">【每日收评】沪指与深成指双双跌超1%，全市场超3500股飘绿，机器人概念股逆势爆发</a> [11]</li></ul><h4>微博 (2 条)</h4><ul><li><a href="https://s.weibo.com/weibo?q=%23%E5%A5%B3%E5%AD%90%E5%8F%91%E7%8E%B0%E8%83%96%E4%B8%9C%E6%9D%A5%E9%94%99%E8%AF%AF%E8%A2%AB%E8%BF%BD%E7%9D%80%E5%A5%96%E5%8A%B1%E7%8E%B0%E9%87%91%23&amp;t=31&amp;band_rank=19&amp;Refer=top" target="_blank" class="news-link">女子发现胖东来错误被追着奖励现金</a> [19]</li><li><a href="https://s.weibo.com/weibo?q=%23iPhone%E4%B8%80%E5%B9%B4%E4%B8%80%E6%8D%A2%E6%AF%94%E4%B8%89%E5%B9%B4%E4%B8%80%E6%8D%A2%E6%9B%B4%E7%9C%81%E9%92%B1%23&amp;t=31&amp;band_rank=26&amp;Refer=top" target="_blank" class="news-link">iPhone一年一换比三年一换更省钱</a> [26]</li></ul><h4>知乎 (3 条)</h4><ul><li><a href="https://www.zhihu.com/question/2038182916086297866" target="_blank" class="news-link">美国 4 月 PPI 上涨 6%，创近年来记录，同时 30 年期国债得标利率超 5%，创近 20 年来记录，你怎么看？</a> [16]</li><li><a href="https://www.zhihu.com/question/2038588162453104310" target="_blank" class="news-link">如何看待 Anthropic 估值反超 OpenAI ？</a> [18]</li><li><a href="https://www.zhihu.com/question/2037259013860087102" target="_blank" class="news-link">如果黄仁勋愿意，凭借英伟达目前造算力卡的技术，最高可以造出什么水平的游戏显卡？</a> [19]</li></ul></div>
+    </body>
+    </html>
+    
